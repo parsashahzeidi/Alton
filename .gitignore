@@ -1,0 +1,4 @@
+bin/
+gmon.out
+.vscode/
+*.out

@@ -1,20 +1,30 @@
-# include <Alton/Instructions/AnalyzedParameters/ParameterProcessor.hpp>
-# include <Alton/Instructions/PreProcessedCode/PreProcessor.hpp>
-//# include <Alton/Instructions/LexedTree/Lexer.hpp>
-//# include <Alton/Instructions/ParsedTree/Parser.hpp>
-//# include <Alton/Instructions/ActionTree/Actionizer.hpp>
+# include <Instructions/AnalyzedArguments/ArgumentProcessor.hpp>
+# include <Instructions/LexedTree/Lexer.hpp>
 
-# include <iostream>
-
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[]){
 	// --- Head ---
-	initialize_parameters();
-	alfie::ParamProcessor paramp;
-	alfie::parameters params = paramp.process();
+	Alton::ArgProcessor::ArgProcessor argp(argv, argc);
+	Alton::ArgProcessor::arg_chart_t args = argp.process();
+
+	Alton::Lexer::Lexer lxr
+	(
+		Alton::FileReader::read
+		(
+			args[Alton::ArgProcessor::arg_id::input_file]
+		)
+	);
+
+	Alton::Lexer::lxm_vec tokens = lxr.lex();
+
+	// --- Body ---
+	for (Alton::Types::natural_num_t i = 0; i < tokens.size(); i++)
+	{
+		std::cout << '[' << Alton::Conversions::text_to_str(tokens[i].enumeration) << "] ";
+	}
 	/*
 	alfie::ByteCode bc;
 	
-	if (params.is_bytecode){
+	if (args.is_bytecode){
 		alfie::statement_vector code = app.code;
 
 		alfie::Lexer lexer(code);
@@ -33,6 +43,5 @@ int main(int argc, char* argv[]){
 	// --- Body ---
 	bc.run();
 	*/
-	std::cout << "PP: " << app.process();
 	return 0;
 }

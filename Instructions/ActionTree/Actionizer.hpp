@@ -1,7 +1,7 @@
 # pragma once
 
 
-namespace alfie{
+namespace Alton{
 	class {
 		// --- Head
 	public:
