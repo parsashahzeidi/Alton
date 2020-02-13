@@ -6,11 +6,9 @@
 # define DEF_ERROR_TEMPLATE(classname, baseclassname, message)\
 class classname: public baseclassname {\
 public:\
-	text_t _message;\
-\
 	classname()\
 	{\
-	_message = str_to_text(message);\
+		_message = str_to_text(message);\
 	}\
 }
 
@@ -26,10 +24,9 @@ namespace Alton
 			public:
 				text_t _message;
 
-				BaseException()
-				{
-					_message = str_to_text("Base exception used in code.");
-				}
+				BaseException():
+						_message(U"Base exception used in code.")
+				{ }
 			};
 
 			// Errors inheriting from BaseException
@@ -37,11 +34,19 @@ namespace Alton
 				DEF_ERROR_TEMPLATE(BaseHelperException, BaseInternalException, "Base exception used in code.");
 					DEF_ERROR_TEMPLATE(StillOperatingError, BaseHelperException, "Attempted to end an operation in the middle of an operation");
 					DEF_ERROR_TEMPLATE(NotOperatingYetError, BaseHelperException, "Attempted to access an operation's data without an operation");
+
+					DEF_ERROR_TEMPLATE(InvalidInputCgroupException, BaseHelperException, "Base exception used in code.");
+						DEF_ERROR_TEMPLATE(InputNotAScopeItemException, InvalidInputCgroupException, "Character not expected to be a MiniScope item");
+							DEF_ERROR_TEMPLATE(InputNotAScopeOpeningException, InputNotAScopeItemException, "Character not expected to be a MiniScope opening");
+							DEF_ERROR_TEMPLATE(InputNotAScopeClosingException, InputNotAScopeItemException, "Character not expected to be a MiniScope closing");
+
+				DEF_ERROR_TEMPLATE(BasePlaceHolderInternalValueUseException, BaseInternalException, "Base exception used in code.");
+					DEF_ERROR_TEMPLATE(PlaceHolderTokenException, BasePlaceHolderInternalValueUseException, "Attempted to pass a Token::null_token to __append");
 			
 			DEF_ERROR_TEMPLATE(BaseExternalException, BaseException, "Base exception used in code.");
-				DEF_ERROR_TEMPLATE(BaseParamException, BaseExternalException, "Base exception used in code.");
-					DEF_ERROR_TEMPLATE(InvalidParamException, BaseParamException, "Unrecognised parameter");
-					DEF_ERROR_TEMPLATE(InvalidParamValueException, BaseParamException, "Can't evaluate parameter");
+				DEF_ERROR_TEMPLATE(BaseArgumentException, BaseExternalException, "Base exception used in code.");
+					DEF_ERROR_TEMPLATE(InvalidArgumentException, BaseArgumentException, "Unrecognised argument");
+					DEF_ERROR_TEMPLATE(InvalidArgumentValueException, BaseArgumentException, "Can't evaluate argument");
 
 				DEF_ERROR_TEMPLATE(BaseCodeException, BaseExternalException, "Base exception used in code.");
 					DEF_ERROR_TEMPLATE(InvalidSyntaxException, BaseCodeException, "Unrecognised syntax");
@@ -49,7 +54,7 @@ namespace Alton
 					DEF_ERROR_TEMPLATE(DentMatchException, BaseCodeException, "No indent where expected");
 					DEF_ERROR_TEMPLATE(OutDentUnmatchException, BaseCodeException, "Outdent doesn't match any previous dent level");
 					DEF_ERROR_TEMPLATE(InvalidEscapeSequence, BaseCodeException, "Unrecognised escape sequence");
-			
+					DEF_ERROR_TEMPLATE(MiniScopeLeftOpenException, BaseCodeException, "Scope unintentionally left open");
 		}
 	}
 }

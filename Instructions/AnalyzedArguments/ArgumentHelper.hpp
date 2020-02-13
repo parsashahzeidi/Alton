@@ -17,7 +17,7 @@ namespace Alton
 		};
 
 		// A chart for easier detection of arguments
-		typedef std::vector<text_t> arg_chart_t;
+		typedef cont_t<text_t> arg_chart_t;
 
 		struct _arg
 		{
@@ -25,14 +25,14 @@ namespace Alton
 			text_t value;
 		};
 
-		typedef struct _arg arg_t;
-		typedef std::vector<arg_t> arg_list_t;
+		typedef  _arg arg_t;
+		typedef cont_t<arg_t> arg_list_t;
 		
-		class ArgHelper: public BaseHelper<text_t, std::vector<text_t>>
+		class ArgHelper: public BaseHelper<text_t, cont_t<text_t>>
 		{
 			// --- Head
 		public:
-			std::vector<text_t> arg_group;
+			cont_t<text_t> arg_group;
 			arg_id current_arg_id = arg_id::count;
 
 			// --- Body
@@ -92,7 +92,7 @@ namespace Alton
 				}
 				
 				// No argument found
-				ErrorHandling::raise_arg(ErrorHandling::Exceptions::InvalidParamException(), curr(0));
+				ErrorHandling::raise_arg(ErrorHandling::Exceptions::InvalidArgumentException(), curr(0));
 			}
 
 			// --- Ctor ~ Dtor
@@ -102,7 +102,7 @@ namespace Alton
 			ArgHelper() = delete;
 			
 			// -- Customized CTOR ---
-			ArgHelper(std::vector<text_t> in):
+			ArgHelper(cont_t<text_t> in):
 					BaseHelper(in)
 			{ 
 				_setup_arg_group(); 

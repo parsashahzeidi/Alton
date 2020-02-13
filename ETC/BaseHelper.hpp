@@ -78,8 +78,6 @@ namespace Alton{
 		*/
 		virtual item &curr(num_t i)
 		{
-			_require_operation();
-
 			if (out.size() > (it + i))
 				return out[it + i];
 
@@ -122,11 +120,6 @@ namespace Alton{
 				virtually_advance();
 			}
 		}
-
-		/**
-		 * @brief Advances a word
-		*/
-		virtual void advance_word(){ advance(); };
 
 		// --- CTOR ~ DTOR
 	protected:

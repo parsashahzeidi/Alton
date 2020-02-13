@@ -47,7 +47,7 @@ namespace Alton
 					if (helper.curr(0)[0] != '-')
 						ErrorHandling::raise_arg
 						(
-							ErrorHandling::Exceptions::InvalidParamException(),
+							ErrorHandling::Exceptions::InvalidArgumentException(),
 							helper.curr(0)
 						);
 
@@ -115,7 +115,7 @@ namespace Alton
 			ArgProcessor() = delete;
 
 			ArgProcessor(char** _argv, natural_num_t argc):
-					helper(std::vector<text_t>())
+					helper(cont_t<text_t>())
 			{
 				// --- Body ---
 				helper.out.reserve(argc);

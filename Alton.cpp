@@ -1,5 +1,6 @@
 # include <Instructions/AnalyzedArguments/ArgumentProcessor.hpp>
 # include <Instructions/LexedTree/Lexer.hpp>
+# include <ETC/AltonContainers/BaseContainer.hpp>
 
 int main(int argc, char *argv[]){
 	// --- Head ---
@@ -43,5 +44,5 @@ int main(int argc, char *argv[]){
 	// --- Body ---
 	bc.run();
 	*/
-	return 0;
+	exit(0);
 }

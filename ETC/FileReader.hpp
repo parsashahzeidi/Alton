@@ -31,8 +31,8 @@ namespace Alton
 				){
 					ErrorHandling::raise_arg
 					(
-						ErrorHandling::Exceptions::InvalidParamValueException(),
-						str_to_text("-i=") + path.u32string()
+						ErrorHandling::Exceptions::InvalidArgumentValueException(),
+						U"-i=" + path.u32string()
 					);
 				}
 				

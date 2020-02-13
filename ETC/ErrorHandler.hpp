@@ -19,14 +19,15 @@ namespace Alton
 		/**
 		 * @brief Gets line:char from a string and index
 		*/
-		struct _index _get_index(text_t in, natural_num_t ptr){
+		_index _get_index(const text_t &in, natural_num_t ptr)
+		{
 			// --- Head ---
-			struct _index index;
+			_index index;
 			natural_num_t i = 0;
 
 			// --- Body ---
 			for (; i < ptr; i++){
-				if (in[i] == utfchar_t('\n'))
+				if (in[i] == U'\n')
 				{
 					index.last_line = index.curr_line;
 					index.curr_line = index.next_line;
@@ -35,7 +36,7 @@ namespace Alton
 					index.line++;
 					index.chtr = 0;
 				}
-				else if (in[i] == utfchar_t('\t'))
+				else if (in[i] == U'\t')
 				{
 					index.next_line += str_to_text("    ");
 					index.chtr += 4;
@@ -52,7 +53,7 @@ namespace Alton
 			index.next_line = str_to_text("");
 
 			// Current line
-			while ((i < in.size()) && (in[i] != utfchar_t('\n')))
+			while ((i < in.size()) && (in[i] != U'\n'))
 			{
 				index.curr_line += in[i];
 				i++;
@@ -60,7 +61,7 @@ namespace Alton
 
 			// Next line
 			i++;
-			while ((i < in.size()) && (in[i] != utfchar_t('\n')))
+			while ((i < in.size()) && (in[i] != U'\n'))
 			{
 				index.next_line += in[i];
 				i++;
@@ -74,8 +75,10 @@ namespace Alton
 		 * @param err The text descibing the error
 		 * @param code The error code to exit with ( if not handled )
 		*/
-		void _raise(text_t err, num_t code){
+		void _raise_error(const text_t &err, num_t code)
+		{
 			std::cerr << "Error: " << text_to_str(err) << '\n';
+			std::cerr.flush();
 			exit(code);
 		}
 
@@ -84,10 +87,10 @@ namespace Alton
 		 * @param err Alton::ErrorHandling::Exceptions::BaseCodeException type
 		 * @param __index Index of the character that's causing the error
 		*/
-		template<class err_t>
-		void raise_pos(err_t err, text_t file, natural_num_t __index){
+		void raise_pos(const Exceptions::BaseCodeException &err, const text_t &file, natural_num_t __index)
+		{
 			// --- Head ---
-			struct _index index = _get_index(file, __index);
+			_index index = _get_index(file, __index);
 			text_t message = err._message;
 
 			// --- Body ---
@@ -121,7 +124,7 @@ namespace Alton
 			message += index.curr_line;
 			message += str_to_text("\n\t");
 
-			//					^
+			//		------------^
 			for (natural_num_t i = 0; i < index.chtr; i++)
 				message += '-';
 			
@@ -139,7 +142,7 @@ namespace Alton
 			//		Terminating...
 			message += str_to_text("\t.\n\t.\n\t.\n\tTerminating...");
 
-			_raise(
+			_raise_error(
 				message,
 				1
 			);
@@ -147,13 +150,12 @@ namespace Alton
 		
 		/**
 		 * @brief Raises an error like err ( arg )
-		 * @param err Alton::ErrorHandling::Exceptions::BaseParamException type
+		 * @param err Alton::ErrorHandling::Exceptions::BaseArgumentException type
 		 * @param arg The problematic argument
 		*/
-		template<class err_t>
-		void raise_arg(err_t err, text_t arg)
+		void raise_arg(const Exceptions::BaseArgumentException &err, const text_t &arg)
 		{
-			_raise
+			_raise_error
 			(
 				err._message
 				+ str_to_text(" ( \'")
@@ -167,9 +169,9 @@ namespace Alton
 		 * @brief Raises an internal error.
 		 * @param err Alton::ErrorHandling::Exceptions::BaseInternalException type
 		*/
-		template<class err_t>
-		void raise_internal(err_t err){
-			_raise(
+		void raise_internal(const Exceptions::BaseInternalException &err)
+		{
+			_raise_error(
 				str_to_text("Internal Error: ")
 				+ err._message
 				+ str_to_text("\n\tTerminating..."),

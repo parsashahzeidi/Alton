@@ -15,10 +15,8 @@
 		/Alton/LICENSE
 */
 
-// We'll Enable this when we need it.
-// # include <thread>
+# include <thread>
 # include <filesystem>
-# include <vector>
 # include <stdint.h>
 # include <iostream>
 # include <string>
@@ -29,15 +27,20 @@ namespace Alton
 {
 	inline namespace Types
 	{
+		// String
 		typedef char32_t utfchar_t;
 		typedef std::u32string text_t;
 
 		// TODO: Replace these with abrietary precision types
+		// Numeric
 		typedef int64_t num_t;
 		typedef size_t natural_num_t;
-		typedef double float_t;
+		typedef long double float_t;
 	}
 }
+
+// Standard Container
+# include <ETC/AltonContainers/BaseContainer.hpp>
 
 // String Type Conversion
 # include <ETC/StringConvert.hpp>
