@@ -33,7 +33,7 @@ namespace Alton
 			/**
 			 * @brief Returns a value to indicate 
 			*/
-			bool __is_locked()
+			bool __is_locked() const
 			{
 				return
 					// Condition for checking if a lock is present
@@ -75,7 +75,7 @@ namespace Alton
 			 * @param data Note: this parameter is a reference;
 					to prevent using the copy constructor twice.
 			*/
-			linked_node *_get_new_node(const T &data)
+			linked_node *_get_new_node(const T &data) const
 			{
 				// --- Head ---
 				linked_node *new_node = new linked_node;
@@ -89,7 +89,7 @@ namespace Alton
 			/**
 			 * @brief Gets the node at in
 			*/
-			linked_node &_get_node(natural_num_t in)
+			linked_node &_get_node(natural_num_t in) const
 			{
 				// --- Head ---
 				linked_node *current = ptr;
@@ -104,7 +104,7 @@ namespace Alton
 			/**
 			 * @brief Returns the last items in the array
 			*/
-			linked_node &_back_node()
+			linked_node &_back_node() const
 			{
 				return _get_node(arr_size - 1);
 			}
@@ -112,7 +112,7 @@ namespace Alton
 			/**
 			 * @brief Returns the first item in the array
 			*/
-			linked_node &_front_node()
+			linked_node &_front_node() const
 			{
 				return *ptr;
 			}
@@ -152,16 +152,6 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Appends an empty item to the end of the array
-			*/
-			void push_back()
-			{
-				_lock();
-				push_back(T());
-				_unlock();
-			}
-
-			/**
 			 * @brief Removes the last item of the array
 			*/
 			void pop_back()
@@ -189,9 +179,9 @@ namespace Alton
 				if (in > arr_size)
 				{
 					while (arr_size != in)
-						push_back();
+						push_back(T());
 				}
-				// Or if we are cutting off the array size
+				// Or if we are cutting off the array's end
 				else if (in < arr_size)
 				{
 					while (arr_size != in)
@@ -216,7 +206,7 @@ namespace Alton
 					A linked list cannot have a preallocated capacity
 					so we'll just return the array size
 			*/
-			natural_num_t capacity()
+			natural_num_t capacity() const
 			{
 				return size();
 			}
@@ -224,7 +214,7 @@ namespace Alton
 			/**
 			 * @brief Checks if the array is empty
 			*/
-			bool empty()
+			bool empty() const
 			{
 				return arr_size == 0;
 			}
@@ -293,14 +283,14 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Can't do anything here since we're using a linked list. :^)
+			 * @brief Can't do anything here since we're using a linked list. :->
 			*/
 			void reserve(natural_num_t) { }
 
 			/**
 			 * @brief Returns the array size
 			*/
-			natural_num_t size()
+			natural_num_t size() const
 			{
 				return arr_size;
 			}
@@ -308,7 +298,7 @@ namespace Alton
 			/**
 			 * @brief Copies another container
 			*/
-			void copy_container_here(cont_t<T> &in)
+			void copy_container_here(const cont_t<T> &in)
 			{
 				_lock();
 				for (natural_num_t i = 0; i < in.arr_size; i++)
@@ -319,7 +309,7 @@ namespace Alton
 			/**
 			 * @brief Returns the item at in
 			*/
-			T &at(natural_num_t in)
+			T &at(natural_num_t in) const
 			{
 				return _get_node(in).data;
 			}
@@ -327,7 +317,7 @@ namespace Alton
 			/**
 			 * @brief Returns the last element of the array
 			*/
-			T &back()
+			T &back() const
 			{
 				return at(arr_size - 1);
 			}
@@ -335,18 +325,18 @@ namespace Alton
 			/**
 			 * @brief Returns the first element of the array
 			*/
-			T &front()
+			T &front() const
 			{
 				return at(0);
 			}
 
-			// Operators
-			T &operator[](natural_num_t in)
+			// -- Operators
+			T &operator[](natural_num_t in) const
 			{
 				return at(in);
 			}
 
-			cont_t<T> &operator=(cont_t<T> &in)
+			cont_t<T> &operator=(const cont_t<T> &in)
 			{
 				_lock();
 				copy_container_here(in);
@@ -354,7 +344,7 @@ namespace Alton
 				_unlock();
 			}
 
-			bool operator==(cont_t<T> &in)
+			bool operator==(const cont_t<T> &in) const
 			{
 				if (in.size() != arr_size)
 					return false;
@@ -368,8 +358,9 @@ namespace Alton
 				return true;
 			}
 
-			bool operator!=(cont_t<T> &in)
+			bool operator!=(const cont_t<T> &in) const
 			{
+				// TODO: Optimise this by redoing the loop at operator== here
 				return !operator==(in);
 			}
 
@@ -378,7 +369,7 @@ namespace Alton
 			cont_t()
 			{ }
 
-			cont_t(cont_t<T> &in)
+			cont_t(const cont_t<T> &in)
 			{
 				copy_container_here(in);
 			}

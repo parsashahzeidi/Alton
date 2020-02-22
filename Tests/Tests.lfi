@@ -1,4 +1,4 @@
-Alton0 main
+Alfie main
 
 # This function essentially does nothing.
 function main:
@@ -16,8 +16,8 @@ function main:
 			This string continues!')
 
 		# --- Lexing quizzes ---
-		print32 = nil  # I'm problematic!
-		a = {
+		var print32 = nil  # I'm problematic!
+		var a = {
 			32, 22, -12<<1
 		}
 		if a[0]:
@@ -28,10 +28,10 @@ function main:
 									# ahh.. Overdid it.
 
 		# --- Parsing / Runtime quizzes ---
-		print21, print32 = (1 <<= 56)
+		var print21 = print32 = (1 <<= 56)
 		a = print21; print32; a
-		print int(a() == a)
-		print "there's a '1' behind this sentence."
+		print (int(a() == a))
+		print ("there's a '1' behind this sentence.")
 		{ 23, 36, 12 }.apply_to (
 			alfie.image.open('./Test.png')
 		)

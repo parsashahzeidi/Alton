@@ -20,7 +20,7 @@ namespace Alton{
 		/**
 		 * @brief Errors if we're inside an operation
 		*/
-		void _require_operation()
+		void _require_operation() const
 		{
 			if (!during_op)
 				ErrorHandling::raise_internal(ErrorHandling::Exceptions::NotOperatingYetError());
@@ -29,7 +29,7 @@ namespace Alton{
 		/**
 		 * @brief Errors if we're outside an operation
 		*/
-		void _require_no_operation()
+		void _require_no_operation() const
 		{
 			if (during_op)
 				ErrorHandling::raise_internal(ErrorHandling::Exceptions::StillOperatingError());
@@ -68,7 +68,7 @@ namespace Alton{
 		/**
 		 * @brief Checks if the helper can still operate
 		*/
-		virtual bool is_operating()
+		virtual bool is_operating() const
 		{
 			return during_op;
 		}
@@ -125,7 +125,7 @@ namespace Alton{
 	protected:
 		BaseHelper() = delete;
 		
-		BaseHelper(list &cache)
+		BaseHelper(const list &cache)
 		{
 			_require_no_operation();
 			out = cache;

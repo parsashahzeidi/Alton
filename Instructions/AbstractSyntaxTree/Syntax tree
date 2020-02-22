@@ -1,0 +1,50 @@
+op_rvalue:
+	Values that appear on the right side of an operation.
+	Like:
+		variable = ab + c(a)
+				   ^--------
+					Rvalue
+
+op_lvalue:
+	Values that appear on the left side of an operation.
+	Like:
+		variable = ab + c(a)
+		^-------
+		 Lvalue
+
+Note:
+	operation values are split into 2 values if they are not constant.
+	Precedence desides which operator should be at the root
+	like:
+		'ab + c(a)':
+			op_lvalue = 'ab'
+			op_rvalue = 'c(a)'
+			Ovalue = '+'
+
+			oper_paranthesis has higher precedence, compared to the '+' operator.
+		
+		'c(a)':
+			op_lvalue = 'c'
+			op_rvalue = oper_list('a')
+			Ovalue = oper_paranthesis
+		
+		'c(a, b, c)':
+			op_lvalue = 'c'
+			op_rvalue = oper_list('a', 'b', 'c')
+			Ovalue = oper_paranthesis
+
+		'function main:':
+			op_lvalue = 'function'
+			op_rvalue = 'main'
+			Ovalue = do_block
+
+Operation / Ovalue:
+	The action that the middle operator does.
+	Like:
+		variable = ab + c(a)
+				 ^
+			  Ovalue
+
+
+Syntax types:
+	

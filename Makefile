@@ -1,9 +1,12 @@
 cxx_lin = g++-9
 cxx_win = wine ~/Apps/MINGW/MinGW/bin/g++.exe
 
+ld_lin = ld
+
 ext_lin = .out
 ext_win = .exe
 ext_ast = .o
+ext_asm = .asm
 
 cls_win = cls
 cls_lin = clear
@@ -11,19 +14,20 @@ cls_lin = clear
 pause_win = pause
 pause_lin = echo "Press the Enter button to exit..." && read nil
 
-console_win = cmd
-console_lin = konsole
+console_win = wine cmd -c
+console_lin = konsole -e
 
 cxx = $(cxx_lin)
+ld = $(ld_lin)
 ext = $(ext_lin)
 cls = $(cls_lin)
 pause = $(pause_lin)
 console = $(console_lin)
 
-args = -I. -m64 -std=c++17 -Wpedantic -Werror -pthread
-dbg_prms = -O0 -g -pg
-lnk_prms = -Ofast -c -lpthread
-bld_prms = -Ofast
+args = -I.
+dbg_prms = -O0 	  -g -pg		-m64 -std=c++2a -Wpedantic -Werror -pthread
+lnk_prms = -Ofast -lpthread -c 	-m64 -std=c++2a -Wpedantic -Werror -pthread
+bld_prms = -Ofast				-melf_x86_64
 
 ignore_error = ; echo -n ""
 ignore_output = > temp.tmp
@@ -35,22 +39,22 @@ debug: dbg
 
 .PHONY:bld
 bld: directories
-	@ $(cxx_lin) $(args) $(bld_prms) ./cache/Alton$(ext_ast) -o ./bin/linux/Alton$(ext_lin)
-	@ $(cxx_win) $(args) $(bld_prms) ./cache/Alton$(ext_ast) -o ./bin/windows/Alton$(ext_win)
+	@ $(cxx)	$(args) $(lnk_prms) ./Alton.cpp			 -o ./cache/Alton$(ext_asm)
+	@ $(ld_lin)	$(args) $(bld_prms) ./cache/Alton$(ext_asm) -o ./bin/linux/Alton$(ext_lin)
 
 .PHONY:dbg
 dbg: directories
 	@ $(cxx) $(args) $(dbg_prms) ./Alton.cpp -o ./bin/debug/Alton$(ext)
 
 .PHONY:_run_debug
-_run_debug: dbg
+_run_debug:
 	@ $(cls)
-	@ valgrind --leak-check=full --show-leak-kinds=all ./bin/debug/Alton$(ext) -i=./Tests/Tests.lfi $(ignore_error)
+	@ make debug && valgrind --leak-check=full --show-leak-kinds=all ./bin/debug/Alton$(ext) -i=./Tests/Tests.lfi $(ignore_error)
 	@ rm ./gmon.out $(ignore_output) $(ignore_error)
 	@ $(pause)
 
-run_debug: dbg
-	@ $(console) -e bash -c "make _run_debug; read" $(ignore_output)
+run_debug:
+	@ $(console) "make _run_debug"
 
 .PHONY:clean
 clean:

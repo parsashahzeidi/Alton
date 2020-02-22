@@ -7,13 +7,15 @@ namespace Alton
 {
 	namespace ErrorHandling
 	{
+		text_t *code;
+
 		struct _index
 		{
 			natural_num_t line = 1;
 			natural_num_t chtr = 0;
-			text_t last_line = str_to_text("");
-			text_t curr_line = str_to_text("");
-			text_t next_line = str_to_text("");
+			text_t last_line = U"";
+			text_t curr_line = U"";
+			text_t next_line = U"";
 		};
 
 		/**
@@ -31,14 +33,14 @@ namespace Alton
 				{
 					index.last_line = index.curr_line;
 					index.curr_line = index.next_line;
-					index.next_line = str_to_text("");
+					index.next_line = U"";
 
 					index.line++;
 					index.chtr = 0;
 				}
 				else if (in[i] == U'\t')
 				{
-					index.next_line += str_to_text("    ");
+					index.next_line += U"    ";
 					index.chtr += 4;
 				}
 				else
@@ -50,7 +52,7 @@ namespace Alton
 
 			index.last_line = index.curr_line;
 			index.curr_line = index.next_line;
-			index.next_line = str_to_text("");
+			index.next_line = U"";
 
 			// Current line
 			while ((i < in.size()) && (in[i] != U'\n'))
@@ -87,7 +89,7 @@ namespace Alton
 		 * @param err Alton::ErrorHandling::Exceptions::BaseCodeException type
 		 * @param __index Index of the character that's causing the error
 		*/
-		void raise_pos(const Exceptions::BaseCodeException &err, const text_t &file, natural_num_t __index)
+		void raise_pos(const Exceptions::BaseCodeException &err, natural_num_t __index, const text_t &file = *code)
 		{
 			// --- Head ---
 			_index index = _get_index(file, __index);
@@ -95,53 +97,54 @@ namespace Alton
 
 			// --- Body ---
 			// Error: Hello at
-			message += str_to_text(" at ");
+			message += U" at ";
 
 			// 8:14
 			message += str_to_text(std::to_string(index.line));
-			message += str_to_text(":");
+			message += U":";
 			message += str_to_text(std::to_string(index.chtr));
-			message += str_to_text(".\n");
+			message += U".\n";
 
 			//		.
 			//		.
 			//		.
 			if (index.line > 1)
-				message += str_to_text("\t.\n\t.\n\t.\n");
+				message += U"\t.\n\t.\n\t.\n";
 
 			// 7	|		hello_init
 			if (index.line != 1)
 			{
 				message += str_to_text(std::to_string(index.line - 1));
-				message += str_to_text(" |\t");
+				message += U" |\t";
 				message += index.last_line;
-				message += str_to_text("\n");
+				message += U"\n";
 			}
 
 			// 8	|			Hello!
 			message += str_to_text(std::to_string(index.line));
-			message += str_to_text(" |\t");
+			message += U" |\t";
 			message += index.curr_line;
-			message += str_to_text("\n\t");
+			message += U"\n\t";
 
 			//		------------^
 			for (natural_num_t i = 0; i < index.chtr; i++)
 				message += '-';
 			
-			message += str_to_text("^\n");
+			message += U"^\n";
 
 			// 9	|		hello_end
 			message += str_to_text(std::to_string(index.line + 1));
-			message += str_to_text(" |\t");
+			message += U" |\t";
 			message += index.next_line;
-			message += str_to_text("\n");
+			message += U"\n";
 
 			//		.
 			//		.
 			//		.
 			//		Terminating...
-			message += str_to_text("\t.\n\t.\n\t.\n\tTerminating...");
+			message += U"\t.\n\t.\n\t.\n\tTerminating...";
 
+			// Actually raising the shit
 			_raise_error(
 				message,
 				1

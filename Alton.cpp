@@ -1,9 +1,13 @@
 # include <Instructions/AnalyzedArguments/ArgumentProcessor.hpp>
 # include <Instructions/LexedTree/Lexer.hpp>
-# include <ETC/AltonContainers/BaseContainer.hpp>
+# include <Instructions/AbstractSyntaxTree/Parser.hpp>
+# include <ETC/AltonContainers/BaseTreeContainer.hpp>
 
 int main(int argc, char *argv[]){
 	// --- Head ---
+	std::string tmp = "ello";
+	Alton::TreeNode<std::string> a(tmp);
+
 	Alton::ArgProcessor::ArgProcessor argp(argv, argc);
 	Alton::ArgProcessor::arg_chart_t args = argp.process();
 
@@ -17,11 +21,31 @@ int main(int argc, char *argv[]){
 
 	Alton::Lexer::lxm_vec tokens = lxr.lex();
 
+	Alton::Parser::Parser parser = tokens;
+	Alton::Types::cont_t<Alton::Parser::ast_t> tree = parser.parse();
+
 	// --- Body ---
+	// -- Tree container test --
+	std::cout << "\n\n\033[1m\t[TestRun]\ttree_container_test()\033[0m\n\n";
+	tmp = "enui on dere?";
+	a.set_left(tmp);
+	a.get_left().set_left(tmp += " Yello!\n");
+	std::cout << a.get_left().get_left().item;
+	std::cout.flush();
+
+	// -- Lexing test --
+	std::cout << "\n\n\033[1m\t[TestRun]\tlexing_test()\033[0m\n\n";
+	
 	for (Alton::Types::natural_num_t i = 0; i < tokens.size(); i++)
 	{
 		std::cout << '[' << Alton::Conversions::text_to_str(tokens[i].enumeration) << "] ";
 	}
+
+	// -- Parsing test --
+	std::cout << "\n\n\033[1m\t[TestRun]\tparsing_test()\033[0m\n\n";
+
+	
+
 	/*
 	alfie::ByteCode bc;
 	

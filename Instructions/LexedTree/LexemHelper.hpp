@@ -124,16 +124,16 @@ namespace Alton
 				it++;
 
 				// Skipping those pesky windows newlines
-				if ((curr(0) == '\r') && (curr(1) == '\n'))
-					it++;
+				if ((curr(0) == U'\r') && (curr(1) == U'\n'))
+					it++;  // TODO: Use a preprocessor.
 
 				// Skipping Escapes.
-				if (curr(0) == '\\')
+				if (curr(0) == U'\\')
 				{
 					// -- \\\n --
-					if (curr(1) == '\n')
+					if (curr(1) == U'\n')
 						it++;
-					else if (curr(1) == '\r' && curr(2) == '\n')
+					else if (curr(1) == U'\r' && curr(2) == U'\n')
 						it += 2;
 
 					// -- Unrecognised escape code --
@@ -141,7 +141,7 @@ namespace Alton
 						ErrorHandling::raise_pos
 						(
 							ErrorHandling::Exceptions::InvalidEscapeSequence(),
-							out, it
+							it, out
 						);
 				}
 				

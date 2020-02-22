@@ -10,7 +10,7 @@ namespace Alton
 		 * @brief Converts a string type to another
 		*/
 		template <typename in, typename out>
-		const out _str_cvt(in _in)
+		out _str_cvt(const in &_in)
 		{
 			// --- Head ---
 			out _out;
@@ -29,7 +29,7 @@ namespace Alton
 		 * Note:
 		 * 	This command will be deceprated in the close future.
 		*/
-		const std::string text_to_str(text_t s)
+		std::string text_to_str(const text_t &s)
 		{
 			return _str_cvt<text_t, std::string>(s);
 		}
@@ -40,7 +40,7 @@ namespace Alton
 		 * Note:
 		 * 	This command will be deceprated in the close future.
 		*/
-		text_t str_to_text(std::string s)
+		text_t str_to_text(const std::string &s)
 		{
 			return _str_cvt<std::string, text_t>(s);
 		}
