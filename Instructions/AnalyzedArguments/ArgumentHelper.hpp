@@ -7,13 +7,17 @@ namespace Alton
 {
 	namespace ArgProcessor
 	{
+		using namespace Conversions;
+		using namespace ErrorHandling;
+
 		// A list for all the possible arguments
 		enum arg_id
 		{
 			output_path = 0,
 			input_file,
 
-			count  // Make sure that this is the last item
+			// Not a argument
+			count
 		};
 
 		// A chart for easier detection of arguments
@@ -28,7 +32,7 @@ namespace Alton
 		typedef  _arg arg_t;
 		typedef cont_t<arg_t> arg_list_t;
 		
-		class ArgHelper: public BaseHelper<text_t, cont_t<text_t>>
+		class ArgHelper: public BaseHelper<text_t, cont_t<text_t>, false>
 		{
 			// --- Head
 		public:
@@ -43,22 +47,20 @@ namespace Alton
 			void _setup_arg_group()
 			{
 				// --- Head ---
-				// std::string is easier here, but (TODO:) will be replaced in the future.
-
 				// Note: Since we're using comments at the end, I think the code'd be more
 				//	readable if we put the commas at the start of each item; I'd also like
 				//	to have each argument in a separate line.
-				std::string args[] =
+				text_t args[] =
 				{
-					 "o="  // Output path
-					,"i="  // Input file
+					 U"o="  // Output path
+					,U"i="  // Input file
 				};
 
 				// --- Body ---
 				arg_group.reserve(arg_id::count);
 
 				for (natural_num_t i = 0; i < arg_id::count; i++)
-					arg_group.push_back(str_to_text(args[i]));
+					arg_group.push_back(args[i]);
 			}
 
 		public:
@@ -92,7 +94,7 @@ namespace Alton
 				}
 				
 				// No argument found
-				ErrorHandling::raise_arg(ErrorHandling::Exceptions::InvalidArgumentException(), curr(0));
+				raise_arg(Exceptions::InvalidArgumentException(), curr(0));
 			}
 
 			// --- Ctor ~ Dtor

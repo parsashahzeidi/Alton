@@ -4,8 +4,10 @@
 
 namespace Alton
 {
-	inline namespace Tools
+	namespace Tools
 	{
+		using namespace Conversions;
+		using namespace ErrorHandling;
 		class FileReader
 		{
 			// --- Head
@@ -29,9 +31,9 @@ namespace Alton
 					std::filesystem::is_directory(path) ||
 					std::filesystem::is_empty(path)
 				){
-					ErrorHandling::raise_arg
+					raise_arg
 					(
-						ErrorHandling::Exceptions::InvalidArgumentValueException(),
+						Exceptions::InvalidArgumentValueException(),
 						U"-i=" + path.u32string()
 					);
 				}

@@ -1,13 +1,16 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <Instructions/LexedTree/LexemHelper.hpp>
 
+# include <Instructions/LexedTree/LexemHelper.hpp>
+# include <Instructions/LexedTree/lexem_t.hpp>
 
 namespace Alton
 {
 	namespace Lexer
 	{
+		using namespace ErrorHandling;
+
 		// --- Lexer class ------------------------
 		class Lexer
 		{
@@ -15,468 +18,506 @@ namespace Alton
 		private:
 			LexemHelper h = text_t(U"");
 
-			// A list of valid operators in Alfie code follows:
-			text_t valid_ops_temp[39] = {
-				// Member-Access operators															00 ~ 02
-				U".", U",", U"=",
-				// Arithmetic operators																03 ~ 16
-				U"++", U"+", U"--", U"-", U"+=", U"-=", U"/", U"*", U"/=", U"*=", U"%", U"%=", U"**", U"**=",
-				// Bitwise operators																17 ~ 26
-				U"^", U"^=", U"&", U"&=", U"|", U"|=", U">>", U"<<", U">>=", U"<<=",
-				// Conditional operators															27 ~ 38
-				U"&&", U"&&=", U"||", U"||=", U"<", U"<=", U">", U">=", U"==", U"!=", U"!", U"!="
-			};
-
-			cont_t<text_t> valid_operators = cont_t<text_t>(valid_ops_temp, 39);
-
-			const text_t opers_g = 
-				// Arithmetic,					00 ~ 04
-				U"+-*/%"
-				// Bit-Op,						05 ~ 07
-				U"^|&"
-				// Comparing,					08 ~ 11
-				U"<>!="
-				// Logical,						12 ~ 14
-				U".,";
-
 			// --- Body
 		private:
 			/**
-			 * @brief finds the character group of a character
-			 * @param in Input string
-			 *  
-			 * @return The character group of str
+			 * @brief Returns a token for the current position
 			*/
-			cgroup _find_char_group(utfchar_t in)
+			token ___find_constant_token()
 			{
-				// --- cgroup::characters ---
-				if 
-				(
-					((in >= 'A') && (in <= 'Z')) ||  // If in is either A or Z or is between them
-					((in >= 'a') && (in <= 'z')) ||  // If in is either a or z or is between them
-					(in == '_')  // If in is equal to _
-				)
-					return cgroup::characters;
+				// --- Head ---
+				// -- Remaining characters to the end --
+				natural_num_t remaining_chars = h.out.size() - h.it;
+				// -- The text to the end --
+				text_t remaining_text = h.out.substr(h.it);
+				// -- A cache value --
+				token cache = token::null_token;
 
-				// --- cgroup::numbers ---
-				else if
-				(
-					(in >= '0') && (in <= '9')  // If in is either 0 or 9 or is between them
-				)
-					return cgroup::numbers;
+				// --- Body ---
+				// Note:
+				//	This is a repetitive process to check for a result
+				//	that's not a null_token ( same as a failed result ).
+				//	Eventually, one of the do-blocks will trigger the
 
-				// --- cgroup::operators ---
-				for (natural_num_t i = 0; i < opers_g.size(); i++)
-					if (in == opers_g[i])
-						return cgroup::operators;
+				// -- 1 character --
+				if (remaining_chars != 0)
+					cache = ____get_const_token_1_char(remaining_text.substr(0, 1));
 
-				// "Yolo-ing the 'switch' tactic" proceeds from here.
-				switch (in)
-				{
-					// --- cgroup::whitespaces ---
-				case U'\t':
-				case U' ':
-					return cgroup::whitespaces;
+				// -- 2 characters --
+				if (cache == token::null_token && remaining_chars >= 2)
+					cache = ____get_const_token_2_chars(remaining_text.substr(0, 2));
 				
-					// --- cgroup::newlines ---
-				case U'\n':
-					return cgroup::newlines;
-
-					// --- cgroup::comments ---
-				case U'#':
-					return cgroup::comments;
+				// -- 3 characters --
+				if (cache == token::null_token && remaining_chars >= 3)
+					cache = ____get_const_token_3_chars(remaining_text.substr(0, 3));
 				
-					// --- cgroup::scope_openings ---
-				case U'(':
-				case U'{':
-				case U'[':
-					return cgroup::scope_openings;
-
-					// --- cgroup::scope_closings ---
-				case U')':
-				case U'}':
-				case U']':
-					return cgroup::scope_closings;
-
-					// --- cgroup::specials ---
-				case U':':
-				case U';':
-					return cgroup::specials;
-
-					// --- cgroup::string_quotes ---
-				case U'\'':
-				case U'\"':
-					return cgroup::string_quotes;
-
-					// --- cgroup::invalids ---
-				default:
-					return cgroup::invalids;
-				}
-			}
-
-			utfchar_t _find_estimated_scope_closing(utfchar_t in)
-			{
-				switch (in)
-				{
-				case U'{':
-					return U'}';
-				case U'[':
-					return U']';
-				case U'(':
-					return U')';
+				// -- 4 or more characters --
+				if (cache == token::null_token && remaining_chars >= 4)
+					cache = ____get_const_token_keywords(remaining_text);
 				
-				default:
-					ErrorHandling::raise_internal
-					(
-						ErrorHandling::Exceptions::InputNotAScopeOpeningException()
-					);
-					return U'\0';
-				}
+				return cache;
 			}
 
 			/**
-			 * @brief Advances a lexem thru the text
+			 * @brief Advances an integer thru
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_integer()
+			{
+				// --- Head ---
+				// -- A cache value --
+				lexem_t cache;
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+
+				// --- Body ---
+				// -- Detected an integer constant --
+				if (h.___char_is_a_number(current_char))
+				{
+					// - Basic stuff.. -
+					cache.position_in_code = h.it;
+					cache.token_type = token::constant_integer;
+					
+					// - Grab the string enumeration -
+					while (h.___char_is_a_number(current_char))
+					{
+						cache.enumeration += current_char;
+
+						h.virtually_advance();
+						current_char = h.curr(0);
+					}
+
+					// - Stick the result to the end. -
+					h.__append(cache);
+					return 1;
+				}
+				// -- Didn't do shit here --
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances an identifier thru
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_identifier()
+			{
+				// --- Head ---
+				// -- A cache value --
+				lexem_t cache;
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+
+				// --- Body ---
+				// -- Detected an identifier --
+				if (h.___char_is_in_english(current_char))
+				{
+					cache.position_in_code = h.it;
+					cache.token_type = token::identifier;
+
+					// - Grab the string enumeration -
+					while (h.___char_is_an_identifier(current_char))
+					{
+						cache.enumeration += current_char;
+
+						h.virtually_advance();
+						current_char = h.curr(0);
+					}
+
+					// - Stick the result to the end. -
+					h.__append(cache);
+					return 1;
+				}
+				// -- Didn't do shit here --
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances a text thru
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_text()
+			{
+				// --- Head ---
+				// -- A cache value --
+				lexem_t cache;
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+				// -- The quote that started the string
+				const utfchar_t quote = current_char; 
+
+				// --- Body ---
+				// -- Detected a text quote --
+				if (current_char == U'\"' || current_char == U'\'')
+				{
+					cache.enumeration += quote;
+					cache.position_in_code = h.it;
+					cache.token_type = token::constant_text;
+
+					// - Skipping the quote -
+					h.virtually_advance(1);
+
+					// - Getting the text -
+					current_char = h.curr(0);
+					while (current_char != quote)
+					{
+						// Skipping the characters next to a \\ 
+						//	to prevent \\\" errors.
+						if (current_char == U'\\')
+						{
+							cache.enumeration += current_char;
+
+							h.virtually_advance(1);
+							current_char = h.curr(0);
+						}
+
+						// Appending the current character
+						cache.enumeration = current_char;
+
+						h.virtually_advance(1);
+						current_char = h.curr(0);
+					}
+
+					// - Skipping the quote -
+					cache.enumeration += quote;
+					h.virtually_advance(1);
+
+					h.__append(cache);
+					return 1;
+				}
+				// -- Didn't detect. :-< ---
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances a text thru
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_whitespace()
+			{
+				// --- Head ---
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+
+				// --- Body ---
+				// -- Detected a text quote --
+				if (current_char == U' ' || current_char == U'\t')
+				{
+					while (current_char == U' ' || current_char == U'\t')
+					{
+						h.virtually_advance();
+						current_char = h.curr(0);
+					}
+					return 1;
+				}
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances thru a newline and the indents that continue afterwards
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_comment()
+			{
+				// --- Head ---
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+
+				// --- Body ---
+				// -- Detected a comment --
+				if (current_char == U'#')
+				{
+					while (!___advance_newline())
+						h.virtually_advance();
+					
+					return 1;
+				}
+				// -- Nope... --
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances thru a newline and the indents that continue afterwards
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_newline()
+			{
+				// --- Head ---
+				// -- A cache value --
+				lexem_t cache;
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+				// -- The amount of dents in the current line --
+				natural_num_t dents = h.previous_dents.back();
+				// -- The amount of dents in the following line --
+				natural_num_t new_dents = 0;
+
+				// --- Body ---
+				// -- Detected an LF newline --
+				if (current_char == U'\n')
+					h.virtually_advance(1);
+				
+				// -- Detected a CRLF newline --
+				else if 
+				(
+					(current_char == U'\r') &&  // CR
+					(h.curr(1) == U'\n')  // LF
+				)
+					h.virtually_advance(2);
+				
+				// -- Detected a do block --
+				else if (current_char == U':')
+				{
+					// - Do block inside a miniscope -
+					if (!h.open_miniscopes.empty())
+						raise_pos
+						(
+							Exceptions::MisplacedDoBlock(),
+							h.it
+						);
+					
+					h.virtually_advance(1);
+					h._expecting_indent = true;
+
+					// - A do block should be immediatly followed by a newline -
+					if (!___advance_newline())
+						raise_pos
+						(
+							Exceptions::DentMatchException(),
+							h.it
+						);
+				}
+
+				// -- Didn't detect it --
+				else return 0;
+
+				// -- Checking if we haven't reached the end --
+				if (!h.is_operating())
+					return 1;
+
+				// -- Checking if we are in a miniscope --
+				if (!h.open_miniscopes.empty())
+					return 1;
+
+				// -- Appending the newline --
+				cache.position_in_code = h.it;
+				cache.enumeration = nl_txt;
+				cache.token_type = token::statement_end;
+				
+				h.__append(cache);
+
+				// -- Counting the dents --
+				current_char = h.curr(0);
+				
+				for (; current_char == U' ' || current_char == U'\t'; new_dents++)
+				{
+					h.virtually_advance(1);
+					current_char = h.curr(0);
+				}
+
+				// -- Skipping a possible comment --
+				___advance_comment();
+				// -- Recursing if possible --
+				if (___advance_newline())
+					return 1;
+
+				// -- Indent --
+				if (new_dents > dents)
+				{
+					// - Indent where not expected -
+					if (!h._expecting_indent)
+						raise_pos
+						(
+							Exceptions::DentUnmatchException(),
+							h.it
+						);
+
+					h.previous_dents.push_back(new_dents);
+
+					cache.enumeration = U"";
+					cache.token_type = token::indent;
+					h.__append(cache);
+					h._expecting_indent = false;
+				}
+
+				// -- Outdent --
+				else if (new_dents < dents)
+				{
+					// -- Expected an indent --
+					if (h._expecting_indent)
+						raise_pos
+						(
+							Exceptions::DentMatchException(),
+							h.it
+						);
+
+					// - Removing the last indents -
+					cache.enumeration = U"";
+					cache.token_type = token::outdent;
+
+					while (new_dents < h.previous_dents.back())
+					{
+						h.previous_dents.pop_back();
+						h.__append(cache);
+					}
+
+					// - No matches for the current outdent  -
+					if (new_dents != h.previous_dents.back())
+						raise_pos
+						(
+							Exceptions::OutDentUnmatchException(),
+							h.it
+						);
+				}
+				// -- No dent change --
+				else
+					// -- Expected an indent --
+					if (h._expecting_indent)
+						raise_pos
+						(
+							Exceptions::DentMatchException(),
+							h.it
+						);
+
+				// Note:
+				//	If you're wondering:
+				//		This function is recursed when 2 newlines are
+				//		 are put next to eachother.
+
+				// Previous comment contains two 'are' words. look close.
+				return 1;
+			}
+
+			/**
+			 * @brief Advances a lexem thru
 			*/
 			void __advance_token()
 			{
 				// --- Head ---
-				cgroup group = _find_char_group(h.curr(0));
+				// -- A cache value --
 				lexem_t cache;
 
 				// --- Body ---
-				// -- Preparing 'cache' --
+				// -- Basic stuff.. --
 				cache.position_in_code = h.it;
-				
-				// Note:
-				//	The reason that we're not
-				//	checking if _expecting_indent
-				//	is on and we don't have a newline
-				//	is that Alfie standards allow
-				//	one-liner condition checks and
-				//	one-liner loops. For example:
-				//		eval 'while a==b: f(a); f(b)'
-				//	is valid.
+				cache.token_type = ___find_constant_token();
+				cache.enumeration = ___get_token_name_in_text(cache.token_type);
 
-				// -- Comments --
-				if (group == cgroup::comments)
+				// -- ___find_constant_token found the token. --
+				if (cache.token_type != token::null_token)
 				{
-					// Escaping to a newline
-					// Note:
-					//	Escape sequences are allowed in comments;
-					//	TODO: Remove this behaviour.
-					while (_find_char_group(h.curr(0)) != cgroup::newlines)
-						h.virtually_advance();
-
-					return;
-				}
-
-				// -- Whitespace token / Invisible token --
-				else if (group == cgroup::whitespaces)
-				{
-					while (_find_char_group(h.curr(0)) == cgroup::whitespaces)
-						h.virtually_advance();
-					return;
-				}
-
-				// -- Newline token --
-				else if (group == cgroup::newlines)
-				{
-					// This lexem should be ignored if a miniscope is open
-					if (h.open_miniscopes.size())
+					// - Skipping the token -
+					h.virtually_advance(cache.enumeration.size());
+					
+					// - Checking for exceptions -
+					switch (cache.token_type)
 					{
-						h.virtually_advance();
-						return;
-					}
+						// Exception for integer constants smaller than zero
+					case token::oper_subtract:
+						if (___advance_integer())
+							// Inverting the enumeration for __advance_integer
+							h.tokenized.back().enumeration = U"-" + h.tokenized.back().enumeration;
+							// Note:
+							//	Even tho "-2" is allowed, "- 2" ( With a space in the mid )
+							//	is not.
+						break;
 
-					// Adding the new statement
-					cache.token_type = token::statement_end;
-					cache.enumeration = nl_txt;
+						// Exception for miniscope openings
+					case token::paranthesis_miniscope_opening:
+					case token::round_bracket_miniscope_opening:
+					case token::square_bracket_miniscope_opening:
+						h.open_miniscopes.push_back(cache.enumeration[0]);
+						break;
 
-					h.__append(cache);
-
-					// Preparing for the indents
-					cache.token_type = token::dent;
-					cache.enumeration = U"\t";
-					cache.position_in_code++;
-
-					// Doing the indents; but resetting them if a newline is found
-					while (_find_char_group(h.curr(0)) == cgroup::newlines)
-					{
-						// Skipping the newline that we currently are on
-						h.virtually_advance();
-
-						// Checking for dem indents
-						// Kinda head
-						cache.value = 0;
-						cache.position_in_code = h.it;
-
-						// Kinda body
-						while (_find_char_group(h.curr(0)) == cgroup::whitespaces)
-						{
-							cache.value++;
-							h.virtually_advance();
-						}
-
-						// Escaping to a newline if a comment is present
-						if (_find_char_group(h.curr(0)) == cgroup::comments)
-							__advance_token();
-					}
-
-					// Checking for wrong dent conditions
-					if (!h._expecting_indent)
-					{
-						// Indent ( While not expecting one )
-						if (cache.value > h.previous_dents.back())
-							ErrorHandling::raise_pos
-							(
-								ErrorHandling::Exceptions::DentUnmatchException(),
-								h.out, h.it
-							);
-						
-						// Outdent
-						else if (cache.value < h.previous_dents.back())
-						{
-							while (h.previous_dents.back() > cache.value)
-								h.previous_dents.pop_back();
-
-							// Checking if there is a similliar indent level before this indent
-							if (cache.value != h.previous_dents.back())
+						// Exception for miniscope closings
+					case token::paranthesis_miniscope_closing:
+					case token::round_bracket_miniscope_closing:
+					case token::square_bracket_miniscope_closing:
+						// Scope closing is legal.
+						if
+						(
+							h._find_potential_scope_closing(h.open_miniscopes.back()) ==  // The scope opening
+							cache.enumeration[0]  // The scope closing
+						)
+							h.open_miniscopes.pop_back();
+						// Scope closing is illegal.
+						else
+							switch (h.open_miniscopes.back())
+							{
+							case U'{':
 								ErrorHandling::raise_pos
 								(
-									ErrorHandling::Exceptions::OutDentUnmatchException(),
-									h.out, h.it
+									ErrorHandling::Exceptions::RoundBracketMiniScopeLeftOpenException(),
+									h.it
 								);
-						}
-					}
-					else
-					{
-						// Dent keep / Outdent ( Where indent was needed )
-						if (cache.value <= h.previous_dents.back())
-							ErrorHandling::raise_pos
-							(
-								ErrorHandling::Exceptions::DentMatchException(),
-								h.out, h.it
-							);
-						
-						h.previous_dents.push_back(cache.value);
+								break;
+							
+							case U'[':
+								ErrorHandling::raise_pos
+								(
+									ErrorHandling::Exceptions::SquareBracketMiniScopeLeftOpenException(),
+									h.it
+								);
+								break;
 
-						h._expecting_indent = false;
-					}
-
-					// Formatting cache's 'value' value:
-					//	We'd want to change 'value' from the amount
-					//	of characters that form this dent to the
-					//	index of the current dent.
-					//	Note that the last dent is considered the current dent, 
-					//	so getting the size of h.previous_dents works just as
-					//	it should.
-					cache.value = h.previous_dents.size();
-
-					// Done!
-					h.__append(cache);
-					return;
-				}
-
-				// -- String constants --
-				else if (group == cgroup::string_quotes)
-				{
-					cache.token_type = token::constant_string;
-					// Adding the first quote
-					cache.enumeration.push_back(h.curr(0));
-
-					for (natural_num_t i = 1; h.curr(i) != h.curr(0); i++)
-					{
-						// Skipping characters that followed a '\' character
-						//	to prevent \\\" errors.
-						if (h.curr(i) == U'\\')
-						{
-							cache.enumeration += U'\\';
-							i++;
-						}
-						
-						cache.enumeration += h.curr(i);
-					}
-
-					// Adding the second quote
-					cache.enumeration.push_back(h.curr(0));
-
-					h.virtually_advance(cache.enumeration.size());
-
-					h.__append(cache);
-					return;
-				}
-
-				// -- Identifiers --
-				else if (group == cgroup::characters)
-				{
-					cache.token_type = token::id;
-
-					// While characters are a number or a character.
-					// Note:
-					//	According to the Alfie standards; identifiers
-					//	can contain either capitalized and/or lower-case
-					//	English characters and/or decimal numerics and/or
-					//	the Underscore character ( U'_' ).
-					while (
-						(_find_char_group(h.curr(0)) == cgroup::characters) ||
-						(_find_char_group(h.curr(0)) == cgroup::numbers)
-					)
-					{
-						cache.enumeration += h.curr(0);
-						h.virtually_advance();
-					}
-
-					h.__append(cache);
-					return;
-				}
-
-				// -- Integer constants --
-				else if (group == cgroup::numbers)
-				{
-					// Setting up cache
-					cache.token_type = token::constant_integer;
-					while (_find_char_group(h.curr(0)) == cgroup::numbers)
-					{
-						cache.enumeration += h.curr(0);
-						h.virtually_advance();
-					}
-
-					// Pushing cache
-					h.__append(cache);
-					return;
-				}
-
-				// -- Operators --
-				else if (group == cgroup::operators)
-				{
-					cache.token_type = token::oper;
-
-					// Getting the whole operator string;
-					//	Example: U".+/*"
-					while (_find_char_group(h.curr(0)) == cgroup::operators)
-					{
-						cache.enumeration += h.curr(0);
-						h.virtually_advance();
-					}
-
-					// Checking if the operator is a valid one;
-					//	Example: U".+/*" is invalid but U"++" isn't.
-					for (natural_num_t i = 0; i < valid_operators.size(); i++)
-					{
-						// Checking for eqality
-						if (cache.enumeration == valid_operators[i])
-						{
-							h.__append(cache);
-							return;
-						}
-					}
-
-					// If the for loop hasn't found a match:
-					ErrorHandling::raise_pos
-					(
-						ErrorHandling::Exceptions::InvalidSyntaxException(),
-						h.out,
-						h.it
-					);
-				}
-
-				// -- Miniscope handling --
-				// - Miniscope opening -
-				else if (group == cgroup::scope_openings)
-				{
-					// Kinda head
-					miniscope_t miniscope;
-
-					// Kinda body
-					// Setting up the miniscope
-					miniscope.opening = h.curr(0);
-					miniscope.estimated_closing =
-						_find_estimated_scope_closing(miniscope.opening);
+							case U'(':
+								ErrorHandling::raise_pos
+								(
+									ErrorHandling::Exceptions::ParanthesisMiniScopeLeftOpenException(),
+									h.it
+								);
+								break;
+							
+							default:
+								ErrorHandling::raise_pos
+								(
+									ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
+									h.it
+								);
+								break;
+							}
+						break;
 					
-					// Pushing the miniscope
-					h.open_miniscopes.push_back(miniscope);
-
-					// Setting up the token
-					cache.token_type = token::scope_opening;
-					cache.enumeration = miniscope.opening;
-
-					// Pushing the token
-					h.__append(cache);
-
-					// Skipping the character
-					h.virtually_advance();
-
-					return;
-				}
-
-				// - Miniscope closing -
-				else if (group == cgroup::scope_closings)
-				{
-					// Checking for a valid state
-					if (
-						// Condition to check if a
-						//	miniscope is present or not
-						!h.open_miniscopes.empty()
-					)
-						if (
-							// Condition to check if the last
-							//	miniscope's estimated closing
-							//	was used here
-							h.open_miniscopes.back()
-							.estimated_closing == h.curr(0)
-						)
-						{
-							// Closing the miniscope
-							h.open_miniscopes.pop_back();
-
-							// Pushing the token
-							cache.token_type = token::scope_closing;
-							cache.enumeration = h.curr(0);
-							h.__append(cache);
-
-							// Skipping the character
-							h.virtually_advance();
-							return;
-						}
-
-					// Invalid state alert!!!!
-					ErrorHandling::raise_pos
-					(
-						ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
-						h.out,
-						h.it
-					);
-
-				}
-
-				// -- Specials --
-				else if (group == cgroup::specials)
-				{
-					switch (h.curr(0))
-					{
-						// - Indenting by one -
-					case U':':
-						// If we dont have any miniscopes open
-						if (h.open_miniscopes.empty())
-							h._expecting_indent = true;
-						h.virtually_advance();
-						return;
-
-						// - Ending the current statement -
-					case U';':
-						cache.token_type = token::statement_end;
-						cache.enumeration = U";";
+						// - Token is under no exceptions -
+					default:
+						cache.enumeration = ___get_token_name_in_text(cache.token_type);
 						h.__append(cache);
-						h.virtually_advance();
-						return;
+						break;
 					}
 				}
+				// -- Alternative methods for finding the token --
+				else
+				{
+					if (___advance_identifier())
+						return;
 
-				ErrorHandling::raise_pos
-				(
-					ErrorHandling::Exceptions::InvalidSyntaxException(),
-					h.out, h.it
-				);
+					else if (___advance_integer())
+						return;
+					
+					else if (___advance_text())
+						return;
+
+					else if (___advance_whitespace())
+						return;
+					
+					else if (___advance_newline())
+						return;
+					
+					else if (___advance_comment())
+						return;
+
+					else
+						raise_pos
+						(
+							Exceptions::InvalidSyntaxException(),
+							h.it
+						);
+				}
 			}
 
 			/**
@@ -499,11 +540,40 @@ namespace Alton
 
 				// Checking if a miniscope is left unclosed at the end of the file
 				if (!h.open_miniscopes.empty())
-					ErrorHandling::raise_pos
-					(
-						ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
-						h.out, h.out.size()-1  // h.out.size()-1 is the last item in h.out.
-					);
+					switch (h.open_miniscopes.front())
+					{
+					case U'{':
+						raise_pos
+						(
+							ErrorHandling::Exceptions::RoundBracketMiniScopeLeftOpenException(),
+							h.it-1
+						);
+						break;
+					
+					case U'[':
+						raise_pos
+						(
+							ErrorHandling::Exceptions::SquareBracketMiniScopeLeftOpenException(),
+							h.it-1
+						);
+						break;
+
+					case U'(':
+						raise_pos
+						(
+							ErrorHandling::Exceptions::ParanthesisMiniScopeLeftOpenException(),
+							h.it-1
+						);
+						break;
+
+					default:
+						raise_pos
+						(
+							ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
+							h.it-1
+						);
+						break;
+					}
 
 				return h.tokenized;
 			}
@@ -528,11 +598,16 @@ namespace Alton
 			// -- Costumized constructors --
 			Lexer(text_t _code):
 					h(_code)
-			{ }
+			{
+				ErrorHandling::setup_error_handling(_code);
+			}
 
 			// --- Destructor ---
 			// -- Default destructor --
-			~Lexer(){ }
+			~Lexer()
+			{
+				ErrorHandling::dupe_error_handling_setup();
+			}
 		};
 	}
 }
