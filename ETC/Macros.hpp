@@ -48,11 +48,12 @@ namespace Alton
 // Newline character
 # if defined(__WIN__)
 	# define nl_str "\r\n"
+	# define nl_txt U"\r\n"
 # else
 	# define nl_str "\n"
+	# define nl_txt U"\n"
 # endif
 
-# define nl_txt str_to_text(nl_str)
 
 // Errors
 # include <ETC/ErrorTemplates.hpp>

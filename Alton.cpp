@@ -13,12 +13,12 @@ int main(int argc, char *argv[]){
 
 	Alton::Lexer::Lexer lxr
 	(
-		Alton::FileReader::read
+		Alton::Tools::FileReader::read
 		(
 			args[Alton::ArgProcessor::arg_id::input_file]
 		)
 	);
-
+	
 	Alton::Lexer::lxm_vec tokens = lxr.lex();
 
 	Alton::Parser::Parser parser = tokens;
@@ -36,15 +36,10 @@ int main(int argc, char *argv[]){
 	// -- Lexing test --
 	std::cout << "\n\n\033[1m\t[TestRun]\tlexing_test()\033[0m\n\n";
 	
-	for (Alton::Types::natural_num_t i = 0; i < tokens.size(); i++)
-	{
-		std::cout << '[' << Alton::Conversions::text_to_str(tokens[i].enumeration) << "] ";
-	}
+	std::cout << lxr.lxm_vec_to_str(tokens).c_str();
 
 	// -- Parsing test --
 	std::cout << "\n\n\033[1m\t[TestRun]\tparsing_test()\033[0m\n\n";
-
-	
 
 	/*
 	alfie::ByteCode bc;
@@ -68,5 +63,6 @@ int main(int argc, char *argv[]){
 	// --- Body ---
 	bc.run();
 	*/
+	Alton::ErrorHandling::_delete_setup();
 	exit(0);
 }

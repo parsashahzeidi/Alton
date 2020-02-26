@@ -5,15 +5,14 @@ function main:
 		# --- Forced folds ---
 		print (
 			"\
-		There're no '\\n's in this string."
+		There're no '\\n's in this text."
 		)
-		# Hello! \
 
 		# --- Strings ---
 		print('Hello!')
 		print("\"Another hello!\"")
 		print('Tricked ya here:"
-			This string continues!')
+			This text continues!')
 
 		# --- Lexing quizzes ---
 		var print32 = nil  # I'm problematic!
@@ -30,7 +29,7 @@ function main:
 		# --- Parsing / Runtime quizzes ---
 		var print21 = print32 = (1 <<= 56)
 		a = print21; print32; a
-		print (int(a() == a))
+		print (int(a == a))
 		print ("there's a '1' behind this sentence.")
 		{ 23, 36, 12 }.apply_to (
 			alfie.image.open('./Test.png')

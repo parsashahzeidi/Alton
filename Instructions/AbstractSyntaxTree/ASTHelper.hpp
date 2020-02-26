@@ -10,7 +10,7 @@ namespace Alton
 	{
 		typedef tree_t<Lexer::lexem_t> ast_t;
 		
-		class ASTHelper: public BaseHelper<Lexer::lexem_t, Lexer::lxm_vec>
+		class ASTHelper: public BaseHelper<Lexer::lexem_t, Lexer::lxm_vec, false>
 		{
 			// --- Head
 

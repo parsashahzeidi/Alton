@@ -7,6 +7,9 @@ namespace Alton
 {
 	namespace ArgProcessor
 	{
+		using namespace Conversions;
+		using namespace ErrorHandling;
+
 		class ArgProcessor
 		{
 			// --- Head
@@ -16,7 +19,7 @@ namespace Alton
 			// --- Body
 		private:
 			/**
-			 * @brief Gets the params from argc and argv.
+			 * @brief Gets the arguments from argc and argv.
 			*/
 			arg_list_t _get_args()
 			{
@@ -43,20 +46,20 @@ namespace Alton
 					cache.arg = helper.current_arg_id;
 					cache.value = helper.curr(0);
 
-					// Checking if the parameter starts with a '-'
+					// Checking if the argument starts with a '-'
 					if (helper.curr(0)[0] != '-')
-						ErrorHandling::raise_arg
+						raise_arg
 						(
-							ErrorHandling::Exceptions::InvalidArgumentException(),
+							Exceptions::InvalidArgumentException(),
 							helper.curr(0)
 						);
 
-					// Cutting the first part of the parameter
+					// Cutting the first part of the argument
 					// Example: -i=./in.lfi
 					//	== ./in.lfi
 					cache.value = cache.value.substr
 					(
-						helper.arg_group[cache.arg].size() + 1  // The size of the current parameter
+						helper.arg_group[cache.arg].size() + 1  // The size of the current argument
 					);
 					out.push_back(cache);
 

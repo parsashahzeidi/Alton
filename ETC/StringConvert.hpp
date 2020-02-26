@@ -4,10 +4,10 @@
 
 namespace Alton
 {
-	inline namespace Conversions
+	namespace Conversions
 	{
 		/**
-		 * @brief Converts a string type to another
+		 * @brief Converts a text type to another
 		*/
 		template <typename in, typename out>
 		out _str_cvt(const in &_in)

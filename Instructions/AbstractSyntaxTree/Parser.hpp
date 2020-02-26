@@ -16,13 +16,6 @@ namespace Alton
 				cont_t<ast_t> statement_list;
 
 			public:
-				const text_t precedence_chart[39] =
-				{
-					U".", U",", U"=",
-					U"^", U"^=", U"&", U"&=", U"|", U"|=", U">>", U"<<", U">>=", U"<<=",
-					U"**", U"**=", U"%", U"%=", U"*",  U"*=", U"/", U"/=", U"+", U"+=", U"-", U"-=",
-					U"!", U"&&", U"&&=", U"||", U"||=", U"<", U"<=", U">", U">=", U"==",
-				};
 
 			// --- Body
 			private:
@@ -40,11 +33,8 @@ namespace Alton
 					
 					// --- Body ---
 					// -- Separating the operators and keeping them in 'opers' --
-					for (natural_num_t i = 0; i < in.size(); i++)
-						if (in[i].token_type == Lexer::token::oper)
-							opers.push_back(in[i]);
 
-					std::cout << opers.size() << nl_str;
+					// TODO: Finish zis
 
 					return ast_t();
 				}
@@ -62,22 +52,8 @@ namespace Alton
 
 					// --- Body ---
 					// -- Fetching everything before the next statement --
-					while (h.is_operating())
-					{
-						cache = h.curr(0);
 
-						// Checking for a statement ending
-						if (cache.token_type == Lexer::token::statement_end)
-						{
-							// -- Skipping ze Lexer::token::statement_end token --
-							h.virtually_advance();
-							// byby.
-							break;
-						}
-						
-						result.append(cache);
-						h.virtually_advance();
-					}
+					// TODO: Finish this segment
 
 					return result;
 				}
