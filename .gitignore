@@ -1,4 +1,16 @@
-bin/
-gmon.out
-.vscode/
+# Extensions
 *.out
+*.exe
+*.asm
+*.o
+*.tmp
+
+# Files
+temp.tmp
+gmon.out
+
+# Directories
+.vscode/
+.idea/
+Build/
+tmpbld/

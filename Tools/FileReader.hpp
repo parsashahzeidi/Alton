@@ -6,18 +6,15 @@ namespace Alton
 {
 	namespace Tools
 	{
-		using namespace Conversions;
-		using namespace ErrorHandling;
-		class FileReader
+		namespace FileReader
 		{
-			// --- Head
-		private:
-			// --- Body
-		public:
 			/**
 			 * @brief Reads an input file.
+			 * @param path The path to the file to read from
+				
+			 * @return A text
 			*/
-			static text_t read(std::filesystem::path path)
+			text_t read(std::filesystem::path path)
 			{
 				// --- Head ---
 				std::string out;
@@ -31,9 +28,9 @@ namespace Alton
 					std::filesystem::is_directory(path) ||
 					std::filesystem::is_empty(path)
 				){
-					raise_arg
+					Clinic::raise_arg
 					(
-						Exceptions::InvalidArgumentValueException(),
+						Clinic::Exceptions::InvalidArgumentValueException(),
 						U"-i=" + path.u32string()
 					);
 				}
@@ -52,12 +49,8 @@ namespace Alton
 					out += cache;
 				}
 
-				return str_to_text(out);
+				return Conversions::str_to_text(out);
 			}
-			// --- CTOR ~ DTOR
-		public:
-			FileReader(){ }
-			~FileReader(){ }
-		};
+		}
 	}
 }

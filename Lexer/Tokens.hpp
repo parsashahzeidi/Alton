@@ -63,13 +63,14 @@ namespace Alton
 			oper_assign,
 			oper_member_access,
 			oper_union,
-			keyword_variable,
+			keyword_var,
 			keyword_constant,
 			keyword_return,
 			keyword_import,
 			keyword_oper,
 			keyword_for,
 			keyword_if,
+			keyword_while,
 			keyword_try,
 			keyword_check,
 			keyword_raise,
@@ -80,6 +81,7 @@ namespace Alton
 		{
 			switch (in)
 			{  // Second 
+			case token::statement_end: return U";";
 			case token::paranthesis_miniscope_opening: return U"(";
 			case token::paranthesis_miniscope_closing: return U")";
 			case token::round_bracket_miniscope_opening: return U"{";
@@ -174,6 +176,7 @@ namespace Alton
 		token ____get_const_token_1_char(text_t in)
 		{
 			// Fifth 
+			if (in == U";") return token::statement_end; else
 			if (in == U"(") return token::paranthesis_miniscope_opening; else
 			if (in == U")") return token::paranthesis_miniscope_closing; else
 			if (in == U"{") return token::round_bracket_miniscope_opening; else

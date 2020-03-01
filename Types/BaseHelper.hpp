@@ -1,13 +1,11 @@
 # pragma once
 
-# include <ETC/ErrorHandler.hpp>
+# include <Clinic/ErrorHandler.hpp>
 # include <ETC/Macros.hpp>
-# include <ETC/StringConvert.hpp>
 
 namespace Alton{
 	inline namespace Types
 	{
-		using namespace ErrorHandling;
 		
 		template<typename item, typename list, bool refining>
 		class BaseHelper
@@ -27,7 +25,11 @@ namespace Alton{
 			void _require_operation() const
 			{
 				if (!during_op)
-					raise_internal(Exceptions::NotOperatingYetError());
+					Clinic::raise_internal
+					(
+						Clinic::Exceptions::NotOperatingYetError(),
+						__FILE__, __LINE__
+					);
 			}
 
 			/**
@@ -36,7 +38,11 @@ namespace Alton{
 			void _require_no_operation() const
 			{
 				if (during_op)
-					raise_internal(Exceptions::StillOperatingError());
+					Clinic::raise_internal
+					(
+						Clinic::Exceptions::StillOperatingError(),
+						__FILE__, __LINE__
+					);
 			}
 
 			/**

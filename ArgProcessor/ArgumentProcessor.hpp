@@ -1,20 +1,20 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <Instructions/AnalyzedArguments/ArgumentHelper.hpp>
+# include <ArgProcessor/arg_id.hpp>
+# include <ArgProcessor/arg_t.hpp>
+# include <ArgProcessor/arg_state_t.hpp>
+# include <ArgProcessor/ArgumentHelper.hpp>
 
 namespace Alton
 {
 	namespace ArgProcessor
 	{
-		using namespace Conversions;
-		using namespace ErrorHandling;
-
 		class ArgProcessor
 		{
 			// --- Head
 		private:
-			ArgHelper helper;
+			ArgHelper h;
 
 			// --- Body
 		private:
@@ -28,30 +28,28 @@ namespace Alton
 				arg_t cache;
 
 				// --- Body ---
-				// Causes faster execution
-				out.reserve(helper.out.size());
 
-				helper.init_op();
+				h.init_op();
 
 				// Skipping the first argument
-				helper.advance();
+				h.advance();
 
 				// Iterating thru
-				while (helper.is_operating())
+				while (h.is_operating())
 				{
 					// Finding the current char
-					helper.arg_is_identical();
+					h.arg_is_identical();
 
 					// Replacing cache
-					cache.arg = helper.current_arg_id;
-					cache.value = helper.curr(0);
+					cache.arg = h.current_arg_id;
+					cache.value = h.curr(0);
 
 					// Checking if the argument starts with a '-'
-					if (helper.curr(0)[0] != '-')
-						raise_arg
+					if (h.curr(0)[0] != '-')
+						Clinic::raise_arg
 						(
-							Exceptions::InvalidArgumentException(),
-							helper.curr(0)
+							Clinic::Exceptions::InvalidArgumentException(),
+							h.curr(0)
 						);
 
 					// Cutting the first part of the argument
@@ -59,30 +57,30 @@ namespace Alton
 					//	== ./in.lfi
 					cache.value = cache.value.substr
 					(
-						helper.arg_group[cache.arg].size() + 1  // The size of the current argument
+						h.arg_group[cache.arg].size() + 1  // The size of the current argument
 					);
 					out.push_back(cache);
 
-					helper.advance();
+					h.advance();
 				}
 
 				return out;
 			}
 
 			/**
-			 * @brief Reformats a arg_list_t into a arg_chart_t
+			 * @brief Reformats a arg_list_t into a arg_state_t
 			 * 
-			 * The reason for not making arg_chart_t-s in the first
+			 * The reason for not making arg_state_t-s in the first
 			 *  place is that if some arguments have order-specialities,
 			 *  we can easily find them by using _get_args.
 			 * 
-			 * arg_chart_t-s are easier / faster to access too, so there's that.
+			 * arg_state_t-s are easier / faster to access too, so there's that.
 			*/
-			arg_chart_t _reformat(arg_list_t in)
+			arg_state_t _reformat(arg_list_t in)
 			{
 				// --- Head ---
 				arg_t cache;
-				arg_chart_t formatted;
+				arg_state_t formatted;
 
 				// --- Body ---
 				// Allocating arg_id::count items at formatted
@@ -103,10 +101,10 @@ namespace Alton
 			/**
 			 * @brief Processes the arguments in argv
 			*/
-			arg_chart_t process()
+			arg_state_t process()
 			{
 				arg_list_t arg_list = _get_args();
-				arg_chart_t formatted = _reformat(arg_list);
+				arg_state_t formatted = _reformat(arg_list);
 				
 				return formatted;
 			}
@@ -118,13 +116,11 @@ namespace Alton
 			ArgProcessor() = delete;
 
 			ArgProcessor(char** _argv, natural_num_t argc):
-					helper(cont_t<text_t>())
+					h(cont_t<text_t>())
 			{
 				// --- Body ---
-				helper.out.reserve(argc);
-
 				for (natural_num_t i = 0; i < argc; i++)
-					helper.out.push_back(str_to_text(_argv[i]));
+					h.out.push_back(Conversions::str_to_text(_argv[i]));
 			}
 
 			// --- Destructor ---

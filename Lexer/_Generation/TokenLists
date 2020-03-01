@@ -1,6 +1,6 @@
 null_token
 
-statement_end
+statement_end ;
 
 paranthesis_miniscope_opening (
 paranthesis_miniscope_closing )
@@ -62,7 +62,7 @@ oper_assign =
 oper_member_access .
 oper_union ,
 
-keyword_variable
+keyword_var
 keyword_constant
 keyword_return
 keyword_import
@@ -70,6 +70,7 @@ keyword_oper
 
 keyword_for
 keyword_if
+keyword_while
 
 keyword_try
 keyword_check

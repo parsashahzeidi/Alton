@@ -1,8 +1,8 @@
 # pragma once
 # include <ETC/Macros.hpp>
-# include <ETC/BaseHelper.hpp>
-# include <Instructions/LexedTree/LexemHelper.hpp>
-# include <ETC/AltonContainers/BaseTreeContainer.hpp>
+# include <Types/BaseHelper.hpp>
+# include <Lexer/lexem_t.hpp>
+# include <Types/BaseTreeContainer.hpp>
 
 namespace Alton
 {
