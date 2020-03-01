@@ -16,8 +16,9 @@ Note that automated builds aren't possible for us yet due to our processing powe
 
 ### Prerequisites
 
-You need to have a **C++** compiler installed on your system; we suggest the **GNU Compiler Collection ( GCC )** compiler suite on Linux and **MinGW-w32** compiler on Windows. You also need to have a working version of **CMake** in your path. Keep in mind that Alton is *not* limited to the GNU Compiler Collection, and can also be compiled with *CLANG* and *MSVC*. ( Not now, but will be possible in  version '01.00.00' )
-You also need a copy of **make**.
+You need to have a **C++** compiler installed on your system; we suggest the **GNU Compiler Collection ( GCC )** compiler suite on Linux and **MinGW-w32** compiler on Windows. Keep in mind that Alton is *not* limited to the GNU Compiler Collection, and can also be compiled with *CLANG* and *MSVC*. ( Not now, but will be possible in  version '01.00.00' )
+You also need to have a working version of **CMake** in your path.
+A working copy of **Make** is also required for compiling.
 
 #### Linux
 
@@ -33,6 +34,7 @@ sudo apt-get install make g++ cmake
 
 Special thanks to the author of [This MinGW Distro](https://nuwen.net/mingw.html);
 since you can simply just download the distro and use it without running into any of the weird problems that are prone to happening ( Like the original MinGW not being able to support pthread on some systems ).
+
 You can also [get CMake from here](https://cmake.org/download/). **Make sure that you install CMake in your %PATH%, and you run the file 'set_distro_paths.bat' to put the distro inside the %PATH% environment variable.**
 
 ### Compiling
