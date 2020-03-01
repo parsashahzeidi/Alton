@@ -1,14 +1,11 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <ETC/StringConvert.hpp>
 
 namespace Alton
 {
-	namespace ErrorHandling
+	namespace Clinic
 	{
-		using namespace Conversions;
-		
 		text_t *code = nullptr;
 
 		struct _index
@@ -107,7 +104,7 @@ namespace Alton
 		*/
 		void _raise_error(const text_t &text, num_t code)
 		{
-			std::cerr << "Error: " << text_to_str(text) << '\n';
+			std::cerr << "Error: " << Conversions::text_to_str(text) << '\n';
 			std::cerr << "\n\tTerminating...\n";
 			std::cerr.flush();
 			exit(code);
@@ -128,13 +125,13 @@ namespace Alton
 			message += U" at ";
 
 			// -- Error: Hello at 8:4 --
-			message += str_to_text(std::to_string(index.line));
+			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U":";
-			message += str_to_text(std::to_string(index.real_chtr));
+			message += Conversions::str_to_text(std::to_string(index.real_chtr));
 			message += U".\n";
 
 			// -- 8		|			Hello! ---
-			message += str_to_text(std::to_string(index.line));
+			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U" |\t";
 			message += index.curr_line;
 			message += U"\n\t";
@@ -179,9 +176,9 @@ namespace Alton
 			_raise_error
 			(
 				err._message
-				+ str_to_text(" ( \'")
+				+ U" ( \'"
 				+ arg
-				+ str_to_text("\' ).\n\tTerminating..."),
+				+ U"\' ).\n",
 				1
 			);
 		}
@@ -190,12 +187,15 @@ namespace Alton
 		 * @brief Raises an internal error.
 		 * @param err Alton::Exceptions::BaseInternalException type
 		*/
-		void raise_internal(const Exceptions::BaseInternalException &err)
+		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, natural_num_t __line)
 		{
 			_raise_error(
-				str_to_text("Internal Error: ")
+				(text_t) U"Internal Error at "
+				+ Conversions::str_to_text(__file)
+				+ U":"
+				+ Conversions::str_to_text(std::to_string(__line))
 				+ err._message
-				+ str_to_text("\n\tTerminating..."),
+				+ U"\n",
 				69
 			);
 		}

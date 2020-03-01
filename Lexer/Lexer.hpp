@@ -2,15 +2,13 @@
 
 # include <ETC/Macros.hpp>
 
-# include <Instructions/LexedTree/LexemHelper.hpp>
-# include <Instructions/LexedTree/lexem_t.hpp>
+# include <Lexer/LexemHelper.hpp>
+# include <Lexer/lexem_t.hpp>
 
 namespace Alton
 {
 	namespace Lexer
 	{
-		using namespace ErrorHandling;
-
 		// --- Lexer class ------------------------
 		class Lexer
 		{
@@ -23,7 +21,7 @@ namespace Alton
 			/**
 			 * @brief Returns a token for the current position
 			*/
-			token ___find_constant_token()
+			token ___advance_constant_token()
 			{
 				// --- Head ---
 				// -- Remaining characters to the end --
@@ -125,6 +123,20 @@ namespace Alton
 						current_char = h.curr(0);
 					}
 
+					// - Look for keywords -
+						 if (cache.enumeration == U"var")		cache.token_type = token::keyword_var;
+					else if (cache.enumeration == U"constant")	cache.token_type = token::keyword_constant;
+					else if (cache.enumeration == U"return")	cache.token_type = token::keyword_return;
+					else if (cache.enumeration == U"import")	cache.token_type = token::keyword_import;
+					else if (cache.enumeration == U"_oper")		cache.token_type = token::keyword_oper;
+
+					else if (cache.enumeration == U"for")		cache.token_type = token::keyword_for;
+					else if (cache.enumeration == U"if")		cache.token_type = token::keyword_if;
+					else if (cache.enumeration == U"while")		cache.token_type = token::keyword_while;
+
+					else if (cache.enumeration == U"try")		cache.token_type = token::keyword_try;
+					else if (cache.enumeration == U"check")		cache.token_type = token::keyword_check;
+
 					// - Stick the result to the end. -
 					h.__append(cache);
 					return 1;
@@ -163,7 +175,7 @@ namespace Alton
 					current_char = h.curr(0);
 					while (current_char != quote)
 					{
-						// Skipping the characters next to a \\ 
+						// Skipping the characters next to a '\'
 						//	to prevent \\\" errors.
 						if (current_char == U'\\')
 						{
@@ -217,7 +229,7 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Advances thru a newline and the indents that continue afterwards
+			 * @brief Advances thru a comment
 			
 			 * @return Returns a check for weather the operation was successful or not
 			*/
@@ -231,12 +243,62 @@ namespace Alton
 				// -- Detected a comment --
 				if (current_char == U'#')
 				{
-					while (!___advance_newline())
+					// No need to check for CRLF and LF;
+					//	Since they both end with LF, just checking for LF is passable.
+					while (current_char != U'\n')
+					{
 						h.virtually_advance();
+						current_char = h.curr(0);
+					}
 					
 					return 1;
 				}
 				// -- Nope... --
+				else return 0;
+			}
+
+			/**
+			 * @brief Advances thru a do block
+			
+			 * @return Returns a check for weather the operation was successful or not
+			*/
+			bool ___advance_do_block()
+			{
+				// --- Head ---
+				// -- A cache value --
+				lexem_t cache;
+				// -- A cache value --
+				utfchar_t current_char = h.curr(0);
+
+				//--- Body ---
+				// -- Detected a do block --
+				if (current_char == U':')
+				{
+					// - Do block inside a miniscope -
+					if (!h.open_miniscopes.empty())
+						Clinic::raise_pos
+						(
+							Clinic::Exceptions::MisplacedDoBlock(),
+							h.it
+						);
+					
+					h.virtually_advance(1);
+					h._expecting_indent = true;
+
+					// - A do block should be immediatly followed by a newline, Altho -
+					//	- whitespace and a comment are allowed, according to the Alfie standards -
+					___advance_whitespace();
+					___advance_comment();
+					if (!___advance_newline())
+						Clinic::raise_pos
+						(
+							Clinic::Exceptions::DentMatchException(),
+							h.it
+						);
+					
+					return 1;
+				}
+				// -- Eyy.. --
 				else return 0;
 			}
 
@@ -269,29 +331,6 @@ namespace Alton
 					(h.curr(1) == U'\n')  // LF
 				)
 					h.virtually_advance(2);
-				
-				// -- Detected a do block --
-				else if (current_char == U':')
-				{
-					// - Do block inside a miniscope -
-					if (!h.open_miniscopes.empty())
-						raise_pos
-						(
-							Exceptions::MisplacedDoBlock(),
-							h.it
-						);
-					
-					h.virtually_advance(1);
-					h._expecting_indent = true;
-
-					// - A do block should be immediatly followed by a newline -
-					if (!___advance_newline())
-						raise_pos
-						(
-							Exceptions::DentMatchException(),
-							h.it
-						);
-				}
 
 				// -- Didn't detect it --
 				else return 0;
@@ -303,13 +342,6 @@ namespace Alton
 				// -- Checking if we are in a miniscope --
 				if (!h.open_miniscopes.empty())
 					return 1;
-
-				// -- Appending the newline --
-				cache.position_in_code = h.it;
-				cache.enumeration = nl_txt;
-				cache.token_type = token::statement_end;
-				
-				h.__append(cache);
 
 				// -- Counting the dents --
 				current_char = h.curr(0);
@@ -324,16 +356,26 @@ namespace Alton
 				___advance_comment();
 				// -- Recursing if possible --
 				if (___advance_newline())
+				{
 					return 1;
+				}
+
+				// -- Appending the newline --
+				cache.position_in_code = h.it;
+				cache.enumeration = nl_txt;
+				cache.token_type = token::statement_end;
+				
+				h.__append(cache);
+
 
 				// -- Indent --
 				if (new_dents > dents)
 				{
 					// - Indent where not expected -
 					if (!h._expecting_indent)
-						raise_pos
+						Clinic::raise_pos
 						(
-							Exceptions::DentUnmatchException(),
+							Clinic::Exceptions::DentUnmatchException(),
 							h.it
 						);
 
@@ -350,9 +392,9 @@ namespace Alton
 				{
 					// -- Expected an indent --
 					if (h._expecting_indent)
-						raise_pos
+						Clinic::raise_pos
 						(
-							Exceptions::DentMatchException(),
+							Clinic::Exceptions::DentMatchException(),
 							h.it
 						);
 
@@ -368,9 +410,9 @@ namespace Alton
 
 					// - No matches for the current outdent  -
 					if (new_dents != h.previous_dents.back())
-						raise_pos
+						Clinic::raise_pos
 						(
-							Exceptions::OutDentUnmatchException(),
+							Clinic::Exceptions::OutDentUnmatchException(),
 							h.it
 						);
 				}
@@ -378,9 +420,9 @@ namespace Alton
 				else
 					// -- Expected an indent --
 					if (h._expecting_indent)
-						raise_pos
+						Clinic::raise_pos
 						(
-							Exceptions::DentMatchException(),
+							Clinic::Exceptions::DentMatchException(),
 							h.it
 						);
 
@@ -405,10 +447,10 @@ namespace Alton
 				// --- Body ---
 				// -- Basic stuff.. --
 				cache.position_in_code = h.it;
-				cache.token_type = ___find_constant_token();
+				cache.token_type = ___advance_constant_token();
 				cache.enumeration = ___get_token_name_in_text(cache.token_type);
 
-				// -- ___find_constant_token found the token. --
+				// -- ___advance_constant_token found the token. --
 				if (cache.token_type != token::null_token)
 				{
 					// - Skipping the token -
@@ -450,33 +492,33 @@ namespace Alton
 							switch (h.open_miniscopes.back())
 							{
 							case U'{':
-								ErrorHandling::raise_pos
+								Clinic::raise_pos
 								(
-									ErrorHandling::Exceptions::RoundBracketMiniScopeLeftOpenException(),
+									Clinic::Exceptions::RoundBracketMiniScopeLeftOpenException(),
 									h.it
 								);
 								break;
 							
 							case U'[':
-								ErrorHandling::raise_pos
+								Clinic::raise_pos
 								(
-									ErrorHandling::Exceptions::SquareBracketMiniScopeLeftOpenException(),
+									Clinic::Exceptions::SquareBracketMiniScopeLeftOpenException(),
 									h.it
 								);
 								break;
 
 							case U'(':
-								ErrorHandling::raise_pos
+								Clinic::raise_pos
 								(
-									ErrorHandling::Exceptions::ParanthesisMiniScopeLeftOpenException(),
+									Clinic::Exceptions::ParanthesisMiniScopeLeftOpenException(),
 									h.it
 								);
 								break;
 							
 							default:
-								ErrorHandling::raise_pos
+								Clinic::raise_pos
 								(
-									ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
+									Clinic::Exceptions::MiniScopeLeftOpenException(),
 									h.it
 								);
 								break;
@@ -511,15 +553,17 @@ namespace Alton
 					else if (___advance_comment())
 						return;
 
+					else if (___advance_do_block())
+						return;
+
 					else
-						raise_pos
+						Clinic::raise_pos
 						(
-							Exceptions::InvalidSyntaxException(),
+							Clinic::Exceptions::UnrecognisedTokenException(),
 							h.it
 						);
 				}
 			}
-
 			/**
 			 * @brief Advances a token thru.
 			*/
@@ -543,33 +587,33 @@ namespace Alton
 					switch (h.open_miniscopes.front())
 					{
 					case U'{':
-						raise_pos
+						Clinic::raise_pos
 						(
-							ErrorHandling::Exceptions::RoundBracketMiniScopeLeftOpenException(),
+							Clinic::Exceptions::RoundBracketMiniScopeLeftOpenException(),
 							h.it-1
 						);
 						break;
 					
 					case U'[':
-						raise_pos
+						Clinic::raise_pos
 						(
-							ErrorHandling::Exceptions::SquareBracketMiniScopeLeftOpenException(),
+							Clinic::Exceptions::SquareBracketMiniScopeLeftOpenException(),
 							h.it-1
 						);
 						break;
 
 					case U'(':
-						raise_pos
+						Clinic::raise_pos
 						(
-							ErrorHandling::Exceptions::ParanthesisMiniScopeLeftOpenException(),
+							Clinic::Exceptions::ParanthesisMiniScopeLeftOpenException(),
 							h.it-1
 						);
 						break;
 
 					default:
-						raise_pos
+						Clinic::raise_pos
 						(
-							ErrorHandling::Exceptions::MiniScopeLeftOpenException(),
+							Clinic::Exceptions::MiniScopeLeftOpenException(),
 							h.it-1
 						);
 						break;
@@ -599,14 +643,14 @@ namespace Alton
 			Lexer(text_t _code):
 					h(_code)
 			{
-				ErrorHandling::setup_error_handling(_code);
+				Clinic::setup_error_handling(_code);
 			}
 
 			// --- Destructor ---
 			// -- Default destructor --
 			~Lexer()
 			{
-				ErrorHandling::dupe_error_handling_setup();
+				Clinic::dupe_error_handling_setup();
 			}
 		};
 	}

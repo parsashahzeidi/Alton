@@ -1,7 +1,7 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <Instructions/LexedTree/Tokens.hpp>
+# include <Lexer/Tokens.hpp>
 
 namespace Alton
 {

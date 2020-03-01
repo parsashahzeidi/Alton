@@ -40,10 +40,10 @@ namespace Alton
 }
 
 // Standard Container
-# include <ETC/AltonContainers/BaseContainer.hpp>
+# include <Types/BaseContainer.hpp>
 
 // String Type Conversion
-# include <ETC/StringConvert.hpp>
+# include <Tools/StringConvert.hpp>
 
 // Newline character
 # if defined(__WIN__)
@@ -54,12 +54,11 @@ namespace Alton
 	# define nl_txt U"\n"
 # endif
 
-
 // Errors
-# include <ETC/ErrorTemplates.hpp>
+# include <Clinic/Exceptions/ErrorTemplates.hpp>
 
 // Error Handling
-# include <ETC/ErrorHandler.hpp>
+# include <Clinic/ErrorHandler.hpp>
 
 // Input Reading
-# include <ETC/FileReader.hpp>
+# include <Tools/FileReader.hpp>

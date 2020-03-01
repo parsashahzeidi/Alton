@@ -6,7 +6,7 @@ def get_tokens():
 	Grabs the tokens at /Path/To/Alton/Tools/Instructions/LexedTree/TokenLists
 	:return: a list of strings and a list of strings
 	"""
-	file = open("./Tools/Instructions/LexedTree/TokenLists").read()
+	file = open("./Lexer/_Generation/TokenLists").read()
 
 	lines = [i.split(" ") for i in file.split("\n")]
 
@@ -31,8 +31,8 @@ def get_tokens():
 if __name__ == "__main__":
 	token, string = get_tokens()
 
-	outfile = open("./Instructions/LexedTree/Tokens.hpp", "w")
-	template = open("./Tools/Instructions/LexedTree/ExampleTokens.hpp").read()
+	outfile = open("./Lexer/Tokens.hpp", "w")
+	template = open("./Lexer/_Generation/ExampleTokens.hpp").read()
 
 	format0, format1, format2, format3, format4, format5 = "", "", "", "", "", ""
 

@@ -1,37 +1,15 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <ETC/BaseHelper.hpp>
+# include <Types/BaseHelper.hpp>
+# include <ArgProcessor/arg_id.hpp>
+# include <ArgProcessor/arg_t.hpp>
+# include <ArgProcessor/arg_state_t.hpp>
 
 namespace Alton
 {
 	namespace ArgProcessor
 	{
-		using namespace Conversions;
-		using namespace ErrorHandling;
-
-		// A list for all the possible arguments
-		enum arg_id
-		{
-			output_path = 0,
-			input_file,
-
-			// Not a argument
-			count
-		};
-
-		// A chart for easier detection of arguments
-		typedef cont_t<text_t> arg_chart_t;
-
-		struct _arg
-		{
-			arg_id arg;
-			text_t value;
-		};
-
-		typedef  _arg arg_t;
-		typedef cont_t<arg_t> arg_list_t;
-		
 		class ArgHelper: public BaseHelper<text_t, cont_t<text_t>, false>
 		{
 			// --- Head
@@ -47,9 +25,6 @@ namespace Alton
 			void _setup_arg_group()
 			{
 				// --- Head ---
-				// Note: Since we're using comments at the end, I think the code'd be more
-				//	readable if we put the commas at the start of each item; I'd also like
-				//	to have each argument in a separate line.
 				text_t args[] =
 				{
 					 U"o="  // Output path
@@ -57,8 +32,6 @@ namespace Alton
 				};
 
 				// --- Body ---
-				arg_group.reserve(arg_id::count);
-
 				for (natural_num_t i = 0; i < arg_id::count; i++)
 					arg_group.push_back(args[i]);
 			}
@@ -94,7 +67,7 @@ namespace Alton
 				}
 				
 				// No argument found
-				raise_arg(Exceptions::InvalidArgumentException(), curr(0));
+				Clinic::raise_arg(Clinic::Exceptions::InvalidArgumentException(), curr(0));
 			}
 
 			// --- Ctor ~ Dtor

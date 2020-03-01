@@ -14,7 +14,6 @@ namespace Alton
 		{
 			// --- Head ---
 			out _out;
-			_out.reserve(_in.size());
 
 			// --- Body ---
 			for (natural_num_t i = 0; i < _in.size(); i++)

@@ -1,16 +1,15 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <ETC/BaseHelper.hpp>
+# include <Types/BaseHelper.hpp>
 
-# include <Instructions/LexedTree/Tokens.hpp>
-# include <Instructions/LexedTree/lexem_t.hpp>
+# include <Lexer/Tokens.hpp>
+# include <Lexer/lexem_t.hpp>
 
 namespace Alton
 {
 	namespace Lexer
 	{
-		using namespace ErrorHandling;
 		class LexemHelper: public BaseHelper<utfchar_t, text_t, false>
 		{
 			// --- Head
@@ -43,9 +42,10 @@ namespace Alton
 			{
 				// Checking if 'in' is a null_token lexem
 				if (in.token_type == token::null_token)
-					raise_internal
+					Clinic::raise_internal
 					(
-						Exceptions::PlaceHolderTokenException()
+						Clinic::Exceptions::PlaceHolderTokenException(),
+						__FILE__, __LINE__
 					);
 
 				tokenized.push_back(in);

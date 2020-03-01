@@ -1,8 +1,8 @@
 # pragma once
 
 # include <ETC/Macros.hpp>
-# include <Instructions/AbstractSyntaxTree/ASTHelper.hpp> 
-# include <Instructions/LexedTree/LexemHelper.hpp>
+# include <Parser/ASTHelper.hpp> 
+# include <Lexer/lexem_t.hpp>
 
 namespace Alton
 {
