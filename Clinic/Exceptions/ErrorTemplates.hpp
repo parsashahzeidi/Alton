@@ -37,6 +37,8 @@ namespace Alton
 
 				DEF_ERROR_TEMPLATE(BasePlaceHolderInternalValueUseException,			BaseInternalException,									"[Internal] Base exception raised");
 					DEF_ERROR_TEMPLATE(PlaceHolderTokenException,							BasePlaceHolderInternalValueUseException, 				"Attempted to pass a Token::null_token to __append");
+
+				DEF_ERROR_TEMPLATE(InternalMathDomainException,							BaseInternalException,									"General math domain exception");
 			
 			DEF_ERROR_TEMPLATE(BaseExternalException,								BaseException,											"[Internal] Base exception raised");
 				DEF_ERROR_TEMPLATE(BaseArgumentException,								BaseExternalException,									"[Internal] Base exception raised");

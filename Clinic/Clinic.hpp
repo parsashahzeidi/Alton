@@ -10,9 +10,9 @@ namespace Alton
 
 		struct _index
 		{
-			natural_num_t line = 1;
-			natural_num_t real_chtr = 0;
-			natural_num_t chtr = 0;
+			natnum_t line = 1;
+			natnum_t real_chtr = 0;
+			natnum_t chtr = 0;
 
 			text_t curr_line = U"";
 		};
@@ -23,7 +23,10 @@ namespace Alton
 		void _delete_setup()
 		{
 			if (code != nullptr)
+			{
 				delete[] code;
+				code = nullptr;
+			}
 		}
 
 		/**
@@ -56,11 +59,11 @@ namespace Alton
 		/**
 		 * @brief Gets line:char from a text and index
 		*/
-		_index _get_index(natural_num_t ptr)
+		_index _get_index(natnum_t ptr)
 		{
 			// --- Head ---
 			_index index;
-			natural_num_t i = 0;
+			natnum_t i = 0;
 
 			// --- Body ---
 			for (; i < ptr; i++)
@@ -114,7 +117,7 @@ namespace Alton
 		 * @brief Adds stuff around an index.
 		 * @param index the frustratingly-good-shit to add stuff around.
 		*/
-		text_t beautify_index(natural_num_t __index)
+		text_t beautify_index(natnum_t __index)
 		{
 			// --- Head ---
 			_index index = _get_index(__index);
@@ -137,7 +140,7 @@ namespace Alton
 			message += U"\n\t";
 
 			// --		------------ --
-			for (natural_num_t i = 0; i < index.chtr; i++)
+			for (natnum_t i = 0; i < index.chtr; i++)
 				message += '-';
 			
 			// --		------------^ --
@@ -151,7 +154,7 @@ namespace Alton
 		 * @param err Alton::Exceptions::BaseCodeException type
 		 * @param __index Index of the character that's causing the error
 		*/
-		void raise_pos(const Exceptions::BaseExternalException &err, natural_num_t __index)
+		void raise_pos(const Exceptions::BaseExternalException &err, natnum_t __index)
 		{
 			// --- Head ---
 			text_t message = err._message;
@@ -187,7 +190,7 @@ namespace Alton
 		 * @brief Raises an internal error.
 		 * @param err Alton::Exceptions::BaseInternalException type
 		*/
-		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, natural_num_t __line)
+		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, natnum_t __line)
 		{
 			_raise_error(
 				(text_t) U"Internal Error at "

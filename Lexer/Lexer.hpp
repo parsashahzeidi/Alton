@@ -25,7 +25,7 @@ namespace Alton
 			{
 				// --- Head ---
 				// -- Remaining characters to the end --
-				natural_num_t remaining_chars = h.out.size() - h.it;
+				natnum_t remaining_chars = h.out.size() - h.it;
 				// -- The text to the end --
 				text_t remaining_text = h.out.substr(h.it);
 				// -- A cache value --
@@ -315,9 +315,9 @@ namespace Alton
 				// -- A cache value --
 				utfchar_t current_char = h.curr(0);
 				// -- The amount of dents in the current line --
-				natural_num_t dents = h.previous_dents.back();
+				natnum_t dents = h.previous_dents.back();
 				// -- The amount of dents in the following line --
-				natural_num_t new_dents = 0;
+				natnum_t new_dents = 0;
 
 				// --- Body ---
 				// -- Detected an LF newline --
@@ -626,7 +626,7 @@ namespace Alton
 			{
 				text_t out;
 
-				for (natural_num_t i = 0; i < in.size(); i++)
+				for (natnum_t i = 0; i < in.size(); i++)
 				{
 					out += text_t(U"[") + in[i].enumeration + U"] ";
 				}

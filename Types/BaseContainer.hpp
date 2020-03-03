@@ -22,10 +22,10 @@ namespace Alton
 			linked_node *ptr = nullptr;
 
 			// Size related stuff
-			natural_num_t arr_size = 0;
+			natnum_t arr_size = 0;
 
 			// Thread related stuff
-			natural_num_t lock_count = 0;
+			natnum_t lock_count = 0;
 			std::thread::id lock_owner = std::this_thread::get_id();
 
 			// --- Body
@@ -89,7 +89,7 @@ namespace Alton
 			/**
 			 * @brief Gets the node at in
 			*/
-			linked_node &_get_node(natural_num_t in) const
+			linked_node &_get_node(natnum_t in) const
 			{
 				// --- Head ---
 				linked_node *current = ptr;
@@ -172,7 +172,7 @@ namespace Alton
 				Note:
 					There is no faster way than to add / remove each item individually
 			*/
-			void resize(natural_num_t in)
+			void resize(natnum_t in)
 			{
 				_lock();
 				// Checking if we're increasing the array size
@@ -206,7 +206,7 @@ namespace Alton
 					A linked list cannot have a preallocated capacity
 					so we'll just return the array size
 			*/
-			natural_num_t capacity() const
+			natnum_t capacity() const
 			{
 				return size();
 			}
@@ -222,7 +222,7 @@ namespace Alton
 			/**
 			 * @brief Assigns a value to an item
 			*/
-			void assign(natural_num_t i, const T &item)
+			void assign(natnum_t i, const T &item)
 			{
 				_lock();
 				_get_node(i)->data = item;
@@ -232,7 +232,7 @@ namespace Alton
 			/**
 			 * @brief Erases a component of the array
 			*/
-			void erase(natural_num_t i)
+			void erase(natnum_t i)
 			{
 				_lock();
 				// --- Head ---
@@ -263,7 +263,7 @@ namespace Alton
 			/**
 			 * @brief Inserts an item between two components of the array
 			*/
-			void insert(natural_num_t i, const T &item)
+			void insert(natnum_t i, const T &item)
 			{
 				_lock();
 				// --- Head ---
@@ -285,12 +285,12 @@ namespace Alton
 			/**
 			 * @brief Can't do anything here since we're using a linked list. :->
 			*/
-			void reserve(natural_num_t) { }
+			void reserve(natnum_t) { }
 
 			/**
 			 * @brief Returns the array size
 			*/
-			natural_num_t size() const
+			natnum_t size() const
 			{
 				return arr_size;
 			}
@@ -301,7 +301,7 @@ namespace Alton
 			void copy_container_here(const cont_t<T> &in)
 			{
 				_lock();
-				for (natural_num_t i = 0; i < in.arr_size; i++)
+				for (natnum_t i = 0; i < in.arr_size; i++)
 					push_back(in.at(i));
 				_unlock();
 			}
@@ -309,7 +309,7 @@ namespace Alton
 			/**
 			 * @brief Returns the item at in
 			*/
-			T &at(natural_num_t in) const
+			T &at(natnum_t in) const
 			{
 				return _get_node(in).data;
 			}
@@ -331,7 +331,7 @@ namespace Alton
 			}
 
 			// -- Operators
-			T &operator[](natural_num_t in) const
+			T &operator[](natnum_t in) const
 			{
 				return at(in);
 			}
@@ -349,7 +349,7 @@ namespace Alton
 				if (in.size() != arr_size)
 					return false;
 				
-				for (natural_num_t i = 0; i < arr_size; i++)
+				for (natnum_t i = 0; i < arr_size; i++)
 				{
 					if (at(i) != in[i])
 						return false;
@@ -374,11 +374,11 @@ namespace Alton
 				copy_container_here(in);
 			}
 
-			cont_t(const T in[], natural_num_t size)
+			cont_t(const T in[], natnum_t size)
 			{
 				resize(size);
 
-				for (natural_num_t i = 0; i < size; i++)
+				for (natnum_t i = 0; i < size; i++)
 					at(i) = in[i];
 			}
 

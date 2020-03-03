@@ -1,6 +1,6 @@
 # pragma once
 
-# include <Clinic/ErrorHandler.hpp>
+# include <Clinic/Clinic.hpp>
 # include <ETC/Macros.hpp>
 
 namespace Alton{
@@ -14,7 +14,7 @@ namespace Alton{
 		public:
 			list out;
 			list tmp;
-			natural_num_t it = 0;
+			natnum_t it = 0;
 			bool during_op = false;
 
 			// --- Body
@@ -113,7 +113,7 @@ namespace Alton{
 			/**
 			 * @brief Advances i times.
 			*/
-			virtual void advance(natural_num_t i = 1)
+			virtual void advance(natnum_t i = 1)
 			{
 				_require_operation();
 				

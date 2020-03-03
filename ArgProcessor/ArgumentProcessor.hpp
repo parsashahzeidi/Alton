@@ -87,7 +87,7 @@ namespace Alton
 				formatted.resize(arg_id::count);
 
 				// Reformatting the chart 
-				for (natural_num_t i = 0; i < in.size(); i++)
+				for (natnum_t i = 0; i < in.size(); i++)
 				{
 					cache = in[i];
 					formatted[cache.arg] = cache.value;
@@ -115,11 +115,11 @@ namespace Alton
 			// -- Default constructor --
 			ArgProcessor() = delete;
 
-			ArgProcessor(char** _argv, natural_num_t argc):
+			ArgProcessor(char** _argv, natnum_t argc):
 					h(cont_t<text_t>())
 			{
 				// --- Body ---
-				for (natural_num_t i = 0; i < argc; i++)
+				for (natnum_t i = 0; i < argc; i++)
 					h.out.push_back(Conversions::str_to_text(_argv[i]));
 			}
 

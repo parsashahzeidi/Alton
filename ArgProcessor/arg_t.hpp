@@ -13,7 +13,7 @@ namespace Alton
 			text_t value;
 		};
 
-		typedef  _arg arg_t;
-		typedef cont_t<arg_t> arg_list_t;
+		using arg_t = _arg;
+		using arg_list_t = cont_t<arg_t>;
 	}
 }

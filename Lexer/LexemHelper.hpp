@@ -19,7 +19,7 @@ namespace Alton
 
 		public:
 			bool _expecting_indent = false;
-			cont_t<natural_num_t> previous_dents;
+			cont_t<natnum_t> previous_dents;
 			cont_t<utfchar_t> open_miniscopes;
 			lexem_t cache;
 			lxm_vec tokenized;

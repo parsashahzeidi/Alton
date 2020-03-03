@@ -16,7 +16,7 @@ namespace Alton
 			out _out;
 
 			// --- Body ---
-			for (natural_num_t i = 0; i < _in.size(); i++)
+			for (natnum_t i = 0; i < _in.size(); i++)
 				_out += _in[i];
 
 			return _out;

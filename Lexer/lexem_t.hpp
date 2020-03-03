@@ -10,10 +10,10 @@ namespace Alton
 		struct _lexem
 		{
 			token token_type = token::null_token;
-			natural_num_t position_in_code = 0;
+			natnum_t position_in_code = 0;
 			text_t enumeration = U"";
 
-			natural_num_t value = 0;
+			natnum_t value = 0;
 		};
 		typedef  _lexem lexem_t;
 		typedef cont_t<lexem_t> lxm_vec;

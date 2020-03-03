@@ -32,7 +32,7 @@ namespace Alton
 				};
 
 				// --- Body ---
-				for (natural_num_t i = 0; i < arg_id::count; i++)
+				for (natnum_t i = 0; i < arg_id::count; i++)
 					arg_group.push_back(args[i]);
 			}
 
@@ -43,11 +43,11 @@ namespace Alton
 			void arg_is_identical()
 			{
 				// --- Head ---
-				natural_num_t min_size;
+				natnum_t min_size;
 				text_t arg_head;
 
 				// --- Body ---
-				for (natural_num_t i = 1; i < arg_group.size(); i++){
+				for (natnum_t i = 1; i < arg_group.size(); i++){
 					min_size = arg_group[i].size();
 
 					// If the substring process goes out of bounds,

@@ -12,15 +12,18 @@
 	Software License which is compatible with
 	the GNU's General Public License ( GPL ).
 	see:
-		/Alton/LICENSE
+		/Path/To/Alton/LICENSE
 */
 
-# include <thread>
+# include <thread>  // TODO: Make a wrapper class similliar to std::thread but with pthread_ calls.
 # include <filesystem>
 # include <stdint.h>
 # include <iostream>
 # include <string>
 # include <fstream>
+
+// Version Data
+# include <ETC/VersionData.hpp>
 
 // Some typedefs
 namespace Alton
@@ -28,24 +31,27 @@ namespace Alton
 	inline namespace Types
 	{
 		// String
-		typedef char32_t utfchar_t;
-		typedef std::u32string text_t;
+		using utfchar_t = char32_t;
+		using text_t = std::u32string;
 
 		// TODO: Replace these with abrietary precision types
 		// Numeric
-		typedef int64_t num_t;
-		typedef size_t natural_num_t;
-		typedef long double float_t;
+		using num_t = long long int;
+		using natnum_t = unsigned long long int;
+		using float_t = long double;
 	}
 }
 
-// Standard Container
+// Container Type
 # include <Types/BaseContainer.hpp>
 
 // String Type Conversion
-# include <Tools/StringConvert.hpp>
+# include <Conversions/StringConvert.hpp>
 
-// Newline character
+// Text Fill Tools
+# include <Tools/TextFill.hpp>
+
+// Newline Character
 # if defined(__WIN__)
 	# define nl_str "\r\n"
 	# define nl_txt U"\r\n"
@@ -54,11 +60,14 @@ namespace Alton
 	# define nl_txt U"\n"
 # endif
 
-// Errors
+// Error Templates
 # include <Clinic/Exceptions/ErrorTemplates.hpp>
 
 // Error Handling
-# include <Clinic/ErrorHandler.hpp>
+# include <Clinic/Clinic.hpp>
+
+// Number to Hex Conversion
+# include <Conversions/ToHex.hpp>
 
 // Input Reading
 # include <Tools/FileReader.hpp>
