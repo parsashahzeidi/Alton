@@ -2,15 +2,17 @@
 
 # pragma once
 
-# include <ETC/Macros.hpp>
+# include <ETC/BareboneMacros.hpp>
+
 
 namespace Alton
 {
 	namespace Lexer
 	{
-		enum token
-		{  // First 
+		enum Token
+		{
 			null_token,
+			// First 
 			statement_end,
 			paranthesis_miniscope_opening,
 			paranthesis_miniscope_closing,
@@ -20,46 +22,46 @@ namespace Alton
 			square_bracket_miniscope_closing,
 			indent,
 			outdent,
-			constant_integer,
+			constant_number,
+			constant_float,
 			constant_text,
 			identifier,
-			oper_sum,
-			oper_increment,
-			oper_sum_assign,
-			oper_subtract,
-			oper_decrement,
-			oper_subtract_assign,
-			oper_multiply,
-			oper_multiply_assign,
-			oper_divide,
-			oper_divide_assign,
-			oper_modulate,
-			oper_modulate_assign,
-			oper_power,
-			oper_power_assign,
-			oper_root,
-			oper_root_assign,
-			oper_left_shift,
-			oper_left_shift_assign,
-			oper_right_shift,
-			oper_right_shift_assign,
-			oper_bitwise_and,
-			oper_bitwise_and_assign,
-			oper_bitwise_or,
-			oper_bitwise_or_assign,
-			oper_bitwise_xor,
-			oper_bitwise_xor_assign,
-			oper_equal_to,
-			oper_not_equal_to,
-			oper_larger_than,
-			oper_larger_than_or_equal_to,
-			oper_smaller_than,
-			oper_smaller_than_or_equal_to,
-			oper_or,
-			oper_or_assign,
-			oper_and,
-			oper_and_assign,
+			do_block,
+			oper_plus,
+			oper_plus_plus,
+			oper_plus_assign,
+			oper_minus,
+			oper_mius_minus,
+			oper_minus_assign,
+			oper_star,
+			oper_star_assign,
+			oper_star_star,
+			oper_star_star_assign,
+			oper_slash,
+			oper_slash_assign,
+			oper_slash_slash,
+			oper_slash_slash_assign,
+			oper_percent,
+			oper_percent_assign,
+			oper_bit_left_shift,
+			oper_bit_left_shift_assign,
+			oper_bit_right_shift,
+			oper_bit_right_shift_assign,
+			oper_bit_and,
+			oper_bit_and_assign,
+			oper_bit_or,
+			oper_bit_or_assign,
+			oper_bit_xor,
+			oper_bit_xor_assign,
+			oper_equal,
+			oper_not_equal,
 			oper_not,
+			oper_more_than,
+			oper_more_than_equal,
+			oper_less_than,
+			oper_less_than_equal,
+			oper_or,
+			oper_and,
 			oper_assign,
 			oper_member_access,
 			oper_union,
@@ -67,7 +69,8 @@ namespace Alton
 			keyword_constant,
 			keyword_return,
 			keyword_import,
-			keyword_oper,
+			keyword_operation,
+			keyword_function,
 			keyword_for,
 			keyword_if,
 			keyword_while,
@@ -75,136 +78,72 @@ namespace Alton
 			keyword_check,
 			keyword_raise,
 			keyword__ZisisntZeFamousEisterEg__,
+			keyword_segment,
+			keyword_goto,
+
+			// Not a Token
+			count
 		};
 
-		text_t ___get_token_name_in_text(token in)
-		{
-			switch (in)
-			{  // Second 
-			case token::statement_end: return U";";
-			case token::paranthesis_miniscope_opening: return U"(";
-			case token::paranthesis_miniscope_closing: return U")";
-			case token::round_bracket_miniscope_opening: return U"{";
-			case token::round_bracket_miniscope_closing: return U"}";
-			case token::square_bracket_miniscope_opening: return U"[";
-			case token::square_bracket_miniscope_closing: return U"]";
-			case token::oper_sum: return U"+";
-			case token::oper_increment: return U"++";
-			case token::oper_sum_assign: return U"+=";
-			case token::oper_subtract: return U"-";
-			case token::oper_decrement: return U"--";
-			case token::oper_subtract_assign: return U"-=";
-			case token::oper_multiply: return U"*";
-			case token::oper_multiply_assign: return U"*=";
-			case token::oper_divide: return U"/";
-			case token::oper_divide_assign: return U"/=";
-			case token::oper_modulate: return U"%";
-			case token::oper_modulate_assign: return U"%=";
-			case token::oper_power: return U"**";
-			case token::oper_power_assign: return U"**=";
-			case token::oper_root: return U"//";
-			case token::oper_root_assign: return U"//=";
-			case token::oper_left_shift: return U"<<";
-			case token::oper_left_shift_assign: return U"<<=";
-			case token::oper_right_shift: return U">>";
-			case token::oper_right_shift_assign: return U">>=";
-			case token::oper_bitwise_and: return U"&";
-			case token::oper_bitwise_and_assign: return U"&=";
-			case token::oper_bitwise_or: return U"|";
-			case token::oper_bitwise_or_assign: return U"|=";
-			case token::oper_bitwise_xor: return U"^";
-			case token::oper_bitwise_xor_assign: return U"^=";
-			case token::oper_equal_to: return U"==";
-			case token::oper_not_equal_to: return U"!=";
-			case token::oper_larger_than: return U">";
-			case token::oper_larger_than_or_equal_to: return U">=";
-			case token::oper_smaller_than: return U"<";
-			case token::oper_smaller_than_or_equal_to: return U"<=";
-			case token::oper_or: return U"||";
-			case token::oper_or_assign: return U"||=";
-			case token::oper_and: return U"&&";
-			case token::oper_and_assign: return U"&&=";
-			case token::oper_not: return U"!";
-			case token::oper_assign: return U"=";
-			case token::oper_member_access: return U".";
-			case token::oper_union: return U",";
-			case token::keyword__ZisisntZeFamousEisterEg__: return U"__decode_me___84095041";
-			
-			default:
-				return U"";
-			}
-		}
+		/**
+		 * BRIEF: Guesses a token's enumeration
+		 * PARAM: in The token.
+		 * 
+		 * RETURN: A Text.
+		*/
+		Text ___get_token_enum_in_text(Token in);
 
-		token ____get_const_token_3_chars(text_t in)
-		{
-			// Third 
-			if (in == U"**=") return token::oper_power_assign; else
-			if (in == U"//=") return token::oper_root_assign; else
-			if (in == U"<<=") return token::oper_left_shift_assign; else
-			if (in == U">>=") return token::oper_right_shift_assign; else
-			if (in == U"||=") return token::oper_or_assign; else
-			if (in == U"&&=") return token::oper_and_assign; else
-			return token::null_token;
-		}
+		/**
+		 * BRIEF: Guesses a token from a given string.
+		 * NOTE: Specializes in tokens with 3 characters in them.
+		 * PARAM: in The text
+		 * 
+		 * RETURN: A Token.
+		*/
+		Token ____get_const_token_3_chars(Text in);
 
-		token ____get_const_token_2_chars(text_t in)
-		{
-			// Fourth 
-			if (in == U"++") return token::oper_increment; else
-			if (in == U"+=") return token::oper_sum_assign; else
-			if (in == U"--") return token::oper_decrement; else
-			if (in == U"-=") return token::oper_subtract_assign; else
-			if (in == U"*=") return token::oper_multiply_assign; else
-			if (in == U"/=") return token::oper_divide_assign; else
-			if (in == U"%=") return token::oper_modulate_assign; else
-			if (in == U"**") return token::oper_power; else
-			if (in == U"//") return token::oper_root; else
-			if (in == U"<<") return token::oper_left_shift; else
-			if (in == U">>") return token::oper_right_shift; else
-			if (in == U"&=") return token::oper_bitwise_and_assign; else
-			if (in == U"|=") return token::oper_bitwise_or_assign; else
-			if (in == U"^=") return token::oper_bitwise_xor_assign; else
-			if (in == U"==") return token::oper_equal_to; else
-			if (in == U"!=") return token::oper_not_equal_to; else
-			if (in == U">=") return token::oper_larger_than_or_equal_to; else
-			if (in == U"<=") return token::oper_smaller_than_or_equal_to; else
-			if (in == U"||") return token::oper_or; else
-			if (in == U"&&") return token::oper_and; else
-			return token::null_token;
-		}
+		/**
+		 * BRIEF: Guesses a token from a given string.
+		 * NOTE: Specializes in tokens with 2 characters in them.
+		 * PARAM: in The text
+		 * 
+		 * RETURN: A Token.
+		*/
+		Token ____get_const_token_2_chars(Text in);
 
-		token ____get_const_token_1_char(text_t in)
-		{
-			// Fifth 
-			if (in == U";") return token::statement_end; else
-			if (in == U"(") return token::paranthesis_miniscope_opening; else
-			if (in == U")") return token::paranthesis_miniscope_closing; else
-			if (in == U"{") return token::round_bracket_miniscope_opening; else
-			if (in == U"}") return token::round_bracket_miniscope_closing; else
-			if (in == U"[") return token::square_bracket_miniscope_opening; else
-			if (in == U"]") return token::square_bracket_miniscope_closing; else
-			if (in == U"+") return token::oper_sum; else
-			if (in == U"-") return token::oper_subtract; else
-			if (in == U"*") return token::oper_multiply; else
-			if (in == U"/") return token::oper_divide; else
-			if (in == U"%") return token::oper_modulate; else
-			if (in == U"&") return token::oper_bitwise_and; else
-			if (in == U"|") return token::oper_bitwise_or; else
-			if (in == U"^") return token::oper_bitwise_xor; else
-			if (in == U">") return token::oper_larger_than; else
-			if (in == U"<") return token::oper_smaller_than; else
-			if (in == U"!") return token::oper_not; else
-			if (in == U"=") return token::oper_assign; else
-			if (in == U".") return token::oper_member_access; else
-			if (in == U",") return token::oper_union; else
-			return token::null_token;
-		}
+		/**
+		 * BRIEF: Guesses a token from a given string.
+		 * NOTE: Specializes in tokens with 1 character in them.
+		 * PARAM: in The text
+		 * 
+		 * RETURN: A Token.
+		*/
+		Token ____get_const_token_1_char(Text in);
 
-		token ____get_const_token_keywords(text_t in)
-		{
-			// Sixth 
-			if (in == U"__decode_me___84095041") return token::keyword__ZisisntZeFamousEisterEg__; else
-			return token::null_token;
-		}
+		/**
+		 * BRIEF: Guesses a token from a given string.
+		 * NOTE: Specializes in tokens with more than 3 characters in them.
+		 * PARAM: in The text
+		 * 
+		 * RETURN: A Token.
+		*/
+		Token ____get_const_token_variable_char(Text in);
+
+		/**
+		 * BRIEF: Guesses a keyword from a given string
+		 * NOTE: Only should be called from ___advance_identifier()
+		 * PARAM: in the text
+		 * 
+		 * RETURN: a Token.
+		*/
+		Token ____get_keyword_token(Text in);
+
+		/**
+		 * BRIEF: Returns token debug info
+		 * PARAM: in the token
+		 * 
+		 * RETURN: a Text.
+		*/
+		Text _get_token_name(Token in);
 	}
 }

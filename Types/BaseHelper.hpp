@@ -1,7 +1,8 @@
 # pragma once
 
 # include <Clinic/Clinic.hpp>
-# include <ETC/Macros.hpp>
+# include <ETC/BareboneMacros.hpp>
+
 
 namespace Alton{
 	inline namespace Types
@@ -14,13 +15,13 @@ namespace Alton{
 		public:
 			list out;
 			list tmp;
-			natnum_t it = 0;
+			Natural it = 0;
 			bool during_op = false;
 
 			// --- Body
 		public:
 			/**
-			 * @brief Errors if we're inside an operation
+			 * BRIEF: Errors if we're inside an operation
 			*/
 			void _require_operation() const
 			{
@@ -33,7 +34,7 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Errors if we're outside an operation
+			 * BRIEF: Errors if we're outside an operation
 			*/
 			void _require_no_operation() const
 			{
@@ -46,7 +47,7 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Initializes an operation.
+			 * BRIEF: Initializes an operation.
 			*/
 			virtual void _init_operation()
 			{
@@ -56,7 +57,7 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Exits an operation.
+			 * BRIEF: Exits an operation.
 			*/
 			virtual void _exit_operation()
 			{
@@ -71,7 +72,7 @@ namespace Alton{
 			}
 			
 			/**
-			 * @brief Initializes an operation.
+			 * BRIEF: Initializes an operation.
 			*/
 			void init_op()
 			{
@@ -79,7 +80,7 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Checks if the helper can still operate
+			 * BRIEF: Checks if the helper can still operate
 			*/
 			virtual bool is_operating() const
 			{
@@ -87,9 +88,9 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Returns the i-th item after it
+			 * BRIEF: Returns the i-th item after it
 			*/
-			virtual item &curr(num_t i)
+			virtual item &curr(Number i)
 			{
 				if (out.size() > (it + i))
 					return out[it + i];
@@ -98,9 +99,9 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Advances w/o keeping the current variable.
+			 * BRIEF: Advances w/o keeping the current variable.
 			*/
-			virtual void virtually_advance(num_t i = 1)
+			virtual void virtually_advance(Number i = 1)
 			{
 				_require_operation();
 
@@ -111,9 +112,9 @@ namespace Alton{
 			}
 
 			/**
-			 * @brief Advances i times.
+			 * BRIEF: Advances i times.
 			*/
-			virtual void advance(natnum_t i = 1)
+			virtual void advance(Natural i = 1)
 			{
 				_require_operation();
 				

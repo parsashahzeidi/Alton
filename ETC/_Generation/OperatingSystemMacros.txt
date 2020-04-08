@@ -1,0 +1,45 @@
+Linux OS_LINUX linux __linux __linux__ __gnu_linux__
+SunOS OS_SUN sun __sun
+BSD OS_BSD BSD __OpenBSD__ __NetBSD__ __FreeBSD__ __DragonFly__ __bsdi__ _SYSTYPE_BSD __FreeBSD_kernel__ __FreeBSD_version __NetBSD_Version__
+MacOS OS_MAC __MACOSX__ __APPLE__ macintosh Macintosh __MACH__
+Windows OS_WINDOWS _WIN32 _WIN64 __WIN32__ __WIN64__ WIN32 WIN64 _MSC_VER __CYGWIN__ __TOS_WIN__ __WINDOWS__ _WIN16 _WIN32_WCE _WIN32_WCE
+AIX OS_AIX _AIX __TOS_AIX__
+Android OS_ANDROID __ANDROID__ __ANDROID_API__
+AmdahlUTS OS_AMDAHL_UTS UTS
+AmigaOS OS_AMIGA AMIGA __amigaos__
+ApolloAEGIS OS_APOLLO_AEGIS aegis
+ApolloOS OS_APOLLO apollo
+BeOS OS_BEOS __BEOS__
+BlueGene OS_BLUE_GENE __bg__ __bgq__ __THW_BLUEGENE__ __TOS_BGQ__
+ConvexOS OS_CONVEX __convex__
+DG-UX OS_DGUX DGUX __DGUX__ __dgux__
+Dynix OS_DYNIX _SEQUENT_ sequent
+eCos OS_ECOS __ECOS
+Dos OS_DOS __EMX__ MSDOS __MSDOS__ _MSDOS __DOS__
+Gnu OS_GNU __GNU__ __gnu_hurd__
+HI-UX-MPP OS_HIUX_MPP __hiuxmpp
+HP-UX OS_HPUX _hpux hpux __hpux
+OS400 OS_IBM_400 __OS400__
+Integrity OS_INTEGRITY __INTEGRITY
+Irix OS_IRIX sgi __sgi
+LynxOS OS_LINX __Lynx__
+OS9 OS_OS9 __OS9000 _OSK
+Minix OS_MINIX __minix
+MorphOS OS_MORPHOS __MORPHOS__
+MPE-Ix OS_MPE mpeix __mpexl
+Nucleus-RTOS OS_NUCLEUS __nucleus__
+OS2 OS_OS2 OS2 _OS2 __OS2__ __TOS_OS2__
+PalmOS OS_PALM __palmos__
+Plan-9 OS_PLAN9 EPLAN9
+DC-OSx OS_DC_OSX pyr
+QNX OS_QNX __QNX__ __QNXNTO__ _NTO_VERSION BBNDK_VERSION_CURRENT
+SCO-OpenServer OS_SCO_OS M_I386 M_XENIX _SCO_DS
+VOS OS_VOS __VOS__
+Syllable OS_SYLLABLE __SYLLABLE__
+SymbianOS OS_SYMBIAN __SYMBIAN32__
+Tru64 OS_OSF1 __osf__ __osf
+UnicOS OS_UNICOS _UNICOS _CRAY __crayx1
+VMS OS_VMS VMS __VMS __VMS_VER
+VxWorks OS_VXWORKS __VXWORKS__ __vxworks _WRS_VXWORKS_MAJOR _WRS_VXWORKS_MINOR _WRS_VXWORKS_MAINT __RTP__ _WRS_KERNEL
+Z-OS OS_IBM_ZOS __MVS__ __HOS_MVS__ __TOS_MVS__
+Unix-Subsystem OS_UNIX_BASED __INTERIX sinux __sysv__ __SVR4 __svr4__ _SYSTYPE_SVR4 ultrix __ultrix __ultrix__ __unix__ __unix unix sco _UNIXWARE7 _UWIN _WINDU_SOURCE

@@ -3,48 +3,70 @@ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 # --- Head ---
 # -- Head's Head --
 project(AltonMain)
-enable_testing()
-
-# -- Variables --
-set							(dir			${CMAKE_CURRENT_SOURCE_DIR})
-set							(SOURCE			Alton.cpp)
-
-# -- Compiler Args --
-set							(DBG_FLAGS		-O0 -g -pg)
-set							(BLD_FLAGS		-Ofast -c -m64)
-set							(LNK_FLAGS		-Ofast)
-set							(ALL_FLAGS		-std=c++2a -Wpedantic -Werror -pthread)
 
 # -- Options --
-option						(USE_DEBUG_TARGETS "Speed up the compiling process by using debug compile flags" OFF)
+option						(NDEBUG "Option to force disablation of debugging arguments" on)
+find_package				(Python3 REQUIRED)
 
-include_directories			(${dir})
+# -- Compile Args --
+set							(PYTHON_RUNTIME				python3	-OO -u)
+set							(CMAKE_CXX_FLAGS			"${CMAKE_CXX_FLAGS} -std=c++2a -Wpedantic -Werror -pthread")
+set							(CMAKE_CXX_FLAGS_DEBUG		"${CMAKE_CXX_FLAGS_DEBUG}	${CMAKE_CXX_FLAGS}	-O0 -g -pg")
+set							(CMAKE_CXX_FLAGS_RELEASE	"${CMAKE_CXX_FLAGS_RELEASE}	${CMAKE_CXX_FLAGS}	-Ofast")
+
+# -- Platform dependent --
+# - Windows -
+if		(WIN32)
+	set						(POSIX_EQUIVELANT_TOOLS_DIR ${dir}/Tools/WindowsPosixEquivelantCommands/)
+	set						(TOUCH ${POSIX_EQUIVELANT_TOOLS_DIR}touch)
+endif	(WIN32)
+
+# - Unix -
+if		(UNIX)
+	set						(TOUCH touch)
+endif	(UNIX)
+
+# -- Build options --
+if		(NDEBUG)
+	set						(CMAKE_BUILD_TYPE			RELEASE)
+	set						(CMAKE_CXX_FLAGS_DEBUG		"${CMAKE_CXX_FLAGS_DEBUG} -DNDEBUG=1")
+else	(!NDEBUG)
+	set						(CMAKE_BUILD_TYPE			DEBUG)
+endif	(NDEBUG)
+
+# -- Variables --
+set							(dir			${CMAKE_HOME_DIRECTORY})
+set							(SOURCE			Alton.cpp)
 
 # --- Body ---
-# -- Proceedral Headers --
-# - The Lexer's _Generation folder -
-add_custom_target			(${PROJECT_NAME}_lexer_headers ALL
-	COMMAND python3 ${dir}/Lexer/_Generation/TokenHeaderGenerator.py
-	WORKING_DIRECTORY ${dir}
+# -- CMake includes --
+add_subdirectory			(${dir}/ETC/_Generation/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/ArgumentProcessor/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/Parser/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/Conversions/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/Clinic/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/Lexer/
+	EXCLUDE_FROM_ALL
+)
+add_subdirectory			(${dir}/Tools/
+	EXCLUDE_FROM_ALL
 )
 
-# -- Targets --
-add_executable (${PROJECT_NAME}Run ${SOURCE})
+# -- Main executable --
+add_executable						(Run ${SOURCE})
 
-# - Build target -
-if (!USE_DEBUG_TARGETS)
-	target_compile_options	(${PROJECT_NAME}Run		PRIVATE		${BLD_FLAGS} ${ALL_FLAGS})
-	target_link_options		(${PROJECT_NAME}Run		PRIVATE		${LNK_FLAGS} ${ALL_FLAGS})
+# -- CXX Linkings --
+target_link_libraries				(Run parser_lib lexer_lib arg_lib clinic_lib convert_lib tool_lib)
 
-# - Debug target -
-else ()
-	target_compile_options	(${PROJECT_NAME}Run		PRIVATE		${DBG_FLAGS} ${ALL_FLAGS})
-	target_link_options		(${PROJECT_NAME}Run		PRIVATE		${DBG_FLAGS} ${ALL_FLAGS})
-
-endif ()
-
-# -- Tests --
-add_test 				(NAME MainTest
-	COMMAND ${PROJECT_NAME} -i=${dir}/Tests/Tests.lfi
-	WORKING_DIRECTORY ${dir}/Tests/
-)
+# -- CXX includes --
+target_include_directories			(Run PUBLIC ${dir})

@@ -1,0 +1,20 @@
+Alpha ARCH_ALPHA __alpha__ __alpha _M_ALPHA
+AMD64 ARCH_X86_64 __amd64__ __amd64 __x86_64__ __x86_64 _M_X64 _M_AMD64
+ARM ARCH_ARM __arm__ __thumb__ __TARGET_ARCH_ARM __TARGET_ARCH_THUMB _ARM _M_ARM _M_ARMT __arm
+ARM64 ARCH_ARM64 __aarch64__
+Blackfin ARCH_BFIN __bfin __BFIN__
+Convex ARCH_CONVEX __convex__
+Epiphany ARCH_EPIPHANY __epiphany__
+HP/PA ARCH_HPPA __hppa__ __HPPA__ __hppa
+Intelx86 ARCH_i386 i386 __i386 __i386__ __i486__ __i586__ __i686__ __IA32__ _M_I86 _M_IX86 _M_IX86 _X86_ __THW_INTEL__ __I86__ __INTEL__ __386
+IntelItanium ARCH_IA64 __ia64__ _IA64 __IA64__ __ia64 _M_IA64 __itanium__
+Motorola68k ARCH_M68k __m68k__ M68000 __MC68K__
+MIPS ARCH_MIPS __mips__ mips _MIPS_ISA _R3000 _R4000 _R5900 __mips __MIPS__
+IBM-PowerPC ARCH_PPC __powerpc __powerpc__ __powerpc64__ __POWERPC__ __ppc__ __ppc64__ __PPC__ __PPC64__ _ARCH_PPC _ARCH_PPC64 _M_PPC __PPCGECKO__ __PPCBROADWAY__ _XENON __ppc
+Pyramid-9810 ARCH_PYR pyr
+RS/6000 ARCH_POWER __THW_RS6000 _IBMR2 _POWER _ARCH_PWR _ARCH_PWR2 _ARCH_PWR3 _ARCH_PWR4
+Sparc ARCH_SPARC __sparc__ __sparc __sparc_v8__ __sparc_v9__ __sparcv8 __sparcv9
+SuperH ARCH_SH __sh__ __sh1__ __sh2__ __sh3__ __SH3__ __SH4__ __SH5__
+SystemZ ARCH_ZARCH __370__ __THW_370__ __s390__ __s390x__ __zarch__ __SYSC_ZARCH__
+TMS320 ARCH_TMS320 _TMS320C2XX __TMS320C2000__ _TMS320C5X __TMS320C55X__ _TMS320C6X __TMS320C6X__
+TMS470 ARCH_TMS470 __TMS470__

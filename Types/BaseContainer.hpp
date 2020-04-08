@@ -1,68 +1,97 @@
 # pragma once
 
-# include <ETC/Macros.hpp>
+# include <ETC/BareboneMacros.hpp>
+
 
 namespace Alton
 {
 	inline namespace Types
 	{
 		template<typename T>
-		class cont_t
+		class Container
 		{
 			// --- Structs
-			struct linked_node
+		private:
+			struct Node
 			{
 				T data;
-				linked_node *next = nullptr;
+				Node *next = nullptr;
 			};
 
 			// --- Head
 		private:
-			// Main pointer
-			linked_node *ptr = nullptr;
+			// -- Main pointer
+			Node *ptr = nullptr;
 
-			// Size related stuff
-			natnum_t arr_size = 0;
+			// -- Size related stuff
+			Natural arr_size = 0;
 
-			// Thread related stuff
-			natnum_t lock_count = 0;
+			// -- Thread related stuff
+			Natural lock_count = 0;
 			std::thread::id lock_owner = std::this_thread::get_id();
 
 			// --- Body
 		private:
 			/**
-			 * @brief Returns a value to indicate 
+			 * BRIEF: Returns a value to indicate a lock
 			*/
 			bool __is_locked() const
 			{
+				return lock_count;
+			}
+
+			/**
+			 * BRIEF: Returns a value to indicate a lock for this thread
+			*/
+			bool __is_locked_for_this_thread() const
+			{
 				return
 					// Condition for checking if a lock is present
-					lock_count &&
+					__is_locked() &&
 					// Condition for checking if we own the lock
 					(lock_owner != std::this_thread::get_id());
 			}
 
 			/**
-			 * @brief Locks the current array for other threads
+			 * BRIEF: Waits until there's no lock for this thread
 			*/
-			void _lock()
+			void _wait_until_unlock() const
 			{
-				// Checking if a lock is present and we dont own it.
-				while (__is_locked())
-				{
+				// Checking if a lock that we don't own is present.
+				while (__is_locked_for_this_thread())
 					// Wait a 100 ms and recheck the lock
 					std::this_thread::sleep_for
 					(
 						std::chrono::milliseconds(100)
 					);
-				}
+			}
+
+			/**
+			 * BRIEF: Waits until there's no lock at all
+			*/
+			void _wait_until_full_unlock() const
+			{
+				while (__is_locked())
+					// Wait a 100 ms and recheck the lock
+					std::this_thread::sleep_for
+					(
+						std::chrono::milliseconds(100)
+					);
+			}
+
+			/**
+			 * BRIEF: Locks the current array for other threads
+			*/
+			void _lock()
+			{
+				_wait_until_unlock();
 
 				lock_owner = std::this_thread::get_id();
 				lock_count++;
 			}
 
 			/**
-			 * @brief Unlocks the most recent lock.
+			 * BRIEF: Unlocks the most recent lock.
 			*/
 			void _unlock()
 			{
@@ -71,14 +100,12 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Returns a new node; for appending purposes
-			 * @param data Note: this parameter is a reference;
-					to prevent using the copy constructor twice.
+			 * BRIEF: Returns a newly allocated node
 			*/
-			linked_node *_get_new_node(const T &data) const
+			Node *_get_new_node(const T &data) const
 			{
 				// --- Head ---
-				linked_node *new_node = new linked_node;
+				Node *new_node = new Node;
 
 				// --- Body ---
 				new_node->data = data;
@@ -87,45 +114,45 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Gets the node at in
+			 * BRIEF: Gets the node at in
 			*/
-			linked_node &_get_node(natnum_t in) const
+			Node &_get_node(Natural in) const
 			{
 				// --- Head ---
-				linked_node *current = ptr;
+				Node *current = ptr;
 				
 				// --- Body ---
-				for (size_t i = 0; i < in; i++)
+				for (Natural i = 0; i < in; i++)
 					current = current->next;
 				
 				return *current;
 			}
 
 			/**
-			 * @brief Returns the last items in the array
+			 * BRIEF: Returns the last items in the array
 			*/
-			linked_node &_back_node() const
+			Node &_back_node() const
 			{
 				return _get_node(arr_size - 1);
 			}
 
 			/**
-			 * @brief Returns the first item in the array
+			 * BRIEF: Returns the first item in the array
 			*/
-			linked_node &_front_node() const
+			Node &_front_node() const
 			{
 				return *ptr;
 			}
 
 		public:
 			/**
-			 * @brief Appends an item to the end of the array
+			 * BRIEF: Appends an item to the end of the array
 			*/
 			void push_back(const T &item)
 			{
 				_lock();
 				// --- Head ---
-				linked_node *new_node = _get_new_node(item);
+				Node *new_node = _get_new_node(item);
 
 				// --- Body ---
 				if (!empty())
@@ -142,17 +169,36 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Appends an item to the end of the array
+			 * BRIEF: appends an item to the start of the array
 			*/
-			void append(const T &item)
+			void push_front(const T &item)
 			{
 				_lock();
-				push_back(item);
+				// --- Head ---
+				Node *new_node = _get_new_node(item);
+
+				// --- Body ---
+				if (!empty())
+					new_node->next = ptr;
+
+				ptr = new_node;
+
+				arr_size++;
 				_unlock();
 			}
 
 			/**
-			 * @brief Removes the last item of the array
+			 * BRIEF: Appends an empty item to the end of the array
+			*/
+			void append()
+			{
+				_lock();
+				push_back(T());
+				_unlock();
+			}
+
+			/**
+			 * BRIEF: Removes the last item of the array
 			*/
 			void pop_back()
 			{
@@ -168,18 +214,36 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Resizes the array to the specified amount
-				Note:
-					There is no faster way than to add / remove each item individually
+			 * BRIEF: Removes the front item of the array
 			*/
-			void resize(natnum_t in)
+			void pop_front()
+			{
+				_lock();
+				// -- The item in the front --
+				Node *front = ptr;
+
+				// --- Body ---
+				// Checking if there exists an item other than front
+				if (arr_size > 1)
+					ptr = front->next;
+
+				// -- Deleting the front item --
+				delete front;
+				arr_size--;
+				_unlock();
+			}
+
+			/**
+			 * BRIEF: Resizes the array to the specified amount
+			*/
+			void resize(Natural in)
 			{
 				_lock();
 				// Checking if we're increasing the array size
 				if (in > arr_size)
 				{
 					while (arr_size != in)
-						push_back(T());
+						append();
 				}
 				// Or if we are cutting off the array's end
 				else if (in < arr_size)
@@ -191,7 +255,7 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Removes every item in the array
+			 * BRIEF: Removes every item in the array
 			*/
 			void clear()
 			{
@@ -201,18 +265,18 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Returns the allocated capacity of the array;
+			 * BRIEF: Returns the allocated capacity of the array;
 				Note:
-					A linked list cannot have a preallocated capacity
-					so we'll just return the array size
+					Our linked list type cannot have a preallocated space
+					so we'll just return the array size.
 			*/
-			natnum_t capacity() const
+			Natural capacity() const
 			{
 				return size();
 			}
 
 			/**
-			 * @brief Checks if the array is empty
+			 * BRIEF: Checks if the array is empty
 			*/
 			bool empty() const
 			{
@@ -220,9 +284,9 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Assigns a value to an item
+			 * BRIEF: Assigns a value to an item
 			*/
-			void assign(natnum_t i, const T &item)
+			void assign(Natural i, const T &item)
 			{
 				_lock();
 				_get_node(i)->data = item;
@@ -230,13 +294,13 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Erases a component of the array
+			 * BRIEF: Erases a component of the array
 			*/
-			void erase(natnum_t i)
+			void erase(Natural i)
 			{
 				_lock();
 				// --- Head ---
-				linked_node item = _get_node(i);
+				Node item = _get_node(i);
 
 				// --- Body ---
 				// Checking if there is an item before i
@@ -261,13 +325,13 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Inserts an item between two components of the array
+			 * BRIEF: Inserts an item between two components of the array
 			*/
-			void insert(natnum_t i, const T &item)
+			void insert(Natural i, const T &item)
 			{
 				_lock();
 				// --- Head ---
-				linked_node new_node = _get_new_node(item);
+				Node new_node = _get_new_node(item);
 				
 				// --- Body ---
 				// Checking if we're not just pushing back
@@ -283,39 +347,40 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Can't do anything here since we're using a linked list. :->
+			 * BRIEF: Can't do anything here since we're using a linked list. :->
 			*/
-			void reserve(natnum_t) { }
+			void reserve(Natural)
+			{ }
 
 			/**
-			 * @brief Returns the array size
+			 * BRIEF: Returns the array size
 			*/
-			natnum_t size() const
+			Natural size() const
 			{
 				return arr_size;
 			}
 
 			/**
-			 * @brief Copies another container
+			 * BRIEF: Copies another container
 			*/
-			void copy_container_here(const cont_t<T> &in)
+			void copy_container_here(const Container<T> &in)
 			{
 				_lock();
-				for (natnum_t i = 0; i < in.arr_size; i++)
+				for (Natural i = 0; i < in.arr_size; i++)
 					push_back(in.at(i));
 				_unlock();
 			}
 
 			/**
-			 * @brief Returns the item at in
+			 * BRIEF: Returns the item at in
 			*/
-			T &at(natnum_t in) const
+			T &at(Natural in) const
 			{
 				return _get_node(in).data;
 			}
 
 			/**
-			 * @brief Returns the last element of the array
+			 * BRIEF: Returns the last element of the array
 			*/
 			T &back() const
 			{
@@ -323,7 +388,7 @@ namespace Alton
 			}
 
 			/**
-			 * @brief Returns the first element of the array
+			 * BRIEF: Returns the first element of the array
 			*/
 			T &front() const
 			{
@@ -331,25 +396,25 @@ namespace Alton
 			}
 
 			// -- Operators
-			T &operator[](natnum_t in) const
+			T &operator[](Natural in) const
 			{
 				return at(in);
 			}
 
-			cont_t<T> &operator=(const cont_t<T> &in)
+			Container<T> &operator=(const Container<T> &in)
 			{
 				_lock();
 				copy_container_here(in);
-				return *this;
 				_unlock();
+				return *this;
 			}
 
-			bool operator==(const cont_t<T> &in) const
+			bool operator==(const Container<T> &in) const
 			{
 				if (in.size() != arr_size)
 					return false;
 				
-				for (natnum_t i = 0; i < arr_size; i++)
+				for (Natural i = 0; i < arr_size; i++)
 				{
 					if (at(i) != in[i])
 						return false;
@@ -358,32 +423,24 @@ namespace Alton
 				return true;
 			}
 
-			bool operator!=(const cont_t<T> &in) const
+			bool operator!=(const Container<T> &in) const
 			{
-				// TODO: Optimise this by redoing the loop at operator== here
 				return !operator==(in);
 			}
 
 			// --- CTOR ~ DTOR
 		public:
-			cont_t()
+			Container()
 			{ }
 
-			cont_t(const cont_t<T> &in)
+			Container(const Container<T> &in)
 			{
 				copy_container_here(in);
 			}
 
-			cont_t(const T in[], natnum_t size)
+			~Container()
 			{
-				resize(size);
-
-				for (natnum_t i = 0; i < size; i++)
-					at(i) = in[i];
-			}
-
-			~cont_t()
-			{
+				_wait_until_full_unlock();
 				clear();
 			}
 		};

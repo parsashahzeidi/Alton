@@ -1,47 +1,36 @@
 # pragma once
 
-# include <ETC/Macros.hpp>
-
+# include <ETC/BareboneMacros.hpp>
 namespace Alton
 {
 	namespace Conversions
 	{
 		/**
-		 * @brief Converts a text type to another
+		 * BRIEF: Converts a text type to another without
+			considering unicode.
 		*/
 		template <typename in, typename out>
-		out _str_cvt(const in &_in)
-		{
-			// --- Head ---
-			out _out;
-
-			// --- Body ---
-			for (natnum_t i = 0; i < _in.size(); i++)
-				_out += _in[i];
-
-			return _out;
-		}
+		out string_convert(const in &_in);
 
 		/**
-		 * @brief Converts a text_t to a std::string
+		 * BRIEF: Converts a Text to a std::string
 		 * 
-		 * Note:
-		 * 	This command will be deceprated in the close future.
+		 * NOTE: This command will be deceprated in the close future.
 		*/
-		std::string text_to_str(const text_t &s)
-		{
-			return _str_cvt<text_t, std::string>(s);
-		}
+		std::string text_to_str(const Text &s);
 
 		/**
-		 * @brief Converts a std::string to a text_t
+		 * BRIEF: Converts a std::string to a Text
 		 * 
-		 * Note:
-		 * 	This command will be deceprated in the close future.
+		 * NOTE: This command will be deceprated in the close future.
 		*/
-		text_t str_to_text(const std::string &s)
-		{
-			return _str_cvt<std::string, text_t>(s);
-		}
+		Text str_to_text(const std::string &s);
+
+		/**
+		 * BRIEF: Converts a numeric object to a text
+		 * PARAM: num The obvious parameter
+		 * PARAM: base The base parameter
+		*/
+		Text base2_to_basen(Number num, Natural base = 10);
 	}
 }

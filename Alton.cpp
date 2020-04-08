@@ -1,62 +1,119 @@
-# include <ArgProcessor/ArgumentProcessor.hpp>
+# include <ETC/VersionData.hpp>
+# include <Conversions/StringConvert.hpp>
+
+# include <Tools/TextFill.hpp>
+# include <Tools/FileReader.hpp>
+
+# include <ArgumentProcessor/ArgumentProcessor.hpp>
 # include <Lexer/Lexer.hpp>
-# include <Parser/Parser.hpp>
-# include <Types/BaseTreeContainer.hpp>
+// # include <Parser/Parser.hpp>
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 	// --- Head ---
-	std::string tmp = "ello";
-	Alton::TreeNode<std::string> a(tmp);
+	// -- Argument Processing Test --
+	using Alton::ArgumentProcessor::ArgumentProcessor;
+	using Alton::ArgumentProcessor::ArgumentState;
+	using Alton::ArgumentProcessor::ArgumentID;
 
-	Alton::ArgProcessor::ArgProcessor argp(argv, argc);
-	Alton::ArgProcessor::arg_state_t args = argp.process();
-
-	Alton::Lexer::Lexer lxr(U"");
+	ArgumentProcessor arg_processor({}, 0);
+	ArgumentState arg_state;
 	
-	Alton::Lexer::lxm_vec tokens;
-/*
-	Alton::Parser::Parser parser = tokens;
-	Alton::Types::cont_t<Alton::Parser::ast_t> tree = parser.parse();
-*/
+	// -- Lexing Test --
+	using Alton::Lexer::Lexer;
+	using Alton::Lexer::LexemeList;
+	
+	Lexer lexer(U"");
+	LexemeList lex;
+
+/*	// -- Parsing Test --
+	using Alton::Parser::Parser;
+	using Alton::Parser::ParseTree;
+
+	Parser parser = Parser(lex);
+	ParseTree parse_tree;  */
+
+	// -- Adittional usings --
+	using Alton::Tools::left_fill;
+	using Alton::Tools::read_file;
+
+	using Alton::Conversions::text_to_str;
+	using Alton::Conversions::base2_to_basen;
+
+	using Alton::Clinic::say;
+	using Alton::Clinic::Component;
+	using Alton::Clinic::ansi_term_colour;
+	using Alton::Clinic::print_header;
+	using Alton::Clinic::ANSIColourCode;
+	using Alton::Clinic::ANSIColourStrength;
+
+	using Alton::Types::Text;
 
 	// --- Body ---
 	// -- Header --
-	std::cout
-			<< "Alton, " << Alton::Conversions::text_to_str(ALTON_RELEASE_NAME)									// The Release Name
-			<< " Version 0x" << Alton::Conversions::text_to_str(
-				Alton::Tools::left_fill(Alton::Conversions::to_hex(ALTON_MAJOR_VERSION), U'0', 2))					// The Major version
-			<< '.' << Alton::Conversions::text_to_str(
-				Alton::Tools::left_fill(Alton::Conversions::to_hex(ALFIE_STANDARD_COMPLIANCE), U'0', 2))			// The Standard
-			<< '.' << Alton::Conversions::text_to_str(
-				Alton::Tools::left_fill(Alton::Conversions::to_hex(ALTON_COMMIT_NUMBER), U'0', 2)) << "; "			// The Commit Number
+	print_header();
 
-			<< "Built on "
-			<< ALTON_BUILD_TIME_YEAR << '/'																			// The Build Year
-			<< ALTON_BUILD_TIME_MONTH << '/'																		// The Build Month
-			<< ALTON_BUILD_TIME_DAY << ' '																			// The Build Day
+	// -- Argument Processing test --
+	// - Print text in bold -
+	say(Component::main_run,
+		U"#1 - The Argument Processing Test."
+	);
 
-			<< ALTON_BUILD_TIME_HOUR << ':'																			// The Build Hour
-			<< ALTON_BUILD_TIME_MINUTE << "':"																		// The Build Minute
-			<< ALTON_BUILD_TIME_SECOND << "\"\n";																	// The Build Second
-	std::cout.flush();
+	arg_processor = ArgumentProcessor(argv, argc);
+	arg_state = arg_processor.process();
 
 	// -- Lexing test --
-	std::cout << "\n\033[1m[Tests]\t The Lexing Test.\033[0m\n";
-	
-	lxr = Alton::Lexer::Lexer
+	say(Component::main_run,
+		U"Successful!"
+	);
+
+	say(Component::main_run,
+		U"#2 - The Lexing Test."
+	);
+
+	lexer = Lexer
 	(
-		Alton::Tools::read_file
+		read_file
 		(
-			args[Alton::ArgProcessor::arg_id::input_file]
+			arg_state[ArgumentID::input_file]
 		)
 	);
 
-	tokens = lxr.lex();
+	lex = lexer.lex();
 
-	std::cout << Alton::Conversions::text_to_str(lxr.lxm_vec_to_str(tokens));
+	say(Component::main_run,
+		lexer.lxm_vec_to_text(lex)
+	);
 
+	say(Component::main_run,
+		U"Successful!"
+	);
+/*
 	// -- Parsing test --
-	std::cout << "\n\033[1m\t[Tests]\t The Parsing Test\033[0m\n";
+	say(Component::main_run,
+		U"#3 - The Parsing Test"
+	);
+	
+	parser = Parser(lex);
+	parse_tree = parser.parse();
 
-	exit(0);
+	say(Component::main_run,
+		U"Successful!"
+	);
+	*/
+
+	/**
+	 * NOTE:
+		Using terminate instead of return helps keep track of 
+		memory errors.
+	*/
+	Alton::Clinic::terminate(0);
+	
+	// If the termination fails.
+	Alton::Clinic::raise_internal
+	(
+		Alton::Clinic::Exceptions::BaseAbsolutelyUnexpectedException()
+		, __FILE__, __LINE__
+	);
+	return 1;
 }

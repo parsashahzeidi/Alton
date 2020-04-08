@@ -1,0 +1,18 @@
+var var
+constant constant
+return return
+import import
+operation operation
+function Function
+
+for for
+if if
+while while
+
+try try
+check check
+raise raise
+_ZisisntZeFamousEisterEg__ __decode_me___19333125
+
+segment segment
+goto goto
