@@ -12,5 +12,5 @@ gmon.out
 # Directories
 .vscode/
 .idea/
-Build/
+Build/*/
 tmpbld/
