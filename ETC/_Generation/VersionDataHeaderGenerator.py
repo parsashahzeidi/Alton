@@ -8,7 +8,7 @@ def basic_format(string: str, property_name: str, short_property_name: str):
 	# --- Head
 	lines = string.split('\n')
 	cache = []
-	
+
 	macro_names = []
 	define_checks = []
 	informal_names = []
@@ -16,18 +16,23 @@ def basic_format(string: str, property_name: str, short_property_name: str):
 	defines = ""
 	check_commands = ""
 
+	index = 0
+
 	# --- Body
 	# -- Formatting
 	for i in lines:
 		cache = i.split(' ')
+		if len(cache) <= 1:
+			continue
 
 		informal_names.append(cache[0])
 		macro_names.append(cache[1])
 		define_checks.append(cache[2:])
-		
+
 	# -- Generating preprocessor scripts
 	for i in range(len(macro_names)):
-		defines += macro_names[i] + ",\n\t"
+		defines += "# define " + macro_names[i] + " " + str(index) + "\n"
+		index += 1
 
 		check_commands += "if defined(" + define_checks[i][0] + ")"
 
@@ -36,14 +41,13 @@ def basic_format(string: str, property_name: str, short_property_name: str):
 
 			for j in define_checks[i][1:-1]:
 				check_commands += j + ") || defined("
-			
+
 			check_commands += define_checks[i][-1] + ")"
-		check_commands += "\n\t# define " +	property_name + " " + short_property_name + "_NAME::" +	macro_names[i] + 	"\n"
-		check_commands += "\t# define " +	property_name + '_TEXT U"' +							informal_names[i] + '"\n'
+		check_commands += "\n\t# define " +	property_name + " " + macro_names[i] + 	"\n"
+		check_commands += "\t# define " +	property_name + '_TEXT U"' + informal_names[i] + '"\n\n'
 		check_commands += "# el"
 
 	return defines[:-1], check_commands
-
 
 
 def main():
@@ -61,11 +65,11 @@ def main():
 	commit_number = versions_file_read()[:-1]
 
 	# - Post-phiccs
-	postfix = versions_file_read()
-	
+	postfix = versions_file_read()[:-1]
+
 	# -- Timings
 	today = time.now()
-	
+
 	# - Major timings
 	year = today.year
 	month = today.month
@@ -87,6 +91,11 @@ def main():
 		open("./ETC/_Generation/ArchitectureMacros.txt", 'r').read(),
 		"ALTON_ARCH",
 		"ARCH"
+	)
+	compiler_defines, compiler_pre_processor_commands = basic_format(
+		open("./ETC/_Generation/CompilerMacros.txt").read(),
+		"ALTON_COMPILER",
+		"COMPILER"
 	)
 
 	# - Python's Build
@@ -119,6 +128,8 @@ def main():
 		os_pre_processor_commands,
 		arch_defines,
 		arch_pre_processor_commands,
+		compiler_defines,
+		compiler_pre_processor_commands,
 
 		pyplatform
 	)

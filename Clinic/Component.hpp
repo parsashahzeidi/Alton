@@ -25,6 +25,6 @@ namespace Alton
 		/**
 		 * @brief Grabs a human readable identifier for a component
 		*/
-		Text get_component_string(Component in);
+		Character get_component_char(Component in);
 	} // namespace Clinic
 } // namespace Alton

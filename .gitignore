@@ -4,13 +4,21 @@
 *.asm
 *.o
 *.tmp
+*~
+*.pyc
 
 # Files
 temp.tmp
 gmon.out
+.gdbinit
+CMakeLists.txt.user
+
+BuildLogs/*
+TouchFiles/*
 
 # Directories
 .vscode/
 .idea/
 Build/*/
 tmpbld/
+__pycache__/

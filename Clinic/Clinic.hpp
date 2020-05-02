@@ -70,7 +70,7 @@ namespace Alton
 		 * PARAM: __index Index of the character that's causing the error
 		*/
 		void raise_pos(const Exceptions::BaseExternalException &err, Natural __index);
-		
+
 		/**
 		 * BRIEF: Raises an error like err ( arg )
 		 * PARAM: err Alton::Exceptions::BaseArgumentException type
@@ -82,14 +82,30 @@ namespace Alton
 		 * BRIEF: Raises an internal error.
 		 * PARAM: err Alton::Exceptions::BaseInternalException type
 		*/
-		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, Natural __line);
+		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, Text __function, Natural __line);
+
+		/**
+		 * BRIEF: Enters a scope for the output terminal's initial spaces.
+		*/
+		void add_scope();
+
+		/**
+		 * BRIEF: Exits a scope for the output terminal's initial spaces.
+		*/
+		void exit_scope();
+
+		/**
+		 * BRIEF: Returns the dent count depending on the scope count
+		 * RETURN: " " * 4 * scope_count
+		*/
+		Text get_scope();
 
 		/**
 		 * BRIEF: Log a string as a component from alfie
 		 * PARAM: component The component that's logging.
 		 * PARAM: text The text that speaks up.
 		*/
-		void say(Component component, const Text &text);
+		void say(Component component, const Text &text, ANSIColourStrength strength = ANSIColourStrength::neutral_ansi_colour_strength, ANSIColourCode colour = ANSIColourCode::ansi_colour_light_grey, FILE *&stream = stdout);
 
 		/**
 		 * BRIEF: Prints the standard Alton header
@@ -102,6 +118,6 @@ namespace Alton
 		 * PARAM: colour The colour's name
 		 * PARAM: reset The switch to indicate resetting of the colours.
 		*/
-		void ansi_term_colour(ANSIColourStrength strength = ANSIColourStrength::neutral_ansi_colour_strength, ANSIColourCode colour = ANSIColourCode::ansi_colour_light_grey, FILE *&stream = stdout);
+		void ansi_term_colour(ANSIColourStrength strength = ANSIColourStrength::neutral_ansi_colour_strength, ANSIColourCode colour = ANSIColourCode::ansi_colour_neutral, FILE *&stream = stdout);
 	}
 }

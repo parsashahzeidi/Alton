@@ -9,6 +9,8 @@
 # include <Parser/AlfieRunData.hpp>
 # include <Parser/Symbol.hpp>
 # include <Parser/ParsingNode.hpp>
+# include <Parser/ParseOperation.hpp>
+# include <Parser/ParseState.hpp>
 
 
 namespace Alton
@@ -20,40 +22,50 @@ namespace Alton
 			// --- Head
 		public:
 			AlfieRunData data;
+			Container<ParseState> stack;
+			ParseTree result;
 
 			// --- Body
 		public:
 			/**
-			 * BRIEF: Checks if a Symbol is also a terminal
+			 * BRIEF: Returns a specific parsing operation from the table
+			 * PARAM: state the table row
+			 * PARAM: item the table collumn
+			 *
+			 * RETURN: A Parsing Operation
 			*/
-			bool _symbol_is_term(const Symbol &in);
+			ParseOperation __get_table_item (Natural state, Symbol item);
 
 			/**
-			 * BRIEF: Checks if a specific Symbol is acceptable
-			 * PARAM: in The symbol to use
-			 * PARAM: index Lookahead amount
-			*/
-			bool _accept(Symbol in, Natural index);
+			 * BRIEF: The nterm_start in `start -> expr`
+			 * PARAM: rule the rule
+
+			 * RETURN: A symbol
+			 */
+			Symbol ____rule_symbol (Natural rule);
 
 			/**
-			 * BRIEF: Forces acceptance of a symbol.
-			 * PARAM: in The symbol to use
-			 * PARAM: tree The tree to push the symbol towards
-			 * PARAM: ex The exception to raise if the function can't force the symbol
-			
-			 * NOTE: Lookahead is always set to 0 when using _force_accept.
+			 * BRIEF: Returns the length of a rule.
+			 * PARAM: rule The rue number.
+
+			 * RETURN: A Natural number.
+			 */
+			Natural ____get_rule_size (Natural rule);
+
+			/**
+			 * BRIEF: Checks if a Symbol is a terminal
 			*/
-			void _force_accept(Symbol in, ParseTree &tree, Clinic::Exceptions::BaseSyntaxException ex = Clinic::Exceptions::UnrecognisedSyntaxException());
+			bool _symbol_is_term (const Symbol &in);
 
 			// --- CTOR ~ DTOR
 		public:
-			ParseHelper() = delete;
+			ParseHelper () = delete;
 
 			// CTORs
-			ParseHelper(LinearParse in);
+			ParseHelper (const LinearParse &in);
 
 			// DTOR
-			~ParseHelper();
+			~ParseHelper ();
 		};
 	}
 }

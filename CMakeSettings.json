@@ -1,0 +1,13 @@
+{
+	"configurations":
+	[
+		{
+			"name": "Debug",
+			"generator": "Ninja",
+			"configurationType" : "Debug",
+			"buildRoot":  "${projectDir}/Build/Debug/",
+			"cmakeCommandArgs":  "",
+			"buildCommandArgs": ""
+		}
+	]
+}

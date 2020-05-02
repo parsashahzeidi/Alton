@@ -1,4 +1,5 @@
 # include <ETC/VersionData.hpp>
+# include <ETC/AltonFunctionDetect.hpp>
 # include <Conversions/StringConvert.hpp>
 
 # include <Tools/TextFill.hpp>
@@ -6,7 +7,7 @@
 
 # include <ArgumentProcessor/ArgumentProcessor.hpp>
 # include <Lexer/Lexer.hpp>
-// # include <Parser/Parser.hpp>
+# include <Parser/Parser.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -18,66 +19,81 @@ int main(int argc, char *argv[])
 
 	ArgumentProcessor arg_processor({}, 0);
 	ArgumentState arg_state;
-	
+
+	// -- File reading Test --
+	using Alton::Types::Text;
+	using Alton::Tools::read_file;
+
+	Text code;
+
 	// -- Lexing Test --
 	using Alton::Lexer::Lexer;
 	using Alton::Lexer::LexemeList;
-	
+
 	Lexer lexer(U"");
 	LexemeList lex;
 
-/*	// -- Parsing Test --
+	// -- Parsing Test --
 	using Alton::Parser::Parser;
 	using Alton::Parser::ParseTree;
 
-	Parser parser = Parser(lex);
-	ParseTree parse_tree;  */
+	Parser parser;
+	ParseTree parse_tree;
 
 	// -- Adittional usings --
 	using Alton::Tools::left_fill;
-	using Alton::Tools::read_file;
 
 	using Alton::Conversions::text_to_str;
 	using Alton::Conversions::base2_to_basen;
 
 	using Alton::Clinic::say;
 	using Alton::Clinic::Component;
-	using Alton::Clinic::ansi_term_colour;
+	using Alton::Clinic::add_scope;
+	using Alton::Clinic::exit_scope;
 	using Alton::Clinic::print_header;
 	using Alton::Clinic::ANSIColourCode;
 	using Alton::Clinic::ANSIColourStrength;
-
-	using Alton::Types::Text;
 
 	// --- Body ---
 	// -- Header --
 	print_header();
 
 	// -- Argument Processing test --
-	// - Print text in bold -
 	say(Component::main_run,
-		U"#1 - The Argument Processing Test."
-	);
+		U"The Argument Processing Test."
+	); add_scope();
 
 	arg_processor = ArgumentProcessor(argv, argc);
 	arg_state = arg_processor.process();
 
+	say(Component::main_run,
+		U"Successful!",
+		ANSIColourStrength::neutral_ansi_colour_strength,
+		ANSIColourCode::ansi_colour_green
+	); exit_scope();
+
+	// -- File Reading test --
+	say(Component::main_run,
+		U"The File Reading test"
+	); add_scope();
+
+	code = read_file
+	(
+		arg_state[ArgumentID::input_file]
+	);
+
+	say(Component::main_run,
+		U"Successful!",
+		ANSIColourStrength::neutral_ansi_colour_strength,
+		ANSIColourCode::ansi_colour_green
+	); exit_scope();
+
 	// -- Lexing test --
 	say(Component::main_run,
-		U"Successful!"
-	);
+		U"The Lexing Test."
+	); add_scope();
 
-	say(Component::main_run,
-		U"#2 - The Lexing Test."
-	);
-
-	lexer = Lexer
-	(
-		read_file
-		(
-			arg_state[ArgumentID::input_file]
-		)
-	);
+	lexer = Lexer(code);
 
 	lex = lexer.lex();
 
@@ -86,34 +102,38 @@ int main(int argc, char *argv[])
 	);
 
 	say(Component::main_run,
-		U"Successful!"
-	);
-/*
+		U"Successful!",
+		ANSIColourStrength::neutral_ansi_colour_strength,
+		ANSIColourCode::ansi_colour_green
+	); exit_scope();
+
+
 	// -- Parsing test --
 	say(Component::main_run,
-		U"#3 - The Parsing Test"
-	);
-	
+		U"The Parsing Test"
+	); add_scope ();
+
 	parser = Parser(lex);
 	parse_tree = parser.parse();
 
 	say(Component::main_run,
-		U"Successful!"
+		U"Successful!",
+		ANSIColourStrength::neutral_ansi_colour_strength,
+		ANSIColourCode::ansi_colour_green
 	);
-	*/
 
 	/**
 	 * NOTE:
-		Using terminate instead of return helps keep track of 
+		Using terminate instead of return helps keep track of
 		memory errors.
 	*/
 	Alton::Clinic::terminate(0);
-	
+
 	// If the termination fails.
 	Alton::Clinic::raise_internal
 	(
-		Alton::Clinic::Exceptions::BaseAbsolutelyUnexpectedException()
-		, __FILE__, __LINE__
+		Alton::Clinic::Exceptions::BaseAbsolutelyUnexpectedException(),
+		__FILE__, ALTON_FUNCTION_DETECT, __LINE__
 	);
 	return 1;
 }

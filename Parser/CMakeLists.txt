@@ -4,6 +4,9 @@ set							(PARSER_LIB_SOURCES
 	${dir}/Parser/Parser.cpp
 	${dir}/Parser/ParseHelper.cpp
 	${dir}/Parser/Symbol.cpp
+	${dir}/Parser/ParseState.cpp
+	${dir}/Parser/ParseTable.cpp
+	${dir}/Parser/ParseOperation.cpp
 )
 
 # -- Dependencies --

@@ -1,5 +1,4 @@
-
-
+# include <ETC/AltonFunctionDetect.hpp>
 # include <Lexer/LexemeHelper.hpp>
 
 
@@ -14,7 +13,7 @@ namespace Alton
 				Clinic::raise_internal
 				(
 					Clinic::Exceptions::PlaceHolderTokenException(),
-					__FILE__, __LINE__
+					__FILE__, ALTON_FUNCTION_DETECT, __LINE__
 				);
 
 			tokenized.push_back(in);
@@ -37,6 +36,15 @@ namespace Alton
 			return ___char_is_a_number(in) || ___char_is_in_english(in);
 		}
 
+		bool LexemeHelper::___char_is_considered_whitespace(Character in)
+		{
+			return in == U'\n' ||
+				   in == U'\r' ||
+				   in == U'\t' ||
+				   in == U'\v' ||
+				   in == U' ';
+		}
+
 		Character LexemeHelper::_find_potential_scope_closing(Character in)
 		{
 			switch (in)
@@ -47,12 +55,12 @@ namespace Alton
 				return U']';
 			case U'(':
 				return U')';
-			
+
 			default:
 				return U'\0';
 			}
 		}
-		
+
 		Character LexemeHelper::_find_potential_scope_opening(Character in)
 		{
 			switch (in)
@@ -63,7 +71,7 @@ namespace Alton
 				return U'[';
 			case U')':
 				return U'(';
-			
+
 			default:
 				return U'\0';
 			}
@@ -82,8 +90,6 @@ namespace Alton
 		// --- CTOR ~ DTOR
 		LexemeHelper::LexemeHelper(Text code):
 				BaseHelper(code)
-		{
-			previous_dents.push_back(0);
-		}
+		{ }
 	}
 }

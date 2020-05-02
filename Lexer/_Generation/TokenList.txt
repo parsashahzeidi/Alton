@@ -1,5 +1,3 @@
-statement_end ;
-
 paranthesis_miniscope_opening (
 paranthesis_miniscope_closing )
 round_bracket_miniscope_opening {
@@ -7,13 +5,11 @@ round_bracket_miniscope_closing }
 square_bracket_miniscope_opening [
 square_bracket_miniscope_closing ]
 
-indent
-outdent
-
 constant_number
+literalized_number
 constant_float
 constant_text
 
 identifier
 
-do_block :
+statement_end ;

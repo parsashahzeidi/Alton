@@ -5,37 +5,37 @@ namespace Alton
 {
 	namespace Clinic
 	{
-		Text get_component_string(Component in)
+		Character get_component_char(Component in)
 		{
 			switch (in)
 			{
 			case Component::main_run:
-				return U"Alton.cpp";
+				return U'M';
 
 			case Component::arg_lib:
-				return U"Argument Processor";
+				return U'A';
 
 			case Component::lexer_lib:
-				return U"Lexer";
+				return U'L';
 
 			case Component::parser_lib:
-				return U"Parser";
+				return U'P';
 
 			case Component::clinic_lib:
-				return U"Clinic";
+				return U'C';
 
 			case Component::convert_lib:
-				return U"Conversion Toolset";
+				return U'T';
 
 			case Component::tool_lib:
-				return U"General Toolset";
+				return U'T';
 
 			case Component::external:
-				return U"External / Improper location";
+				return U'?';
 
 			case Component::count:
 			default:
-				return U"----ERROR----";
+				return U'?';
 			}
 		}
 	}

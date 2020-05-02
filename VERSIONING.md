@@ -8,4 +8,4 @@ Alton's versioning system consists of 3 ~ 4 parts:
 * The Patch version; in 2-digit capitalized hex. The *ALTON_COMMIT_NUMBER* variable is the code equivelant for this number.
 * Optionally, the version ending; usually *CV* + number, or *SR*, standing for *Candidate Version* and *Stable Release*, respectively.
 
-The versioning structure is designed to be compatible with [SEMVER](https://semver.org/).
+The versioning structure is designed to be closely compatible with [SEMVER](https://semver.org/).

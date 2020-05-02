@@ -91,10 +91,8 @@
 	# undef ALTON_OS_TEXT
 # endif /*ALTON_OS_TEXT*/
 
-enum OS_NAME
-{  // Twelveth
-	%s
-};
+// Twelveth
+%s
 
 // Thirteenth
 # %sse
@@ -111,10 +109,8 @@ enum OS_NAME
 	# undef ALTON_ARCH_TEXT
 # endif /*ALTON_ARCH_TEXT*/
 
-enum ARCH_NAME
-{  // Fourteenth
-	%s
-};
+// Fourteenth
+%s
 
 // Fifteenth
 # %sse
@@ -122,8 +118,17 @@ enum ARCH_NAME
 			Please modify /Path/To/Alton/ETC/_Generation/ExampleVersionData.hpp.
 # endif
 
+// Sixteenth
+%s
+
+// Seventeenth
+# %sse
+	# error This compiler is not recognised by Alton.\
+			Please modify /Path/To/Alton/ETC/_Generation/ExampleVersionData.hpp.
+# endif
+
 // -- The Python Executable's Platform Info --
 # ifdef ALTON_PYTHON_VERSION_INFO
 	# undef ALTON_PYTHON_VERSION_INFO
 # endif /*ALTON_PYTHON_VERSION_INFO*/
-# define ALTON_PYTHON_VERSION_INFO U"%s"  // Sixteenth
+# define ALTON_PYTHON_VERSION_INFO U"%s"  // Eighteenth

@@ -19,11 +19,11 @@ One may ask about the reasoning behind not putting all of the components in one 
 
 ## Versioning
 
-Alton supports a [SEMVER](https://semver.org/)-compatible versioning design. - See the [VERSIONING.md](VERSIONING.md) file for the definition.
+Alton supports a [SEMVER](https://semver.org/)-compatible versioning protocol. - See the [VERSIONING.md](VERSIONING.md) file for the definition.
 
 ## License
 
-This project is licensed under the **Boost Software License ( BSL )**. - See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **Boost Software License ( BSL )**. - See the [LICENSE](LICENSE) or the [COPYING](COPYING) file for more details.
 
 ## Developed with
 
@@ -36,13 +36,13 @@ A bunch of cool and *free* software on the internet! - See the [CREDIT.md](CREDI
 ![Test Status](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FTestStatus.json)
 ![Hash](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FCommitHash.json)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/parsashahzeidi/alton/total?color=67add8&style=for-the-badge)
+![GitHub All Releases](https://img.shields.io/github/downloads/parsashahzeidi/Alton/total?color=67add8&style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub license](https://img.shields.io/github/license/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/parsashahzeidi/alton?color=67add8&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
 ![GitHub followers](https://img.shields.io/github/followers/parsashahzeidi?color=67add8&label=&logo=github&logoColor=f2f1f0&style=for-the-badge)

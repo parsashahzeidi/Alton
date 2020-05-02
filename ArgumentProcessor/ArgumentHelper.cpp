@@ -37,7 +37,7 @@ namespace Alton
 				// the application crashes; so...
 				if (curr(0).size() < (min_size + 1))
 					continue;
-				
+
 				// We can now perform the substring-ing without worries.
 				arg_head = curr(0).substr(1, min_size);
 
@@ -48,9 +48,11 @@ namespace Alton
 					return;
 				}
 			}
-			
+
 			// No argument found
-			Clinic::raise_arg(Clinic::Exceptions::InvalidArgumentException(), curr(0));
+			Clinic::raise_arg(
+				Clinic::Exceptions::InvalidArgumentException(), curr(0)
+			);
 		}
 
 		// --- Ctor ~ Dtor
@@ -58,8 +60,8 @@ namespace Alton
 		// -- Customized CTOR ---
 		ArgumentHelper::ArgumentHelper(Container<Text> in):
 				BaseHelper(in)
-		{ 
-			_setup_arg_group(); 
+		{
+			_setup_arg_group();
 		}
 
 		// --- DTOR ---

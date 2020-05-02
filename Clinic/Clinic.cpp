@@ -1,8 +1,8 @@
 # include <Clinic/Clinic.hpp>
 # include <Tools/TextFill.hpp>
 # include <ETC/VersionData.hpp>
+# include <ETC/AltonFunctionDetect.hpp>
 # include <Tools/TextFill.hpp>
-
 
 
 namespace Alton
@@ -10,6 +10,7 @@ namespace Alton
 	namespace Clinic
 	{
 		Text *code = nullptr;
+		Natural scope_count = 0;
 
 		void _delete_setup()
 		{
@@ -127,13 +128,13 @@ namespace Alton
 			// -- Error: Hello at --
 			message += U" at ";
 
-			// -- Error: Hello at 8:4 --
+			// -- Error: Hello at 8:4. --
 			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U":";
 			message += Conversions::str_to_text(std::to_string(index.real_chtr));
 			message += U".\n";
 
-			// -- 8		|			Hello! ---
+			// -- 8		|			Hello! --
 			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U" |\t";
 			message += index.curr_line;
@@ -142,7 +143,7 @@ namespace Alton
 			// --		------------ --
 			for (Natural i = 0; i < index.chtr; i++)
 				message += U'-';
-			
+
 			// --		------------^ --
 			message += U"^\n";
 
@@ -176,30 +177,87 @@ namespace Alton
 			);
 		}
 
-		void raise_internal(const Exceptions::BaseInternalException &err, std::string __file, Natural __line)
+		void raise_internal
+		(
+			const Exceptions::BaseInternalException &err,
+			std::string __file, Text __func, Natural __line
+		)
 		{
 			_raise_error(
 				err._message
-				+ U" at "
+				+ U" at \""
 				+ Conversions::str_to_text(__file)
-				+ U":"
+				+ U"\" at \""
+				+ __func
+				+ U"\" at line "
 				+ Conversions::str_to_text(std::to_string(__line))
-				+ U"\n",
+				+ U".\n",
 				0xDead
 			);
 		}
 
-		void say(Component component, const Text &text)
+		void add_scope()
 		{
+			scope_count++;
+		}
+
+		void exit_scope()
+		{
+			// Scope count can't go under 0.
+			if (scope_count)
+				scope_count--;
+
+			else
+				raise_internal
+				(
+					Exceptions::InternalMathDomainException(),
+					__FILE__, ALTON_FUNCTION_DETECT, __LINE__
+				);
+		}
+
+		Text get_scope()
+		{
+			// --- Head ---
+			Text output;
+
+			// --- Body ---
+			for (Natural _ = 0; _ < scope_count; _++)
+				output += U" |  ";
+
+			return output;
+		}
+
+		void say(Component component, const Text &text, ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream)
+		{
+			ansi_term_colour
+			(
+				ANSIColourStrength::high_ansi_colour_strength,
+				ANSIColourCode::ansi_colour_magenta,
+				stream
+			);
+
 			_log
 			(
-				text_init
-				U"["
-				+ Tools::left_fill(get_component_string(component), U' ', 20)
-				+ U"]  "
-				+ text
-				+ U"\n"
-				, stdout
+				text_init U" " + get_component_char(component) + U" ",
+				stream
+			);
+
+			ansi_term_colour
+			(
+				ANSIColourStrength::low_ansi_colour_strength,
+				ANSIColourCode::ansi_colour_blue
+			);
+
+			_log
+			(
+				get_scope (),
+				stream
+			);
+
+			ansi_term_colour(strength, colour, stream);
+			_log(
+				text + U"\n"
+				, stream
 			);
 		}
 
@@ -210,9 +268,9 @@ namespace Alton
 			_log
 			(
 				text_init
-				U"Alton, " + ALTON_RELEASE_NAME + U", Version 0x"											// The Release Name
+				U"Alton, " + ALTON_RELEASE_NAME + U", 0x"															// The Release Name
 				+		 Tools::left_fill(Conversions::base2_to_basen(ALFIE_MAJOR_VERSION, 16),		  U'0', 2)		// The Major version
-				+ U"." + Tools::left_fill(Conversions::base2_to_basen(ALTON_REVISION, 16), U'0', 2)		// The Standard
+				+ U"." + Tools::left_fill(Conversions::base2_to_basen(ALTON_REVISION, 16), U'0', 2)					// The Standard
 				+ U"." + Tools::left_fill(Conversions::base2_to_basen(ALTON_COMMIT_NUMBER, 16),		  U'0', 2)		// The Commit Number
 				+ ALTON_VERSION_POSTFIX																				// The version postphiccs
 
@@ -220,18 +278,18 @@ namespace Alton
 			);
 
 			// --- The build time data ---
-			ansi_term_colour(ANSIColourStrength::low_ansi_colour_strength);
+			ansi_term_colour(ANSIColourStrength::low_ansi_colour_strength, ANSIColourCode::ansi_colour_white);
 			_log
 			(
 				text_init
-				U". Built at " 
+				U". [ "
 				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_YEAR,  10) + U"/"									// This Year
 				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_MONTH, 10) + U"/"									// This Month
 				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_DAY,	  10) + U" "									// Today
 
 				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_HOUR,   10) + U":"									// This Hour
 				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_MINUTE, 10) + U":"									// This Minute
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_SECOND, 10)											// This Second
+				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_SECOND, 10) + U" "									// This Second
 
 				, stdout
 			);
@@ -240,10 +298,10 @@ namespace Alton
 			_log
 			(
 				text_init
-				U" [" + ALTON_OS_TEXT + U" " + ALTON_ARCH_TEXT														// This Compiling Platform
+				ALTON_OS_TEXT + U" " + ALTON_ARCH_TEXT + U" " + ALTON_COMPILER_TEXT														// This Compiling Platform
 
-				+ U"].\n Made with Python "
-				+ ALTON_PYTHON_VERSION_INFO + U"\n"															// The version of Python used
+				+ U" ]\nMade with Python "
+				+ ALTON_PYTHON_VERSION_INFO + U"\n"																	// The version of Python used
 
 				, stdout
 			);
@@ -255,7 +313,7 @@ namespace Alton
 			// --- Body ---
 			// -- Printing the ANSI escape code initial --
 			_log(U"\033[0", stream);
-			
+
 			// -- Printing the colour strength --
 			switch (strength)
 			{
@@ -273,9 +331,17 @@ namespace Alton
 			}
 
 			// -- Printing the colour --
-			/** NOTE: The ANSIColourCode enumeration uses ANSI colour codes as their id. */
-			_log(U";", stream);
-			_log(colour, stream);
+			/**
+			 * NOTE: The ANSIColourCode enumerations use ANSI colour codes as
+				their id, the exception is the
+				ANSIColourCode::ansi_colour_neutral item.
+			 */
+			if (colour != ANSIColourCode::ansi_colour_neutral)
+			{
+				_log(U";", stream);
+				_log(colour, stream);
+			}
+
 			_log(U"m", stream);
 		}
 	}

@@ -20,40 +20,38 @@ def main():
 	header_template = header_template_file.read()
 
 
-	format0, format1, format2, format3, format4, format5, format6, format7 = "", "", "", "", "", "", "", ""
+	format0, format1, format2, format3, format4, format5, format6 = "", "", "", "", "", "", ""
 	cache = ""
 
 	for i in symbols:
 		format0 += "\n\t\t\t" + i.token + ","
-		format7 += "\n\t\t\tcase Token::" + i.token + ": return U\"" + i.token + "\";"
+		format6 += "\n\t\t\tcase Token::" + i.token + ": return U\"" + i.token + "\";"
 
 		if i.string == "":
 			continue
-
-		format1 += "\n\t\t\tcase Token::" + i.token + ": return U\"" + i.string + "\";"
 
 		cache = "\n\t\t\tif (in == U\"" + i.string + "\") return Token::" + i.token + "; else"
 
 		if len(i.string) == 3:
-			format2 += cache
+			format1 += cache
 		elif len(i.string) == 2:
-			format3 += cache
+			format2 += cache
 		elif len(i.string) == 1:
-			format4 += cache
+			format3 += cache
 		else:
-			format5 += cache
+			format4 += cache
 
 	for i in keywords:
 		format0 += "\n\t\t\t" + i.token + ","
-		format7 += "\n\t\t\tcase Token::" + i.token + ": return U\"" + i.token + "\";"
-		
+		format6 += "\n\t\t\tcase Token::" + i.token + ": return U\"" + i.token + "\";"
+
 		if i.string == "":
 			continue
 
-		format6 += "\n\t\t\tif (in == U\"" + i.string + "\") return Token::" + i.token + "; else"
+		format5 += "\n\t\t\tif (in == U\"" + i.string + "\") return Token::" + i.token + "; else"
 
 	header_template %= format0
-	source_template %= format1, format2, format3, format4, format5, format6, format7
+	source_template %= format1, format2, format3, format4, format5, format6
 
 	source.write(header_template)
 	source_template_file.close()

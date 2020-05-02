@@ -1,6 +1,5 @@
-
-
 # include <Parser/ParseHelper.hpp>
+
 
 namespace Alton
 {
@@ -11,31 +10,15 @@ namespace Alton
 			return in < token_to_symbol(Lexer::Token::count);
 		}
 
-		bool ParseHelper::_accept(Symbol in, Natural index)
-		{
-			return curr(index).symbol_type == in;
-		}
-
-		void ParseHelper::_force_accept(Symbol in, ParseTree &tree, Clinic::Exceptions::BaseSyntaxException ex)
-		{
-			if (_accept(in, 0))
-			{
-				tree.list.push_back(curr(0));
-				virtually_advance();
-			}
-			
-			else
-				Clinic::raise_pos
-				(
-					ex, curr(0).position_in_code
-				);
-		}
-
 		// --- CTOR ~ DTOR
 		// CTORs
-		ParseHelper::ParseHelper(LinearParse in):
-			BaseHelper(in)
-		{ }
+		ParseHelper::ParseHelper(const LinearParse &in):
+				BaseHelper(in)
+		{
+			result.item.symbol_type = Symbol::nterm_start;
+			result.item.position_in_code = 0;
+			stack.push_back (ParseState (0, 0));
+		}
 
 		// DTOR
 		ParseHelper::~ParseHelper()

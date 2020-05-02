@@ -19,12 +19,16 @@ namespace Alton
 			Text enumeration = U"";
 
 			// --- CTORs
-			ParsingNode(Lexer::Lexeme in)
-			{
-				enumeration = in.enumeration;
-				position_in_code = in.position_in_code;
-				symbol_type = token_to_symbol(in.token_type);
-			}
+			ParsingNode(Lexer::Lexeme in):
+					enumeration (in.enumeration),
+					position_in_code (in.position_in_code),
+					symbol_type (token_to_symbol (in.token_type))
+			{ }
+
+			ParsingNode (Symbol in, Natural _position_in_code):
+				symbol_type (in),
+				position_in_code (_position_in_code)
+			{ }
 
 			ParsingNode()
 			{ }

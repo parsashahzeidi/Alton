@@ -6,9 +6,10 @@ def get_tokens(filepath: str, prependix: str):
 	Grabs the tokens at /Path/To/Alton/Tools/Instructions/LexedTree/TokenLists.txt
 	:return: a list of strings and a list of strings
 	"""
-	file = open(filepath).read()
+	file = open(filepath)
+	text = file.read(); file.close()
 
-	lines = [i.split(" ") for i in file.split("\n")]
+	lines = [i.split(" ") for i in text.split("\n")]
 
 	tokens = []
 	strings = []
@@ -31,10 +32,9 @@ def get_tokens(filepath: str, prependix: str):
 
 
 def get_all_tokens():
-	return get_tokens("./Lexer/_Generation/KeywordList.txt", "keyword_") +\
+	return get_tokens("./Lexer/_Generation/TokenList.txt", "") +\
 		get_tokens("./Lexer/_Generation/OperatorList.txt", "oper_") +\
-		get_tokens("./Lexer/_Generation/TokenList.txt", "")
-
+		get_tokens("./Lexer/_Generation/KeywordList.txt", "keyword_")
 
 class Token:
 	def __init__(self, token: str, string: str):

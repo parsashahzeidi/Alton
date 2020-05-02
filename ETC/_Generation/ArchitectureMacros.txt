@@ -6,9 +6,9 @@ Blackfin ARCH_BFIN __bfin __BFIN__
 Convex ARCH_CONVEX __convex__
 Epiphany ARCH_EPIPHANY __epiphany__
 HP/PA ARCH_HPPA __hppa__ __HPPA__ __hppa
-Intelx86 ARCH_i386 i386 __i386 __i386__ __i486__ __i586__ __i686__ __IA32__ _M_I86 _M_IX86 _M_IX86 _X86_ __THW_INTEL__ __I86__ __INTEL__ __386
+Intelx86 ARCH_I386 i386 __i386 __i386__ __i486__ __i586__ __i686__ __IA32__ _M_I86 _M_IX86 _M_IX86 _X86_ __THW_INTEL__ __I86__ __INTEL__ __386
 IntelItanium ARCH_IA64 __ia64__ _IA64 __IA64__ __ia64 _M_IA64 __itanium__
-Motorola68k ARCH_M68k __m68k__ M68000 __MC68K__
+Motorola68k ARCH_M68K __m68k__ M68000 __MC68K__
 MIPS ARCH_MIPS __mips__ mips _MIPS_ISA _R3000 _R4000 _R5900 __mips __MIPS__
 IBM-PowerPC ARCH_PPC __powerpc __powerpc__ __powerpc64__ __POWERPC__ __ppc__ __ppc64__ __PPC__ __PPC64__ _ARCH_PPC _ARCH_PPC64 _M_PPC __PPCGECKO__ __PPCBROADWAY__ _XENON __ppc
 Pyramid-9810 ARCH_PYR pyr

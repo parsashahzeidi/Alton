@@ -6,10 +6,17 @@ These instructions will compile a working version of Alton on your system with [
 
 You need to have a **C++** compiler installed on your system; I'd say that **Clang** on GNU/Linux and MacOS, and **MinGW-w32** on Windows are the most well suited tools on the noted platforms for compiling Alton. Keep in mind that Alton is *not* limited to these compilers, and can be compiled with *any compiler that supports proper C++17 / C++2a* and *any operating system that has a libc implementation and is POSIX complaint*. You also need copies of [GNU Make][GNUMakeLink], [CMake][CMakeLink], and a working [Python 3][PythonLink] distro.
 
-### Linux
+### GNU/Linux
 
-Just do this in a *Debian* terminal:
+#### Packages
+* **Clang**, **G++** or another C++ compiler
+* [**Make**][GNUMakeLink], or optionally [**Ninja**][NinjaLink]
+* [**CMake**][CMakeLink]
+* [**Python 3**][PythonLink]
+* [**Git**], or just download a zip file
 
+#### Distro specific install
+Just do this in an *Ubuntu* bash copy:
 ```bash
 sudo apt-get install git make clang cmake python3
 ```
@@ -18,13 +25,13 @@ TODO: add instructions for other distros.
 
 ### Windows
 
-If you don't have MinGW or Git, grab yourself one.
-[This one][NuwenMinGW].
+If you don't have MinGW or Git, grab yourself some.
+[This distro][NuwenMinGW] is Alton's go-to distro, containing MinGW and Git in a bundle.
 You can also [get CMake from here][CMakeLink]. **Make sure that CMake, Git, Make, and G++, are accessible within your _%path%_ environment variable.**
 
 ## Compiling
 
-### GNU/linux
+### GNU/Linux
 
 #### Step 1.1
 
@@ -55,9 +62,9 @@ Windows has a considerably greater tutorial length, so hold on to your pants and
 
 #### Step 2.2
 
-Open up CMake GUI, Locate the folder, then hit *Configure*, *Generate*, and *Open Project* in order.
+Open up CMake GUI, Locate the folder, then hit *Configure*, *Generate*, and *Open Project* in their respective order.
 
-### Step 2.3
+#### Step 2.3
 
 Open a CMD window in the folder that just opened, then just write `make -j5` in the terminal.
 

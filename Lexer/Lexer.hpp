@@ -21,51 +21,46 @@ namespace Alton
 			// --- Body
 		private:
 			/**
-			 * BRIEF: Returns a Token for the current position
+			 * BRIEF: Advances a Token for the current position
+
+			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
-			Token ___advance_constant_token();
+			bool ___advance_constant_token();
 
 			/**
 			 * BRIEF: Advances an integer thru
-			
+
 			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
 			bool ___advance_number();
 
 			/**
 			 * BRIEF: Advances an identifier thru
-			
+
 			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
 			bool ___advance_identifier();
 
 			/**
 			 * BRIEF: Advances a text thru
-			
+
 			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
 			bool ___advance_text();
 
 			/**
 			 * BRIEF: Advances a text thru
-			
+
 			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
 			bool ___advance_whitespace();
 
 			/**
 			 * BRIEF: Advances thru a comment
-			
+
 			 * RETURN: Returns a check for weather the operation was successful or not
 			*/
 			bool ___advance_comment();
-
-			/**
-			 * BRIEF: Advances thru a newline and the indents that continue afterwards
-			
-			 * RETURN: Returns a check for weather the operation was successful or not
-			*/
-			bool ___advance_newline();
 
 			/**
 			 * BRIEF: Advances a lexeme thru

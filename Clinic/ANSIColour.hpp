@@ -14,6 +14,7 @@ namespace Alton
 		/** BRIEF: some pre-picked, but standard ansi colours. */
 		enum ANSIColourCode
 		{
+			ansi_colour_neutral,
 			ansi_colour_black = 30,
 			ansi_colour_red = 31,
 			ansi_colour_green = 32,

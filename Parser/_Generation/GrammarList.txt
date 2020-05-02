@@ -1,101 +1,70 @@
-#	Alfie's Standard Grammar.
-#		You can get updates for this file from
-#		Alfie's GitHub repos. Therefore, this file is not
-#		specific to any launcher, including Alton.
-#		A launcher developer is allowed to make modifications to
-#		this file to accomply with their launcher's parsing
-#		capabilities, but the developer(s) shall remove or
-#		replace this header or state their changes in the form
-#		of comments if done so. Explicit exceptions to this rule
-#		for specific non-terminals are made in the form of
-#		regular comments below.
-#	Adapted from Alfie0x01 - Segment0x05.
+# Alfie's Standard Grammar.
+#	You can get updates for this file from
+#	Alfie's GitHub repos. Therefore, this file is not
+#	specific to any launcher, including Alton.
+#	A launcher developer is allowed to make modifications to
+#	this file to amply with their launcher's parsing
+#	capabilities, but the developer(s) shall remove or
+#	replace this header or state their changes in the form
+#	of comments if done so. Explicit exceptions to this rule
+#	for specific non-terminals may be made in the form of
+#	regular comments below.
+#
+#	Since Alton is supposed to work with a Canonical LR parser,
+#	This grammar may not be supported by, for example an LL parser.
+#	To address this, Alfie will try to keep this grammar fully
+#	LL-compatible. if any rule is not LL-compatible, a public
+#	standard defect shall be declared.
+# Adapted from Alfie0x01 - Segment0x05.
 
-start = ( function | import_statement statement_end ) *
+start -> grammar_list
 
-do_block_code = do_block statement_end indent statement + outdent
+grammar_list -> grammar grammar_list
+grammar_list -> grammar
 
-function = ( keyword_function | keyword_operation ) identifier func_arguments do_block_code
+grammar -> identifier oper_arrow product statement_end
+grammar -> identifier oper_arrow statement_end
 
-func_argument = identifier [ oper_assign substatement ]
-func_arguments = paranthesis_miniscope_opening [ func_argument ( oper_union func_argument ) * ] paranthesis_miniscope_closing
+product -> identifier product
+product -> identifier
 
-call_arguments = paranthesis_miniscope_opening [ union ] paranthesis_miniscope_closing
+# Example grammar
+#	start -> expr start
+#	start -> expr
+#
+#	expr -> B
+#	expr -> expr A
 
-do_block_keyword = keyword_for | keyword_if | keyword_while
+# Example lex
+#	B A A B
 
-statement = ( do_block | variable_definition | substatement | import_statement ) statement_end +
-substatement = operation
-mini_statement = call_statement | constant_number | constant_float | constant_text | array | member
-do_block = do_block_keyword call_arguments do_block_code
-variable_definition = keyword_var identifier oper_assign substatement
-import_statement = keyword_import member
+# Example of Bottom-Up Shift-reduce Left to right rightmost-deriative parsing
+#		Stack		Lookahead		Future			Action
+#	B			| A				| AB		|	expr -> B
+#	expr		| A				| AB		|	Shift
+#	expr A		| A				| B			|	expr -> expr A
+#	expr		| A				| B			|	Shift
+#	expr A		| B				| ...		|	expr -> expr A
+#	expr		| B				| ...		|	Shift
+#	expr B		| ...			| ...		|	expr -> B
+#	expr expr	| ...			| ...		|	start -> expr
+#	expr start	| ...			| ...		|	start -> expr start
+#	start		| ...			| ...		|	Accept
 
-#	Members have one main difference compared to unions, and
-#	that is the fact that members are parsed recursively,
-#	whilst unions are parsed linearly. This will help easier
-#	development of launchers.
-member_appendix = square_bracket_miniscope_opening substatement square_bracket_miniscope_closing
-member = identifier [ member_appendix ] [ oper_member_access member ]
-
-union = substatement ( oper_union substatement ) *
-
-array = member square_bracket_miniscope_opening [ union ] square_bracket_miniscope_closing
-
-call_statement = member call_arguments
-
-segment = keyword_segment identifier
-segment_call = keyword_goto identifier
-
-#	The preceedence table for alton consists of 3 main parts:
-#	Comparing, Arithmetic, Binary arithmetic.
-operation = comparing_operation
-
-#	From here follows the comparing part:
-#	ID		Operator(s)
-#	0		|| &&
-#	1		== !=
-#	2		> >= < <=
-#	3		!
-
-comparing_operation = or_and_oper
-
-or_and_oper = equal_not_equal_oper ( ( oper_or | oper_and ) equal_not_equal_oper ) *
-
-equal_not_equal_oper = lesser_greater_oper ( ( oper_equal | oper_not_equal ) lesser_greater_oper ) *
-
-lesser_greater_oper = not_oper ( ( oper_more_than | oper_more_than_equal | oper_less_than | oper_less_than_equal ) )
-
-not_oper = [oper_not] arithmetic_operation
-
-#	From here follows the Arithmetic part.
-#	ID		Operator(s)
-#	4		+ -
-#	5		* / //
-#	6		%
-#	7		**
-#	8		++ --
-
-arithmetic_operation = summarizing_oper
-
-summarizing_oper = multiplying_oper ( ( oper_plus | oper_minus ) multiplying_oper ) *
-
-multiplying_oper = modulating_oper ( ( oper_star | oper_slash | oper_slash_slash ) modulating_oper ) *
-
-modulating_oper = powering_oper ( ( oper_percent ) powering_oper ) *
-
-powering_oper = increment_decrement_oper ( ( oper_star_star ) increment_decrement_oper ) *
-
-increment_decrement_oper = [ oper_plus_plus | oper_mius_minus ] binary_arithmetic_operation | binary_arithmetic_operation [ oper_plus_plus | oper_mius_minus ]
-
-#	From here follows the Binary arithmetic part.
-#	ID		Operator(s)
-#	9		<< >>
-#	10		& | ^
-
-binary_arithmetic_operation = shift_oper
-
-shift_oper = bitwise_oper ( ( oper_bit_left_shift | oper_bit_right_shift ) bitwise_oper ) *
-
-bitwise_oper = mini_statement ( ( oper_bit_and | oper_bit_or | oper_bit_xor ) mini_statement ) *
-
+# Example of Top-Down ∞ token lookahead Left to right Leftmost deriative parsing
+#		Stack							Action
+#	start						|	start -> expr start
+#	expr start					|	expr -> expr A
+#	expr A start				|	expr -> expr A
+#	expr A A start				|	expr -> B
+#	B A A start					|	Pop
+#	A A start					|	Pop
+#	A start						|	Pop
+#	start						|	start -> expr
+#	expr						|	expr -> B
+#	B							|	Pop
+#	...							|	Accept
+#	Note that since this grammar contains Left-recursive rules, an LR parser
+#	Wouldn't mind, but LL parsers will pee their pants immediately. That's why
+#	the LL parser is mentioned to have infinity lookahead symbols, which is
+#	ofc, impossible.

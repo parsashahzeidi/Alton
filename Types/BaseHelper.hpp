@@ -1,5 +1,6 @@
 # pragma once
 
+# include <ETC/AltonFunctionDetect.hpp>
 # include <Clinic/Clinic.hpp>
 # include <ETC/BareboneMacros.hpp>
 
@@ -7,7 +8,7 @@
 namespace Alton{
 	inline namespace Types
 	{
-		
+
 		template<typename item, typename list, bool refining>
 		class BaseHelper
 		{
@@ -29,7 +30,7 @@ namespace Alton{
 					Clinic::raise_internal
 					(
 						Clinic::Exceptions::NotOperatingYetError(),
-						__FILE__, __LINE__
+						__FILE__, ALTON_FUNCTION_DETECT, __LINE__
 					);
 			}
 
@@ -42,7 +43,7 @@ namespace Alton{
 					Clinic::raise_internal
 					(
 						Clinic::Exceptions::StillOperatingError(),
-						__FILE__, __LINE__
+						__FILE__, ALTON_FUNCTION_DETECT, __LINE__
 					);
 			}
 
@@ -70,7 +71,7 @@ namespace Alton{
 				it = out.size();
 				during_op = false;
 			}
-			
+
 			/**
 			 * BRIEF: Initializes an operation.
 			*/
@@ -117,7 +118,7 @@ namespace Alton{
 			virtual void advance(Natural i = 1)
 			{
 				_require_operation();
-				
+
 				for (; (i != 0) && during_op; i--)
 				{
 					tmp.push_back(curr(0));
@@ -128,7 +129,7 @@ namespace Alton{
 			// --- CTOR ~ DTOR
 		protected:
 			BaseHelper() = delete;
-			
+
 			BaseHelper(const list &cache)
 			{
 				_require_no_operation();

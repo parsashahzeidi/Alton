@@ -9,8 +9,9 @@ namespace Alton
 	{
 		enum Symbol
 		{
-			null_symbol,
+			null_symbol = 0,  // #0
 			%s
+			ending = -1,  // #-1
 			// Not a Symbol
 			count
 		};
@@ -25,7 +26,7 @@ namespace Alton
 			would make the process extremely slow and painstaking to
 			to debug.
 
-	 * TODO:
+		 * TODO:
 			Check for invalid tokens and raise a Clinic::
 			Exceptions::InternalMathDomainException(). Currently
 			useless.

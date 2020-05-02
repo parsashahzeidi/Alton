@@ -16,8 +16,6 @@ namespace Alton
 		{
 			// --- Head
 		public:
-			bool _expecting_indent = false;
-			Container<Natural> previous_dents;
 			Container<Character> open_miniscopes;
 			Lexeme cache;
 			LexemeList tokenized;
@@ -53,11 +51,17 @@ namespace Alton
 			bool ___char_is_an_identifier(Character in);
 
 			/**
+			 * BRIEF: Checks if the character is considered whitespace or not.
+			 * PARAM: in the character.
+			*/
+			bool ___char_is_considered_whitespace(Character in);
+
+			/**
 			 * BRIEF: Returns a potential scope closing for the scope opening
 			 * PARAM: in Ze scope closing
 			*/
 			Character _find_potential_scope_closing(Character in);
-			
+
 			/**
 			 * BRIEF: Returns a potential scope opening for the scope closing
 			 * PARAM: in Ze scope closing

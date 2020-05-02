@@ -5,16 +5,6 @@ namespace Alton
 {
 	namespace Lexer
 	{
-		Text ___get_token_enum_in_text(Token in)
-		{
-			switch (in)
-			{  // First %s
-			
-			default:
-				return U"";
-			}
-		}
-
 		Token ____get_const_token_3_chars(Text in)
 		{
 			// Second %s
@@ -44,7 +34,7 @@ namespace Alton
 			// Sixth %s
 			return Token::null_token;
 		}
-		
+
 		Text _get_token_name(Token in)
 		{
 			switch(in)

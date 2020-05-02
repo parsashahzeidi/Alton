@@ -1,52 +1,8 @@
-Alfie1 main
+grammar_list -> grammar grammar_list;
+grammar_list -> grammar;
 
-import Daemon
-import Image
-import placeholder_palette
+grammar -> identifier oper_arrow product statement_end;
+grammar -> identifier oper_arrow statement_end;
 
-# This is a basic mandelbrot implementation whom purpose is
-#	to provide testing for Alfie's stock launcher, Alton.
-
-# Special thanks goes to wikipedia's mandelbrot plotting
-#	algoritm collections for helping me write this.
-
-# Enjoy the results!
-
-Function Color mandelbrot_pixel(x, y):
-	Float x1 = 0.0
-	Float y1 = 0.0
-	Float x2 = 0.0
-	Float y2 = 0.0
-	Float temp = 0.0
-
-	Natural iterator = 0
-
-	while (x2 + y2 < 4):
-		if (iterator >= 100) break
-		else iterator++
-
-		temp = x2 - y2
-		y1 = 2 * x1 * y1 + y
-		x1 = temp + x0
-
-		x2 = x1 ** 2
-		y2 = y1 ** 2
-
-	return placeholder_palette(iterator)
-
-
-Function Image mandelbrot():
-	# --- Head
-	Image output = Image(1920, 1080)
-	Image.Calculator calculator = output.calculator
-
-	# --- Body
-	calculator.assign_embarrassingly_parallel(
-		mandelbrot_pixel()
-	)
-	output.normalize()
-	return output
-
-
-Wrapper main():
-	Daemon.add(mandelbrot())
+product -> identifier product;
+product -> identifier;
