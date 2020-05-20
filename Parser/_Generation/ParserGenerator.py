@@ -4,7 +4,7 @@ from os import getcwd
 from sys import path
 path.append(getcwd())
 
-from Parser._Generation.Symbol import Symbol, get_lexing_symbols, get_symbol_index
+from Parser._Generation.Symbol import Symbol, get_lexing_symbols, get_symbol_index, count_of_symbols, get_symbol_text_from_index
 from Parser._Generation.Grammar import Grammar
 from Parser._Generation.Configuration import Configuration
 from Parser._Generation.ParseOperation import ParseOperation
@@ -24,9 +24,6 @@ class ParserGenerator:
 		self.follow_memory = {}
 		self.state_list = [self.state_0 ()]
 		self.parse_table = []
-		self.symbol_indexes = {}
-
-		self.setup_symbol_indexes()
 
 	def read_grammar(self):
 		"""
@@ -67,24 +64,6 @@ class ParserGenerator:
 		self.symbols += non_terminals
 
 		return grammar
-
-	def setup_symbol_indexes(self):
-		# --- Head
-		name = ""
-		index = 0
-
-		# --- Body
-		for i in self.symbols:
-			name = i.symbol
-
-			index += 1
-			self.symbol_indexes.update({name: index})
-
-		index += 1
-		self.symbol_indexes.update({"ending": index})
-
-		index += 1
-		self.symbol_indexes.update({"count": index})
 
 	def _calculate_first(self, symbol: Symbol, stack: list = []):
 		# --- Head
@@ -227,18 +206,10 @@ class ParserGenerator:
 
 	def get_symbol_from_index (self, index: int):
 		# --- Head
-		augmented_index = index - 1
+		text = get_symbol_text_from_index (index)
 
 		# --- Body
-		# -- Special cases
-		if augmented_index == len (self.symbols):
-			return Symbol("ending", 1)
-
-		elif augmented_index == -1:
-			return Symbol("null_symbol", 1)
-
-		# -- Regularity
-		else: return self.symbols[augmented_index]
+		return Symbol (text, index = index)
 
 	def state_0 (self):
 		return state_0 (self.grammar, self.first)
@@ -286,9 +257,6 @@ class ParserGenerator:
 
 		return index
 
-	def count_of_symbols(self):
-		return self.symbol_indexes["count"]
-
 	def count_of_states (self):
 		return len (self.state_list)
 
@@ -314,7 +282,7 @@ class ParserGenerator:
 		new_table = make_multiplication (
 			empty_item,
 			[
-				self.count_of_symbols (),
+				count_of_symbols (),
 				self.count_of_states ()
 			]
 		)
@@ -350,7 +318,7 @@ class ParserGenerator:
 					value = self.find_rule_index (j)
 
 					# -- Accept
-					if j.lookahead == Symbol("ending", 1) and j.name == "s0":
+					if j.name == "s0":
 						self.parse_table[i][index].override_operation (
 							ParseOperation.OPERATION_ACCEPT,
 							value, i, next_sym

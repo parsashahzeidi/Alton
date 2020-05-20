@@ -8,11 +8,13 @@ from Lexer._Generation.Token import get_all_tokens as get_lexing_tokens
 from Tools.PythonGeneralTools.basic_ne import basic_ne
 
 _symbol_list = {}
+_index_list = {}
 
 
 def add_symbol (text: str):
 	next_index = len (_symbol_list)
 	_symbol_list.update ({text: next_index})
+	_index_list.update ({next_index: text})
 
 	return next_index
 
@@ -26,6 +28,15 @@ def get_symbol_index (text: str):
 	else: index = add_symbol (text)
 
 	return index
+
+
+def count_of_symbols ():
+	return len (_symbol_list)
+
+
+def get_symbol_text_from_index (index: int):
+	# --- Head
+	return _index_list [index]
 
 
 def determine_term(text: str):
@@ -43,11 +54,9 @@ def determine_term(text: str):
 
 
 class Symbol:
-	def __init__(self, name: str, terminal: int = 2):
+	def __init__(self, name: str, terminal: int = 2, index: int = None):
 		# --- Head
 		self.symbol = name
-		# -- The index is for faster equality checking
-		self.index = self.get_index ()
 
 		# --- Body
 		# -- Parsing the `terminal` parameter
@@ -56,8 +65,23 @@ class Symbol:
 			self.terminal = terminal
 
 		# - Implicitly declaring the terminal-ness
-		else:
+		elif terminal == 2:
 			self.terminal = determine_term(name)
+
+		# - Error
+		else:
+			BaseException ("Bru, you forgot the terminal parameter")
+
+		# -- Parsing the `index` parameter
+		#	NOTE: The index is for faster equality checking
+
+		# - Implicit indexing
+		if index is None:
+			self.index = self.get_index ()
+
+		# - Explicit indexing
+		else:
+			self.index = index
 
 	def __eq__(self, item):
 		return self.index == item.index

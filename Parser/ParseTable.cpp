@@ -113,39 +113,39 @@ namespace Alton
 			// --- Body ---
 			// Second 
 
-			if (state == 0 && item == Symbol::constant_text)
+			if (state == 0 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 1); else
 
 
-			if (state == 0 && item == Symbol::oper_greater_than_equal)
+			if (state == 0 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 0 && item == Symbol::keyword_shader)
+			if (state == 0 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 0 && item == Symbol::keyword_float)
+			if (state == 0 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 0 && item == Symbol::keyword_bool)
+			if (state == 0 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 0 && item == Symbol::keyword_void)
+			if (state == 0 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 0 && item == Symbol::keyword_int)
+			if (state == 0 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 0 && item == Symbol::keyword_nat)
+			if (state == 0 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::shift, 8); else
 
 
-			if (state == 0 && item == Symbol::keyword_else)
+			if (state == 0 && item == Symbol::nterm_module_space)
 				operation.override (ParseOperationType::go_to, 11); else
 
 
@@ -157,107 +157,107 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 10); else
 
 
-			if (state == 0 && item == Symbol::nterm_module_space)
+			if (state == 0 && item == Symbol::nterm_module_item)
 				operation.override (ParseOperationType::go_to, 12); else
 
 
-			if (state == 0 && item == Symbol::nterm_module_item)
+			if (state == 0 && item == Symbol::nterm_module)
 				operation.override (ParseOperationType::go_to, 13); else
 
 
-			if (state == 0 && item == Symbol::nterm_module)
+			if (state == 0 && item == Symbol::nterm_function)
 				operation.override (ParseOperationType::go_to, 14); else
 
 
-			if (state == 0 && item == Symbol::nterm_function)
+			if (state == 0 && item == Symbol::nterm_interface)
 				operation.override (ParseOperationType::go_to, 15); else
 
 
-			if (state == 0 && item == Symbol::nterm_interface)
+			if (state == 0 && item == Symbol::nterm_shader)
 				operation.override (ParseOperationType::go_to, 16); else
 
 
-			if (state == 0 && item == Symbol::nterm_shader)
+			if (state == 0 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 18); else
 
 
-			if (state == 0 && item == Symbol::nterm_item)
+			if (state == 0 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 0 && item == Symbol::nterm_union)
+			if (state == 0 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 0 && item == Symbol::nterm_sid_union)
+			if (state == 0 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 0 && item == Symbol::nterm_def_union)
+			if (state == 0 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 1 && item == Symbol::rparen)
+			if (state == 1 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 1 && item == Symbol::constant_text)
+			if (state == 1 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 1 && item == Symbol::oper_union)
+			if (state == 1 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 2 && item == Symbol::constant_text)
+			if (state == 2 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 63); else
 
 
-			if (state == 3 && item == Symbol::constant_text)
+			if (state == 3 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 64); else
 
 
-			if (state == 4 && item == Symbol::constant_text)
+			if (state == 4 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 66); else
 
 
-			if (state == 5 && item == Symbol::constant_text)
+			if (state == 5 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 65); else
 
 
-			if (state == 6 && item == Symbol::constant_text)
+			if (state == 6 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 67); else
 
 
-			if (state == 7 && item == Symbol::constant_text)
+			if (state == 7 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 68); else
 
 
-			if (state == 8 && item == Symbol::constant_text)
+			if (state == 8 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 22); else
 
 
-			if (state == 8 && item == Symbol::oper_greater_than_equal)
+			if (state == 8 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 8 && item == Symbol::keyword_shader)
+			if (state == 8 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 8 && item == Symbol::keyword_float)
+			if (state == 8 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 8 && item == Symbol::keyword_bool)
+			if (state == 8 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 8 && item == Symbol::keyword_void)
+			if (state == 8 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 8 && item == Symbol::keyword_int)
+			if (state == 8 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
@@ -265,79 +265,79 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 23); else
 
 
-			if (state == 8 && item == Symbol::nterm_shader)
+			if (state == 8 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 24); else
 
 
-			if (state == 8 && item == Symbol::nterm_item)
+			if (state == 8 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 8 && item == Symbol::nterm_union)
+			if (state == 8 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 8 && item == Symbol::nterm_sid_union)
+			if (state == 8 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 8 && item == Symbol::nterm_def_union)
+			if (state == 8 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 9 && item == Symbol::nterm_location)
+			if (state == 9 && item == Symbol::ending)
 				operation.override (ParseOperationType::accept, 0); else
 
 
-			if (state == 10 && item == Symbol::rparen)
+			if (state == 10 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 25); else
 
 
-			if (state == 10 && item == Symbol::constant_text)
+			if (state == 10 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 10 && item == Symbol::oper_union)
+			if (state == 10 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 26); else
 
 
-			if (state == 11 && item == Symbol::nterm_location)
+			if (state == 11 && item == Symbol::ending)
 				operation.override (ParseOperationType::reduce, 0); else
 
 
-			if (state == 12 && item == Symbol::constant_text)
+			if (state == 12 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 1); else
 
 
-			if (state == 12 && item == Symbol::oper_greater_than_equal)
+			if (state == 12 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 12 && item == Symbol::keyword_shader)
+			if (state == 12 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 12 && item == Symbol::keyword_float)
+			if (state == 12 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 12 && item == Symbol::keyword_bool)
+			if (state == 12 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 12 && item == Symbol::keyword_void)
+			if (state == 12 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 12 && item == Symbol::keyword_int)
+			if (state == 12 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 12 && item == Symbol::keyword_nat)
+			if (state == 12 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::shift, 8); else
 
 
-			if (state == 12 && item == Symbol::keyword_else)
+			if (state == 12 && item == Symbol::nterm_module_space)
 				operation.override (ParseOperationType::go_to, 27); else
 
 
@@ -345,55 +345,51 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 10); else
 
 
-			if (state == 12 && item == Symbol::nterm_module_space)
+			if (state == 12 && item == Symbol::nterm_module_item)
 				operation.override (ParseOperationType::go_to, 12); else
 
 
-			if (state == 12 && item == Symbol::nterm_module_item)
+			if (state == 12 && item == Symbol::nterm_module)
 				operation.override (ParseOperationType::go_to, 13); else
 
 
-			if (state == 12 && item == Symbol::nterm_module)
+			if (state == 12 && item == Symbol::nterm_function)
 				operation.override (ParseOperationType::go_to, 14); else
 
 
-			if (state == 12 && item == Symbol::nterm_function)
+			if (state == 12 && item == Symbol::nterm_interface)
 				operation.override (ParseOperationType::go_to, 15); else
 
 
-			if (state == 12 && item == Symbol::nterm_interface)
+			if (state == 12 && item == Symbol::nterm_shader)
 				operation.override (ParseOperationType::go_to, 16); else
 
 
-			if (state == 12 && item == Symbol::nterm_shader)
+			if (state == 12 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 18); else
 
 
-			if (state == 12 && item == Symbol::nterm_item)
+			if (state == 12 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 12 && item == Symbol::nterm_union)
+			if (state == 12 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 12 && item == Symbol::nterm_sid_union)
+			if (state == 12 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 12 && item == Symbol::nterm_def_union)
+			if (state == 12 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 12 && item == Symbol::nterm_location)
+			if (state == 12 && item == Symbol::ending)
 				operation.override (ParseOperationType::reduce, 3); else
 
 
-			if (state == 13 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 4); else
-
-
-			if (state == 13 && item == Symbol::oper_greater_than_equal)
+			if (state == 13 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 4); else
 
 
@@ -421,15 +417,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 4); else
 
 
-			if (state == 13 && item == Symbol::nterm_location)
+			if (state == 13 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 4); else
 
 
-			if (state == 14 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 5); else
+			if (state == 13 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 4); else
 
 
-			if (state == 14 && item == Symbol::oper_greater_than_equal)
+			if (state == 14 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 5); else
 
 
@@ -457,15 +453,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 5); else
 
 
-			if (state == 14 && item == Symbol::nterm_location)
+			if (state == 14 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 5); else
 
 
-			if (state == 15 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 8); else
+			if (state == 14 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 5); else
 
 
-			if (state == 15 && item == Symbol::oper_greater_than_equal)
+			if (state == 15 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 8); else
 
 
@@ -493,15 +489,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 8); else
 
 
-			if (state == 15 && item == Symbol::nterm_location)
+			if (state == 15 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 8); else
 
 
-			if (state == 16 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 9); else
+			if (state == 15 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 8); else
 
 
-			if (state == 16 && item == Symbol::oper_greater_than_equal)
+			if (state == 16 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 9); else
 
 
@@ -529,11 +525,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 9); else
 
 
-			if (state == 16 && item == Symbol::nterm_location)
+			if (state == 16 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 9); else
 
 
-			if (state == 17 && item == Symbol::constant_text)
+			if (state == 16 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 9); else
+
+
+			if (state == 17 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 28); else
 
 
@@ -541,87 +541,87 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 29); else
 
 
-			if (state == 18 && item == Symbol::null_symbol)
+			if (state == 18 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 30); else
 
 
-			if (state == 18 && item == Symbol::nterm_code)
+			if (state == 18 && item == Symbol::nterm_def_args)
 				operation.override (ParseOperationType::go_to, 31); else
 
 
-			if (state == 19 && item == Symbol::constant_text)
+			if (state == 19 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 59); else
 
 
-			if (state == 20 && item == Symbol::constant_text)
+			if (state == 20 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 60); else
 
 
-			if (state == 21 && item == Symbol::constant_text)
+			if (state == 21 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 62); else
 
 
-			if (state == 22 && item == Symbol::constant_text)
+			if (state == 22 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 22 && item == Symbol::oper_union)
+			if (state == 22 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 23 && item == Symbol::constant_text)
+			if (state == 23 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 23 && item == Symbol::oper_union)
+			if (state == 23 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 26); else
 
 
-			if (state == 24 && item == Symbol::null_symbol)
+			if (state == 24 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 30); else
 
 
-			if (state == 24 && item == Symbol::nterm_code)
+			if (state == 24 && item == Symbol::nterm_def_args)
 				operation.override (ParseOperationType::go_to, 32); else
 
 
-			if (state == 25 && item == Symbol::lscope)
+			if (state == 25 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 33); else
 
 
-			if (state == 25 && item == Symbol::constant_text)
+			if (state == 25 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 1); else
 
 
-			if (state == 25 && item == Symbol::oper_greater_than_equal)
+			if (state == 25 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 25 && item == Symbol::keyword_shader)
+			if (state == 25 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 25 && item == Symbol::keyword_float)
+			if (state == 25 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 25 && item == Symbol::keyword_bool)
+			if (state == 25 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 25 && item == Symbol::keyword_void)
+			if (state == 25 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 25 && item == Symbol::keyword_int)
+			if (state == 25 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 25 && item == Symbol::keyword_nat)
+			if (state == 25 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::shift, 34); else
 
 
-			if (state == 25 && item == Symbol::keyword_else)
+			if (state == 25 && item == Symbol::nterm_module_space)
 				operation.override (ParseOperationType::go_to, 36); else
 
 
@@ -629,47 +629,47 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 35); else
 
 
-			if (state == 25 && item == Symbol::nterm_module_space)
+			if (state == 25 && item == Symbol::nterm_module_item)
 				operation.override (ParseOperationType::go_to, 37); else
 
 
-			if (state == 25 && item == Symbol::nterm_module_item)
+			if (state == 25 && item == Symbol::nterm_module)
 				operation.override (ParseOperationType::go_to, 38); else
 
 
-			if (state == 25 && item == Symbol::nterm_module)
+			if (state == 25 && item == Symbol::nterm_function)
 				operation.override (ParseOperationType::go_to, 39); else
 
 
-			if (state == 25 && item == Symbol::nterm_function)
+			if (state == 25 && item == Symbol::nterm_interface)
 				operation.override (ParseOperationType::go_to, 40); else
 
 
-			if (state == 25 && item == Symbol::nterm_interface)
+			if (state == 25 && item == Symbol::nterm_shader)
 				operation.override (ParseOperationType::go_to, 41); else
 
 
-			if (state == 25 && item == Symbol::nterm_shader)
+			if (state == 25 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 42); else
 
 
-			if (state == 25 && item == Symbol::nterm_item)
+			if (state == 25 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 25 && item == Symbol::nterm_union)
+			if (state == 25 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 25 && item == Symbol::nterm_sid_union)
+			if (state == 25 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 25 && item == Symbol::nterm_def_union)
+			if (state == 25 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 26 && item == Symbol::constant_text)
+			if (state == 26 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 22); else
 
 
@@ -677,51 +677,51 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 23); else
 
 
-			if (state == 26 && item == Symbol::nterm_union)
+			if (state == 26 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 43); else
 
 
-			if (state == 27 && item == Symbol::nterm_location)
+			if (state == 27 && item == Symbol::ending)
 				operation.override (ParseOperationType::reduce, 2); else
 
 
-			if (state == 28 && item == Symbol::null_symbol)
+			if (state == 28 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 29 && item == Symbol::null_symbol)
+			if (state == 29 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 61); else
 
 
-			if (state == 30 && item == Symbol::lparen)
+			if (state == 30 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 44); else
 
 
-			if (state == 30 && item == Symbol::constant_text)
+			if (state == 30 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 22); else
 
 
-			if (state == 30 && item == Symbol::oper_greater_than_equal)
+			if (state == 30 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 30 && item == Symbol::keyword_shader)
+			if (state == 30 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 30 && item == Symbol::keyword_float)
+			if (state == 30 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 30 && item == Symbol::keyword_bool)
+			if (state == 30 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 30 && item == Symbol::keyword_void)
+			if (state == 30 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 30 && item == Symbol::keyword_int)
+			if (state == 30 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
@@ -729,51 +729,47 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 23); else
 
 
-			if (state == 30 && item == Symbol::nterm_shader)
+			if (state == 30 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 46); else
 
 
-			if (state == 30 && item == Symbol::nterm_item)
+			if (state == 30 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 45); else
 
 
-			if (state == 30 && item == Symbol::nterm_array)
+			if (state == 30 && item == Symbol::nterm_def_union)
 				operation.override (ParseOperationType::go_to, 47); else
 
 
-			if (state == 30 && item == Symbol::nterm_union)
+			if (state == 30 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 30 && item == Symbol::nterm_sid_union)
+			if (state == 30 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 30 && item == Symbol::nterm_def_union)
+			if (state == 30 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 31 && item == Symbol::rparen)
+			if (state == 31 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 48); else
 
 
-			if (state == 31 && item == Symbol::nterm_reg_if_tail)
+			if (state == 31 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 49); else
 
 
-			if (state == 32 && item == Symbol::rparen)
+			if (state == 32 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 48); else
 
 
-			if (state == 32 && item == Symbol::nterm_reg_if_tail)
+			if (state == 32 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 50); else
 
 
-			if (state == 33 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 7); else
-
-
-			if (state == 33 && item == Symbol::oper_greater_than_equal)
+			if (state == 33 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 7); else
 
 
@@ -801,35 +797,39 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 7); else
 
 
-			if (state == 33 && item == Symbol::nterm_location)
+			if (state == 33 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 7); else
 
 
-			if (state == 34 && item == Symbol::constant_text)
+			if (state == 33 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 7); else
+
+
+			if (state == 34 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 22); else
 
 
-			if (state == 34 && item == Symbol::oper_greater_than_equal)
+			if (state == 34 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 34 && item == Symbol::keyword_shader)
+			if (state == 34 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 34 && item == Symbol::keyword_float)
+			if (state == 34 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 34 && item == Symbol::keyword_bool)
+			if (state == 34 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 34 && item == Symbol::keyword_void)
+			if (state == 34 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 34 && item == Symbol::keyword_int)
+			if (state == 34 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
@@ -837,79 +837,79 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 23); else
 
 
-			if (state == 34 && item == Symbol::nterm_shader)
+			if (state == 34 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 51); else
 
 
-			if (state == 34 && item == Symbol::nterm_item)
+			if (state == 34 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 34 && item == Symbol::nterm_union)
+			if (state == 34 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 34 && item == Symbol::nterm_sid_union)
+			if (state == 34 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 34 && item == Symbol::nterm_def_union)
+			if (state == 34 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 35 && item == Symbol::rparen)
+			if (state == 35 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 52); else
 
 
-			if (state == 35 && item == Symbol::constant_text)
+			if (state == 35 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 35 && item == Symbol::oper_union)
+			if (state == 35 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 26); else
 
 
-			if (state == 36 && item == Symbol::lscope)
+			if (state == 36 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 53); else
 
 
-			if (state == 37 && item == Symbol::lscope)
+			if (state == 37 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 3); else
 
 
-			if (state == 37 && item == Symbol::constant_text)
+			if (state == 37 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 1); else
 
 
-			if (state == 37 && item == Symbol::oper_greater_than_equal)
+			if (state == 37 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 37 && item == Symbol::keyword_shader)
+			if (state == 37 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 37 && item == Symbol::keyword_float)
+			if (state == 37 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 37 && item == Symbol::keyword_bool)
+			if (state == 37 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 37 && item == Symbol::keyword_void)
+			if (state == 37 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 37 && item == Symbol::keyword_int)
+			if (state == 37 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 37 && item == Symbol::keyword_nat)
+			if (state == 37 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::shift, 34); else
 
 
-			if (state == 37 && item == Symbol::keyword_else)
+			if (state == 37 && item == Symbol::nterm_module_space)
 				operation.override (ParseOperationType::go_to, 54); else
 
 
@@ -917,55 +917,51 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 35); else
 
 
-			if (state == 37 && item == Symbol::nterm_module_space)
+			if (state == 37 && item == Symbol::nterm_module_item)
 				operation.override (ParseOperationType::go_to, 37); else
 
 
-			if (state == 37 && item == Symbol::nterm_module_item)
+			if (state == 37 && item == Symbol::nterm_module)
 				operation.override (ParseOperationType::go_to, 38); else
 
 
-			if (state == 37 && item == Symbol::nterm_module)
+			if (state == 37 && item == Symbol::nterm_function)
 				operation.override (ParseOperationType::go_to, 39); else
 
 
-			if (state == 37 && item == Symbol::nterm_function)
+			if (state == 37 && item == Symbol::nterm_interface)
 				operation.override (ParseOperationType::go_to, 40); else
 
 
-			if (state == 37 && item == Symbol::nterm_interface)
+			if (state == 37 && item == Symbol::nterm_shader)
 				operation.override (ParseOperationType::go_to, 41); else
 
 
-			if (state == 37 && item == Symbol::nterm_shader)
+			if (state == 37 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 42); else
 
 
-			if (state == 37 && item == Symbol::nterm_item)
+			if (state == 37 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 37 && item == Symbol::nterm_union)
+			if (state == 37 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 37 && item == Symbol::nterm_sid_union)
+			if (state == 37 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 37 && item == Symbol::nterm_def_union)
+			if (state == 37 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 38 && item == Symbol::lscope)
+			if (state == 38 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 4); else
 
 
-			if (state == 38 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 4); else
-
-
-			if (state == 38 && item == Symbol::oper_greater_than_equal)
+			if (state == 38 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 4); else
 
 
@@ -993,15 +989,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 4); else
 
 
-			if (state == 39 && item == Symbol::lscope)
+			if (state == 38 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 4); else
+
+
+			if (state == 39 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 5); else
 
 
-			if (state == 39 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 5); else
-
-
-			if (state == 39 && item == Symbol::oper_greater_than_equal)
+			if (state == 39 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 5); else
 
 
@@ -1029,15 +1025,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 5); else
 
 
-			if (state == 40 && item == Symbol::lscope)
+			if (state == 39 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 5); else
+
+
+			if (state == 40 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 8); else
 
 
-			if (state == 40 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 8); else
-
-
-			if (state == 40 && item == Symbol::oper_greater_than_equal)
+			if (state == 40 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 8); else
 
 
@@ -1065,15 +1061,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 8); else
 
 
-			if (state == 41 && item == Symbol::lscope)
+			if (state == 40 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 8); else
+
+
+			if (state == 41 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 9); else
 
 
-			if (state == 41 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 9); else
-
-
-			if (state == 41 && item == Symbol::oper_greater_than_equal)
+			if (state == 41 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 9); else
 
 
@@ -1101,23 +1097,27 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 9); else
 
 
-			if (state == 42 && item == Symbol::null_symbol)
+			if (state == 41 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 9); else
+
+
+			if (state == 42 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 30); else
 
 
-			if (state == 42 && item == Symbol::nterm_code)
+			if (state == 42 && item == Symbol::nterm_def_args)
 				operation.override (ParseOperationType::go_to, 55); else
 
 
-			if (state == 43 && item == Symbol::constant_text)
+			if (state == 43 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 44 && item == Symbol::rparen)
+			if (state == 44 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 39); else
 
 
-			if (state == 45 && item == Symbol::constant_text)
+			if (state == 45 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 56); else
 
 
@@ -1125,27 +1125,27 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 57); else
 
 
-			if (state == 46 && item == Symbol::lparen)
+			if (state == 46 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 79); else
 
 
-			if (state == 46 && item == Symbol::statement_end)
+			if (state == 46 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::shift, 58); else
 
 
-			if (state == 47 && item == Symbol::lparen)
+			if (state == 47 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 59); else
 
 
-			if (state == 48 && item == Symbol::lscope)
+			if (state == 48 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 60); else
 
 
-			if (state == 48 && item == Symbol::keyword_graphic)
+			if (state == 48 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 48 && item == Symbol::keyword_while)
+			if (state == 48 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -1153,35 +1153,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 63); else
 
 
-			if (state == 48 && item == Symbol::nterm_just_if)
+			if (state == 48 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 48 && item == Symbol::nterm_if_else)
+			if (state == 48 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 48 && item == Symbol::nterm_open_while)
+			if (state == 48 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 48 && item == Symbol::nterm_closed_while)
+			if (state == 48 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 48 && item == Symbol::nterm_while_statement)
+			if (state == 48 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 48 && item == Symbol::nterm_vardef)
+			if (state == 48 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 49 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 10); else
-
-
-			if (state == 49 && item == Symbol::oper_greater_than_equal)
+			if (state == 49 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 10); else
 
 
@@ -1209,15 +1205,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 10); else
 
 
-			if (state == 49 && item == Symbol::nterm_location)
+			if (state == 49 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 10); else
 
 
-			if (state == 50 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 11); else
+			if (state == 49 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 10); else
 
 
-			if (state == 50 && item == Symbol::oper_greater_than_equal)
+			if (state == 50 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 11); else
 
 
@@ -1245,55 +1241,59 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 11); else
 
 
-			if (state == 50 && item == Symbol::nterm_location)
+			if (state == 50 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 11); else
 
 
-			if (state == 51 && item == Symbol::null_symbol)
+			if (state == 50 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 11); else
+
+
+			if (state == 51 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 30); else
 
 
-			if (state == 51 && item == Symbol::nterm_code)
+			if (state == 51 && item == Symbol::nterm_def_args)
 				operation.override (ParseOperationType::go_to, 70); else
 
 
-			if (state == 52 && item == Symbol::lscope)
+			if (state == 52 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 71); else
 
 
-			if (state == 52 && item == Symbol::constant_text)
+			if (state == 52 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 1); else
 
 
-			if (state == 52 && item == Symbol::oper_greater_than_equal)
+			if (state == 52 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 52 && item == Symbol::keyword_shader)
+			if (state == 52 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 52 && item == Symbol::keyword_float)
+			if (state == 52 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 52 && item == Symbol::keyword_bool)
+			if (state == 52 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 52 && item == Symbol::keyword_void)
+			if (state == 52 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 52 && item == Symbol::keyword_int)
+			if (state == 52 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 52 && item == Symbol::keyword_nat)
+			if (state == 52 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::shift, 34); else
 
 
-			if (state == 52 && item == Symbol::keyword_else)
+			if (state == 52 && item == Symbol::nterm_module_space)
 				operation.override (ParseOperationType::go_to, 72); else
 
 
@@ -1301,51 +1301,47 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 35); else
 
 
-			if (state == 52 && item == Symbol::nterm_module_space)
+			if (state == 52 && item == Symbol::nterm_module_item)
 				operation.override (ParseOperationType::go_to, 37); else
 
 
-			if (state == 52 && item == Symbol::nterm_module_item)
+			if (state == 52 && item == Symbol::nterm_module)
 				operation.override (ParseOperationType::go_to, 38); else
 
 
-			if (state == 52 && item == Symbol::nterm_module)
+			if (state == 52 && item == Symbol::nterm_function)
 				operation.override (ParseOperationType::go_to, 39); else
 
 
-			if (state == 52 && item == Symbol::nterm_function)
+			if (state == 52 && item == Symbol::nterm_interface)
 				operation.override (ParseOperationType::go_to, 40); else
 
 
-			if (state == 52 && item == Symbol::nterm_interface)
+			if (state == 52 && item == Symbol::nterm_shader)
 				operation.override (ParseOperationType::go_to, 41); else
 
 
-			if (state == 52 && item == Symbol::nterm_shader)
+			if (state == 52 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 42); else
 
 
-			if (state == 52 && item == Symbol::nterm_item)
+			if (state == 52 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 17); else
 
 
-			if (state == 52 && item == Symbol::nterm_union)
+			if (state == 52 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 52 && item == Symbol::nterm_sid_union)
+			if (state == 52 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 52 && item == Symbol::nterm_def_union)
+			if (state == 52 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 53 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 6); else
-
-
-			if (state == 53 && item == Symbol::oper_greater_than_equal)
+			if (state == 53 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 6); else
 
 
@@ -1373,63 +1369,67 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 6); else
 
 
-			if (state == 53 && item == Symbol::nterm_location)
+			if (state == 53 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 6); else
 
 
-			if (state == 54 && item == Symbol::lscope)
+			if (state == 53 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 6); else
+
+
+			if (state == 54 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 2); else
 
 
-			if (state == 55 && item == Symbol::rparen)
+			if (state == 55 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 73); else
 
 
-			if (state == 55 && item == Symbol::nterm_reg_if_tail)
+			if (state == 55 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 74); else
 
 
-			if (state == 56 && item == Symbol::lparen)
+			if (state == 56 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 56 && item == Symbol::statement_end)
+			if (state == 56 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 57 && item == Symbol::lparen)
+			if (state == 57 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 61); else
 
 
-			if (state == 57 && item == Symbol::statement_end)
+			if (state == 57 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::reduce, 61); else
 
 
-			if (state == 58 && item == Symbol::constant_text)
+			if (state == 58 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 22); else
 
 
-			if (state == 58 && item == Symbol::oper_greater_than_equal)
+			if (state == 58 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 58 && item == Symbol::keyword_shader)
+			if (state == 58 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 58 && item == Symbol::keyword_float)
+			if (state == 58 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 58 && item == Symbol::keyword_bool)
+			if (state == 58 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 58 && item == Symbol::keyword_void)
+			if (state == 58 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 58 && item == Symbol::keyword_int)
+			if (state == 58 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
@@ -1437,39 +1437,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 23); else
 
 
-			if (state == 58 && item == Symbol::nterm_shader)
+			if (state == 58 && item == Symbol::nterm_var_footprint)
 				operation.override (ParseOperationType::go_to, 46); else
 
 
-			if (state == 58 && item == Symbol::nterm_item)
+			if (state == 58 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 45); else
 
 
-			if (state == 58 && item == Symbol::nterm_array)
+			if (state == 58 && item == Symbol::nterm_def_union)
 				operation.override (ParseOperationType::go_to, 75); else
 
 
-			if (state == 58 && item == Symbol::nterm_union)
+			if (state == 58 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 21); else
 
 
-			if (state == 58 && item == Symbol::nterm_sid_union)
+			if (state == 58 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 58 && item == Symbol::nterm_def_union)
+			if (state == 58 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 59 && item == Symbol::rparen)
+			if (state == 59 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 38); else
 
 
-			if (state == 60 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 13); else
-
-
-			if (state == 60 && item == Symbol::oper_greater_than_equal)
+			if (state == 60 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
@@ -1497,47 +1493,51 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 60 && item == Symbol::nterm_location)
+			if (state == 60 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 61 && item == Symbol::null_symbol)
+			if (state == 60 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 13); else
+
+
+			if (state == 61 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 76); else
 
 
-			if (state == 61 && item == Symbol::nterm_non_scoped_statement)
+			if (state == 61 && item == Symbol::nterm_one_call_arg)
 				operation.override (ParseOperationType::go_to, 77); else
 
 
-			if (state == 61 && item == Symbol::nterm_access)
+			if (state == 61 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 78); else
 
 
-			if (state == 62 && item == Symbol::null_symbol)
+			if (state == 62 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 79); else
 
 
-			if (state == 62 && item == Symbol::nterm_non_scoped_statement)
+			if (state == 62 && item == Symbol::nterm_one_call_arg)
 				operation.override (ParseOperationType::go_to, 80); else
 
 
-			if (state == 62 && item == Symbol::nterm_access)
+			if (state == 62 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 81); else
 
 
-			if (state == 63 && item == Symbol::lscope)
+			if (state == 63 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 82); else
 
 
-			if (state == 64 && item == Symbol::lscope)
+			if (state == 64 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 17); else
 
 
-			if (state == 64 && item == Symbol::keyword_graphic)
+			if (state == 64 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 64 && item == Symbol::keyword_while)
+			if (state == 64 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -1545,35 +1545,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 83); else
 
 
-			if (state == 64 && item == Symbol::nterm_just_if)
+			if (state == 64 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 64 && item == Symbol::nterm_if_else)
+			if (state == 64 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 64 && item == Symbol::nterm_open_while)
+			if (state == 64 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 64 && item == Symbol::nterm_closed_while)
+			if (state == 64 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 64 && item == Symbol::nterm_while_statement)
+			if (state == 64 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 64 && item == Symbol::nterm_vardef)
+			if (state == 64 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 65 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 18); else
-
-
-			if (state == 65 && item == Symbol::keyword_graphic)
+			if (state == 65 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 18); else
 
 
@@ -1581,11 +1577,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 18); else
 
 
-			if (state == 66 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 19); else
+			if (state == 65 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 18); else
 
 
-			if (state == 66 && item == Symbol::keyword_graphic)
+			if (state == 66 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 19); else
 
 
@@ -1593,11 +1589,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 19); else
 
 
-			if (state == 67 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 20); else
+			if (state == 66 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 19); else
 
 
-			if (state == 67 && item == Symbol::keyword_graphic)
+			if (state == 67 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 20); else
 
 
@@ -1605,11 +1601,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 20); else
 
 
-			if (state == 68 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 21); else
+			if (state == 67 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 20); else
 
 
-			if (state == 68 && item == Symbol::keyword_graphic)
+			if (state == 68 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 21); else
 
 
@@ -1617,11 +1613,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 21); else
 
 
-			if (state == 69 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 26); else
+			if (state == 68 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 21); else
 
 
-			if (state == 69 && item == Symbol::keyword_graphic)
+			if (state == 69 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 26); else
 
 
@@ -1629,23 +1625,23 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 26); else
 
 
-			if (state == 70 && item == Symbol::rparen)
+			if (state == 69 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 26); else
+
+
+			if (state == 70 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 73); else
 
 
-			if (state == 70 && item == Symbol::nterm_reg_if_tail)
+			if (state == 70 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 84); else
 
 
-			if (state == 71 && item == Symbol::lscope)
+			if (state == 71 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 7); else
 
 
-			if (state == 71 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 7); else
-
-
-			if (state == 71 && item == Symbol::oper_greater_than_equal)
+			if (state == 71 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 7); else
 
 
@@ -1673,19 +1669,23 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 7); else
 
 
-			if (state == 72 && item == Symbol::lscope)
+			if (state == 71 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 7); else
+
+
+			if (state == 72 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 85); else
 
 
-			if (state == 73 && item == Symbol::lscope)
+			if (state == 73 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 86); else
 
 
-			if (state == 73 && item == Symbol::keyword_graphic)
+			if (state == 73 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 73 && item == Symbol::keyword_while)
+			if (state == 73 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -1693,39 +1693,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 87); else
 
 
-			if (state == 73 && item == Symbol::nterm_just_if)
+			if (state == 73 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 73 && item == Symbol::nterm_if_else)
+			if (state == 73 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 73 && item == Symbol::nterm_open_while)
+			if (state == 73 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 73 && item == Symbol::nterm_closed_while)
+			if (state == 73 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 73 && item == Symbol::nterm_while_statement)
+			if (state == 73 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 73 && item == Symbol::nterm_vardef)
+			if (state == 73 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 74 && item == Symbol::lscope)
+			if (state == 74 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 10); else
 
 
-			if (state == 74 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 10); else
-
-
-			if (state == 74 && item == Symbol::oper_greater_than_equal)
+			if (state == 74 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 10); else
 
 
@@ -1753,55 +1749,59 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 10); else
 
 
-			if (state == 75 && item == Symbol::lparen)
+			if (state == 74 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 10); else
+
+
+			if (state == 75 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 78); else
 
 
-			if (state == 76 && item == Symbol::null_symbol)
+			if (state == 76 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 88); else
 
 
-			if (state == 76 && item == Symbol::rscope)
+			if (state == 76 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 89); else
 
 
-			if (state == 76 && item == Symbol::preprocessor_call)
+			if (state == 76 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 90); else
 
 
-			if (state == 76 && item == Symbol::constant_number)
+			if (state == 76 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 91); else
 
 
-			if (state == 76 && item == Symbol::literalized_number)
+			if (state == 76 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 92); else
 
 
-			if (state == 76 && item == Symbol::constant_float)
+			if (state == 76 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 93); else
 
 
-			if (state == 76 && item == Symbol::constant_text)
+			if (state == 76 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 94); else
 
 
-			if (state == 76 && item == Symbol::oper_assign)
+			if (state == 76 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 76 && item == Symbol::oper_plus)
+			if (state == 76 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 76 && item == Symbol::oper_minus)
+			if (state == 76 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 76 && item == Symbol::oper_star)
+			if (state == 76 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 76 && item == Symbol::oper_less_than)
+			if (state == 76 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -1809,27 +1809,27 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 100); else
 
 
-			if (state == 76 && item == Symbol::nterm_one_call_arg)
+			if (state == 76 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 101); else
 
 
-			if (state == 76 && item == Symbol::nterm_access)
+			if (state == 76 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 105); else
 
 
-			if (state == 76 && item == Symbol::nterm_type)
+			if (state == 76 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 102); else
 
 
-			if (state == 76 && item == Symbol::nterm_var_footprint)
+			if (state == 76 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 103); else
 
 
-			if (state == 76 && item == Symbol::nterm_compound_type)
+			if (state == 76 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 104); else
 
 
-			if (state == 76 && item == Symbol::nterm_basic_type)
+			if (state == 76 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 106); else
 
 
@@ -1837,87 +1837,87 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 107); else
 
 
-			if (state == 76 && item == Symbol::nterm_union)
+			if (state == 76 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 108); else
 
 
-			if (state == 77 && item == Symbol::keyword_graphic)
+			if (state == 77 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 77 && item == Symbol::keyword_while)
+			if (state == 77 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
-			if (state == 77 && item == Symbol::nterm_open_while)
+			if (state == 77 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 109); else
 
 
-			if (state == 77 && item == Symbol::nterm_closed_while)
+			if (state == 77 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 110); else
 
 
-			if (state == 77 && item == Symbol::nterm_while_statement)
+			if (state == 77 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 77 && item == Symbol::nterm_vardef)
+			if (state == 77 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
-
-
-			if (state == 78 && item == Symbol::keyword_graphic)
-				operation.override (ParseOperationType::reduce, 44); else
 
 
 			if (state == 78 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 79 && item == Symbol::null_symbol)
+			if (state == 78 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 44); else
+
+
+			if (state == 79 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 88); else
 
 
-			if (state == 79 && item == Symbol::rscope)
+			if (state == 79 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 89); else
 
 
-			if (state == 79 && item == Symbol::preprocessor_call)
+			if (state == 79 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 90); else
 
 
-			if (state == 79 && item == Symbol::constant_number)
+			if (state == 79 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 91); else
 
 
-			if (state == 79 && item == Symbol::literalized_number)
+			if (state == 79 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 92); else
 
 
-			if (state == 79 && item == Symbol::constant_float)
+			if (state == 79 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 93); else
 
 
-			if (state == 79 && item == Symbol::constant_text)
+			if (state == 79 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 94); else
 
 
-			if (state == 79 && item == Symbol::oper_assign)
+			if (state == 79 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 79 && item == Symbol::oper_plus)
+			if (state == 79 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 79 && item == Symbol::oper_minus)
+			if (state == 79 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 79 && item == Symbol::oper_star)
+			if (state == 79 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 79 && item == Symbol::oper_less_than)
+			if (state == 79 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -1925,27 +1925,27 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 100); else
 
 
-			if (state == 79 && item == Symbol::nterm_one_call_arg)
+			if (state == 79 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 111); else
 
 
-			if (state == 79 && item == Symbol::nterm_access)
+			if (state == 79 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 105); else
 
 
-			if (state == 79 && item == Symbol::nterm_type)
+			if (state == 79 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 102); else
 
 
-			if (state == 79 && item == Symbol::nterm_var_footprint)
+			if (state == 79 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 103); else
 
 
-			if (state == 79 && item == Symbol::nterm_compound_type)
+			if (state == 79 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 104); else
 
 
-			if (state == 79 && item == Symbol::nterm_basic_type)
+			if (state == 79 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 106); else
 
 
@@ -1953,75 +1953,75 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 112); else
 
 
-			if (state == 79 && item == Symbol::nterm_union)
+			if (state == 79 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 108); else
 
 
-			if (state == 80 && item == Symbol::null_symbol)
+			if (state == 80 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 80 && item == Symbol::rparen)
+			if (state == 80 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 114); else
 
 
-			if (state == 80 && item == Symbol::rscope)
+			if (state == 80 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 80 && item == Symbol::preprocessor_call)
+			if (state == 80 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 80 && item == Symbol::constant_number)
+			if (state == 80 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 80 && item == Symbol::literalized_number)
+			if (state == 80 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 80 && item == Symbol::constant_float)
+			if (state == 80 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 80 && item == Symbol::constant_text)
+			if (state == 80 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 80 && item == Symbol::identifier)
+			if (state == 80 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 121); else
 
 
-			if (state == 80 && item == Symbol::oper_greater_than_equal)
+			if (state == 80 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 80 && item == Symbol::keyword_shader)
+			if (state == 80 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 80 && item == Symbol::keyword_float)
+			if (state == 80 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 80 && item == Symbol::keyword_bool)
+			if (state == 80 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 80 && item == Symbol::keyword_void)
+			if (state == 80 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 80 && item == Symbol::keyword_int)
+			if (state == 80 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 80 && item == Symbol::keyword_graphic)
+			if (state == 80 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 122); else
 
 
-			if (state == 80 && item == Symbol::keyword_while)
+			if (state == 80 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 123); else
 
 
@@ -2029,91 +2029,87 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 80 && item == Symbol::nterm_reg_if_tail)
+			if (state == 80 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 125); else
 
 
-			if (state == 80 && item == Symbol::nterm_statement)
+			if (state == 80 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 126); else
 
 
-			if (state == 80 && item == Symbol::nterm_if_statement)
+			if (state == 80 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 130); else
 
 
-			if (state == 80 && item == Symbol::nterm_open_while)
+			if (state == 80 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 127); else
 
 
-			if (state == 80 && item == Symbol::nterm_closed_while)
+			if (state == 80 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 128); else
 
 
-			if (state == 80 && item == Symbol::nterm_while_statement)
+			if (state == 80 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 80 && item == Symbol::nterm_vardef)
+			if (state == 80 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 129); else
 
 
-			if (state == 80 && item == Symbol::nterm_call_args)
+			if (state == 80 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 131); else
 
 
-			if (state == 80 && item == Symbol::nterm_one_call_arg)
+			if (state == 80 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 132); else
 
 
-			if (state == 80 && item == Symbol::nterm_item)
+			if (state == 80 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 80 && item == Symbol::nterm_access)
+			if (state == 80 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 80 && item == Symbol::nterm_type)
+			if (state == 80 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 80 && item == Symbol::nterm_var_footprint)
+			if (state == 80 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 80 && item == Symbol::nterm_compound_type)
+			if (state == 80 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 80 && item == Symbol::nterm_basic_type)
+			if (state == 80 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 80 && item == Symbol::nterm_union)
+			if (state == 80 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 80 && item == Symbol::nterm_sid_union)
+			if (state == 80 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 80 && item == Symbol::nterm_def_union)
+			if (state == 80 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 81 && item == Symbol::null_symbol)
+			if (state == 81 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 81 && item == Symbol::rparen)
+			if (state == 81 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 81 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 44); else
-
-
-			if (state == 81 && item == Symbol::preprocessor_call)
+			if (state == 81 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
@@ -2137,7 +2133,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 81 && item == Symbol::oper_greater_than_equal)
+			if (state == 81 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
@@ -2161,7 +2157,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 81 && item == Symbol::keyword_graphic)
+			if (state == 81 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::reduce, 44); else
 
 
@@ -2169,11 +2165,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 82 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 12); else
+			if (state == 81 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 44); else
 
 
-			if (state == 82 && item == Symbol::oper_greater_than_equal)
+			if (state == 82 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
@@ -2201,23 +2197,23 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 82 && item == Symbol::nterm_location)
+			if (state == 82 && item == Symbol::keyword_graphic)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 83 && item == Symbol::lscope)
+			if (state == 82 && item == Symbol::ending)
+				operation.override (ParseOperationType::reduce, 12); else
+
+
+			if (state == 83 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 16); else
 
 
-			if (state == 84 && item == Symbol::lscope)
+			if (state == 84 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 11); else
 
 
-			if (state == 84 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 11); else
-
-
-			if (state == 84 && item == Symbol::oper_greater_than_equal)
+			if (state == 84 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 11); else
 
 
@@ -2245,15 +2241,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 11); else
 
 
-			if (state == 85 && item == Symbol::lscope)
+			if (state == 84 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 11); else
+
+
+			if (state == 85 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 6); else
 
 
-			if (state == 85 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 6); else
-
-
-			if (state == 85 && item == Symbol::oper_greater_than_equal)
+			if (state == 85 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 6); else
 
 
@@ -2281,15 +2277,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 6); else
 
 
-			if (state == 86 && item == Symbol::lscope)
+			if (state == 85 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 6); else
+
+
+			if (state == 86 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 86 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 13); else
-
-
-			if (state == 86 && item == Symbol::oper_greater_than_equal)
+			if (state == 86 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
@@ -2317,27 +2313,31 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 87 && item == Symbol::lscope)
+			if (state == 86 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 13); else
+
+
+			if (state == 87 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 140); else
 
 
-			if (state == 88 && item == Symbol::oper_assign)
+			if (state == 88 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 88 && item == Symbol::oper_plus)
+			if (state == 88 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 88 && item == Symbol::oper_minus)
+			if (state == 88 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 88 && item == Symbol::oper_star)
+			if (state == 88 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 88 && item == Symbol::oper_less_than)
+			if (state == 88 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -2345,31 +2345,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 141); else
 
 
-			if (state == 89 && item == Symbol::null_symbol)
+			if (state == 89 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 89 && item == Symbol::rscope)
+			if (state == 89 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 89 && item == Symbol::preprocessor_call)
+			if (state == 89 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 89 && item == Symbol::constant_number)
+			if (state == 89 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 89 && item == Symbol::literalized_number)
+			if (state == 89 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 89 && item == Symbol::constant_float)
+			if (state == 89 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 89 && item == Symbol::constant_text)
+			if (state == 89 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -2377,111 +2377,107 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 89 && item == Symbol::nterm_one_call_arg)
+			if (state == 89 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 89 && item == Symbol::nterm_array_access)
+			if (state == 89 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 156); else
 
 
-			if (state == 89 && item == Symbol::nterm_access)
+			if (state == 89 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 89 && item == Symbol::nterm_type)
+			if (state == 89 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 89 && item == Symbol::nterm_var_footprint)
+			if (state == 89 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 89 && item == Symbol::nterm_compound_type)
+			if (state == 89 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 89 && item == Symbol::nterm_basic_type)
+			if (state == 89 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 89 && item == Symbol::nterm_union)
+			if (state == 89 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
-
-
-			if (state == 90 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 55); else
 
 
 			if (state == 90 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 90 && item == Symbol::rscope)
+			if (state == 90 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 91 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 56); else
+			if (state == 90 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 55); else
 
 
 			if (state == 91 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 91 && item == Symbol::rscope)
+			if (state == 91 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 92 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 57); else
+			if (state == 91 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 56); else
 
 
 			if (state == 92 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 92 && item == Symbol::rscope)
+			if (state == 92 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 93 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 58); else
+			if (state == 92 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 57); else
 
 
 			if (state == 93 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 93 && item == Symbol::rscope)
+			if (state == 93 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 94 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 1); else
+			if (state == 93 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 58); else
 
 
 			if (state == 94 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 94 && item == Symbol::rscope)
+			if (state == 94 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 94 && item == Symbol::oper_union)
+			if (state == 94 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 95 && item == Symbol::null_symbol)
+			if (state == 94 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
+
+
+			if (state == 95 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 69); else
 
 
-			if (state == 95 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 69); else
-
-
-			if (state == 95 && item == Symbol::preprocessor_call)
+			if (state == 95 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 69); else
 
 
@@ -2501,15 +2497,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 69); else
 
 
-			if (state == 96 && item == Symbol::null_symbol)
+			if (state == 95 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 69); else
+
+
+			if (state == 96 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 71); else
 
 
-			if (state == 96 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 71); else
-
-
-			if (state == 96 && item == Symbol::preprocessor_call)
+			if (state == 96 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 71); else
 
 
@@ -2529,15 +2525,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 71); else
 
 
-			if (state == 97 && item == Symbol::null_symbol)
+			if (state == 96 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 71); else
+
+
+			if (state == 97 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 70); else
 
 
-			if (state == 97 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 70); else
-
-
-			if (state == 97 && item == Symbol::preprocessor_call)
+			if (state == 97 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 70); else
 
 
@@ -2557,15 +2553,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 70); else
 
 
-			if (state == 98 && item == Symbol::null_symbol)
+			if (state == 97 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 70); else
+
+
+			if (state == 98 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 72); else
 
 
-			if (state == 98 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 72); else
-
-
-			if (state == 98 && item == Symbol::preprocessor_call)
+			if (state == 98 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 72); else
 
 
@@ -2585,15 +2581,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 72); else
 
 
-			if (state == 99 && item == Symbol::null_symbol)
+			if (state == 98 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 72); else
+
+
+			if (state == 99 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 73); else
 
 
-			if (state == 99 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 73); else
-
-
-			if (state == 99 && item == Symbol::preprocessor_call)
+			if (state == 99 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 73); else
 
 
@@ -2613,127 +2609,131 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 73); else
 
 
-			if (state == 100 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 81); else
+			if (state == 99 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 73); else
 
 
 			if (state == 100 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 100 && item == Symbol::rscope)
+			if (state == 100 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 100 && item == Symbol::oper_union)
+			if (state == 100 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 100 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 158); else
 
 
-			if (state == 101 && item == Symbol::null_symbol)
+			if (state == 101 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 159); else
 
 
-			if (state == 101 && item == Symbol::lparen)
+			if (state == 101 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 160); else
 
 
-			if (state == 101 && item == Symbol::rscope)
+			if (state == 101 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 161); else
 
 
-			if (state == 101 && item == Symbol::nterm_paren_oper)
+			if (state == 101 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 162); else
 
 
-			if (state == 101 && item == Symbol::nterm_access)
+			if (state == 101 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 163); else
-
-
-			if (state == 102 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 45); else
 
 
 			if (state == 102 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 102 && item == Symbol::rscope)
+			if (state == 102 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 103 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 46); else
+			if (state == 102 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 45); else
 
 
 			if (state == 103 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 103 && item == Symbol::rscope)
+			if (state == 103 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 104 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 47); else
+			if (state == 103 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 46); else
 
 
 			if (state == 104 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 104 && item == Symbol::rscope)
+			if (state == 104 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 105 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 48); else
+			if (state == 104 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 47); else
 
 
 			if (state == 105 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 105 && item == Symbol::rscope)
+			if (state == 105 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 106 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 49); else
+			if (state == 105 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 48); else
 
 
 			if (state == 106 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 106 && item == Symbol::rscope)
+			if (state == 106 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 107 && item == Symbol::null_symbol)
+			if (state == 106 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 49); else
+
+
+			if (state == 107 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 107 && item == Symbol::rscope)
+			if (state == 107 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 107 && item == Symbol::preprocessor_call)
+			if (state == 107 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 107 && item == Symbol::constant_number)
+			if (state == 107 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 107 && item == Symbol::literalized_number)
+			if (state == 107 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 107 && item == Symbol::constant_float)
+			if (state == 107 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 107 && item == Symbol::constant_text)
+			if (state == 107 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -2741,55 +2741,51 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 107 && item == Symbol::nterm_one_call_arg)
+			if (state == 107 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 107 && item == Symbol::nterm_array_access)
+			if (state == 107 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 178); else
 
 
-			if (state == 107 && item == Symbol::nterm_access)
+			if (state == 107 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 107 && item == Symbol::nterm_type)
+			if (state == 107 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 107 && item == Symbol::nterm_var_footprint)
+			if (state == 107 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 107 && item == Symbol::nterm_compound_type)
+			if (state == 107 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 107 && item == Symbol::nterm_basic_type)
+			if (state == 107 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 107 && item == Symbol::nterm_union)
+			if (state == 107 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
-
-
-			if (state == 108 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 54); else
 
 
 			if (state == 108 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 108 && item == Symbol::rscope)
+			if (state == 108 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 109 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 31); else
+			if (state == 108 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 109 && item == Symbol::keyword_graphic)
+			if (state == 109 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 31); else
 
 
@@ -2797,11 +2793,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 31); else
 
 
-			if (state == 110 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 32); else
+			if (state == 109 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 31); else
 
 
-			if (state == 110 && item == Symbol::keyword_graphic)
+			if (state == 110 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 32); else
 
 
@@ -2809,51 +2805,55 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 32); else
 
 
-			if (state == 111 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::shift, 159); else
+			if (state == 110 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 32); else
 
 
 			if (state == 111 && item == Symbol::lparen)
+				operation.override (ParseOperationType::shift, 159); else
+
+
+			if (state == 111 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 180); else
 
 
-			if (state == 111 && item == Symbol::rscope)
+			if (state == 111 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 161); else
 
 
-			if (state == 111 && item == Symbol::nterm_paren_oper)
+			if (state == 111 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 162); else
 
 
-			if (state == 111 && item == Symbol::nterm_access)
+			if (state == 111 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 163); else
 
 
-			if (state == 112 && item == Symbol::null_symbol)
+			if (state == 112 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 112 && item == Symbol::rscope)
+			if (state == 112 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 112 && item == Symbol::preprocessor_call)
+			if (state == 112 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 112 && item == Symbol::constant_number)
+			if (state == 112 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 112 && item == Symbol::literalized_number)
+			if (state == 112 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 112 && item == Symbol::constant_float)
+			if (state == 112 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 112 && item == Symbol::constant_text)
+			if (state == 112 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -2861,55 +2861,55 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 112 && item == Symbol::nterm_one_call_arg)
+			if (state == 112 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 112 && item == Symbol::nterm_array_access)
+			if (state == 112 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 181); else
 
 
-			if (state == 112 && item == Symbol::nterm_access)
+			if (state == 112 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 112 && item == Symbol::nterm_type)
+			if (state == 112 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 112 && item == Symbol::nterm_var_footprint)
+			if (state == 112 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 112 && item == Symbol::nterm_compound_type)
+			if (state == 112 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 112 && item == Symbol::nterm_basic_type)
+			if (state == 112 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 112 && item == Symbol::nterm_union)
+			if (state == 112 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 113 && item == Symbol::oper_assign)
+			if (state == 113 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 113 && item == Symbol::oper_plus)
+			if (state == 113 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 113 && item == Symbol::oper_minus)
+			if (state == 113 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 113 && item == Symbol::oper_star)
+			if (state == 113 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 113 && item == Symbol::oper_less_than)
+			if (state == 113 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -2917,15 +2917,15 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 182); else
 
 
-			if (state == 114 && item == Symbol::lscope)
+			if (state == 114 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 183); else
 
 
-			if (state == 114 && item == Symbol::keyword_graphic)
+			if (state == 114 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 114 && item == Symbol::keyword_while)
+			if (state == 114 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -2933,55 +2933,55 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 184); else
 
 
-			if (state == 114 && item == Symbol::nterm_just_if)
+			if (state == 114 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 114 && item == Symbol::nterm_if_else)
+			if (state == 114 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 114 && item == Symbol::nterm_open_while)
+			if (state == 114 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 114 && item == Symbol::nterm_closed_while)
+			if (state == 114 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 114 && item == Symbol::nterm_while_statement)
+			if (state == 114 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 114 && item == Symbol::nterm_vardef)
+			if (state == 114 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 115 && item == Symbol::null_symbol)
+			if (state == 115 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 115 && item == Symbol::rscope)
+			if (state == 115 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 115 && item == Symbol::preprocessor_call)
+			if (state == 115 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 115 && item == Symbol::constant_number)
+			if (state == 115 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 115 && item == Symbol::literalized_number)
+			if (state == 115 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 115 && item == Symbol::constant_float)
+			if (state == 115 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 115 && item == Symbol::constant_text)
+			if (state == 115 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -2989,95 +2989,91 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 115 && item == Symbol::nterm_one_call_arg)
+			if (state == 115 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 115 && item == Symbol::nterm_array_access)
+			if (state == 115 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 185); else
 
 
-			if (state == 115 && item == Symbol::nterm_access)
+			if (state == 115 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 115 && item == Symbol::nterm_type)
+			if (state == 115 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 115 && item == Symbol::nterm_var_footprint)
+			if (state == 115 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 115 && item == Symbol::nterm_compound_type)
+			if (state == 115 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 115 && item == Symbol::nterm_basic_type)
+			if (state == 115 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 115 && item == Symbol::nterm_union)
+			if (state == 115 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
 
 
-			if (state == 116 && item == Symbol::null_symbol)
+			if (state == 116 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 116 && item == Symbol::rscope)
+			if (state == 116 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 116 && item == Symbol::identifier)
+			if (state == 116 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 117 && item == Symbol::null_symbol)
+			if (state == 117 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 117 && item == Symbol::rscope)
+			if (state == 117 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 117 && item == Symbol::identifier)
+			if (state == 117 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 118 && item == Symbol::null_symbol)
+			if (state == 118 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 118 && item == Symbol::rscope)
+			if (state == 118 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 118 && item == Symbol::identifier)
+			if (state == 118 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 119 && item == Symbol::null_symbol)
+			if (state == 119 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 119 && item == Symbol::rscope)
+			if (state == 119 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 119 && item == Symbol::identifier)
+			if (state == 119 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 120 && item == Symbol::null_symbol)
+			if (state == 120 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 120 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 1); else
-
-
-			if (state == 120 && item == Symbol::constant_text)
+			if (state == 120 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -3085,15 +3081,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 120 && item == Symbol::oper_union)
+			if (state == 120 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 121 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 34); else
+			if (state == 120 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 121 && item == Symbol::keyword_graphic)
+			if (state == 121 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 34); else
 
 
@@ -3105,39 +3101,39 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 34); else
 
 
-			if (state == 122 && item == Symbol::null_symbol)
+			if (state == 121 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 34); else
+
+
+			if (state == 122 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 76); else
 
 
-			if (state == 122 && item == Symbol::nterm_non_scoped_statement)
+			if (state == 122 && item == Symbol::nterm_one_call_arg)
 				operation.override (ParseOperationType::go_to, 186); else
 
 
-			if (state == 122 && item == Symbol::nterm_access)
+			if (state == 122 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 78); else
 
 
-			if (state == 123 && item == Symbol::null_symbol)
+			if (state == 123 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 79); else
 
 
-			if (state == 123 && item == Symbol::nterm_non_scoped_statement)
+			if (state == 123 && item == Symbol::nterm_one_call_arg)
 				operation.override (ParseOperationType::go_to, 187); else
 
 
-			if (state == 123 && item == Symbol::nterm_access)
+			if (state == 123 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 81); else
 
 
-			if (state == 124 && item == Symbol::null_symbol)
+			if (state == 124 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 124 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 81); else
-
-
-			if (state == 124 && item == Symbol::constant_text)
+			if (state == 124 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
@@ -3145,15 +3141,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 124 && item == Symbol::oper_union)
+			if (state == 124 && item == Symbol::statement_end)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 124 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 188); else
 
 
-			if (state == 125 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 14); else
-
-
-			if (state == 125 && item == Symbol::keyword_graphic)
+			if (state == 125 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 14); else
 
 
@@ -3165,11 +3161,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 14); else
 
 
-			if (state == 126 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 25); else
+			if (state == 125 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 14); else
 
 
-			if (state == 126 && item == Symbol::keyword_graphic)
+			if (state == 126 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 25); else
 
 
@@ -3178,14 +3174,14 @@ namespace Alton
 
 
 			if (state == 126 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 25); else
+
+
+			if (state == 126 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::shift, 189); else
 
 
-			if (state == 127 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 22); else
-
-
-			if (state == 127 && item == Symbol::keyword_graphic)
+			if (state == 127 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 22); else
 
 
@@ -3193,19 +3189,19 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 22); else
 
 
-			if (state == 128 && item == Symbol::keyword_if)
+			if (state == 127 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 22); else
+
+
+			if (state == 128 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::shift, 190); else
 
 
-			if (state == 129 && item == Symbol::keyword_if)
+			if (state == 129 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 26); else
 
 
-			if (state == 130 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 15); else
-
-
-			if (state == 130 && item == Symbol::keyword_graphic)
+			if (state == 130 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 15); else
 
 
@@ -3217,91 +3213,95 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 15); else
 
 
-			if (state == 131 && item == Symbol::identifier)
+			if (state == 130 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 15); else
+
+
+			if (state == 131 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 191); else
 
 
-			if (state == 132 && item == Symbol::null_symbol)
+			if (state == 132 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 192); else
 
 
-			if (state == 132 && item == Symbol::rscope)
+			if (state == 132 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 193); else
 
 
-			if (state == 132 && item == Symbol::identifier)
+			if (state == 132 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 194); else
 
 
-			if (state == 132 && item == Symbol::nterm_paren_oper)
+			if (state == 132 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 195); else
 
 
-			if (state == 132 && item == Symbol::nterm_access)
+			if (state == 132 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 196); else
 
 
-			if (state == 133 && item == Symbol::null_symbol)
+			if (state == 133 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 133 && item == Symbol::rscope)
+			if (state == 133 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 133 && item == Symbol::identifier)
+			if (state == 133 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 134 && item == Symbol::null_symbol)
+			if (state == 134 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 134 && item == Symbol::rscope)
+			if (state == 134 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 134 && item == Symbol::identifier)
+			if (state == 134 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 135 && item == Symbol::null_symbol)
+			if (state == 135 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 135 && item == Symbol::rscope)
+			if (state == 135 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 135 && item == Symbol::identifier)
+			if (state == 135 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 136 && item == Symbol::null_symbol)
+			if (state == 136 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 136 && item == Symbol::rscope)
+			if (state == 136 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 136 && item == Symbol::identifier)
+			if (state == 136 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 137 && item == Symbol::null_symbol)
+			if (state == 137 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 137 && item == Symbol::rscope)
+			if (state == 137 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 137 && item == Symbol::identifier)
+			if (state == 137 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 138 && item == Symbol::constant_text)
+			if (state == 138 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 197); else
 
 
@@ -3309,35 +3309,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 198); else
 
 
-			if (state == 138 && item == Symbol::nterm_call_item)
+			if (state == 138 && item == Symbol::nterm_sid_union)
 				operation.override (ParseOperationType::go_to, 199); else
 
 
-			if (state == 139 && item == Symbol::null_symbol)
+			if (state == 139 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 139 && item == Symbol::rscope)
+			if (state == 139 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 54); else
-
-
-			if (state == 139 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 62); else
 
 
 			if (state == 139 && item == Symbol::identifier)
+				operation.override (ParseOperationType::reduce, 62); else
+
+
+			if (state == 139 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 140 && item == Symbol::lscope)
+			if (state == 140 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 140 && item == Symbol::constant_text)
-				operation.override (ParseOperationType::reduce, 12); else
-
-
-			if (state == 140 && item == Symbol::oper_greater_than_equal)
+			if (state == 140 && item == Symbol::identifier)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
@@ -3365,31 +3361,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 141 && item == Symbol::null_symbol)
+			if (state == 140 && item == Symbol::keyword_graphic)
+				operation.override (ParseOperationType::reduce, 12); else
+
+
+			if (state == 141 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 141 && item == Symbol::rscope)
+			if (state == 141 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 141 && item == Symbol::preprocessor_call)
+			if (state == 141 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 141 && item == Symbol::constant_number)
+			if (state == 141 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 141 && item == Symbol::literalized_number)
+			if (state == 141 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 141 && item == Symbol::constant_float)
+			if (state == 141 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 141 && item == Symbol::constant_text)
+			if (state == 141 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -3397,55 +3397,55 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 141 && item == Symbol::nterm_one_call_arg)
+			if (state == 141 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 141 && item == Symbol::nterm_array_access)
+			if (state == 141 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 200); else
 
 
-			if (state == 141 && item == Symbol::nterm_access)
+			if (state == 141 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 141 && item == Symbol::nterm_type)
+			if (state == 141 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 141 && item == Symbol::nterm_var_footprint)
+			if (state == 141 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 141 && item == Symbol::nterm_compound_type)
+			if (state == 141 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 141 && item == Symbol::nterm_basic_type)
+			if (state == 141 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 141 && item == Symbol::nterm_union)
+			if (state == 141 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 142 && item == Symbol::oper_assign)
+			if (state == 142 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 142 && item == Symbol::oper_plus)
+			if (state == 142 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 142 && item == Symbol::oper_minus)
+			if (state == 142 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 142 && item == Symbol::oper_star)
+			if (state == 142 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 142 && item == Symbol::oper_less_than)
+			if (state == 142 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -3453,31 +3453,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 201); else
 
 
-			if (state == 143 && item == Symbol::null_symbol)
+			if (state == 143 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 143 && item == Symbol::rscope)
+			if (state == 143 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 143 && item == Symbol::preprocessor_call)
+			if (state == 143 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 143 && item == Symbol::constant_number)
+			if (state == 143 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 143 && item == Symbol::literalized_number)
+			if (state == 143 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 143 && item == Symbol::constant_float)
+			if (state == 143 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 143 && item == Symbol::constant_text)
+			if (state == 143 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -3485,43 +3485,39 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 143 && item == Symbol::nterm_one_call_arg)
+			if (state == 143 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 143 && item == Symbol::nterm_array_access)
+			if (state == 143 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 202); else
 
 
-			if (state == 143 && item == Symbol::nterm_access)
+			if (state == 143 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 143 && item == Symbol::nterm_type)
+			if (state == 143 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 143 && item == Symbol::nterm_var_footprint)
+			if (state == 143 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 143 && item == Symbol::nterm_compound_type)
+			if (state == 143 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 143 && item == Symbol::nterm_basic_type)
+			if (state == 143 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 143 && item == Symbol::nterm_union)
+			if (state == 143 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
 
 
-			if (state == 144 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 55); else
-
-
-			if (state == 144 && item == Symbol::rscope)
+			if (state == 144 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
@@ -3529,15 +3525,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 144 && item == Symbol::statement_end)
+			if (state == 144 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 145 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 56); else
+			if (state == 144 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 145 && item == Symbol::rscope)
+			if (state == 145 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
@@ -3545,15 +3541,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 145 && item == Symbol::statement_end)
+			if (state == 145 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 146 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 57); else
+			if (state == 145 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 146 && item == Symbol::rscope)
+			if (state == 146 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
@@ -3561,15 +3557,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 146 && item == Symbol::statement_end)
+			if (state == 146 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 147 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 58); else
+			if (state == 146 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 147 && item == Symbol::rscope)
+			if (state == 147 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
@@ -3577,15 +3573,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 147 && item == Symbol::statement_end)
+			if (state == 147 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 148 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 1); else
+			if (state == 147 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 148 && item == Symbol::rscope)
+			if (state == 148 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -3593,7 +3589,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 148 && item == Symbol::statement_end)
+			if (state == 148 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -3601,11 +3597,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 149 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 81); else
+			if (state == 148 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 149 && item == Symbol::rscope)
+			if (state == 149 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
@@ -3613,43 +3609,43 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 149 && item == Symbol::statement_end)
+			if (state == 149 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
 			if (state == 149 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 149 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 203); else
 
 
-			if (state == 150 && item == Symbol::null_symbol)
+			if (state == 150 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 204); else
 
 
-			if (state == 150 && item == Symbol::rscope)
+			if (state == 150 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 205); else
 
 
-			if (state == 150 && item == Symbol::lbrack)
+			if (state == 150 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 75); else
 
 
-			if (state == 150 && item == Symbol::statement_end)
+			if (state == 150 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::shift, 206); else
 
 
-			if (state == 150 && item == Symbol::nterm_paren_oper)
+			if (state == 150 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 207); else
 
 
-			if (state == 150 && item == Symbol::nterm_access)
+			if (state == 150 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 208); else
 
 
-			if (state == 151 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 45); else
-
-
-			if (state == 151 && item == Symbol::rscope)
+			if (state == 151 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
@@ -3657,15 +3653,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 151 && item == Symbol::statement_end)
+			if (state == 151 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 152 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 46); else
+			if (state == 151 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 152 && item == Symbol::rscope)
+			if (state == 152 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
@@ -3673,15 +3669,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 152 && item == Symbol::statement_end)
+			if (state == 152 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 153 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 47); else
+			if (state == 152 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 153 && item == Symbol::rscope)
+			if (state == 153 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
@@ -3689,15 +3685,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 153 && item == Symbol::statement_end)
+			if (state == 153 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 154 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 48); else
+			if (state == 153 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 154 && item == Symbol::rscope)
+			if (state == 154 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
@@ -3705,15 +3701,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 154 && item == Symbol::statement_end)
+			if (state == 154 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 155 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 49); else
+			if (state == 154 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 155 && item == Symbol::rscope)
+			if (state == 155 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
@@ -3721,19 +3717,19 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 155 && item == Symbol::statement_end)
+			if (state == 155 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 156 && item == Symbol::lbrack)
+			if (state == 155 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 49); else
+
+
+			if (state == 156 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 209); else
 
 
-			if (state == 157 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 54); else
-
-
-			if (state == 157 && item == Symbol::rscope)
+			if (state == 157 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
@@ -3741,11 +3737,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 157 && item == Symbol::statement_end)
+			if (state == 157 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 158 && item == Symbol::constant_text)
+			if (state == 157 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 54); else
+
+
+			if (state == 158 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 94); else
 
 
@@ -3753,59 +3753,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 100); else
 
 
-			if (state == 158 && item == Symbol::nterm_union)
+			if (state == 158 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 210); else
 
 
-			if (state == 159 && item == Symbol::null_symbol)
+			if (state == 159 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 159 && item == Symbol::lparen)
+			if (state == 159 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 211); else
 
 
-			if (state == 159 && item == Symbol::rscope)
+			if (state == 159 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 159 && item == Symbol::preprocessor_call)
+			if (state == 159 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 159 && item == Symbol::constant_number)
+			if (state == 159 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 159 && item == Symbol::literalized_number)
+			if (state == 159 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 159 && item == Symbol::constant_float)
+			if (state == 159 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 159 && item == Symbol::constant_text)
+			if (state == 159 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 159 && item == Symbol::oper_assign)
+			if (state == 159 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 159 && item == Symbol::oper_plus)
+			if (state == 159 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 159 && item == Symbol::oper_minus)
+			if (state == 159 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 159 && item == Symbol::oper_star)
+			if (state == 159 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 159 && item == Symbol::oper_less_than)
+			if (state == 159 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -3813,31 +3813,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 159 && item == Symbol::nterm_one_call_arg)
+			if (state == 159 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 159 && item == Symbol::nterm_array_access)
+			if (state == 159 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 212); else
 
 
-			if (state == 159 && item == Symbol::nterm_access)
+			if (state == 159 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 159 && item == Symbol::nterm_type)
+			if (state == 159 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 159 && item == Symbol::nterm_var_footprint)
+			if (state == 159 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 159 && item == Symbol::nterm_compound_type)
+			if (state == 159 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 159 && item == Symbol::nterm_basic_type)
+			if (state == 159 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -3845,43 +3845,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 141); else
 
 
-			if (state == 159 && item == Symbol::nterm_union)
+			if (state == 159 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
-
-
-			if (state == 160 && item == Symbol::keyword_graphic)
-				operation.override (ParseOperationType::reduce, 43); else
 
 
 			if (state == 160 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 161 && item == Symbol::null_symbol)
+			if (state == 160 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 43); else
+
+
+			if (state == 161 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 161 && item == Symbol::rscope)
+			if (state == 161 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 161 && item == Symbol::preprocessor_call)
+			if (state == 161 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 161 && item == Symbol::constant_number)
+			if (state == 161 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 161 && item == Symbol::literalized_number)
+			if (state == 161 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 161 && item == Symbol::constant_float)
+			if (state == 161 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 161 && item == Symbol::constant_text)
+			if (state == 161 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -3889,75 +3889,75 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 161 && item == Symbol::nterm_one_call_arg)
+			if (state == 161 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 221); else
 
 
-			if (state == 161 && item == Symbol::nterm_access)
+			if (state == 161 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 161 && item == Symbol::nterm_type)
+			if (state == 161 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 161 && item == Symbol::nterm_var_footprint)
+			if (state == 161 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 161 && item == Symbol::nterm_compound_type)
+			if (state == 161 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 161 && item == Symbol::nterm_basic_type)
+			if (state == 161 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 161 && item == Symbol::nterm_union)
+			if (state == 161 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
-
-
-			if (state == 162 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 50); else
 
 
 			if (state == 162 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 162 && item == Symbol::rscope)
+			if (state == 162 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 163 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 42); else
+			if (state == 162 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 50); else
 
 
 			if (state == 163 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 163 && item == Symbol::rscope)
+			if (state == 163 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 164 && item == Symbol::oper_assign)
-				operation.override (ParseOperationType::shift, 95); else
+			if (state == 163 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 42); else
 
 
 			if (state == 164 && item == Symbol::oper_plus)
-				operation.override (ParseOperationType::shift, 96); else
+				operation.override (ParseOperationType::shift, 95); else
 
 
 			if (state == 164 && item == Symbol::oper_minus)
-				operation.override (ParseOperationType::shift, 97); else
+				operation.override (ParseOperationType::shift, 96); else
 
 
 			if (state == 164 && item == Symbol::oper_star)
-				operation.override (ParseOperationType::shift, 98); else
+				operation.override (ParseOperationType::shift, 97); else
 
 
 			if (state == 164 && item == Symbol::oper_less_than)
+				operation.override (ParseOperationType::shift, 98); else
+
+
+			if (state == 164 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -3965,31 +3965,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 228); else
 
 
-			if (state == 165 && item == Symbol::null_symbol)
+			if (state == 165 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 165 && item == Symbol::rscope)
+			if (state == 165 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 165 && item == Symbol::preprocessor_call)
+			if (state == 165 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 165 && item == Symbol::constant_number)
+			if (state == 165 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 165 && item == Symbol::literalized_number)
+			if (state == 165 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 165 && item == Symbol::constant_float)
+			if (state == 165 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 165 && item == Symbol::constant_text)
+			if (state == 165 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -3997,115 +3997,111 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 165 && item == Symbol::nterm_one_call_arg)
+			if (state == 165 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 165 && item == Symbol::nterm_array_access)
+			if (state == 165 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 229); else
 
 
-			if (state == 165 && item == Symbol::nterm_access)
+			if (state == 165 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 165 && item == Symbol::nterm_type)
+			if (state == 165 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 165 && item == Symbol::nterm_var_footprint)
+			if (state == 165 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 165 && item == Symbol::nterm_compound_type)
+			if (state == 165 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 165 && item == Symbol::nterm_basic_type)
+			if (state == 165 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 165 && item == Symbol::nterm_union)
+			if (state == 165 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
-
-
-			if (state == 166 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 55); else
 
 
 			if (state == 166 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 166 && item == Symbol::rscope)
+			if (state == 166 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 166 && item == Symbol::statement_end)
+			if (state == 166 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 167 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 56); else
+			if (state == 166 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 55); else
 
 
 			if (state == 167 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 167 && item == Symbol::rscope)
+			if (state == 167 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 167 && item == Symbol::statement_end)
+			if (state == 167 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 168 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 57); else
+			if (state == 167 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 56); else
 
 
 			if (state == 168 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 168 && item == Symbol::rscope)
+			if (state == 168 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 168 && item == Symbol::statement_end)
+			if (state == 168 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 169 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 58); else
+			if (state == 168 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 57); else
 
 
 			if (state == 169 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 169 && item == Symbol::rscope)
+			if (state == 169 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 169 && item == Symbol::statement_end)
+			if (state == 169 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 170 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 1); else
+			if (state == 169 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 58); else
 
 
 			if (state == 170 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 170 && item == Symbol::rscope)
+			if (state == 170 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 170 && item == Symbol::statement_end)
+			if (state == 170 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -4113,163 +4109,163 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 171 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 81); else
+			if (state == 170 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
 
 
 			if (state == 171 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 171 && item == Symbol::rscope)
+			if (state == 171 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 171 && item == Symbol::statement_end)
+			if (state == 171 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
 			if (state == 171 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 171 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 230); else
 
 
-			if (state == 172 && item == Symbol::null_symbol)
+			if (state == 172 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 231); else
 
 
-			if (state == 172 && item == Symbol::lparen)
+			if (state == 172 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 75); else
 
 
-			if (state == 172 && item == Symbol::rscope)
+			if (state == 172 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 232); else
 
 
-			if (state == 172 && item == Symbol::statement_end)
+			if (state == 172 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::shift, 233); else
 
 
-			if (state == 172 && item == Symbol::nterm_paren_oper)
+			if (state == 172 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 234); else
 
 
-			if (state == 172 && item == Symbol::nterm_access)
+			if (state == 172 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 235); else
-
-
-			if (state == 173 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 45); else
 
 
 			if (state == 173 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 173 && item == Symbol::rscope)
+			if (state == 173 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 173 && item == Symbol::statement_end)
+			if (state == 173 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 174 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 46); else
+			if (state == 173 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 45); else
 
 
 			if (state == 174 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 174 && item == Symbol::rscope)
+			if (state == 174 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 174 && item == Symbol::statement_end)
+			if (state == 174 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 175 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 47); else
+			if (state == 174 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 46); else
 
 
 			if (state == 175 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 175 && item == Symbol::rscope)
+			if (state == 175 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 175 && item == Symbol::statement_end)
+			if (state == 175 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 176 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 48); else
+			if (state == 175 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 47); else
 
 
 			if (state == 176 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 176 && item == Symbol::rscope)
+			if (state == 176 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 176 && item == Symbol::statement_end)
+			if (state == 176 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 177 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 49); else
+			if (state == 176 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 48); else
 
 
 			if (state == 177 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 177 && item == Symbol::rscope)
+			if (state == 177 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 177 && item == Symbol::statement_end)
+			if (state == 177 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 178 && item == Symbol::lparen)
+			if (state == 177 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 49); else
+
+
+			if (state == 178 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 236); else
-
-
-			if (state == 179 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 54); else
 
 
 			if (state == 179 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 179 && item == Symbol::rscope)
+			if (state == 179 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 179 && item == Symbol::statement_end)
+			if (state == 179 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 180 && item == Symbol::null_symbol)
+			if (state == 179 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 54); else
+
+
+			if (state == 180 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 180 && item == Symbol::rparen)
+			if (state == 180 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 180 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 43); else
-
-
-			if (state == 180 && item == Symbol::preprocessor_call)
+			if (state == 180 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
@@ -4293,7 +4289,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 180 && item == Symbol::oper_greater_than_equal)
+			if (state == 180 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
@@ -4317,7 +4313,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 180 && item == Symbol::keyword_graphic)
+			if (state == 180 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::reduce, 43); else
 
 
@@ -4325,35 +4321,39 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 43); else
 
 
-			if (state == 181 && item == Symbol::lparen)
+			if (state == 180 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 43); else
+
+
+			if (state == 181 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 237); else
 
 
-			if (state == 182 && item == Symbol::null_symbol)
+			if (state == 182 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 182 && item == Symbol::rscope)
+			if (state == 182 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 182 && item == Symbol::preprocessor_call)
+			if (state == 182 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 182 && item == Symbol::constant_number)
+			if (state == 182 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 182 && item == Symbol::literalized_number)
+			if (state == 182 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 182 && item == Symbol::constant_float)
+			if (state == 182 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 182 && item == Symbol::constant_text)
+			if (state == 182 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -4361,43 +4361,39 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 182 && item == Symbol::nterm_one_call_arg)
+			if (state == 182 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 182 && item == Symbol::nterm_array_access)
+			if (state == 182 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 238); else
 
 
-			if (state == 182 && item == Symbol::nterm_access)
+			if (state == 182 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 182 && item == Symbol::nterm_type)
+			if (state == 182 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 182 && item == Symbol::nterm_var_footprint)
+			if (state == 182 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 182 && item == Symbol::nterm_compound_type)
+			if (state == 182 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 182 && item == Symbol::nterm_basic_type)
+			if (state == 182 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 182 && item == Symbol::nterm_union)
+			if (state == 182 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 183 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 13); else
-
-
-			if (state == 183 && item == Symbol::keyword_graphic)
+			if (state == 183 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
@@ -4409,103 +4405,107 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 184 && item == Symbol::lscope)
+			if (state == 183 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 13); else
+
+
+			if (state == 184 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 239); else
 
 
-			if (state == 185 && item == Symbol::lbrack)
+			if (state == 185 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 240); else
 
 
-			if (state == 186 && item == Symbol::keyword_graphic)
+			if (state == 186 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 122); else
 
 
-			if (state == 186 && item == Symbol::keyword_while)
+			if (state == 186 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 123); else
 
 
-			if (state == 186 && item == Symbol::nterm_open_while)
+			if (state == 186 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 109); else
 
 
-			if (state == 186 && item == Symbol::nterm_closed_while)
+			if (state == 186 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 241); else
 
 
-			if (state == 186 && item == Symbol::nterm_while_statement)
+			if (state == 186 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 186 && item == Symbol::nterm_vardef)
+			if (state == 186 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 129); else
 
 
-			if (state == 187 && item == Symbol::null_symbol)
+			if (state == 187 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 187 && item == Symbol::rparen)
+			if (state == 187 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 114); else
 
 
-			if (state == 187 && item == Symbol::rscope)
+			if (state == 187 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 187 && item == Symbol::preprocessor_call)
+			if (state == 187 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 187 && item == Symbol::constant_number)
+			if (state == 187 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 187 && item == Symbol::literalized_number)
+			if (state == 187 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 187 && item == Symbol::constant_float)
+			if (state == 187 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 187 && item == Symbol::constant_text)
+			if (state == 187 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 187 && item == Symbol::identifier)
+			if (state == 187 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 121); else
 
 
-			if (state == 187 && item == Symbol::oper_greater_than_equal)
+			if (state == 187 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 187 && item == Symbol::keyword_shader)
+			if (state == 187 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 187 && item == Symbol::keyword_float)
+			if (state == 187 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 187 && item == Symbol::keyword_bool)
+			if (state == 187 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 187 && item == Symbol::keyword_void)
+			if (state == 187 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 187 && item == Symbol::keyword_int)
+			if (state == 187 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 187 && item == Symbol::keyword_graphic)
+			if (state == 187 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 122); else
 
 
-			if (state == 187 && item == Symbol::keyword_while)
+			if (state == 187 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 123); else
 
 
@@ -4513,79 +4513,79 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 187 && item == Symbol::nterm_reg_if_tail)
+			if (state == 187 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 125); else
 
 
-			if (state == 187 && item == Symbol::nterm_statement)
+			if (state == 187 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 242); else
 
 
-			if (state == 187 && item == Symbol::nterm_if_statement)
+			if (state == 187 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 130); else
 
 
-			if (state == 187 && item == Symbol::nterm_open_while)
+			if (state == 187 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 127); else
 
 
-			if (state == 187 && item == Symbol::nterm_closed_while)
+			if (state == 187 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 243); else
 
 
-			if (state == 187 && item == Symbol::nterm_while_statement)
+			if (state == 187 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 187 && item == Symbol::nterm_vardef)
+			if (state == 187 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 129); else
 
 
-			if (state == 187 && item == Symbol::nterm_call_args)
+			if (state == 187 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 131); else
 
 
-			if (state == 187 && item == Symbol::nterm_one_call_arg)
+			if (state == 187 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 132); else
 
 
-			if (state == 187 && item == Symbol::nterm_item)
+			if (state == 187 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 187 && item == Symbol::nterm_access)
+			if (state == 187 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 187 && item == Symbol::nterm_type)
+			if (state == 187 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 187 && item == Symbol::nterm_var_footprint)
+			if (state == 187 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 187 && item == Symbol::nterm_compound_type)
+			if (state == 187 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 187 && item == Symbol::nterm_basic_type)
+			if (state == 187 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 187 && item == Symbol::nterm_union)
+			if (state == 187 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 187 && item == Symbol::nterm_sid_union)
+			if (state == 187 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 187 && item == Symbol::nterm_def_union)
+			if (state == 187 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 188 && item == Symbol::constant_text)
+			if (state == 188 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
@@ -4593,75 +4593,75 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 188 && item == Symbol::nterm_union)
+			if (state == 188 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 244); else
 
 
-			if (state == 189 && item == Symbol::null_symbol)
+			if (state == 189 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 189 && item == Symbol::rparen)
+			if (state == 189 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 245); else
 
 
-			if (state == 189 && item == Symbol::rscope)
+			if (state == 189 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 189 && item == Symbol::preprocessor_call)
+			if (state == 189 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 189 && item == Symbol::constant_number)
+			if (state == 189 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 189 && item == Symbol::literalized_number)
+			if (state == 189 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 189 && item == Symbol::constant_float)
+			if (state == 189 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 189 && item == Symbol::constant_text)
+			if (state == 189 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 189 && item == Symbol::identifier)
+			if (state == 189 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 246); else
 
 
-			if (state == 189 && item == Symbol::oper_greater_than_equal)
+			if (state == 189 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 189 && item == Symbol::keyword_shader)
+			if (state == 189 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 189 && item == Symbol::keyword_float)
+			if (state == 189 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 189 && item == Symbol::keyword_bool)
+			if (state == 189 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 189 && item == Symbol::keyword_void)
+			if (state == 189 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 189 && item == Symbol::keyword_int)
+			if (state == 189 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 189 && item == Symbol::keyword_graphic)
+			if (state == 189 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 189 && item == Symbol::keyword_while)
+			if (state == 189 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -4669,143 +4669,143 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 189 && item == Symbol::nterm_reg_if_tail)
+			if (state == 189 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 247); else
 
 
-			if (state == 189 && item == Symbol::nterm_statement)
+			if (state == 189 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 248); else
 
 
-			if (state == 189 && item == Symbol::nterm_if_statement)
+			if (state == 189 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 251); else
 
 
-			if (state == 189 && item == Symbol::nterm_open_while)
+			if (state == 189 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 249); else
 
 
-			if (state == 189 && item == Symbol::nterm_closed_while)
+			if (state == 189 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 250); else
 
 
-			if (state == 189 && item == Symbol::nterm_while_statement)
+			if (state == 189 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 189 && item == Symbol::nterm_vardef)
+			if (state == 189 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 189 && item == Symbol::nterm_call_args)
+			if (state == 189 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 252); else
 
 
-			if (state == 189 && item == Symbol::nterm_one_call_arg)
+			if (state == 189 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 253); else
 
 
-			if (state == 189 && item == Symbol::nterm_item)
+			if (state == 189 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 189 && item == Symbol::nterm_access)
+			if (state == 189 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 189 && item == Symbol::nterm_type)
+			if (state == 189 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 189 && item == Symbol::nterm_var_footprint)
+			if (state == 189 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 189 && item == Symbol::nterm_compound_type)
+			if (state == 189 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 189 && item == Symbol::nterm_basic_type)
+			if (state == 189 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 189 && item == Symbol::nterm_union)
+			if (state == 189 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 189 && item == Symbol::nterm_sid_union)
+			if (state == 189 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 189 && item == Symbol::nterm_def_union)
+			if (state == 189 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 190 && item == Symbol::null_symbol)
+			if (state == 190 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 190 && item == Symbol::rparen)
+			if (state == 190 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 245); else
 
 
-			if (state == 190 && item == Symbol::rscope)
+			if (state == 190 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 190 && item == Symbol::preprocessor_call)
+			if (state == 190 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 190 && item == Symbol::constant_number)
+			if (state == 190 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 190 && item == Symbol::literalized_number)
+			if (state == 190 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 190 && item == Symbol::constant_float)
+			if (state == 190 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 190 && item == Symbol::constant_text)
+			if (state == 190 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 190 && item == Symbol::identifier)
+			if (state == 190 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 246); else
 
 
-			if (state == 190 && item == Symbol::oper_greater_than_equal)
+			if (state == 190 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 190 && item == Symbol::keyword_shader)
+			if (state == 190 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 190 && item == Symbol::keyword_float)
+			if (state == 190 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 190 && item == Symbol::keyword_bool)
+			if (state == 190 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 190 && item == Symbol::keyword_void)
+			if (state == 190 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 190 && item == Symbol::keyword_int)
+			if (state == 190 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 190 && item == Symbol::keyword_graphic)
+			if (state == 190 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 190 && item == Symbol::keyword_while)
+			if (state == 190 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -4813,83 +4813,79 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 190 && item == Symbol::nterm_reg_if_tail)
+			if (state == 190 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 247); else
 
 
-			if (state == 190 && item == Symbol::nterm_statement)
+			if (state == 190 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 254); else
 
 
-			if (state == 190 && item == Symbol::nterm_if_statement)
+			if (state == 190 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 251); else
 
 
-			if (state == 190 && item == Symbol::nterm_open_while)
+			if (state == 190 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 255); else
 
 
-			if (state == 190 && item == Symbol::nterm_closed_while)
+			if (state == 190 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 256); else
 
 
-			if (state == 190 && item == Symbol::nterm_while_statement)
+			if (state == 190 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 190 && item == Symbol::nterm_vardef)
+			if (state == 190 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 190 && item == Symbol::nterm_call_args)
+			if (state == 190 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 252); else
 
 
-			if (state == 190 && item == Symbol::nterm_one_call_arg)
+			if (state == 190 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 253); else
 
 
-			if (state == 190 && item == Symbol::nterm_item)
+			if (state == 190 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 190 && item == Symbol::nterm_access)
+			if (state == 190 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 190 && item == Symbol::nterm_type)
+			if (state == 190 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 190 && item == Symbol::nterm_var_footprint)
+			if (state == 190 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 190 && item == Symbol::nterm_compound_type)
+			if (state == 190 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 190 && item == Symbol::nterm_basic_type)
+			if (state == 190 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 190 && item == Symbol::nterm_union)
+			if (state == 190 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 190 && item == Symbol::nterm_sid_union)
+			if (state == 190 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 190 && item == Symbol::nterm_def_union)
+			if (state == 190 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 191 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 35); else
-
-
-			if (state == 191 && item == Symbol::keyword_graphic)
+			if (state == 191 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 35); else
 
 
@@ -4901,55 +4897,59 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 35); else
 
 
-			if (state == 192 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::shift, 164); else
+			if (state == 191 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 35); else
 
 
 			if (state == 192 && item == Symbol::lparen)
+				operation.override (ParseOperationType::shift, 164); else
+
+
+			if (state == 192 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 257); else
 
 
-			if (state == 192 && item == Symbol::rscope)
+			if (state == 192 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 192 && item == Symbol::preprocessor_call)
+			if (state == 192 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 192 && item == Symbol::constant_number)
+			if (state == 192 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 192 && item == Symbol::literalized_number)
+			if (state == 192 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 192 && item == Symbol::constant_float)
+			if (state == 192 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 192 && item == Symbol::constant_text)
+			if (state == 192 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 192 && item == Symbol::oper_assign)
+			if (state == 192 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 192 && item == Symbol::oper_plus)
+			if (state == 192 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 192 && item == Symbol::oper_minus)
+			if (state == 192 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 192 && item == Symbol::oper_star)
+			if (state == 192 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 192 && item == Symbol::oper_less_than)
+			if (state == 192 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -4957,31 +4957,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 192 && item == Symbol::nterm_one_call_arg)
+			if (state == 192 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 192 && item == Symbol::nterm_array_access)
+			if (state == 192 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 258); else
 
 
-			if (state == 192 && item == Symbol::nterm_access)
+			if (state == 192 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 192 && item == Symbol::nterm_type)
+			if (state == 192 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 192 && item == Symbol::nterm_var_footprint)
+			if (state == 192 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 192 && item == Symbol::nterm_compound_type)
+			if (state == 192 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 192 && item == Symbol::nterm_basic_type)
+			if (state == 192 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -4989,35 +4989,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 182); else
 
 
-			if (state == 192 && item == Symbol::nterm_union)
+			if (state == 192 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 193 && item == Symbol::null_symbol)
+			if (state == 193 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 193 && item == Symbol::rscope)
+			if (state == 193 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 193 && item == Symbol::preprocessor_call)
+			if (state == 193 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 193 && item == Symbol::constant_number)
+			if (state == 193 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 193 && item == Symbol::literalized_number)
+			if (state == 193 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 193 && item == Symbol::constant_float)
+			if (state == 193 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 193 && item == Symbol::constant_text)
+			if (state == 193 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -5025,39 +5025,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 193 && item == Symbol::nterm_one_call_arg)
+			if (state == 193 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 259); else
 
 
-			if (state == 193 && item == Symbol::nterm_access)
+			if (state == 193 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 193 && item == Symbol::nterm_type)
+			if (state == 193 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 193 && item == Symbol::nterm_var_footprint)
+			if (state == 193 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 193 && item == Symbol::nterm_compound_type)
+			if (state == 193 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 193 && item == Symbol::nterm_basic_type)
+			if (state == 193 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 193 && item == Symbol::nterm_union)
+			if (state == 193 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
 
 
-			if (state == 194 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 36); else
-
-
-			if (state == 194 && item == Symbol::keyword_graphic)
+			if (state == 194 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 36); else
 
 
@@ -5069,79 +5065,83 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 36); else
 
 
-			if (state == 195 && item == Symbol::null_symbol)
+			if (state == 194 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 36); else
+
+
+			if (state == 195 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 195 && item == Symbol::rscope)
+			if (state == 195 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 195 && item == Symbol::identifier)
+			if (state == 195 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 196 && item == Symbol::null_symbol)
+			if (state == 196 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 196 && item == Symbol::rscope)
+			if (state == 196 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 196 && item == Symbol::identifier)
+			if (state == 196 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 197 && item == Symbol::statement_end)
+			if (state == 197 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 197 && item == Symbol::oper_dot)
+			if (state == 197 && item == Symbol::oper_assign)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 198 && item == Symbol::statement_end)
+			if (state == 198 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::shift, 260); else
 
 
-			if (state == 198 && item == Symbol::oper_dot)
+			if (state == 198 && item == Symbol::oper_assign)
 				operation.override (ParseOperationType::reduce, 77); else
 
 
-			if (state == 199 && item == Symbol::oper_dot)
+			if (state == 199 && item == Symbol::oper_assign)
 				operation.override (ParseOperationType::shift, 261); else
 
 
-			if (state == 200 && item == Symbol::lparen)
+			if (state == 200 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 262); else
 
 
-			if (state == 201 && item == Symbol::null_symbol)
+			if (state == 201 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 201 && item == Symbol::rscope)
+			if (state == 201 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 201 && item == Symbol::preprocessor_call)
+			if (state == 201 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 201 && item == Symbol::constant_number)
+			if (state == 201 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 201 && item == Symbol::literalized_number)
+			if (state == 201 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 201 && item == Symbol::constant_float)
+			if (state == 201 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 201 && item == Symbol::constant_text)
+			if (state == 201 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -5149,43 +5149,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 201 && item == Symbol::nterm_one_call_arg)
+			if (state == 201 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 201 && item == Symbol::nterm_array_access)
+			if (state == 201 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 263); else
 
 
-			if (state == 201 && item == Symbol::nterm_access)
+			if (state == 201 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 201 && item == Symbol::nterm_type)
+			if (state == 201 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 201 && item == Symbol::nterm_var_footprint)
+			if (state == 201 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 201 && item == Symbol::nterm_compound_type)
+			if (state == 201 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 201 && item == Symbol::nterm_basic_type)
+			if (state == 201 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 201 && item == Symbol::nterm_union)
+			if (state == 201 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 202 && item == Symbol::lbrack)
+			if (state == 202 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 264); else
 
 
-			if (state == 203 && item == Symbol::constant_text)
+			if (state == 203 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -5193,59 +5193,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 203 && item == Symbol::nterm_union)
+			if (state == 203 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 265); else
 
 
-			if (state == 204 && item == Symbol::null_symbol)
+			if (state == 204 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 204 && item == Symbol::lparen)
+			if (state == 204 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 266); else
 
 
-			if (state == 204 && item == Symbol::rscope)
+			if (state == 204 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 204 && item == Symbol::preprocessor_call)
+			if (state == 204 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 204 && item == Symbol::constant_number)
+			if (state == 204 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 204 && item == Symbol::literalized_number)
+			if (state == 204 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 204 && item == Symbol::constant_float)
+			if (state == 204 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 204 && item == Symbol::constant_text)
+			if (state == 204 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 204 && item == Symbol::oper_assign)
+			if (state == 204 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 204 && item == Symbol::oper_plus)
+			if (state == 204 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 204 && item == Symbol::oper_minus)
+			if (state == 204 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 204 && item == Symbol::oper_star)
+			if (state == 204 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 204 && item == Symbol::oper_less_than)
+			if (state == 204 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -5253,31 +5253,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 204 && item == Symbol::nterm_one_call_arg)
+			if (state == 204 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 204 && item == Symbol::nterm_array_access)
+			if (state == 204 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 267); else
 
 
-			if (state == 204 && item == Symbol::nterm_access)
+			if (state == 204 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 204 && item == Symbol::nterm_type)
+			if (state == 204 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 204 && item == Symbol::nterm_var_footprint)
+			if (state == 204 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 204 && item == Symbol::nterm_compound_type)
+			if (state == 204 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 204 && item == Symbol::nterm_basic_type)
+			if (state == 204 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -5285,35 +5285,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 201); else
 
 
-			if (state == 204 && item == Symbol::nterm_union)
+			if (state == 204 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 205 && item == Symbol::null_symbol)
+			if (state == 205 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 205 && item == Symbol::rscope)
+			if (state == 205 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 205 && item == Symbol::preprocessor_call)
+			if (state == 205 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 205 && item == Symbol::constant_number)
+			if (state == 205 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 205 && item == Symbol::literalized_number)
+			if (state == 205 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 205 && item == Symbol::constant_float)
+			if (state == 205 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 205 && item == Symbol::constant_text)
+			if (state == 205 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -5321,59 +5321,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 205 && item == Symbol::nterm_one_call_arg)
+			if (state == 205 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 268); else
 
 
-			if (state == 205 && item == Symbol::nterm_access)
+			if (state == 205 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 205 && item == Symbol::nterm_type)
+			if (state == 205 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 205 && item == Symbol::nterm_var_footprint)
+			if (state == 205 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 205 && item == Symbol::nterm_compound_type)
+			if (state == 205 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 205 && item == Symbol::nterm_basic_type)
+			if (state == 205 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 205 && item == Symbol::nterm_union)
+			if (state == 205 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
 
 
-			if (state == 206 && item == Symbol::null_symbol)
+			if (state == 206 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 206 && item == Symbol::rscope)
+			if (state == 206 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 206 && item == Symbol::preprocessor_call)
+			if (state == 206 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 206 && item == Symbol::constant_number)
+			if (state == 206 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 206 && item == Symbol::literalized_number)
+			if (state == 206 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 206 && item == Symbol::constant_float)
+			if (state == 206 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 206 && item == Symbol::constant_text)
+			if (state == 206 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -5381,43 +5381,39 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 206 && item == Symbol::nterm_one_call_arg)
+			if (state == 206 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 206 && item == Symbol::nterm_array_access)
+			if (state == 206 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 269); else
 
 
-			if (state == 206 && item == Symbol::nterm_access)
+			if (state == 206 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 206 && item == Symbol::nterm_type)
+			if (state == 206 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 206 && item == Symbol::nterm_var_footprint)
+			if (state == 206 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 206 && item == Symbol::nterm_compound_type)
+			if (state == 206 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 206 && item == Symbol::nterm_basic_type)
+			if (state == 206 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 206 && item == Symbol::nterm_union)
+			if (state == 206 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
 
 
-			if (state == 207 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 50); else
-
-
-			if (state == 207 && item == Symbol::rscope)
+			if (state == 207 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
@@ -5425,15 +5421,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 207 && item == Symbol::statement_end)
+			if (state == 207 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 208 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 42); else
+			if (state == 207 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 208 && item == Symbol::rscope)
+			if (state == 208 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
@@ -5441,67 +5437,71 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 208 && item == Symbol::statement_end)
+			if (state == 208 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 209 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 52); else
+			if (state == 208 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 42); else
 
 
 			if (state == 209 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 209 && item == Symbol::rscope)
+			if (state == 209 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 210 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 80); else
+			if (state == 209 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 52); else
 
 
 			if (state == 210 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 210 && item == Symbol::rscope)
+			if (state == 210 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 211 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 41); else
+			if (state == 210 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 80); else
 
 
 			if (state == 211 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 211 && item == Symbol::rscope)
+			if (state == 211 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 212 && item == Symbol::lparen)
+			if (state == 211 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 41); else
+
+
+			if (state == 212 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 270); else
 
 
-			if (state == 213 && item == Symbol::oper_assign)
+			if (state == 213 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 213 && item == Symbol::oper_plus)
+			if (state == 213 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 213 && item == Symbol::oper_minus)
+			if (state == 213 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 213 && item == Symbol::oper_star)
+			if (state == 213 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 213 && item == Symbol::oper_less_than)
+			if (state == 213 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -5509,31 +5509,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 271); else
 
 
-			if (state == 214 && item == Symbol::null_symbol)
+			if (state == 214 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 214 && item == Symbol::rscope)
+			if (state == 214 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 214 && item == Symbol::preprocessor_call)
+			if (state == 214 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 214 && item == Symbol::constant_number)
+			if (state == 214 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 214 && item == Symbol::literalized_number)
+			if (state == 214 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 214 && item == Symbol::constant_float)
+			if (state == 214 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 214 && item == Symbol::constant_text)
+			if (state == 214 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -5541,43 +5541,39 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 214 && item == Symbol::nterm_one_call_arg)
+			if (state == 214 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 214 && item == Symbol::nterm_array_access)
+			if (state == 214 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 272); else
 
 
-			if (state == 214 && item == Symbol::nterm_access)
+			if (state == 214 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 214 && item == Symbol::nterm_type)
+			if (state == 214 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 214 && item == Symbol::nterm_var_footprint)
+			if (state == 214 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 214 && item == Symbol::nterm_compound_type)
+			if (state == 214 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 214 && item == Symbol::nterm_basic_type)
+			if (state == 214 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 214 && item == Symbol::nterm_union)
+			if (state == 214 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
 
 
-			if (state == 215 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 55); else
-
-
-			if (state == 215 && item == Symbol::rscope)
+			if (state == 215 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
@@ -5585,11 +5581,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 216 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 56); else
+			if (state == 215 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 216 && item == Symbol::rscope)
+			if (state == 216 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
@@ -5597,11 +5593,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 217 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 57); else
+			if (state == 216 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 217 && item == Symbol::rscope)
+			if (state == 217 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
@@ -5609,11 +5605,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 218 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 58); else
+			if (state == 217 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 218 && item == Symbol::rscope)
+			if (state == 218 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
@@ -5621,11 +5617,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 219 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 1); else
+			if (state == 218 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 219 && item == Symbol::rscope)
+			if (state == 219 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -5633,15 +5629,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 219 && item == Symbol::oper_union)
+			if (state == 219 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 220 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 81); else
+			if (state == 219 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 220 && item == Symbol::rscope)
+			if (state == 220 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
@@ -5649,35 +5645,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 220 && item == Symbol::oper_union)
+			if (state == 220 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 220 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 273); else
 
 
-			if (state == 221 && item == Symbol::null_symbol)
+			if (state == 221 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 221 && item == Symbol::rscope)
+			if (state == 221 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 221 && item == Symbol::lbrack)
+			if (state == 221 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 276); else
 
 
-			if (state == 221 && item == Symbol::nterm_paren_oper)
+			if (state == 221 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 221 && item == Symbol::nterm_access)
+			if (state == 221 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
 
 
-			if (state == 222 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 45); else
-
-
-			if (state == 222 && item == Symbol::rscope)
+			if (state == 222 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
@@ -5685,11 +5681,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 223 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 46); else
+			if (state == 222 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 223 && item == Symbol::rscope)
+			if (state == 223 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
@@ -5697,11 +5693,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 224 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 47); else
+			if (state == 223 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 224 && item == Symbol::rscope)
+			if (state == 224 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
@@ -5709,11 +5705,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 225 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 48); else
+			if (state == 224 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 225 && item == Symbol::rscope)
+			if (state == 225 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
@@ -5721,11 +5717,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 226 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 49); else
+			if (state == 225 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 226 && item == Symbol::rscope)
+			if (state == 226 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
@@ -5733,11 +5729,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 227 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 54); else
+			if (state == 226 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 227 && item == Symbol::rscope)
+			if (state == 227 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
@@ -5745,31 +5741,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 228 && item == Symbol::null_symbol)
+			if (state == 227 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 54); else
+
+
+			if (state == 228 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 228 && item == Symbol::rscope)
+			if (state == 228 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 228 && item == Symbol::preprocessor_call)
+			if (state == 228 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 228 && item == Symbol::constant_number)
+			if (state == 228 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 228 && item == Symbol::literalized_number)
+			if (state == 228 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 228 && item == Symbol::constant_float)
+			if (state == 228 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 228 && item == Symbol::constant_text)
+			if (state == 228 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -5777,43 +5777,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 228 && item == Symbol::nterm_one_call_arg)
+			if (state == 228 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 228 && item == Symbol::nterm_array_access)
+			if (state == 228 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 279); else
 
 
-			if (state == 228 && item == Symbol::nterm_access)
+			if (state == 228 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 228 && item == Symbol::nterm_type)
+			if (state == 228 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 228 && item == Symbol::nterm_var_footprint)
+			if (state == 228 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 228 && item == Symbol::nterm_compound_type)
+			if (state == 228 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 228 && item == Symbol::nterm_basic_type)
+			if (state == 228 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 228 && item == Symbol::nterm_union)
+			if (state == 228 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 229 && item == Symbol::lbrack)
+			if (state == 229 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 280); else
 
 
-			if (state == 230 && item == Symbol::constant_text)
+			if (state == 230 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -5821,59 +5821,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 230 && item == Symbol::nterm_union)
+			if (state == 230 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 281); else
 
 
-			if (state == 231 && item == Symbol::null_symbol)
+			if (state == 231 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 231 && item == Symbol::lparen)
+			if (state == 231 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 282); else
 
 
-			if (state == 231 && item == Symbol::rscope)
+			if (state == 231 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 231 && item == Symbol::preprocessor_call)
+			if (state == 231 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 231 && item == Symbol::constant_number)
+			if (state == 231 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 231 && item == Symbol::literalized_number)
+			if (state == 231 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 231 && item == Symbol::constant_float)
+			if (state == 231 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 231 && item == Symbol::constant_text)
+			if (state == 231 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 231 && item == Symbol::oper_assign)
+			if (state == 231 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 231 && item == Symbol::oper_plus)
+			if (state == 231 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 231 && item == Symbol::oper_minus)
+			if (state == 231 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 231 && item == Symbol::oper_star)
+			if (state == 231 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 231 && item == Symbol::oper_less_than)
+			if (state == 231 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -5881,31 +5881,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 231 && item == Symbol::nterm_one_call_arg)
+			if (state == 231 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 231 && item == Symbol::nterm_array_access)
+			if (state == 231 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 283); else
 
 
-			if (state == 231 && item == Symbol::nterm_access)
+			if (state == 231 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 231 && item == Symbol::nterm_type)
+			if (state == 231 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 231 && item == Symbol::nterm_var_footprint)
+			if (state == 231 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 231 && item == Symbol::nterm_compound_type)
+			if (state == 231 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 231 && item == Symbol::nterm_basic_type)
+			if (state == 231 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -5913,35 +5913,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 228); else
 
 
-			if (state == 231 && item == Symbol::nterm_union)
+			if (state == 231 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 232 && item == Symbol::null_symbol)
+			if (state == 232 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 232 && item == Symbol::rscope)
+			if (state == 232 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 232 && item == Symbol::preprocessor_call)
+			if (state == 232 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 232 && item == Symbol::constant_number)
+			if (state == 232 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 232 && item == Symbol::literalized_number)
+			if (state == 232 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 232 && item == Symbol::constant_float)
+			if (state == 232 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 232 && item == Symbol::constant_text)
+			if (state == 232 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -5949,59 +5949,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 232 && item == Symbol::nterm_one_call_arg)
+			if (state == 232 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 284); else
 
 
-			if (state == 232 && item == Symbol::nterm_access)
+			if (state == 232 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 232 && item == Symbol::nterm_type)
+			if (state == 232 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 232 && item == Symbol::nterm_var_footprint)
+			if (state == 232 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 232 && item == Symbol::nterm_compound_type)
+			if (state == 232 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 232 && item == Symbol::nterm_basic_type)
+			if (state == 232 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 232 && item == Symbol::nterm_union)
+			if (state == 232 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
 
 
-			if (state == 233 && item == Symbol::null_symbol)
+			if (state == 233 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 233 && item == Symbol::rscope)
+			if (state == 233 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 233 && item == Symbol::preprocessor_call)
+			if (state == 233 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 233 && item == Symbol::constant_number)
+			if (state == 233 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 233 && item == Symbol::literalized_number)
+			if (state == 233 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 233 && item == Symbol::constant_float)
+			if (state == 233 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 233 && item == Symbol::constant_text)
+			if (state == 233 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -6009,91 +6009,87 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 233 && item == Symbol::nterm_one_call_arg)
+			if (state == 233 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 233 && item == Symbol::nterm_array_access)
+			if (state == 233 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 285); else
 
 
-			if (state == 233 && item == Symbol::nterm_access)
+			if (state == 233 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 233 && item == Symbol::nterm_type)
+			if (state == 233 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 233 && item == Symbol::nterm_var_footprint)
+			if (state == 233 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 233 && item == Symbol::nterm_compound_type)
+			if (state == 233 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 233 && item == Symbol::nterm_basic_type)
+			if (state == 233 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 233 && item == Symbol::nterm_union)
+			if (state == 233 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
-
-
-			if (state == 234 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 50); else
 
 
 			if (state == 234 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 234 && item == Symbol::rscope)
+			if (state == 234 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 234 && item == Symbol::statement_end)
+			if (state == 234 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 235 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 42); else
+			if (state == 234 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 50); else
 
 
 			if (state == 235 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 235 && item == Symbol::rscope)
+			if (state == 235 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 235 && item == Symbol::statement_end)
+			if (state == 235 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 236 && item == Symbol::keyword_graphic)
-				operation.override (ParseOperationType::reduce, 53); else
+			if (state == 235 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 42); else
 
 
 			if (state == 236 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::null_symbol)
+			if (state == 236 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::rparen)
+			if (state == 237 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::rscope)
+			if (state == 237 && item == Symbol::lscope)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::preprocessor_call)
+			if (state == 237 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -6117,7 +6113,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::oper_greater_than_equal)
+			if (state == 237 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -6141,7 +6137,7 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 237 && item == Symbol::keyword_graphic)
+			if (state == 237 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -6149,15 +6145,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 238 && item == Symbol::lparen)
+			if (state == 237 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 53); else
+
+
+			if (state == 238 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 286); else
 
 
-			if (state == 239 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 12); else
-
-
-			if (state == 239 && item == Symbol::keyword_graphic)
+			if (state == 239 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
@@ -6169,27 +6165,27 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 240 && item == Symbol::null_symbol)
+			if (state == 239 && item == Symbol::keyword_else)
+				operation.override (ParseOperationType::reduce, 12); else
+
+
+			if (state == 240 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 240 && item == Symbol::rscope)
+			if (state == 240 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 240 && item == Symbol::identifier)
+			if (state == 240 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 241 && item == Symbol::keyword_if)
+			if (state == 241 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 32); else
 
 
-			if (state == 242 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 25); else
-
-
-			if (state == 242 && item == Symbol::keyword_graphic)
+			if (state == 242 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 25); else
 
 
@@ -6198,22 +6194,22 @@ namespace Alton
 
 
 			if (state == 242 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 25); else
+
+
+			if (state == 242 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::shift, 287); else
 
 
-			if (state == 243 && item == Symbol::keyword_if)
+			if (state == 243 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::shift, 288); else
 
 
-			if (state == 244 && item == Symbol::null_symbol)
+			if (state == 244 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 244 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 80); else
-
-
-			if (state == 244 && item == Symbol::constant_text)
+			if (state == 244 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
@@ -6221,15 +6217,19 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 245 && item == Symbol::lscope)
+			if (state == 244 && item == Symbol::statement_end)
+				operation.override (ParseOperationType::reduce, 80); else
+
+
+			if (state == 245 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 289); else
 
 
-			if (state == 245 && item == Symbol::keyword_graphic)
+			if (state == 245 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 245 && item == Symbol::keyword_while)
+			if (state == 245 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -6237,35 +6237,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 290); else
 
 
-			if (state == 245 && item == Symbol::nterm_just_if)
+			if (state == 245 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 245 && item == Symbol::nterm_if_else)
+			if (state == 245 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 245 && item == Symbol::nterm_open_while)
+			if (state == 245 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 245 && item == Symbol::nterm_closed_while)
+			if (state == 245 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 245 && item == Symbol::nterm_while_statement)
+			if (state == 245 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 245 && item == Symbol::nterm_vardef)
+			if (state == 245 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 246 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 34); else
-
-
-			if (state == 246 && item == Symbol::keyword_graphic)
+			if (state == 246 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 34); else
 
 
@@ -6273,11 +6269,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 34); else
 
 
-			if (state == 247 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 14); else
+			if (state == 246 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 34); else
 
 
-			if (state == 247 && item == Symbol::keyword_graphic)
+			if (state == 247 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 14); else
 
 
@@ -6285,11 +6281,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 14); else
 
 
-			if (state == 248 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 28); else
+			if (state == 247 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 14); else
 
 
-			if (state == 248 && item == Symbol::keyword_graphic)
+			if (state == 248 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 28); else
 
 
@@ -6297,11 +6293,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 28); else
 
 
-			if (state == 249 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 24); else
+			if (state == 248 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 28); else
 
 
-			if (state == 249 && item == Symbol::keyword_graphic)
+			if (state == 249 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 24); else
 
 
@@ -6309,11 +6305,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 24); else
 
 
-			if (state == 250 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 27); else
+			if (state == 249 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 24); else
 
 
-			if (state == 250 && item == Symbol::keyword_graphic)
+			if (state == 250 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 27); else
 
 
@@ -6321,11 +6317,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 27); else
 
 
-			if (state == 251 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 15); else
+			if (state == 250 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 27); else
 
 
-			if (state == 251 && item == Symbol::keyword_graphic)
+			if (state == 251 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 15); else
 
 
@@ -6333,35 +6329,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 15); else
 
 
-			if (state == 252 && item == Symbol::identifier)
+			if (state == 251 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 15); else
+
+
+			if (state == 252 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 291); else
 
 
-			if (state == 253 && item == Symbol::null_symbol)
+			if (state == 253 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 192); else
 
 
-			if (state == 253 && item == Symbol::rscope)
+			if (state == 253 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 193); else
 
 
-			if (state == 253 && item == Symbol::identifier)
+			if (state == 253 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 292); else
 
 
-			if (state == 253 && item == Symbol::nterm_paren_oper)
+			if (state == 253 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 195); else
 
 
-			if (state == 253 && item == Symbol::nterm_access)
+			if (state == 253 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 196); else
 
 
-			if (state == 254 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 30); else
-
-
-			if (state == 254 && item == Symbol::keyword_graphic)
+			if (state == 254 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 30); else
 
 
@@ -6369,11 +6365,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 30); else
 
 
-			if (state == 255 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 23); else
+			if (state == 254 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 30); else
 
 
-			if (state == 255 && item == Symbol::keyword_graphic)
+			if (state == 255 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 23); else
 
 
@@ -6381,11 +6377,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 23); else
 
 
-			if (state == 256 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 29); else
+			if (state == 255 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 23); else
 
 
-			if (state == 256 && item == Symbol::keyword_graphic)
+			if (state == 256 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 29); else
 
 
@@ -6393,43 +6389,47 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 29); else
 
 
-			if (state == 257 && item == Symbol::null_symbol)
+			if (state == 256 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 29); else
+
+
+			if (state == 257 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 257 && item == Symbol::rscope)
+			if (state == 257 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 257 && item == Symbol::identifier)
+			if (state == 257 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 258 && item == Symbol::lparen)
+			if (state == 258 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 293); else
 
 
-			if (state == 259 && item == Symbol::null_symbol)
+			if (state == 259 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 259 && item == Symbol::rscope)
+			if (state == 259 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 259 && item == Symbol::lbrack)
+			if (state == 259 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 294); else
 
 
-			if (state == 259 && item == Symbol::nterm_paren_oper)
+			if (state == 259 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 259 && item == Symbol::nterm_access)
+			if (state == 259 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
 
 
-			if (state == 260 && item == Symbol::constant_text)
+			if (state == 260 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 197); else
 
 
@@ -6437,35 +6437,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 198); else
 
 
-			if (state == 260 && item == Symbol::nterm_call_item)
+			if (state == 260 && item == Symbol::nterm_sid_union)
 				operation.override (ParseOperationType::go_to, 295); else
 
 
-			if (state == 261 && item == Symbol::null_symbol)
+			if (state == 261 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 296); else
 
 
-			if (state == 261 && item == Symbol::rscope)
+			if (state == 261 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 297); else
 
 
-			if (state == 261 && item == Symbol::preprocessor_call)
+			if (state == 261 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 298); else
 
 
-			if (state == 261 && item == Symbol::constant_number)
+			if (state == 261 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 299); else
 
 
-			if (state == 261 && item == Symbol::literalized_number)
+			if (state == 261 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 300); else
 
 
-			if (state == 261 && item == Symbol::constant_float)
+			if (state == 261 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 301); else
 
 
-			if (state == 261 && item == Symbol::constant_text)
+			if (state == 261 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 302); else
 
 
@@ -6473,59 +6473,55 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 303); else
 
 
-			if (state == 261 && item == Symbol::nterm_one_call_arg)
+			if (state == 261 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 304); else
 
 
-			if (state == 261 && item == Symbol::nterm_array_access)
+			if (state == 261 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 310); else
 
 
-			if (state == 261 && item == Symbol::nterm_access)
+			if (state == 261 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 308); else
 
 
-			if (state == 261 && item == Symbol::nterm_type)
+			if (state == 261 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 305); else
 
 
-			if (state == 261 && item == Symbol::nterm_var_footprint)
+			if (state == 261 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 306); else
 
 
-			if (state == 261 && item == Symbol::nterm_compound_type)
+			if (state == 261 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 307); else
 
 
-			if (state == 261 && item == Symbol::nterm_basic_type)
+			if (state == 261 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 309); else
 
 
-			if (state == 261 && item == Symbol::nterm_union)
+			if (state == 261 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 311); else
-
-
-			if (state == 262 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 53); else
 
 
 			if (state == 262 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 262 && item == Symbol::rscope)
+			if (state == 262 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 263 && item == Symbol::lparen)
+			if (state == 262 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 53); else
+
+
+			if (state == 263 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 312); else
 
 
-			if (state == 264 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 52); else
-
-
-			if (state == 264 && item == Symbol::rscope)
+			if (state == 264 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
@@ -6533,15 +6529,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 264 && item == Symbol::statement_end)
+			if (state == 264 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 265 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 80); else
+			if (state == 264 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 265 && item == Symbol::rscope)
+			if (state == 265 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
@@ -6549,15 +6545,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 265 && item == Symbol::statement_end)
+			if (state == 265 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 266 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 41); else
+			if (state == 265 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 266 && item == Symbol::rscope)
+			if (state == 266 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
@@ -6565,75 +6561,79 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 266 && item == Symbol::statement_end)
+			if (state == 266 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 267 && item == Symbol::lparen)
+			if (state == 266 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 41); else
+
+
+			if (state == 267 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 313); else
 
 
-			if (state == 268 && item == Symbol::null_symbol)
+			if (state == 268 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 268 && item == Symbol::rscope)
+			if (state == 268 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 268 && item == Symbol::lbrack)
+			if (state == 268 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 314); else
 
 
-			if (state == 268 && item == Symbol::nterm_paren_oper)
+			if (state == 268 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 268 && item == Symbol::nterm_access)
+			if (state == 268 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
 
 
-			if (state == 269 && item == Symbol::lbrack)
+			if (state == 269 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 74); else
-
-
-			if (state == 270 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 40); else
 
 
 			if (state == 270 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 270 && item == Symbol::rscope)
+			if (state == 270 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 271 && item == Symbol::null_symbol)
+			if (state == 270 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 40); else
+
+
+			if (state == 271 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 271 && item == Symbol::rscope)
+			if (state == 271 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 271 && item == Symbol::preprocessor_call)
+			if (state == 271 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 271 && item == Symbol::constant_number)
+			if (state == 271 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 271 && item == Symbol::literalized_number)
+			if (state == 271 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 271 && item == Symbol::constant_float)
+			if (state == 271 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 271 && item == Symbol::constant_text)
+			if (state == 271 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -6641,43 +6641,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 271 && item == Symbol::nterm_one_call_arg)
+			if (state == 271 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 271 && item == Symbol::nterm_array_access)
+			if (state == 271 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 315); else
 
 
-			if (state == 271 && item == Symbol::nterm_access)
+			if (state == 271 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 271 && item == Symbol::nterm_type)
+			if (state == 271 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 271 && item == Symbol::nterm_var_footprint)
+			if (state == 271 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 271 && item == Symbol::nterm_compound_type)
+			if (state == 271 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 271 && item == Symbol::nterm_basic_type)
+			if (state == 271 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 271 && item == Symbol::nterm_union)
+			if (state == 271 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 272 && item == Symbol::lbrack)
+			if (state == 272 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 316); else
 
 
-			if (state == 273 && item == Symbol::constant_text)
+			if (state == 273 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -6685,59 +6685,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 273 && item == Symbol::nterm_union)
+			if (state == 273 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 317); else
 
 
-			if (state == 274 && item == Symbol::null_symbol)
+			if (state == 274 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 274 && item == Symbol::lparen)
+			if (state == 274 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 318); else
 
 
-			if (state == 274 && item == Symbol::rscope)
+			if (state == 274 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 274 && item == Symbol::preprocessor_call)
+			if (state == 274 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 274 && item == Symbol::constant_number)
+			if (state == 274 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 274 && item == Symbol::literalized_number)
+			if (state == 274 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 274 && item == Symbol::constant_float)
+			if (state == 274 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 274 && item == Symbol::constant_text)
+			if (state == 274 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 274 && item == Symbol::oper_assign)
+			if (state == 274 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 274 && item == Symbol::oper_plus)
+			if (state == 274 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 274 && item == Symbol::oper_minus)
+			if (state == 274 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 274 && item == Symbol::oper_star)
+			if (state == 274 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 274 && item == Symbol::oper_less_than)
+			if (state == 274 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -6745,31 +6745,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 274 && item == Symbol::nterm_one_call_arg)
+			if (state == 274 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 274 && item == Symbol::nterm_array_access)
+			if (state == 274 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 319); else
 
 
-			if (state == 274 && item == Symbol::nterm_access)
+			if (state == 274 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 274 && item == Symbol::nterm_type)
+			if (state == 274 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 274 && item == Symbol::nterm_var_footprint)
+			if (state == 274 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 274 && item == Symbol::nterm_compound_type)
+			if (state == 274 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 274 && item == Symbol::nterm_basic_type)
+			if (state == 274 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -6777,35 +6777,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 271); else
 
 
-			if (state == 274 && item == Symbol::nterm_union)
+			if (state == 274 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 275 && item == Symbol::null_symbol)
+			if (state == 275 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 275 && item == Symbol::rscope)
+			if (state == 275 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 275 && item == Symbol::preprocessor_call)
+			if (state == 275 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 275 && item == Symbol::constant_number)
+			if (state == 275 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 275 && item == Symbol::literalized_number)
+			if (state == 275 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 275 && item == Symbol::constant_float)
+			if (state == 275 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 275 && item == Symbol::constant_text)
+			if (state == 275 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -6813,51 +6813,47 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 275 && item == Symbol::nterm_one_call_arg)
+			if (state == 275 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 320); else
 
 
-			if (state == 275 && item == Symbol::nterm_access)
+			if (state == 275 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 275 && item == Symbol::nterm_type)
+			if (state == 275 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 275 && item == Symbol::nterm_var_footprint)
+			if (state == 275 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 275 && item == Symbol::nterm_compound_type)
+			if (state == 275 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 275 && item == Symbol::nterm_basic_type)
+			if (state == 275 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 275 && item == Symbol::nterm_union)
+			if (state == 275 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
-
-
-			if (state == 276 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 51); else
 
 
 			if (state == 276 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 276 && item == Symbol::rscope)
+			if (state == 276 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 277 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 50); else
+			if (state == 276 && item == Symbol::lbrack)
+				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 277 && item == Symbol::rscope)
+			if (state == 277 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
@@ -6865,11 +6861,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 278 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 42); else
+			if (state == 277 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 278 && item == Symbol::rscope)
+			if (state == 278 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
@@ -6877,163 +6873,167 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 279 && item == Symbol::lparen)
+			if (state == 278 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 42); else
+
+
+			if (state == 279 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 321); else
-
-
-			if (state == 280 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 52); else
 
 
 			if (state == 280 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 280 && item == Symbol::rscope)
+			if (state == 280 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 280 && item == Symbol::statement_end)
+			if (state == 280 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 281 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 80); else
+			if (state == 280 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 52); else
 
 
 			if (state == 281 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 281 && item == Symbol::rscope)
+			if (state == 281 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 281 && item == Symbol::statement_end)
+			if (state == 281 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 282 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 41); else
+			if (state == 281 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 80); else
 
 
 			if (state == 282 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 282 && item == Symbol::rscope)
+			if (state == 282 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 282 && item == Symbol::statement_end)
+			if (state == 282 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 283 && item == Symbol::lparen)
+			if (state == 282 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 41); else
+
+
+			if (state == 283 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 322); else
 
 
-			if (state == 284 && item == Symbol::null_symbol)
+			if (state == 284 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 284 && item == Symbol::rscope)
+			if (state == 284 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 284 && item == Symbol::lbrack)
+			if (state == 284 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 323); else
 
 
-			if (state == 284 && item == Symbol::nterm_paren_oper)
+			if (state == 284 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 284 && item == Symbol::nterm_access)
+			if (state == 284 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
 
 
-			if (state == 285 && item == Symbol::lparen)
+			if (state == 285 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 74); else
 
 
-			if (state == 286 && item == Symbol::null_symbol)
+			if (state == 286 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 286 && item == Symbol::rscope)
+			if (state == 286 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 286 && item == Symbol::identifier)
+			if (state == 286 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 287 && item == Symbol::null_symbol)
+			if (state == 287 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 287 && item == Symbol::rparen)
+			if (state == 287 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 324); else
 
 
-			if (state == 287 && item == Symbol::rscope)
+			if (state == 287 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 287 && item == Symbol::preprocessor_call)
+			if (state == 287 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 287 && item == Symbol::constant_number)
+			if (state == 287 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 287 && item == Symbol::literalized_number)
+			if (state == 287 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 287 && item == Symbol::constant_float)
+			if (state == 287 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 287 && item == Symbol::constant_text)
+			if (state == 287 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 287 && item == Symbol::identifier)
+			if (state == 287 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 325); else
 
 
-			if (state == 287 && item == Symbol::oper_greater_than_equal)
+			if (state == 287 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 287 && item == Symbol::keyword_shader)
+			if (state == 287 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 287 && item == Symbol::keyword_float)
+			if (state == 287 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 287 && item == Symbol::keyword_bool)
+			if (state == 287 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 287 && item == Symbol::keyword_void)
+			if (state == 287 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 287 && item == Symbol::keyword_int)
+			if (state == 287 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 287 && item == Symbol::keyword_graphic)
+			if (state == 287 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 122); else
 
 
-			if (state == 287 && item == Symbol::keyword_while)
+			if (state == 287 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 123); else
 
 
@@ -7041,143 +7041,143 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 287 && item == Symbol::nterm_reg_if_tail)
+			if (state == 287 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 326); else
 
 
-			if (state == 287 && item == Symbol::nterm_statement)
+			if (state == 287 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 327); else
 
 
-			if (state == 287 && item == Symbol::nterm_if_statement)
+			if (state == 287 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 329); else
 
 
-			if (state == 287 && item == Symbol::nterm_open_while)
+			if (state == 287 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 249); else
 
 
-			if (state == 287 && item == Symbol::nterm_closed_while)
+			if (state == 287 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 328); else
 
 
-			if (state == 287 && item == Symbol::nterm_while_statement)
+			if (state == 287 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 287 && item == Symbol::nterm_vardef)
+			if (state == 287 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 129); else
 
 
-			if (state == 287 && item == Symbol::nterm_call_args)
+			if (state == 287 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 330); else
 
 
-			if (state == 287 && item == Symbol::nterm_one_call_arg)
+			if (state == 287 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 331); else
 
 
-			if (state == 287 && item == Symbol::nterm_item)
+			if (state == 287 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 287 && item == Symbol::nterm_access)
+			if (state == 287 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 287 && item == Symbol::nterm_type)
+			if (state == 287 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 287 && item == Symbol::nterm_var_footprint)
+			if (state == 287 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 287 && item == Symbol::nterm_compound_type)
+			if (state == 287 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 287 && item == Symbol::nterm_basic_type)
+			if (state == 287 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 287 && item == Symbol::nterm_union)
+			if (state == 287 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 287 && item == Symbol::nterm_sid_union)
+			if (state == 287 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 287 && item == Symbol::nterm_def_union)
+			if (state == 287 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 288 && item == Symbol::null_symbol)
+			if (state == 288 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 113); else
 
 
-			if (state == 288 && item == Symbol::rparen)
+			if (state == 288 && item == Symbol::lscope)
 				operation.override (ParseOperationType::shift, 324); else
 
 
-			if (state == 288 && item == Symbol::rscope)
+			if (state == 288 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 115); else
 
 
-			if (state == 288 && item == Symbol::preprocessor_call)
+			if (state == 288 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 116); else
 
 
-			if (state == 288 && item == Symbol::constant_number)
+			if (state == 288 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 117); else
 
 
-			if (state == 288 && item == Symbol::literalized_number)
+			if (state == 288 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 118); else
 
 
-			if (state == 288 && item == Symbol::constant_float)
+			if (state == 288 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 119); else
 
 
-			if (state == 288 && item == Symbol::constant_text)
+			if (state == 288 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 120); else
 
 
-			if (state == 288 && item == Symbol::identifier)
+			if (state == 288 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 325); else
 
 
-			if (state == 288 && item == Symbol::oper_greater_than_equal)
+			if (state == 288 && item == Symbol::keyword_shader)
 				operation.override (ParseOperationType::shift, 2); else
 
 
-			if (state == 288 && item == Symbol::keyword_shader)
+			if (state == 288 && item == Symbol::keyword_float)
 				operation.override (ParseOperationType::shift, 3); else
 
 
-			if (state == 288 && item == Symbol::keyword_float)
+			if (state == 288 && item == Symbol::keyword_bool)
 				operation.override (ParseOperationType::shift, 4); else
 
 
-			if (state == 288 && item == Symbol::keyword_bool)
+			if (state == 288 && item == Symbol::keyword_void)
 				operation.override (ParseOperationType::shift, 5); else
 
 
-			if (state == 288 && item == Symbol::keyword_void)
+			if (state == 288 && item == Symbol::keyword_int)
 				operation.override (ParseOperationType::shift, 6); else
 
 
-			if (state == 288 && item == Symbol::keyword_int)
+			if (state == 288 && item == Symbol::keyword_nat)
 				operation.override (ParseOperationType::shift, 7); else
 
 
-			if (state == 288 && item == Symbol::keyword_graphic)
+			if (state == 288 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 122); else
 
 
-			if (state == 288 && item == Symbol::keyword_while)
+			if (state == 288 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 123); else
 
 
@@ -7185,83 +7185,79 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 124); else
 
 
-			if (state == 288 && item == Symbol::nterm_reg_if_tail)
+			if (state == 288 && item == Symbol::nterm_code)
 				operation.override (ParseOperationType::go_to, 326); else
 
 
-			if (state == 288 && item == Symbol::nterm_statement)
+			if (state == 288 && item == Symbol::nterm_reg_if_tail)
 				operation.override (ParseOperationType::go_to, 332); else
 
 
-			if (state == 288 && item == Symbol::nterm_if_statement)
+			if (state == 288 && item == Symbol::nterm_non_scoped_statement)
 				operation.override (ParseOperationType::go_to, 329); else
 
 
-			if (state == 288 && item == Symbol::nterm_open_while)
+			if (state == 288 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 255); else
 
 
-			if (state == 288 && item == Symbol::nterm_closed_while)
+			if (state == 288 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 333); else
 
 
-			if (state == 288 && item == Symbol::nterm_while_statement)
+			if (state == 288 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 288 && item == Symbol::nterm_vardef)
+			if (state == 288 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 129); else
 
 
-			if (state == 288 && item == Symbol::nterm_call_args)
+			if (state == 288 && item == Symbol::nterm_vardef)
 				operation.override (ParseOperationType::go_to, 330); else
 
 
-			if (state == 288 && item == Symbol::nterm_one_call_arg)
+			if (state == 288 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 331); else
 
 
-			if (state == 288 && item == Symbol::nterm_item)
+			if (state == 288 && item == Symbol::nterm_type)
 				operation.override (ParseOperationType::go_to, 138); else
 
 
-			if (state == 288 && item == Symbol::nterm_access)
+			if (state == 288 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 136); else
 
 
-			if (state == 288 && item == Symbol::nterm_type)
+			if (state == 288 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 133); else
 
 
-			if (state == 288 && item == Symbol::nterm_var_footprint)
+			if (state == 288 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 134); else
 
 
-			if (state == 288 && item == Symbol::nterm_compound_type)
+			if (state == 288 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 135); else
 
 
-			if (state == 288 && item == Symbol::nterm_basic_type)
+			if (state == 288 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 137); else
 
 
-			if (state == 288 && item == Symbol::nterm_union)
+			if (state == 288 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 139); else
 
 
-			if (state == 288 && item == Symbol::nterm_sid_union)
+			if (state == 288 && item == Symbol::nterm_compound_type)
 				operation.override (ParseOperationType::go_to, 19); else
 
 
-			if (state == 288 && item == Symbol::nterm_def_union)
+			if (state == 288 && item == Symbol::nterm_basic_type)
 				operation.override (ParseOperationType::go_to, 20); else
 
 
-			if (state == 289 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 13); else
-
-
-			if (state == 289 && item == Symbol::keyword_graphic)
+			if (state == 289 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
@@ -7269,15 +7265,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 290 && item == Symbol::lscope)
+			if (state == 289 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 13); else
+
+
+			if (state == 290 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 334); else
 
 
-			if (state == 291 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 35); else
-
-
-			if (state == 291 && item == Symbol::keyword_graphic)
+			if (state == 291 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 35); else
 
 
@@ -7285,11 +7281,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 35); else
 
 
-			if (state == 292 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 36); else
+			if (state == 291 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 35); else
 
 
-			if (state == 292 && item == Symbol::keyword_graphic)
+			if (state == 292 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 36); else
 
 
@@ -7297,51 +7293,55 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 36); else
 
 
-			if (state == 293 && item == Symbol::null_symbol)
+			if (state == 292 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 36); else
+
+
+			if (state == 293 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 293 && item == Symbol::rscope)
+			if (state == 293 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 293 && item == Symbol::identifier)
+			if (state == 293 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 294 && item == Symbol::null_symbol)
+			if (state == 294 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 294 && item == Symbol::rscope)
+			if (state == 294 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 294 && item == Symbol::identifier)
+			if (state == 294 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 295 && item == Symbol::oper_dot)
+			if (state == 295 && item == Symbol::oper_assign)
 				operation.override (ParseOperationType::reduce, 76); else
 
 
-			if (state == 296 && item == Symbol::oper_assign)
+			if (state == 296 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 296 && item == Symbol::oper_plus)
+			if (state == 296 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 296 && item == Symbol::oper_minus)
+			if (state == 296 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 296 && item == Symbol::oper_star)
+			if (state == 296 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 296 && item == Symbol::oper_less_than)
+			if (state == 296 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -7349,31 +7349,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 335); else
 
 
-			if (state == 297 && item == Symbol::null_symbol)
+			if (state == 297 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 142); else
 
 
-			if (state == 297 && item == Symbol::rscope)
+			if (state == 297 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 143); else
 
 
-			if (state == 297 && item == Symbol::preprocessor_call)
+			if (state == 297 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 144); else
 
 
-			if (state == 297 && item == Symbol::constant_number)
+			if (state == 297 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 145); else
 
 
-			if (state == 297 && item == Symbol::literalized_number)
+			if (state == 297 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 146); else
 
 
-			if (state == 297 && item == Symbol::constant_float)
+			if (state == 297 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 147); else
 
 
-			if (state == 297 && item == Symbol::constant_text)
+			if (state == 297 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 148); else
 
 
@@ -7381,47 +7381,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 149); else
 
 
-			if (state == 297 && item == Symbol::nterm_one_call_arg)
+			if (state == 297 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 150); else
 
 
-			if (state == 297 && item == Symbol::nterm_array_access)
+			if (state == 297 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 336); else
 
 
-			if (state == 297 && item == Symbol::nterm_access)
+			if (state == 297 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 154); else
 
 
-			if (state == 297 && item == Symbol::nterm_type)
+			if (state == 297 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 151); else
 
 
-			if (state == 297 && item == Symbol::nterm_var_footprint)
+			if (state == 297 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 152); else
 
 
-			if (state == 297 && item == Symbol::nterm_compound_type)
+			if (state == 297 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 153); else
 
 
-			if (state == 297 && item == Symbol::nterm_basic_type)
+			if (state == 297 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 155); else
 
 
-			if (state == 297 && item == Symbol::nterm_union)
+			if (state == 297 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 157); else
 
 
-			if (state == 298 && item == Symbol::null_symbol)
+			if (state == 298 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 298 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 55); else
-
-
-			if (state == 298 && item == Symbol::identifier)
+			if (state == 298 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 55); else
 
 
@@ -7429,15 +7425,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 55); else
 
 
-			if (state == 299 && item == Symbol::null_symbol)
+			if (state == 298 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 55); else
+
+
+			if (state == 299 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 299 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 56); else
-
-
-			if (state == 299 && item == Symbol::identifier)
+			if (state == 299 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 56); else
 
 
@@ -7445,15 +7441,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 56); else
 
 
-			if (state == 300 && item == Symbol::null_symbol)
+			if (state == 299 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 56); else
+
+
+			if (state == 300 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 300 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 57); else
-
-
-			if (state == 300 && item == Symbol::identifier)
+			if (state == 300 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 57); else
 
 
@@ -7461,15 +7457,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 57); else
 
 
-			if (state == 301 && item == Symbol::null_symbol)
+			if (state == 300 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 57); else
+
+
+			if (state == 301 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 301 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 58); else
-
-
-			if (state == 301 && item == Symbol::identifier)
+			if (state == 301 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 58); else
 
 
@@ -7477,15 +7473,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 58); else
 
 
-			if (state == 302 && item == Symbol::null_symbol)
+			if (state == 301 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 58); else
+
+
+			if (state == 302 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 302 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 1); else
-
-
-			if (state == 302 && item == Symbol::identifier)
+			if (state == 302 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 1); else
 
 
@@ -7497,15 +7493,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 1); else
 
 
-			if (state == 303 && item == Symbol::null_symbol)
+			if (state == 302 && item == Symbol::oper_dot)
+				operation.override (ParseOperationType::reduce, 1); else
+
+
+			if (state == 303 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
-			if (state == 303 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 81); else
-
-
-			if (state == 303 && item == Symbol::identifier)
+			if (state == 303 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 81); else
 
 
@@ -7514,42 +7510,42 @@ namespace Alton
 
 
 			if (state == 303 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 81); else
+
+
+			if (state == 303 && item == Symbol::oper_dot)
 				operation.override (ParseOperationType::shift, 337); else
 
 
-			if (state == 304 && item == Symbol::null_symbol)
+			if (state == 304 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 338); else
 
 
-			if (state == 304 && item == Symbol::rscope)
+			if (state == 304 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 339); else
 
 
-			if (state == 304 && item == Symbol::identifier)
+			if (state == 304 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 75); else
 
 
-			if (state == 304 && item == Symbol::statement_end)
+			if (state == 304 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::shift, 340); else
 
 
-			if (state == 304 && item == Symbol::nterm_paren_oper)
+			if (state == 304 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 341); else
 
 
-			if (state == 304 && item == Symbol::nterm_access)
+			if (state == 304 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 342); else
 
 
-			if (state == 305 && item == Symbol::null_symbol)
+			if (state == 305 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 305 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 45); else
-
-
-			if (state == 305 && item == Symbol::identifier)
+			if (state == 305 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 45); else
 
 
@@ -7557,15 +7553,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 45); else
 
 
-			if (state == 306 && item == Symbol::null_symbol)
+			if (state == 305 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 45); else
+
+
+			if (state == 306 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 306 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 46); else
-
-
-			if (state == 306 && item == Symbol::identifier)
+			if (state == 306 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 46); else
 
 
@@ -7573,15 +7569,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 46); else
 
 
-			if (state == 307 && item == Symbol::null_symbol)
+			if (state == 306 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 46); else
+
+
+			if (state == 307 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 307 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 47); else
-
-
-			if (state == 307 && item == Symbol::identifier)
+			if (state == 307 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 47); else
 
 
@@ -7589,15 +7585,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 47); else
 
 
-			if (state == 308 && item == Symbol::null_symbol)
+			if (state == 307 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 47); else
+
+
+			if (state == 308 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 308 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 48); else
-
-
-			if (state == 308 && item == Symbol::identifier)
+			if (state == 308 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 48); else
 
 
@@ -7605,15 +7601,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 48); else
 
 
-			if (state == 309 && item == Symbol::null_symbol)
+			if (state == 308 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 48); else
+
+
+			if (state == 309 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 309 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 49); else
-
-
-			if (state == 309 && item == Symbol::identifier)
+			if (state == 309 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 49); else
 
 
@@ -7621,19 +7617,19 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 49); else
 
 
-			if (state == 310 && item == Symbol::identifier)
+			if (state == 309 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 49); else
+
+
+			if (state == 310 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 37); else
 
 
-			if (state == 311 && item == Symbol::null_symbol)
+			if (state == 311 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 311 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 54); else
-
-
-			if (state == 311 && item == Symbol::identifier)
+			if (state == 311 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 54); else
 
 
@@ -7641,11 +7637,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 312 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 53); else
+			if (state == 311 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 54); else
 
 
-			if (state == 312 && item == Symbol::rscope)
+			if (state == 312 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -7653,15 +7649,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 312 && item == Symbol::statement_end)
+			if (state == 312 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 313 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 40); else
+			if (state == 312 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 313 && item == Symbol::rscope)
+			if (state == 313 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
@@ -7669,15 +7665,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 313 && item == Symbol::statement_end)
+			if (state == 313 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 314 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 51); else
+			if (state == 313 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 314 && item == Symbol::rscope)
+			if (state == 314 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
@@ -7685,19 +7681,19 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 314 && item == Symbol::statement_end)
+			if (state == 314 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 315 && item == Symbol::lparen)
+			if (state == 314 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 51); else
+
+
+			if (state == 315 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 343); else
 
 
-			if (state == 316 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 52); else
-
-
-			if (state == 316 && item == Symbol::rscope)
+			if (state == 316 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
@@ -7705,11 +7701,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 317 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 80); else
+			if (state == 316 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 317 && item == Symbol::rscope)
+			if (state == 317 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
@@ -7717,11 +7713,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 318 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 41); else
+			if (state == 317 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 318 && item == Symbol::rscope)
+			if (state == 318 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
@@ -7729,87 +7725,91 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 319 && item == Symbol::lparen)
+			if (state == 318 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 41); else
+
+
+			if (state == 319 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 344); else
 
 
-			if (state == 320 && item == Symbol::null_symbol)
+			if (state == 320 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 320 && item == Symbol::rscope)
+			if (state == 320 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 320 && item == Symbol::lbrack)
+			if (state == 320 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 345); else
 
 
-			if (state == 320 && item == Symbol::nterm_paren_oper)
+			if (state == 320 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 320 && item == Symbol::nterm_access)
+			if (state == 320 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
-
-
-			if (state == 321 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 53); else
 
 
 			if (state == 321 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 321 && item == Symbol::rscope)
+			if (state == 321 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 321 && item == Symbol::statement_end)
+			if (state == 321 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 322 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 40); else
+			if (state == 321 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 53); else
 
 
 			if (state == 322 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 322 && item == Symbol::rscope)
+			if (state == 322 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 322 && item == Symbol::statement_end)
+			if (state == 322 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 323 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 51); else
+			if (state == 322 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 40); else
 
 
 			if (state == 323 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 323 && item == Symbol::rscope)
+			if (state == 323 && item == Symbol::rparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 323 && item == Symbol::statement_end)
+			if (state == 323 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 324 && item == Symbol::lscope)
+			if (state == 323 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 51); else
+
+
+			if (state == 324 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 346); else
 
 
-			if (state == 324 && item == Symbol::keyword_graphic)
+			if (state == 324 && item == Symbol::keyword_while)
 				operation.override (ParseOperationType::shift, 61); else
 
 
-			if (state == 324 && item == Symbol::keyword_while)
+			if (state == 324 && item == Symbol::keyword_if)
 				operation.override (ParseOperationType::shift, 62); else
 
 
@@ -7817,87 +7817,83 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 347); else
 
 
-			if (state == 324 && item == Symbol::nterm_just_if)
+			if (state == 324 && item == Symbol::nterm_statement)
 				operation.override (ParseOperationType::go_to, 64); else
 
 
-			if (state == 324 && item == Symbol::nterm_if_else)
+			if (state == 324 && item == Symbol::nterm_if_statement)
 				operation.override (ParseOperationType::go_to, 65); else
 
 
-			if (state == 324 && item == Symbol::nterm_open_while)
+			if (state == 324 && item == Symbol::nterm_just_if)
 				operation.override (ParseOperationType::go_to, 66); else
 
 
-			if (state == 324 && item == Symbol::nterm_closed_while)
+			if (state == 324 && item == Symbol::nterm_if_else)
 				operation.override (ParseOperationType::go_to, 67); else
 
 
-			if (state == 324 && item == Symbol::nterm_while_statement)
+			if (state == 324 && item == Symbol::nterm_open_while)
 				operation.override (ParseOperationType::go_to, 68); else
 
 
-			if (state == 324 && item == Symbol::nterm_vardef)
+			if (state == 324 && item == Symbol::nterm_closed_while)
 				operation.override (ParseOperationType::go_to, 69); else
 
 
-			if (state == 325 && item == Symbol::keyword_if)
+			if (state == 325 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 34); else
 
 
-			if (state == 326 && item == Symbol::keyword_if)
+			if (state == 326 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 14); else
 
 
-			if (state == 327 && item == Symbol::keyword_if)
+			if (state == 327 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 28); else
 
 
-			if (state == 328 && item == Symbol::keyword_if)
+			if (state == 328 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 27); else
 
 
-			if (state == 329 && item == Symbol::keyword_if)
+			if (state == 329 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 15); else
 
 
-			if (state == 330 && item == Symbol::identifier)
+			if (state == 330 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 348); else
 
 
-			if (state == 331 && item == Symbol::null_symbol)
+			if (state == 331 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 192); else
 
 
-			if (state == 331 && item == Symbol::rscope)
+			if (state == 331 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 193); else
 
 
-			if (state == 331 && item == Symbol::identifier)
+			if (state == 331 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::shift, 349); else
 
 
-			if (state == 331 && item == Symbol::nterm_paren_oper)
+			if (state == 331 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 195); else
 
 
-			if (state == 331 && item == Symbol::nterm_access)
+			if (state == 331 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 196); else
 
 
-			if (state == 332 && item == Symbol::keyword_if)
+			if (state == 332 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 30); else
 
 
-			if (state == 333 && item == Symbol::keyword_if)
+			if (state == 333 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 29); else
 
 
-			if (state == 334 && item == Symbol::lscope)
-				operation.override (ParseOperationType::reduce, 12); else
-
-
-			if (state == 334 && item == Symbol::keyword_graphic)
+			if (state == 334 && item == Symbol::rscope)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
@@ -7905,31 +7901,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 335 && item == Symbol::null_symbol)
+			if (state == 334 && item == Symbol::keyword_if)
+				operation.override (ParseOperationType::reduce, 12); else
+
+
+			if (state == 335 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 335 && item == Symbol::rscope)
+			if (state == 335 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 335 && item == Symbol::preprocessor_call)
+			if (state == 335 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 335 && item == Symbol::constant_number)
+			if (state == 335 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 335 && item == Symbol::literalized_number)
+			if (state == 335 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 335 && item == Symbol::constant_float)
+			if (state == 335 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 335 && item == Symbol::constant_text)
+			if (state == 335 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
@@ -7937,43 +7937,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 335 && item == Symbol::nterm_one_call_arg)
+			if (state == 335 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 335 && item == Symbol::nterm_array_access)
+			if (state == 335 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 350); else
 
 
-			if (state == 335 && item == Symbol::nterm_access)
+			if (state == 335 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 335 && item == Symbol::nterm_type)
+			if (state == 335 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 335 && item == Symbol::nterm_var_footprint)
+			if (state == 335 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 335 && item == Symbol::nterm_compound_type)
+			if (state == 335 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 335 && item == Symbol::nterm_basic_type)
+			if (state == 335 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
-			if (state == 335 && item == Symbol::nterm_union)
+			if (state == 335 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 336 && item == Symbol::lbrack)
+			if (state == 336 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 351); else
 
 
-			if (state == 337 && item == Symbol::constant_text)
+			if (state == 337 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 302); else
 
 
@@ -7981,59 +7981,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 303); else
 
 
-			if (state == 337 && item == Symbol::nterm_union)
+			if (state == 337 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 352); else
 
 
-			if (state == 338 && item == Symbol::null_symbol)
+			if (state == 338 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 164); else
 
 
-			if (state == 338 && item == Symbol::lparen)
+			if (state == 338 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 353); else
 
 
-			if (state == 338 && item == Symbol::rscope)
+			if (state == 338 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 165); else
 
 
-			if (state == 338 && item == Symbol::preprocessor_call)
+			if (state == 338 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 166); else
 
 
-			if (state == 338 && item == Symbol::constant_number)
+			if (state == 338 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 167); else
 
 
-			if (state == 338 && item == Symbol::literalized_number)
+			if (state == 338 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 168); else
 
 
-			if (state == 338 && item == Symbol::constant_float)
+			if (state == 338 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 169); else
 
 
-			if (state == 338 && item == Symbol::constant_text)
+			if (state == 338 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 170); else
 
 
-			if (state == 338 && item == Symbol::oper_assign)
+			if (state == 338 && item == Symbol::oper_plus)
 				operation.override (ParseOperationType::shift, 95); else
 
 
-			if (state == 338 && item == Symbol::oper_plus)
+			if (state == 338 && item == Symbol::oper_minus)
 				operation.override (ParseOperationType::shift, 96); else
 
 
-			if (state == 338 && item == Symbol::oper_minus)
+			if (state == 338 && item == Symbol::oper_star)
 				operation.override (ParseOperationType::shift, 97); else
 
 
-			if (state == 338 && item == Symbol::oper_star)
+			if (state == 338 && item == Symbol::oper_less_than)
 				operation.override (ParseOperationType::shift, 98); else
 
 
-			if (state == 338 && item == Symbol::oper_less_than)
+			if (state == 338 && item == Symbol::oper_greater_than_equal)
 				operation.override (ParseOperationType::shift, 99); else
 
 
@@ -8041,31 +8041,31 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 171); else
 
 
-			if (state == 338 && item == Symbol::nterm_one_call_arg)
+			if (state == 338 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 172); else
 
 
-			if (state == 338 && item == Symbol::nterm_array_access)
+			if (state == 338 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 354); else
 
 
-			if (state == 338 && item == Symbol::nterm_access)
+			if (state == 338 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 176); else
 
 
-			if (state == 338 && item == Symbol::nterm_type)
+			if (state == 338 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 173); else
 
 
-			if (state == 338 && item == Symbol::nterm_var_footprint)
+			if (state == 338 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 174); else
 
 
-			if (state == 338 && item == Symbol::nterm_compound_type)
+			if (state == 338 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 175); else
 
 
-			if (state == 338 && item == Symbol::nterm_basic_type)
+			if (state == 338 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 177); else
 
 
@@ -8073,35 +8073,35 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 335); else
 
 
-			if (state == 338 && item == Symbol::nterm_union)
+			if (state == 338 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 179); else
 
 
-			if (state == 339 && item == Symbol::null_symbol)
+			if (state == 339 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 213); else
 
 
-			if (state == 339 && item == Symbol::rscope)
+			if (state == 339 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 214); else
 
 
-			if (state == 339 && item == Symbol::preprocessor_call)
+			if (state == 339 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 215); else
 
 
-			if (state == 339 && item == Symbol::constant_number)
+			if (state == 339 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 216); else
 
 
-			if (state == 339 && item == Symbol::literalized_number)
+			if (state == 339 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 217); else
 
 
-			if (state == 339 && item == Symbol::constant_float)
+			if (state == 339 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 218); else
 
 
-			if (state == 339 && item == Symbol::constant_text)
+			if (state == 339 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 219); else
 
 
@@ -8109,59 +8109,59 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 220); else
 
 
-			if (state == 339 && item == Symbol::nterm_one_call_arg)
+			if (state == 339 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 355); else
 
 
-			if (state == 339 && item == Symbol::nterm_access)
+			if (state == 339 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 225); else
 
 
-			if (state == 339 && item == Symbol::nterm_type)
+			if (state == 339 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 222); else
 
 
-			if (state == 339 && item == Symbol::nterm_var_footprint)
+			if (state == 339 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 223); else
 
 
-			if (state == 339 && item == Symbol::nterm_compound_type)
+			if (state == 339 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 224); else
 
 
-			if (state == 339 && item == Symbol::nterm_basic_type)
+			if (state == 339 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 226); else
 
 
-			if (state == 339 && item == Symbol::nterm_union)
+			if (state == 339 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 227); else
 
 
-			if (state == 340 && item == Symbol::null_symbol)
+			if (state == 340 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 296); else
 
 
-			if (state == 340 && item == Symbol::rscope)
+			if (state == 340 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 297); else
 
 
-			if (state == 340 && item == Symbol::preprocessor_call)
+			if (state == 340 && item == Symbol::constant_number)
 				operation.override (ParseOperationType::shift, 298); else
 
 
-			if (state == 340 && item == Symbol::constant_number)
+			if (state == 340 && item == Symbol::literalized_number)
 				operation.override (ParseOperationType::shift, 299); else
 
 
-			if (state == 340 && item == Symbol::literalized_number)
+			if (state == 340 && item == Symbol::constant_float)
 				operation.override (ParseOperationType::shift, 300); else
 
 
-			if (state == 340 && item == Symbol::constant_float)
+			if (state == 340 && item == Symbol::constant_text)
 				operation.override (ParseOperationType::shift, 301); else
 
 
-			if (state == 340 && item == Symbol::constant_text)
+			if (state == 340 && item == Symbol::identifier)
 				operation.override (ParseOperationType::shift, 302); else
 
 
@@ -8169,47 +8169,43 @@ namespace Alton
 				operation.override (ParseOperationType::go_to, 303); else
 
 
-			if (state == 340 && item == Symbol::nterm_one_call_arg)
+			if (state == 340 && item == Symbol::nterm_item)
 				operation.override (ParseOperationType::go_to, 304); else
 
 
-			if (state == 340 && item == Symbol::nterm_array_access)
+			if (state == 340 && item == Symbol::nterm_union)
 				operation.override (ParseOperationType::go_to, 356); else
 
 
-			if (state == 340 && item == Symbol::nterm_access)
+			if (state == 340 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 308); else
 
 
-			if (state == 340 && item == Symbol::nterm_type)
+			if (state == 340 && item == Symbol::nterm_call_item)
 				operation.override (ParseOperationType::go_to, 305); else
 
 
-			if (state == 340 && item == Symbol::nterm_var_footprint)
+			if (state == 340 && item == Symbol::nterm_array_access)
 				operation.override (ParseOperationType::go_to, 306); else
 
 
-			if (state == 340 && item == Symbol::nterm_compound_type)
+			if (state == 340 && item == Symbol::nterm_array)
 				operation.override (ParseOperationType::go_to, 307); else
 
 
-			if (state == 340 && item == Symbol::nterm_basic_type)
+			if (state == 340 && item == Symbol::nterm_access)
 				operation.override (ParseOperationType::go_to, 309); else
 
 
-			if (state == 340 && item == Symbol::nterm_union)
+			if (state == 340 && item == Symbol::nterm_location)
 				operation.override (ParseOperationType::go_to, 311); else
 
 
-			if (state == 341 && item == Symbol::null_symbol)
+			if (state == 341 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 341 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 50); else
-
-
-			if (state == 341 && item == Symbol::identifier)
+			if (state == 341 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 50); else
 
 
@@ -8217,15 +8213,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 50); else
 
 
-			if (state == 342 && item == Symbol::null_symbol)
+			if (state == 341 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 50); else
+
+
+			if (state == 342 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 342 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 42); else
-
-
-			if (state == 342 && item == Symbol::identifier)
+			if (state == 342 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 42); else
 
 
@@ -8233,11 +8229,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 343 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 53); else
+			if (state == 342 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 42); else
 
 
-			if (state == 343 && item == Symbol::rscope)
+			if (state == 343 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -8245,11 +8241,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 344 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 40); else
+			if (state == 343 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 344 && item == Symbol::rscope)
+			if (state == 344 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
@@ -8257,11 +8253,11 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 345 && item == Symbol::null_symbol)
-				operation.override (ParseOperationType::reduce, 51); else
+			if (state == 344 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 345 && item == Symbol::rscope)
+			if (state == 345 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
@@ -8269,35 +8265,35 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 346 && item == Symbol::keyword_if)
+			if (state == 345 && item == Symbol::rbrack)
+				operation.override (ParseOperationType::reduce, 51); else
+
+
+			if (state == 346 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 13); else
 
 
-			if (state == 347 && item == Symbol::lscope)
+			if (state == 347 && item == Symbol::rscope)
 				operation.override (ParseOperationType::shift, 357); else
 
 
-			if (state == 348 && item == Symbol::keyword_if)
+			if (state == 348 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 35); else
 
 
-			if (state == 349 && item == Symbol::keyword_if)
+			if (state == 349 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 36); else
 
 
-			if (state == 350 && item == Symbol::lparen)
+			if (state == 350 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 358); else
 
 
-			if (state == 351 && item == Symbol::null_symbol)
+			if (state == 351 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 351 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 52); else
-
-
-			if (state == 351 && item == Symbol::identifier)
+			if (state == 351 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 52); else
 
 
@@ -8305,15 +8301,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 52); else
 
 
-			if (state == 352 && item == Symbol::null_symbol)
+			if (state == 351 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 52); else
+
+
+			if (state == 352 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 352 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 80); else
-
-
-			if (state == 352 && item == Symbol::identifier)
+			if (state == 352 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 80); else
 
 
@@ -8321,15 +8317,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 80); else
 
 
-			if (state == 353 && item == Symbol::null_symbol)
+			if (state == 352 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 80); else
+
+
+			if (state == 353 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 353 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 41); else
-
-
-			if (state == 353 && item == Symbol::identifier)
+			if (state == 353 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 41); else
 
 
@@ -8337,47 +8333,47 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 41); else
 
 
-			if (state == 354 && item == Symbol::lparen)
+			if (state == 353 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 41); else
+
+
+			if (state == 354 && item == Symbol::rparen)
 				operation.override (ParseOperationType::shift, 359); else
 
 
-			if (state == 355 && item == Symbol::null_symbol)
+			if (state == 355 && item == Symbol::lparen)
 				operation.override (ParseOperationType::shift, 274); else
 
 
-			if (state == 355 && item == Symbol::rscope)
+			if (state == 355 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::shift, 275); else
 
 
-			if (state == 355 && item == Symbol::lbrack)
+			if (state == 355 && item == Symbol::rbrack)
 				operation.override (ParseOperationType::shift, 360); else
 
 
-			if (state == 355 && item == Symbol::nterm_paren_oper)
+			if (state == 355 && item == Symbol::nterm_call_args)
 				operation.override (ParseOperationType::go_to, 277); else
 
 
-			if (state == 355 && item == Symbol::nterm_access)
+			if (state == 355 && item == Symbol::nterm_paren_oper)
 				operation.override (ParseOperationType::go_to, 278); else
 
 
-			if (state == 356 && item == Symbol::identifier)
+			if (state == 356 && item == Symbol::statement_end)
 				operation.override (ParseOperationType::reduce, 74); else
 
 
-			if (state == 357 && item == Symbol::keyword_if)
+			if (state == 357 && item == Symbol::keyword_else)
 				operation.override (ParseOperationType::reduce, 12); else
 
 
-			if (state == 358 && item == Symbol::null_symbol)
+			if (state == 358 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 358 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 53); else
-
-
-			if (state == 358 && item == Symbol::identifier)
+			if (state == 358 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 53); else
 
 
@@ -8385,15 +8381,15 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 53); else
 
 
-			if (state == 359 && item == Symbol::null_symbol)
+			if (state == 358 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 53); else
+
+
+			if (state == 359 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 359 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 40); else
-
-
-			if (state == 359 && item == Symbol::identifier)
+			if (state == 359 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 40); else
 
 
@@ -8401,19 +8397,23 @@ namespace Alton
 				operation.override (ParseOperationType::reduce, 40); else
 
 
-			if (state == 360 && item == Symbol::null_symbol)
+			if (state == 359 && item == Symbol::oper_union)
+				operation.override (ParseOperationType::reduce, 40); else
+
+
+			if (state == 360 && item == Symbol::lparen)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
-			if (state == 360 && item == Symbol::rscope)
-				operation.override (ParseOperationType::reduce, 51); else
-
-
-			if (state == 360 && item == Symbol::identifier)
+			if (state == 360 && item == Symbol::lbrack)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
 			if (state == 360 && item == Symbol::statement_end)
+				operation.override (ParseOperationType::reduce, 51); else
+
+
+			if (state == 360 && item == Symbol::oper_union)
 				operation.override (ParseOperationType::reduce, 51); else
 
 
