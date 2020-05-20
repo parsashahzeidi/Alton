@@ -1,8 +1,79 @@
-grammar_list -> grammar grammar_list;
-grammar_list -> grammar;
+##~ import Daemon
+~ import Image
+~ import RGBTools
+~ import Placeholders
+~ import Colours#
 
-grammar -> identifier oper_arrow product statement_end;
-grammar -> identifier oper_arrow statement_end;
+# This is a basic mandelbrot implementation whom purpose is
+#	to provide testing for Alfie's stock launcher, Alton.
 
-product -> identifier product;
-product -> identifier;
+# Special thanks goes to wikipedia's mandelbrot plotting
+#	algoritm collections for helping me write this.
+
+# Enjoy the results!
+
+##
+	The Mandelbrot Algorithm.
+#
+Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
+{
+	# --- Head ---
+	var x1, y1, x2, y2, temp = 0.0;
+
+	var iterator = 0n;
+
+	# --- Body ---
+	while (x2 + y2 < 4)
+	{
+		if (iterator >= 100)
+		{
+			iterator = 0
+			break
+		}
+		else iterator++;
+
+		temp = x2 - y2;
+		y1 = 2 * x1 * y1 + y;
+		x1 = temp + x0;
+
+		x2 = x1 ** 2;
+		y2 = y1 ** 2;
+	}
+
+	return placeholder_palette (iterator);
+}
+
+# NOTE: I want the noise to be biased towards 0,
+#	the bias parameter defines this behaviour's strength.
+shader noise (Float bias, Float _, Float _)
+{
+	color = RGB
+	(
+		random_float (0, 1),
+		random_float (0, 1),
+		random_float (0, 1)
+	);
+	color **= bias;
+	return color;
+}
+
+Image mandelbrot ()
+{
+	# --- Head ---
+	var output = Image (1920, 1080, Colours.black);
+	var calculator = output.calculator;
+
+	# --- Body ---
+	calculator.assign_embarrassingly_parallel (mandelbrot_pixel);
+	calculator.add_embarrassingly_parallel (noise, 4);
+	output.normalize_min_max ();
+	return output;
+}
+
+
+interf main ()
+{
+	Daemon.initialize_input ();
+	Daemon.add_image (mandelbrot ());
+	Daemon.exit ();
+}

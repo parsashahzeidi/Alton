@@ -1,0 +1,12 @@
+shader Shader
+float Float
+bool Bool
+void Void
+int Int
+nat Nat
+
+graphic Graphic
+
+while while
+if if
+else else

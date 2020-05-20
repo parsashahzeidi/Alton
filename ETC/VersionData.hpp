@@ -7,14 +7,14 @@
 # ifdef ALFIE_MAJOR_VERSION
 	# undef ALFIE_MAJOR_VERSION
 # endif /*ALFIE_MAJOR_VERSION*/
-# define ALFIE_MAJOR_VERSION 0x00  // First
+# define ALFIE_MAJOR_VERSION 0x01  // First
 
 
 // -- The major release's name --
 # ifdef ALTON_RELEASE_NAME
 	# undef ALTON_RELEASE_NAME
 # endif /*ALFIE_MAJOR_VERSION*/
-# define ALTON_RELEASE_NAME U"The Emptyness"  // Second
+# define ALTON_RELEASE_NAME U"The Big Bang"  // Second
 
 
 // -- The standard that this build complies with --
@@ -28,14 +28,14 @@
 # ifdef ALTON_COMMIT_NUMBER
 	# undef ALTON_COMMIT_NUMBER
 # endif /*ALTON_COMMIT_NUMBER*/
-# define ALTON_COMMIT_NUMBER 0x09  // Fourth
+# define ALTON_COMMIT_NUMBER 0x00  // Fourth
 
 
 // -- The Postfix of the version --
 # ifdef ALTON_VERSION_POSTFIX
 	# undef ALTON_VERSION_POSTFIX
 # endif /*ALTON_VERSION_POSTFIX*/
-# define ALTON_VERSION_POSTFIX U"CV1"  // Fifth
+# define ALTON_VERSION_POSTFIX U"SR"  // Fifth
 
 
 // --- Build timing ---
@@ -56,7 +56,7 @@
 # ifdef ALTON_BUILD_TIME_DAY
 	# undef ALTON_BUILD_TIME_DAY
 # endif /*ALTON_BUILD_TIME_DAY*/
-# define ALTON_BUILD_TIME_DAY 2  // Eigth
+# define ALTON_BUILD_TIME_DAY 11  // Eigth
 
 
 // -- Minor timings --
@@ -64,19 +64,19 @@
 # ifdef ALTON_BUILD_TIME_HOUR
 	# undef ALTON_BUILD_TIME_HOUR
 # endif /*ALTON_BUILD_TIME_HOUR*/
-# define ALTON_BUILD_TIME_HOUR 15  // Ninth
+# define ALTON_BUILD_TIME_HOUR 22  // Ninth
 
 // - Minute -
 # ifdef ALTON_BUILD_TIME_MINUTE
 	# undef ALTON_BUILD_TIME_MINUTE
 # endif /*ALTON_BUILD_TIME_MINUTE*/
-# define ALTON_BUILD_TIME_MINUTE 25  // Tenth
+# define ALTON_BUILD_TIME_MINUTE 31  // Tenth
 
 // - Second -
 # ifdef ALTON_BUILD_TIME_SECOND
 	# undef ALTON_BUILD_TIME_SECOND
 # endif /*ALTON_BUILD_TIME_SECOND*/
-# define ALTON_BUILD_TIME_SECOND 43  // Eleventh!
+# define ALTON_BUILD_TIME_SECOND 55  // Eleventh!
 
 
 

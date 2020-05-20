@@ -14,7 +14,7 @@ class Grammar:
 	def __eq__(self, item):
 		if self.name != item.name:
 			return 0
-		
+
 		if self.product != item.product:
 			return 0
 
@@ -30,13 +30,13 @@ class Grammar:
 		# --- Body
 		if char == "_":
 			return 1
-		
+
 		elif integer >= b'a'[0] and integer <= b'z'[0]:
 			return 1
-		
+
 		elif integer >= b'A'[0] and integer <= b'Z'[0]:
 			return 1
-		
+
 		else: return 0
 
 	def ___char_is_name(self, char):
@@ -49,7 +49,7 @@ class Grammar:
 
 		elif integer >= b'0'[0] and integer <= b'9'[0]:
 			return 1
-		
+
 		else: return 0
 
 	def __advance_name(self, text:str):
@@ -61,7 +61,7 @@ class Grammar:
 		# -- If the character is not a name start then quit.
 		if not self.___char_is_name_start(character):
 			return token, output
-		
+
 		# -- Separate each character
 		while self.___char_is_name(character):
 			token += character
@@ -69,14 +69,14 @@ class Grammar:
 			character = output[0]
 
 		return token, output[:-1]
-	
+
 	def __advance_whitespace(self, text: str):
 		# --- Head
 		whitespace = ['\n', '\t', ' ', '\r', '\v']
 		output = text + "$"
 
 		# --- Body
-		while output[0] in whitespace: 
+		while output[0] in whitespace:
 			output = output[1:]
 
 		return "", output[:-1]
@@ -84,7 +84,7 @@ class Grammar:
 	def __advance_arrow(self, text: str):
 		if len(text) < 2:
 			return "", text
-		
+
 		if text[:2] == "->":
 			return "->", text[2:]
 
@@ -101,7 +101,7 @@ class Grammar:
 		# -- Clearing tarilin' newlines
 		while len(remaining_text) != 0 and remaining_text[-1] == "\n":
 			remaining_text = remaining_text[:-1]
-		
+
 		error_text = "Rule \"" + remaining_text + "\" "
 
 		# -- Detecting emptyness
@@ -132,8 +132,8 @@ class Grammar:
 		self.product = []
 
 		while last_length != 0:
-			token_cache, remaining_text = self.__advance_whitespace(remaining_text)
-			token_cache, remaining_text = self.__advance_name(remaining_text)
+			token_cache, remaining_text = self.__advance_whitespace (remaining_text)
+			token_cache, remaining_text = self.__advance_name (remaining_text)
 
 			self.product.append(Symbol(token_cache))
 
@@ -149,4 +149,3 @@ class Grammar:
 
 
 			last_length = len(remaining_text)
-

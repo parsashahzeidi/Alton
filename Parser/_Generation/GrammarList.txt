@@ -10,23 +10,155 @@
 #	for specific non-terminals may be made in the form of
 #	regular comments below.
 #
-#	Since Alton is supposed to work with a Canonical LR parser,
-#	This grammar may not be supported by, for example an LL parser.
+#	Since Alton is supposed to work with a slower Canonical LR parser,
+#	This grammar may not be supported by, for example, a faster LL (1) parser.
 #	To address this, Alfie will try to keep this grammar fully
 #	LL-compatible. if any rule is not LL-compatible, a public
 #	standard defect shall be declared.
 # Adapted from Alfie0x01 - Segment0x05.
 
-start -> grammar_list
+# --- Macros ---
+start -> module_space
+sid -> identifier
 
-grammar_list -> grammar grammar_list
-grammar_list -> grammar
+# --- Grammar ---
+# -- Module space --
+module_space -> module_item module_space
+module_space -> module_item
 
-grammar -> identifier oper_arrow product statement_end
-grammar -> identifier oper_arrow statement_end
+module_item -> module
+module_item -> function
 
-product -> identifier product
-product -> identifier
+# -- Modules --
+module -> sid lscope module_space rscope
+module -> sid lscope rscope
+
+# -- Function types --
+function -> interface
+function -> shader
+
+interface -> var_footprint def_args code
+shader -> keyword_graphic var_footprint def_args code
+
+# -- Code! --
+code -> lscope statement_list rscope
+code -> lscope rscope
+
+# NOTE: The reg_if_tail non-terminal is for if statements.
+#	They can either use brackets or not. For example, both of the following
+#	statements are correct, just like C++ or Java.
+#		if ( item ) statement
+#		if ( item ) { statement_list }
+reg_if_tail -> code
+reg_if_tail -> non_scoped_statement
+
+# -- Statements --
+# - Lists -
+statement_list -> statement statement_list
+statement_list -> statement
+
+# - Filter -
+statement -> if_statement
+
+# - If statements -
+# The following rules are for a dangling-else detection and are LR specific.
+#	Modifications of the rules if_statement, just_if, if_else,
+#	open_while_scope and closed_while_scope are explicitly allowed.
+if_statement -> just_if
+if_statement -> if_else
+
+just_if -> open_while
+
+just_if -> keyword_if one_call_arg just_if
+just_if -> keyword_if one_call_arg if_else keyword_else just_if
+just_if -> keyword_if one_call_arg reg_if_tail keyword_else just_if
+just_if -> keyword_if one_call_arg reg_if_tail
+
+if_else -> closed_while
+
+if_else -> keyword_if one_call_arg reg_if_tail keyword_else if_else
+if_else -> keyword_if one_call_arg reg_if_tail keyword_else reg_if_tail
+if_else -> keyword_if one_call_arg if_else keyword_else if_else
+if_else -> keyword_if one_call_arg if_else keyword_else reg_if_tail
+
+# - While statements -
+open_while -> keyword_while one_call_arg just_if
+closed_while -> keyword_while one_call_arg if_else
+while_statement -> keyword_while one_call_arg reg_if_tail
+
+# - Other statements -
+non_scoped_statement -> statement_end
+non_scoped_statement -> vardef statement_end
+non_scoped_statement -> item statement_end
+
+vardef -> type sid_union oper_assign union
+
+# -- Argument types --
+def_args -> lparen def_union rparen
+def_args -> lparen rparen
+
+call_args -> lparen union rparen
+call_args -> lparen rparen
+call_args -> paren_oper
+
+one_call_arg -> lparen item rparen
+one_call_arg -> paren_oper
+
+# -- Item types --
+# - Complex items -
+item -> call_item
+item -> array_access
+item -> array
+item -> paren_oper
+item -> access
+
+call_item -> item call_args
+array_access -> item lbrack item rbrack
+array -> lbrack union rbrack
+paren_oper -> lparen any_operator union rparen
+access -> location
+
+# - Basic items -
+item -> constant_number
+item -> literalized_number
+item -> constant_float
+item -> constant_text
+
+# -- Type statements --
+type -> compound_type
+type -> basic_type
+var_footprint -> type sid
+
+# - Compound types -
+compound_type -> location
+
+# - Basic types -
+basic_type -> keyword_shader
+basic_type -> keyword_float
+basic_type -> keyword_void
+basic_type -> keyword_bool
+basic_type -> keyword_int
+basic_type -> keyword_nat
+
+# -- Operators --
+any_operator -> oper_plus
+any_operator -> oper_star
+any_operator -> oper_minus
+any_operator -> oper_less_than
+any_operator -> oper_greater_than_equal
+
+# -- Union types --
+union -> item oper_union union
+union -> item
+
+sid_union -> sid oper_union sid_union
+sid_union -> sid
+
+def_union -> var_footprint oper_union def_union
+def_union -> var_footprint
+
+location -> sid oper_dot location
+location -> sid
 
 # Example grammar
 #	start -> expr start
@@ -39,31 +171,31 @@ product -> identifier
 #	B A A B
 
 # Example of Bottom-Up Shift-reduce Left to right rightmost-deriative parsing
-#		Stack		Lookahead		Future			Action
-#	B			| A				| AB		|	expr -> B
-#	expr		| A				| AB		|	Shift
-#	expr A		| A				| B			|	expr -> expr A
-#	expr		| A				| B			|	Shift
-#	expr A		| B				| ...		|	expr -> expr A
-#	expr		| B				| ...		|	Shift
-#	expr B		| ...			| ...		|	expr -> B
-#	expr expr	| ...			| ...		|	start -> expr
-#	expr start	| ...			| ...		|	start -> expr start
-#	start		| ...			| ...		|	Accept
+#		Stack       Lookahead       Future          Action
+#	B           | A             | AB        |   expr -> B
+#	expr        | A             | AB        |   Shift
+#	expr A      | A             | B         |   expr -> expr A
+#	expr        | A             | B         |   Shift
+#	expr A      | B             | ...       |   expr -> expr A
+#	expr        | B             | ...       |   Shift
+#	expr B      | ...           | ...       |   expr -> B
+#	expr expr   | ...           | ...       |   start -> expr
+#	expr start  | ...           | ...       |   start -> expr start
+#	start       | ...           | ...       |   Accept
 
 # Example of Top-Down ∞ token lookahead Left to right Leftmost deriative parsing
-#		Stack							Action
-#	start						|	start -> expr start
-#	expr start					|	expr -> expr A
-#	expr A start				|	expr -> expr A
-#	expr A A start				|	expr -> B
-#	B A A start					|	Pop
-#	A A start					|	Pop
-#	A start						|	Pop
-#	start						|	start -> expr
-#	expr						|	expr -> B
-#	B							|	Pop
-#	...							|	Accept
+#		Stack                           Action
+#	start                       |   start -> expr start
+#	expr start                  |   expr -> expr A
+#	expr A start                |   expr -> expr A
+#	expr A A start              |   expr -> B
+#	B A A start                 |   Pop
+#	A A start                   |   Pop
+#	A start                     |   Pop
+#	start                       |   start -> expr
+#	expr                        |   expr -> B
+#	B                           |   Pop
+#	...                         |   Accept
 #	Note that since this grammar contains Left-recursive rules, an LR parser
 #	Wouldn't mind, but LL parsers will pee their pants immediately. That's why
 #	the LL parser is mentioned to have infinity lookahead symbols, which is

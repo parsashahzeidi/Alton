@@ -18,7 +18,7 @@ namespace Alton
 					Clinic::Exceptions::UnexistentSwitchCaseException (),
 					__FILE__, ALTON_FUNCTION_DETECT, __LINE__
 				);
-				return Symbol::null_symbol;
+				return 0;
 			}
 		}
 

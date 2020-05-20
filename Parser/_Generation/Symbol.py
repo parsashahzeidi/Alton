@@ -7,9 +7,26 @@ path.append(getcwd())
 from Lexer._Generation.Token import get_all_tokens as get_lexing_tokens
 from Tools.PythonGeneralTools.basic_ne import basic_ne
 
+_symbol_list = {}
 
-def get_lexing_symbols():
-	return [Symbol(i.token, 1) for i in get_lexing_tokens()]
+
+def add_symbol (text: str):
+	next_index = len (_symbol_list)
+	_symbol_list.update ({text: next_index})
+
+	return next_index
+
+
+def get_symbol_index (text: str):
+	index = 0
+
+	if text in _symbol_list:
+		index = _symbol_list [text]
+
+	else: index = add_symbol (text)
+
+	return index
+
 
 def determine_term(text: str):
 	# --- Head
@@ -27,23 +44,40 @@ def determine_term(text: str):
 
 class Symbol:
 	def __init__(self, name: str, terminal: int = 2):
+		# --- Head
 		self.symbol = name
+		# -- The index is for faster equality checking
+		self.index = self.get_index ()
 
+		# --- Body
+		# -- Parsing the `terminal` parameter
+		# - Explicitly declared terminal / non-terminal
 		if terminal == 0 or terminal == 1:
 			self.terminal = terminal
 
+		# - Implicitly declaring the terminal-ness
 		else:
 			self.terminal = determine_term(name)
 
 	def __eq__(self, item):
-		if self.symbol == item.symbol:
-			# Returning NotImplemented caused bugs, Will never do again.
-			return 1
-
-		else: return 0
+		return self.index == item.index
 
 	def __ne__(self, item):
 		return basic_ne(self, item)
+
+	def get_index (self):
+		# --- Head
+		index = 0
+		symbol_string = self.symbol
+
+		# --- Body
+		# -- Need to register the symbol
+		if self.symbol not in _symbol_list:
+			index = add_symbol (symbol_string)
+
+		else: index = get_symbol_index (symbol_string)
+
+		return index
 
 	def is_term(self):
 		if self.terminal == 1:
@@ -55,9 +89,24 @@ class Symbol:
 		else:
 			return None
 
+	def symbol (self):
+		return _symbol_list [self.index]
+
 	def get_cpp_name(self):
 		if self.is_term():
 			return self.symbol
 
 		else:
 			return "nterm_" + self.symbol
+
+
+def get_lexing_symbols():
+	# --- Head
+	lexing_tokens = get_lexing_tokens()
+	parsing_symbols = []
+
+	# --- Body
+	for i in lexing_tokens:
+		parsing_symbols.append (Symbol (i.token, 1))
+
+	return parsing_symbols

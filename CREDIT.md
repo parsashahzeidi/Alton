@@ -10,12 +10,12 @@
 
 * [Krita](https://krita.org/) - The *Freely available*, Most Capable, and the *Easiest-to-learn*, drawing program, from the [KDE](https://kde.org/).
 
-* [Wikipedia](https://www.wikipedia.org/) - The *Public Domain* documentation collection for nearly everything!
+* [Wikipedia](https://www.wikipedia.org/) - The *Wiki*-type documentation collection for nearly everything!
 
-* And many other amazing, *free*, and capable software, like [Fish](https://fishshell.com), [Konsole](https://konsole.kde.org/), [GNU/Linux](https://www.gnu.org/), ...
+* And many other amazing, *free*, and capable software, like [Fish](https://fishshell.com), [Konsole](https://konsole.kde.org/), [GNU addons to Linux, known as GNU / Linux](https://www.gnu.org/), etc; not mentioning the programming languages behind the scenes.
 
-You may notice that nearly every software behind the development of Alton is *"Free"*. The reason for that is:
+You may notice that nearly every software behind the development of Alton is _"Libre"_. The reason for that is:
 
-* Alton supports their user's privacy,
-* Alton supports the idea of *"Application on server, Developers all around the world"*, and
+* Alton supports their user's privacy, and decides not to risk it on some random paid software. I'm looking at you, _ICAN_.
+* Alton likes the idea of *Application on the internet, Devs around the world*, and
 * Alton itself is a [FLOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software), so it shall support other FLOSSes.

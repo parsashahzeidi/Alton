@@ -1,1 +1,13 @@
-arrow ->
+union ,
+dot .
+
+assign =
+
+plus +
+minus -
+
+star *
+
+less_than <
+
+greater_than_equal >=

@@ -9,6 +9,7 @@ You need to have a **C++** compiler installed on your system; I'd say that **Cla
 ### GNU/Linux
 
 #### Packages
+
 * **Clang**, **G++** or another C++ compiler
 * [**Make**][GNUMakeLink], or optionally [**Ninja**][NinjaLink]
 * [**CMake**][CMakeLink]
@@ -16,6 +17,7 @@ You need to have a **C++** compiler installed on your system; I'd say that **Cla
 * [**Git**], or just download a zip file
 
 #### Distro specific install
+
 Just do this in an *Ubuntu* bash copy:
 ```bash
 sudo apt-get install git make clang cmake python3
@@ -25,8 +27,7 @@ TODO: add instructions for other distros.
 
 ### Windows
 
-If you don't have MinGW or Git, grab yourself some.
-[This distro][NuwenMinGW] is Alton's go-to distro, containing MinGW and Git in a bundle.
+If you don't have MinGW or Git, grab them. [This distro][NuwenMinGW] is Alton's go-to distro, containing MinGW and Git in a bundle.
 You can also [get CMake from here][CMakeLink]. **Make sure that CMake, Git, Make, and G++, are accessible within your _%path%_ environment variable.**
 
 ## Compiling
@@ -62,7 +63,7 @@ Windows has a considerably greater tutorial length, so hold on to your pants and
 
 #### Step 2.2
 
-Open up CMake GUI, Locate the folder, then hit *Configure*, *Generate*, and *Open Project* in their respective order.
+Open up CMake GUI, Locate the unzipped folder, then hit *Configure*, *Generate*, and *Open Project* in order.
 
 #### Step 2.3
 

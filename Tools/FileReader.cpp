@@ -23,12 +23,11 @@ namespace Alton
 				std::filesystem::is_directory(path)
 			)
 			{
-				Clinic::ansi_term_colour(Clinic::ANSIColourStrength::high_ansi_colour_strength, Clinic::ANSIColourCode::ansi_colour_red);
-				Clinic::say(Clinic::Component::tool_lib, U"Fail triggered.");
-				Clinic::ansi_term_colour();
+				Clinic::ansi_term_colour (Clinic::ANSIColourStrength::high_ansi_colour_strength, Clinic::ANSIColourCode::ansi_colour_red);
+				Clinic::ansi_term_colour ();
 				goto Raise;
 			}
-			
+
 			// Optimizing the string
 			out.reserve(std::filesystem::file_size(path));
 

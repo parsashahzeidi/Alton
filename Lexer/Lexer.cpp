@@ -60,17 +60,17 @@ namespace Alton
 			switch (cache.token_type)
 			{
 				// Exception for miniscope openings
-			case Token::paranthesis_miniscope_opening:
-			case Token::round_bracket_miniscope_opening:
-			case Token::square_bracket_miniscope_opening:
+			case Token::lparen:
+			case Token::lscope:
+			case Token::lbrack:
 				h.open_miniscopes.push_back(cache.enumeration[0]);
 				h.__append(cache);
 				break;
 
 				// Exception for miniscope closings
-			case Token::paranthesis_miniscope_closing:
-			case Token::round_bracket_miniscope_closing:
-			case Token::square_bracket_miniscope_closing:
+			case Token::rparen:
+			case Token::rscope:
+			case Token::rbrack:
 				// Scope closing is legal.
 				if
 				(
@@ -445,18 +445,19 @@ namespace Alton
 			return h.tokenized;
 		}
 
-		Text Lexer::lxm_vec_to_text(LexemeList in)
+		Text Lexer::print_lxm_vec (LexemeList in)
 		{
 			Text out;
 
 			for (Natural i = 0; i < in.size(); i++)
 			{
-				out += text_init
-					U"\033[0;2m[ "
-					+ _get_token_name(in[i].token_type)
-					+ U" \033[0;1m"
+				say
+				(
+					Clinic::Component::lexer_lib,
+					_get_token_name(in[i].token_type)
+					+ U": "
 					+ in[i].enumeration
-					+ U"\033[0;2m ] ";
+				);
 			}
 
 			out += U"\033[0m";

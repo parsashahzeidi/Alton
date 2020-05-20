@@ -59,21 +59,27 @@ int main(int argc, char *argv[])
 	print_header();
 
 	// -- Argument Processing test --
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"The Argument Processing Test."
 	); add_scope();
 
 	arg_processor = ArgumentProcessor(argv, argc);
 	arg_state = arg_processor.process();
 
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"Successful!",
 		ANSIColourStrength::neutral_ansi_colour_strength,
 		ANSIColourCode::ansi_colour_green
 	); exit_scope();
 
 	// -- File Reading test --
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"The File Reading test"
 	); add_scope();
 
@@ -82,26 +88,27 @@ int main(int argc, char *argv[])
 		arg_state[ArgumentID::input_file]
 	);
 
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"Successful!",
 		ANSIColourStrength::neutral_ansi_colour_strength,
 		ANSIColourCode::ansi_colour_green
 	); exit_scope();
 
 	// -- Lexing test --
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"The Lexing Test."
 	); add_scope();
 
 	lexer = Lexer(code);
-
 	lex = lexer.lex();
 
-	say(Component::main_run,
-		lexer.lxm_vec_to_text(lex)
-	);
-
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"Successful!",
 		ANSIColourStrength::neutral_ansi_colour_strength,
 		ANSIColourCode::ansi_colour_green
@@ -109,18 +116,22 @@ int main(int argc, char *argv[])
 
 
 	// -- Parsing test --
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"The Parsing Test"
 	); add_scope ();
 
 	parser = Parser(lex);
 	parse_tree = parser.parse();
 
-	say(Component::main_run,
+	say
+	(
+		Component::main_run,
 		U"Successful!",
 		ANSIColourStrength::neutral_ansi_colour_strength,
 		ANSIColourCode::ansi_colour_green
-	);
+	); exit_scope ();
 
 	/**
 	 * NOTE:

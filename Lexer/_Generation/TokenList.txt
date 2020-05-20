@@ -1,9 +1,11 @@
-paranthesis_miniscope_opening (
-paranthesis_miniscope_closing )
-round_bracket_miniscope_opening {
-round_bracket_miniscope_closing }
-square_bracket_miniscope_opening [
-square_bracket_miniscope_closing ]
+lparen (
+rparen )
+lscope {
+rscope }
+lbrack [
+rbrack ]
+
+preprocessor_call ~
 
 constant_number
 literalized_number

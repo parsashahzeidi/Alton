@@ -75,7 +75,7 @@ namespace Alton
 		public:
 			LexemeList lex();
 
-			Text lxm_vec_to_text(LexemeList in);
+			Text print_lxm_vec(LexemeList in);
 
 			// --- CTOR ~ DTOR
 		public:

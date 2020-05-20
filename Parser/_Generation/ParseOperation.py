@@ -21,19 +21,14 @@ class ParseOperation:
 		self.value = 0
 
 	def __str__ (self):
-		if self.operation == ParseOperation.OPERATION_UNDEFINED\
-			or self.operation == ParseOperation.OPERATION_ERROR:
-			return "·"
-
-		else:
-			return self.get_operation_char () + str (self.value)
+		return self.get_operation_char () + str (self.value)
 
 	def get_operation_char(self, operation:int = None):
 		if operation is None:
 			operation = self.operation
 
 		if operation == ParseOperation.OPERATION_UNDEFINED:
-			return " "
+			return "E"
 
 		if operation == ParseOperation.OPERATION_SHIFT:
 			return "S"
@@ -48,7 +43,7 @@ class ParseOperation:
 			return "G"
 
 		if operation == ParseOperation.OPERATION_ERROR:
-			return " "
+			return "E"
 
 	def get_cpp_override_representation(self):
 		# --- Head

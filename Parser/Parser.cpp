@@ -9,7 +9,9 @@ namespace Alton
 	{
 		void Parser::print_tree (ParseTree in)
 		{
-			Clinic::say (Clinic::Component::parser_lib,
+			Clinic::say
+			(
+				Clinic::Component::parser_lib,
 				Conversions::base2_to_basen (Number (in.item.symbol_type), 10) +
 				U' ' +
 				in.item.enumeration
@@ -179,7 +181,9 @@ namespace Alton
 			const Natural header_char_size = 6;
 
 			// --- Body ---
-			Clinic::say(Clinic::Component::parser_lib,
+			Clinic::say
+			(
+				Clinic::Component::parser_lib,
 				U"Validating Header.."
 			);
 			// -- Grabbing the first 2 items --
@@ -235,7 +239,7 @@ namespace Alton
 			while (h.is_operating())
 				h.virtually_advance ();
 
-			print_tree (parse);
+			// print_tree (parse);
 			return parse;
 		}
 
@@ -246,15 +250,29 @@ namespace Alton
 		Parser::Parser(Lexer::LexemeList &in):
 				h(LinearParse())
 		{
+			// --- Head ---
+			Natural position_in_code;
+
+			// --- Body ---
+			// -- Setting up the lexing symbols --
 			for (Natural i = 0; i < in.size(); i++)
 				h.out.push_back(in[i]);
 
+			// -- Setting up the "$" / ending symbol --
+			// - Setting up the last lookahead -
+			if (!h.out.empty ())
+				position_in_code = h.out.back ().position_in_code;
+
+			else
+				position_in_code = 0;
+
+			// - The bastard itself -
 			h.out.push_back
 			(
 				ParsingNode
 				(
 					Symbol::ending,
-					h.out.back ().position_in_code
+					position_in_code
 				)
 			);
 		}
