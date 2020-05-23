@@ -127,6 +127,16 @@ namespace Alton
 				10
 			);
 
+			Text stack;
+			for (Natural i = 0; i < h.stack.size (); i++)
+			{
+				stack += Conversions::base2_to_basen
+				(
+					h.stack [i].i,
+					10
+				) + U" ";
+			}
+
 			// --- Body ---
 			switch (oper.type)
 			{
@@ -142,10 +152,17 @@ namespace Alton
 				break;
 
 			case ParseOperationType::error:
+				say
+				(
+					Clinic::Component::parser_lib,
+					text_init
+						U"On a lookahead of " + lookahead +
+						U" & with the stack " + stack
+				);
 				Clinic::raise_pos
 				(
 					Clinic::Exceptions::UnrecognisedSyntaxException(),
-					h.curr(1).position_in_code
+					h.curr(0).position_in_code
 				);
 
 			default:

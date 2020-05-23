@@ -426,16 +426,12 @@ class ParserGenerator:
 		file.close()
 
 	def parser_generator_md (self):
+		# NOTE: String concatenation is pretty slow in Python and PyPy, That's
+		#	why I directly write to the file and don't use a template in this
+		#	function. If I were using a template, the string would be "%s%s".
 		# --- Head
 		# -- Files
 		output = open ("./BuildLogs/ParserGenerator.md", 'w')
-
-		# -- Templates
-		template = "%s%s"
-
-		# -- Strings
-		table = "# Table\n\n"
-		states = "# States\n\n"
 
 		# -- Caches
 		state_text = ""
@@ -444,42 +440,42 @@ class ParserGenerator:
 		# --- Body
 		# -- First format
 		# - Head
-		table += "| index | 0 |"
-		splitting_line += "| :--- |"
-		for i in range (len (self.symbols)):
-			table += " " + str (i + 1) + " |"
+		# The header
+		output.write ("# Table\n\n| index | 0 |")
+		splitting_line += "| :--- | :---: |"
+
+		# The body
+		for i in self.symbols:
+			output.write (" " + i.symbol + " |")
 			splitting_line += " :---: |"
 
-		table += " $ |\n"
-		splitting_line += " :---: |"
-
-		table += splitting_line + "\n"
+		output.write (" $ |\n" + splitting_line + " :---: |" + "\n")
 
 		# - Body
 		for i in range (len (self.state_list)):
-			state_text = "| \\#" + str (i) + " |"
-
-			table += state_text
+			output.write ("| \\#" + str (i) + " |")
 
 			for j in self.parse_table[i]:
-				table += " " + str (j) + " |"
+				output.write (" " + str (j) + " |")
 
-			table += '\n'
+			output.write ('\n')
 
 		# -- Second format
+		# - Head
+		output.write ("# States\n\n")
+
+		# - Body
 		for i in range (len (self.state_list)):
 			state_text = "## State " + str (i) + "\n\n"
 
-			states += state_text
+			output.write (state_text)
 
 			for j in self.state_list [i].items:
-				states += "* __" + str (j) + "__\n"
+				output.write ("* __" + str (j) + "__\n")
 
-			states += "\n"
+			output.write ("\n")
 
-		# -- Formatting and saving
-		template %= states, table
-		output.write (template); output.close ()
+		output.close ()
 
 
 def main ():

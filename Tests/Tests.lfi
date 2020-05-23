@@ -2,7 +2,8 @@
 ~ import Image
 ~ import RGBTools
 ~ import Placeholders
-~ import Colours#
+~ import Colours
+~ import Random#
 
 # This is a basic mandelbrot implementation whom purpose is
 #	to provide testing for Alfie's stock launcher, Alton.
@@ -13,14 +14,14 @@
 # Enjoy the results!
 
 ##
-	The Mandelbrot Algorithm.
+	The Mandelbrot Algorithm
 #
 Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
 {
 	# --- Head ---
-	var x1, y1, x2, y2, temp = 0.0;
+	Float x1 = 0.0;#, y1, x2, y2, temp = 0.0;
 
-	var iterator = 0n;
+	Nat iterator = 0n;
 
 	# --- Body ---
 	while (x2 + y2 < 4)
@@ -45,16 +46,16 @@ Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
 
 # NOTE: I want the noise to be biased towards 0,
 #	the bias parameter defines this behaviour's strength.
-shader noise (Float bias, Float _, Float _)
+Graphic noise (Float bias, Float _, Float _)
 {
-	color = RGB
+	colour = RGB
 	(
 		random_float (0, 1),
 		random_float (0, 1),
 		random_float (0, 1)
 	);
-	color **= bias;
-	return color;
+	colour = pow (bias, colour);
+	return colour;
 }
 
 Image mandelbrot ()
@@ -71,7 +72,7 @@ Image mandelbrot ()
 }
 
 
-interf main ()
+Void main ()
 {
 	Daemon.initialize_input ();
 	Daemon.add_image (mandelbrot ());

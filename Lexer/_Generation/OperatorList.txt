@@ -3,11 +3,49 @@ dot .
 
 assign =
 
+plus_assign +=
+minus_assign -=
+
+star_assign *=
+slash_assign /=
+percent_assign %=
+
+left_left_assign <<=
+right_right_assign >>=
+accent_assign ^=
+stand_assign |=
+ampersand_assign &=
+
+
 plus +
 minus -
 
+
 star *
+slash /
+percent %
+
+
+left_left <<
+right_right >>
+accent ^
+stand |
+ampersand &
+
+
+plus_plus ++
+minus_minus --
+
+
+ampersand_ampersand &&
+stand_stand ||
+
+
+equal ==
+not_equal !=
 
 less_than <
+less_than_equal <=
 
+greater_than >
 greater_than_equal >=

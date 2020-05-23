@@ -8,12 +8,31 @@ namespace Alton
 		Token ____get_const_token_3_chars(Text in)
 		{
 			// Second 
+			if (in == U"<<=") return Token::oper_left_left_assign; else
+			if (in == U">>=") return Token::oper_right_right_assign; else
 			return Token::null_token;
 		}
 
 		Token ____get_const_token_2_chars(Text in)
 		{
 			// Third 
+			if (in == U"+=") return Token::oper_plus_assign; else
+			if (in == U"-=") return Token::oper_minus_assign; else
+			if (in == U"*=") return Token::oper_star_assign; else
+			if (in == U"/=") return Token::oper_slash_assign; else
+			if (in == U"%=") return Token::oper_percent_assign; else
+			if (in == U"^=") return Token::oper_accent_assign; else
+			if (in == U"|=") return Token::oper_stand_assign; else
+			if (in == U"&=") return Token::oper_ampersand_assign; else
+			if (in == U"<<") return Token::oper_left_left; else
+			if (in == U">>") return Token::oper_right_right; else
+			if (in == U"++") return Token::oper_plus_plus; else
+			if (in == U"--") return Token::oper_minus_minus; else
+			if (in == U"&&") return Token::oper_ampersand_ampersand; else
+			if (in == U"||") return Token::oper_stand_stand; else
+			if (in == U"==") return Token::oper_equal; else
+			if (in == U"!=") return Token::oper_not_equal; else
+			if (in == U"<=") return Token::oper_less_than_equal; else
 			if (in == U">=") return Token::oper_greater_than_equal; else
 			return Token::null_token;
 		}
@@ -35,7 +54,13 @@ namespace Alton
 			if (in == U"+") return Token::oper_plus; else
 			if (in == U"-") return Token::oper_minus; else
 			if (in == U"*") return Token::oper_star; else
+			if (in == U"/") return Token::oper_slash; else
+			if (in == U"%") return Token::oper_percent; else
+			if (in == U"^") return Token::oper_accent; else
+			if (in == U"|") return Token::oper_stand; else
+			if (in == U"&") return Token::oper_ampersand; else
 			if (in == U"<") return Token::oper_less_than; else
+			if (in == U">") return Token::oper_greater_than; else
 			return Token::null_token;
 		}
 
@@ -81,10 +106,35 @@ namespace Alton
 			case Token::oper_union: return U"oper_union";
 			case Token::oper_dot: return U"oper_dot";
 			case Token::oper_assign: return U"oper_assign";
+			case Token::oper_plus_assign: return U"oper_plus_assign";
+			case Token::oper_minus_assign: return U"oper_minus_assign";
+			case Token::oper_star_assign: return U"oper_star_assign";
+			case Token::oper_slash_assign: return U"oper_slash_assign";
+			case Token::oper_percent_assign: return U"oper_percent_assign";
+			case Token::oper_left_left_assign: return U"oper_left_left_assign";
+			case Token::oper_right_right_assign: return U"oper_right_right_assign";
+			case Token::oper_accent_assign: return U"oper_accent_assign";
+			case Token::oper_stand_assign: return U"oper_stand_assign";
+			case Token::oper_ampersand_assign: return U"oper_ampersand_assign";
 			case Token::oper_plus: return U"oper_plus";
 			case Token::oper_minus: return U"oper_minus";
 			case Token::oper_star: return U"oper_star";
+			case Token::oper_slash: return U"oper_slash";
+			case Token::oper_percent: return U"oper_percent";
+			case Token::oper_left_left: return U"oper_left_left";
+			case Token::oper_right_right: return U"oper_right_right";
+			case Token::oper_accent: return U"oper_accent";
+			case Token::oper_stand: return U"oper_stand";
+			case Token::oper_ampersand: return U"oper_ampersand";
+			case Token::oper_plus_plus: return U"oper_plus_plus";
+			case Token::oper_minus_minus: return U"oper_minus_minus";
+			case Token::oper_ampersand_ampersand: return U"oper_ampersand_ampersand";
+			case Token::oper_stand_stand: return U"oper_stand_stand";
+			case Token::oper_equal: return U"oper_equal";
+			case Token::oper_not_equal: return U"oper_not_equal";
 			case Token::oper_less_than: return U"oper_less_than";
+			case Token::oper_less_than_equal: return U"oper_less_than_equal";
+			case Token::oper_greater_than: return U"oper_greater_than";
 			case Token::oper_greater_than_equal: return U"oper_greater_than_equal";
 			case Token::keyword_shader: return U"keyword_shader";
 			case Token::keyword_float: return U"keyword_float";
