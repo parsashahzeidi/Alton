@@ -70,7 +70,7 @@ class Symbol:
 
 		# - Error
 		else:
-			BaseException ("Bru, you forgot the terminal parameter")
+			BaseException ("Bruh, you forgot the terminal parameter")
 
 		# -- Parsing the `index` parameter
 		#	NOTE: The index is for faster equality checking

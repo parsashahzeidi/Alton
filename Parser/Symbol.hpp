@@ -115,7 +115,9 @@ namespace Alton
 			nterm_def_union,  // #103
 			nterm_location,  // #104
 			
-			ending = -1,  // #-1
+			// I can't bother to add a number to this, just add 1 to the last
+			//	number.
+			ending,
 			// Not a Symbol
 			count
 		};

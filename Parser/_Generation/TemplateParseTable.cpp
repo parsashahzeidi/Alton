@@ -8,45 +8,22 @@ namespace Alton
 {
 	namespace Parser
 	{
-		Natural ParseHelper::____get_rule_size (Natural rule)
-		{
-			switch (rule)
-			{  // First %s
-			default:
-				Clinic::raise_internal
-				(
-					Clinic::Exceptions::UnexistentSwitchCaseException (),
-					__FILE__, ALTON_FUNCTION_DETECT, __LINE__
-				);
-				return 0;
-			}
-		}
-
-		ParseOperation ParseHelper::__get_table_item (Natural state, Symbol item)
+		void ParseHelper::initialize_rules ()
 		{
 			// --- Head ---
-			ParseOperation operation;
-
-			// --- Body ---
-			// Second %s
-			operation.override (ParseOperationType::error, 0);
-
-			return operation;
+			// -- First, HUGE -- %s
 		}
 
-		Symbol ParseHelper::____rule_symbol (Natural rule)
+		void ParseHelper::initialize_parse_table ()
 		{
+			// --- Head ---
+			// -- Second --
+			const Natural state_count = %s;
+			const Natural symbol_count = Symbol::count;
+			table.resize (state_count);
+
 			// --- Body ---
-			switch (rule)
-			{  // Third %s
-			default:
-				Clinic::raise_internal
-				(
-					Clinic::Exceptions::UnexistentSwitchCaseException (),
-					__FILE__, ALTON_FUNCTION_DETECT, __LINE__
-				);
-				return Symbol::null_symbol;
-			}
+			// -- Third, HUGE -- %s
 		}
 	} // namespace Parser
 } // namespace Alton

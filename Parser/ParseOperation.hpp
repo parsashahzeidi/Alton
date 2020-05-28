@@ -12,8 +12,8 @@ namespace Alton
 		{
 			// --- Head
 		public:
-			ParseOperationType type;
-			Natural result;
+			ParseOperationType type = ParseOperationType::error;
+			Natural result = 0;
 
 			// --- Body
 		public:

@@ -356,9 +356,9 @@ class ParserGenerator:
 	def parse_table_cpp(self):
 		# --- Head
 		# -- Formattings
-		format1 = "\n"
-		format2 = "\n"
-		format3 = "\n"
+		format1 = "\n\t\t\t"
+		format2 = ""
+		format3 = "\n\t\t\t"
 
 		# -- Files
 		template = open ("Parser/_Generation/TemplateParseTable.cpp", 'r')
@@ -371,6 +371,8 @@ class ParserGenerator:
 		length = 0
 		symbol_name = ""
 		item = None
+		row = ""
+		column = ""
 
 		# --- Body
 		self.create_state_list ()
@@ -378,30 +380,35 @@ class ParserGenerator:
 
 		# -- Formats
 		# - Format 1
-		for index in range (len (self.grammar)):
-			length = len (self.grammar[index].product)
-			format1 += """\
-			case """ + str (index) + """: return """ + str (length) + """;\n"""
+		format1 += "rules.reserve (" + str (len (self.grammar)) + ");\n\t\t\t"
+		for i in self.grammar:
+			format1 +=\
+					"rules.push_back (" + i.get_cpp_parserule_representation ()\
+					+ ");\n\t\t\t"
 
 		# - Format 2
+		format2 = str (len (self.parse_table))
+
+		# - Format 3
 		for i in range (len (self.parse_table)):
+			# Resizing the row
+			row = "table [" + str (i) + "]"
+			format3 += row + ".resize (symbol_count);\n\t\t\t"
+
 			for j in range (len (self.parse_table [i])):
 				item = self.parse_table [i][j]
-				symbol_name = self.get_symbol_from_index (j).get_cpp_name()
+				symbol = self.get_symbol_from_index (j).get_cpp_name()
+
+				column = " [Symbol::" + symbol + "]"
 
 				if item.operation == ParseOperation.OPERATION_ERROR:
 					continue
 
-				format2 += """
-			if (state == """ + str (i) + """ && item == Symbol::""" + symbol_name + """)
-				operation""" + item.get_cpp_override_representation () + """; else\n\n"""
+				format3 += \
+						row + column + item.get_cpp_override_representation ()\
+						+ ";\n\t\t\t"
 
-		# - Format 3
-		for i in range (len (self.grammar)):
-			symbol = Symbol (self.grammar[i].name, 0).get_cpp_name()
-
-			format3 += "\t\t\tcase " + str (i) + ": return Symbol::" + symbol + ";\n"
-
+		# -- Saving
 		string %= format1, format2, format3
 		output.write (string); output.close()
 

@@ -234,10 +234,7 @@ p3_operation -> p2_operation
 p2_operation -> p2_operation oper_stand						p1_operation
 p2_operation -> p1_operation
 
-p1_operation -> oper_plus rvalue
-p1_operation -> oper_minus rvalue
-p1_operation -> rvalue oper_plus_plus
-p1_operation -> rvalue oper_minus_minus
+p1_operation -> rvalue
 
 # -- Union types --
 union -> item oper_union union

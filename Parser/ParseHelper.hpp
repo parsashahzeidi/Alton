@@ -10,7 +10,9 @@
 # include <Parser/Symbol.hpp>
 # include <Parser/ParsingNode.hpp>
 # include <Parser/ParseOperation.hpp>
+# include <Parser/ParseTable.hpp>
 # include <Parser/ParseState.hpp>
+# include <Parser/ParseRule.hpp>
 
 
 namespace Alton
@@ -25,32 +27,20 @@ namespace Alton
 			Container<ParseState> stack;
 			ParseTree result;
 
+			ParseTable table;
+			Container <ParseRule> rules;
+
 			// --- Body
 		public:
 			/**
-			 * BRIEF: Returns a specific parsing operation from the table
-			 * PARAM: state the table row
-			 * PARAM: item the table collumn
-			 *
-			 * RETURN: A Parsing Operation
-			*/
-			ParseOperation __get_table_item (Natural state, Symbol item);
+			 * BRIEF: Initializes a constant parse table
+			 */
+			void initialize_parse_table ();
 
 			/**
-			 * BRIEF: The nterm_start in `start -> expr`
-			 * PARAM: rule the rule
-
-			 * RETURN: A symbol
+			 * BRIEF: Initializes a list containing rule lists
 			 */
-			Symbol ____rule_symbol (Natural rule);
-
-			/**
-			 * BRIEF: Returns the length of a rule.
-			 * PARAM: rule The rue number.
-
-			 * RETURN: A Natural number.
-			 */
-			Natural ____get_rule_size (Natural rule);
+			void initialize_rules ();
 
 			/**
 			 * BRIEF: Checks if a Symbol is a terminal

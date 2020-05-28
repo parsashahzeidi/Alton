@@ -11,7 +11,9 @@ namespace Alton
 		{
 			null_symbol = 0,  // #0
 			%s
-			ending = -1,  // #-1
+			// I can't bother to add a number to this, just add 1 to the last
+			//	number.
+			ending,
 			// Not a Symbol
 			count
 		};

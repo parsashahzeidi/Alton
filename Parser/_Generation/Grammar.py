@@ -149,3 +149,9 @@ class Grammar:
 
 
 			last_length = len(remaining_text)
+
+	def get_cpp_parserule_representation (self):
+		output = "ParseRule (Symbol::nterm_" + self.name + ", "
+		output += str (len (self.product)) + ")"
+
+		return output

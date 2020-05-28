@@ -13,8 +13,7 @@ namespace Alton
 			(
 				Clinic::Component::parser_lib,
 				Conversions::base2_to_basen (Number (in.item.symbol_type), 10) +
-				U' ' +
-				in.item.enumeration
+				U' ' + in.item.enumeration
 			);
 
 			// The add_scope and exit_scope allow the tree's nodes to appear
@@ -32,22 +31,18 @@ namespace Alton
 		}
 
 
-		void Parser::___reduce (Natural rule)
+		void Parser::___reduce (Natural _rule)
 		{
 			// --- Head ---
-			Natural rule_size;
+			ParseRule rule = h.rules [_rule];
 			ParseState reduce_to;
 			ParseState go_to_push;
-			Symbol rule_symbol;
 			ParseTree new_tree;
 
 			// --- Body ---
-			rule_size = h.____get_rule_size (rule);
-			rule_symbol = h.____rule_symbol(rule);
-
 			// -- Popping the end of the stack --
 			// - Popping everything but the end of the end of the stack.
-			for (Natural _ = 0; (_ + 1) < h.____get_rule_size(rule); _++)
+			for (Natural _ = 0; (_ + 1) < rule.size; _++)
 				h.stack.pop_back ();
 
 			// - We're gonna keep the last item of the grammar for a little
@@ -61,7 +56,7 @@ namespace Alton
 			reduce_to = h.stack.back ();
 
 			// -- Ze goto! --
-			go_to_push.i = h.__get_table_item (reduce_to.i, rule_symbol).result;
+			go_to_push.i = h.table [reduce_to.i] [rule.symbol].result;
 
 			h.stack.push_back(go_to_push);
 
@@ -69,11 +64,11 @@ namespace Alton
 			// - Grabbing the tree's item -
 			new_tree.item = ParsingNode
 			(
-				rule_symbol, go_to_push.position_in_code
+				rule.symbol, go_to_push.position_in_code
 			);
 
 			// -- Popping the items from the result --
-			for (Natural i = 0; i < rule_size; i++)
+			for (Natural i = 0; i < rule.size; i++)
 			{
 				// - Appending the item -
 				new_tree.list.push_front
@@ -114,7 +109,7 @@ namespace Alton
 			Symbol item = h.curr (0).symbol_type;
 
 			// --- Body ---
-			return h.__get_table_item(state, item);
+			return h.table [state] [item];
 		}
 
 
