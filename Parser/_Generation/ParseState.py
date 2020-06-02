@@ -19,7 +19,9 @@ from copy import copy
 
 def state_0 (rules, first):
 	# --- Head
-	grammar = Grammar ("s0 -> start")
+	grammar = Grammar ()
+	grammar.name = "s0"
+	grammar.product = [Symbol ("start", 1)]
 	ending_symbol = Symbol ("ending", 1)
 	configurations = [Configuration (grammar, ending_symbol, 0)]
 	state_kernel = ParseState (configurations)
@@ -72,7 +74,7 @@ class ParseState:
 			return True, index
 
 
-	def closure (self, rules: list, first, kernel: list = []):
+	def closure (self, rules: list, first, kernel: list = []]):
 		# --- Head
 		result = None
 		last_size = 0

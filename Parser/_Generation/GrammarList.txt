@@ -1,290 +1,73 @@
-# Alfie's Standard Grammar.
-#	You can get updates for this file from
-#	Alfie's GitHub repos. Therefore, this file is not
-#	specific to any launcher, including Alton.
-#	A launcher developer is allowed to make modifications to
-#	this file to amply with their launcher's parsing
-#	capabilities, but the developer(s) shall remove or
-#	replace this header or state their changes in the form
-#	of comments if done so. Explicit exceptions to this rule
-#	for specific non-terminals may be made in the form of
-#	regular comments below.
-#
-#	Since Alton is supposed to work with a slower Canonical LR parser,
-#	This grammar may not be supported by, for example, a faster LL (1) parser.
-#	To address this, Alfie will try to keep this grammar fully
-#	LL-compatible. if any rule is not LL-compatible, a public
-#	standard defect shall be declared.
-# Adapted from Alfie0x01 - Segment0x05.
+start
+	:	module_space
+	;
 
-# --- Macros ---
-start -> module_space
+module_space
+	:	module_item module_space
+	|	module_item
+	;
 
-# --- Grammar ---
-# -- Module space --
-module_space -> module_item module_space
-module_space -> module_item
+module_item
+	:	interface
+	|	shader
+	|	module
+	;
 
-module_item -> module
-module_item -> function
+interface
+	:	declare lparen defargs rparen code
+	|	keyword_graphic declare lparen defargs rparen code
+	;
 
-# -- Modules --
-module -> identifier lscope module_space rscope
-module -> identifier lscope rscope
+declare
+	:	type identifier
+	|	keyword_var identifier
+	;
 
-# -- Function types --
-function -> interface
-function -> shader
+type
+	: i_am_invalid_and_i_mess_up_ur_code // TODO: FINISH ME!
+	;
 
-interface -> var_footprint def_args code
-shader -> keyword_graphic var_footprint def_args code
+module
+	:	identifier lbrack module_space rbrack
+	|	identifier lbrack rbrack
+	;
 
-# -- Code! --
-code -> lscope statement_list rscope
-code -> lscope rscope
 
-# NOTE: The reg_if_tail non-terminal is for if statements.
-#	They can either use brackets or not. For example, both of the following
-#	statements are correct, just like C++ or Java.
-#		if ( item ) statement
-#		if ( item ) { statement_list }
-reg_if_tail -> code
-reg_if_tail -> non_scoped_statement
 
-# -- Statements --
-# - Lists -
-statement_list -> statement statement_list
-statement_list -> statement
+// Example grammar
+//	start: expr start | expr
+//
+//	expr: B | expr A
 
-# - Filter -
-statement -> if_statement
-statement -> non_scoped_statement
+// Example lex
+//	B A A B
 
-# - If statements -
-# NOTE: The following rules are for a dangling-else detection and are LR
-#	specific. Modifications of the rules if_statement, just_if, if_else,
-#	open_while and closed_while are explicitly allowed.
-if_statement -> just_if
-if_statement -> if_else
+// Example of Bottom-Up Shift-reduce Left to right rightmost-deriative parsing
+//		Stack       Lookahead       Future          Action
+//	B           | A             | AB        |   expr: B
+//	expr        | A             | AB        |   Shift
+//	expr A      | A             | B         |   expr: expr A
+//	expr        | A             | B         |   Shift
+//	expr A      | B             | ...       |   expr: expr A
+//	expr        | B             | ...       |   Shift
+//	expr B      | ...           | ...       |   expr: B
+//	expr expr   | ...           | ...       |   start: expr
+//	expr start  | ...           | ...       |   start: expr start
+//	start       | ...           | ...       |   Accept
 
-just_if -> open_while
-
-just_if -> keyword_if one_call_arg just_if
-just_if -> keyword_if one_call_arg if_else keyword_else just_if
-just_if -> keyword_if one_call_arg reg_if_tail keyword_else just_if
-just_if -> keyword_if one_call_arg reg_if_tail
-
-if_else -> closed_while
-
-if_else -> keyword_if one_call_arg reg_if_tail keyword_else if_else
-if_else -> keyword_if one_call_arg reg_if_tail keyword_else reg_if_tail
-if_else -> keyword_if one_call_arg if_else keyword_else if_else
-if_else -> keyword_if one_call_arg if_else keyword_else reg_if_tail
-
-# - While statements -
-open_while -> keyword_while one_call_arg just_if
-closed_while -> keyword_while one_call_arg if_else
-
-# - Other statements -
-non_scoped_statement -> statement_end
-non_scoped_statement -> vardef statement_end
-non_scoped_statement -> item statement_end
-
-vardef -> type identifier_union oper_assign union
-vardef -> type identifier_union
-
-# -- Argument types --
-def_args -> lparen def_union rparen
-def_args -> lparen rparen
-
-call_args -> lparen union rparen
-call_args -> lparen rparen
-call_args -> paren_oper
-
-one_call_arg -> lparen item rparen
-one_call_arg -> paren_oper
-
-# -- Item types --
-# - L-Values -
-lvalue -> call_item
-lvalue -> array_access
-lvalue -> array
-lvalue -> location
-
-call_item -> rvalue call_args
-array_access -> rvalue lbrack item rbrack
-array -> lbrack union rbrack
-paren_oper -> lparen any_operator union rparen
-
-# - R-Values -
-# NOTE: R-Values are values that are unmodifiable by the user
-
-# for example:
-#	The following code is not possible
-#		(1 + 2) = a
-#	Why? because the result of a safe operation is not modifiable.
-
-#	The following code is possible
-#		a = (1 + 2)
-#	Why? Just because.
-
-# Another example: a = b
-#	a is the L-Value here, in the sense that it appears on the left side of a
-#	destructive operand ( such as =, +=, //=, etc.. )
-
-#	On the other hand ( literally ), the R-Value is b, as it appears on the
-#	right side.
-
-#	Implicit conversion from L-Values to R-Values is allowed.
-rvalue -> paren_oper
-rvalue -> constant_number
-rvalue -> literalized_number
-rvalue -> constant_float
-rvalue -> constant_text
-rvalue -> lvalue
-
-# -- Type statements --
-type -> compound_type
-type -> basic_type
-var_footprint -> type identifier
-
-# - Compound types -
-compound_type -> location
-
-# - Basic types -
-basic_type -> keyword_shader
-basic_type -> keyword_float
-basic_type -> keyword_void
-basic_type -> keyword_bool
-basic_type -> keyword_int
-basic_type -> keyword_nat
-
-# -- Operators --
-any_operator -> oper_plus
-any_operator -> oper_minus
-
-any_operator -> oper_star
-any_operator -> oper_slash
-any_operator -> oper_percent
-
-any_operator -> oper_left_left
-any_operator -> oper_right_right
-any_operator -> oper_accent
-any_operator -> oper_stand
-any_operator -> oper_ampersand
-
-any_operator -> oper_equal
-any_operator -> oper_not_equal
-any_operator -> oper_less_than
-any_operator -> oper_less_than_equal
-any_operator -> oper_greater_than
-any_operator -> oper_greater_than_equal
-
-# -- Operations --
-# NOTE: This precedence system is optimised for LR parsers, Modifications of the
-#	rules p[0-9]+_operation are explicitly allowed.
-
-item -> p11_operation
-
-p11_operation -> p11_operation oper_left_left_assign		p10_operation
-p11_operation -> p11_operation oper_right_right_assign		p10_operation
-p11_operation -> p11_operation oper_stand_assign			p10_operation
-p11_operation -> p11_operation oper_ampersand_assign		p10_operation
-p11_operation -> p11_operation oper_accent_assign			p10_operation
-p11_operation -> p11_operation oper_star_assign				p10_operation
-p11_operation -> p11_operation oper_slash_assign			p10_operation
-p11_operation -> p11_operation oper_percent_assign			p10_operation
-p11_operation -> p11_operation oper_plus_assign				p10_operation
-p11_operation -> p11_operation oper_minus_assign			p10_operation
-p11_operation -> p10_operation
-
-p10_operation -> p10_operation oper_ampersand_ampersand		p9_operation
-p10_operation -> p10_operation oper_stand_stand 			p9_operation
-p10_operation -> p9_operation
-
-p9_operation -> p9_operation oper_equal						p8_operation
-p9_operation -> p9_operation oper_not_equal					p8_operation
-p9_operation -> p8_operation
-
-p8_operation -> p8_operation oper_less_than					p7_operation
-p8_operation -> p8_operation oper_less_than_equal			p7_operation
-p8_operation -> p8_operation oper_greater_than				p7_operation
-p8_operation -> p8_operation oper_greater_than_equal		p7_operation
-p8_operation -> p7_operation
-
-p7_operation -> p7_operation oper_plus						p6_operation
-p7_operation -> p7_operation oper_minus						p6_operation
-p7_operation -> p6_operation
-
-p6_operation -> p6_operation oper_star						p5_operation
-p6_operation -> p6_operation oper_slash						p5_operation
-p6_operation -> p6_operation oper_percent					p5_operation
-p6_operation -> p5_operation
-
-p5_operation -> p5_operation oper_right_right				p4_operation
-p5_operation -> p5_operation oper_left_left					p4_operation
-p5_operation -> p4_operation
-
-p4_operation -> p4_operation oper_ampersand					p3_operation
-p4_operation -> p3_operation
-
-p3_operation -> p3_operation oper_accent					p2_operation
-p3_operation -> p2_operation
-
-p2_operation -> p2_operation oper_stand						p1_operation
-p2_operation -> p1_operation
-
-p1_operation -> rvalue
-
-# -- Union types --
-union -> item oper_union union
-union -> item
-
-identifier_union -> identifier oper_union identifier_union
-identifier_union -> identifier
-
-def_union -> var_footprint oper_union def_union
-def_union -> var_footprint
-
-location -> identifier oper_dot location
-location -> identifier
-
-# Example grammar
-#	start -> expr start
-#	start -> expr
-#
-#	expr -> B
-#	expr -> expr A
-
-# Example lex
-#	B A A B
-
-# Example of Bottom-Up Shift-reduce Left to right rightmost-deriative parsing
-#		Stack       Lookahead       Future          Action
-#	B           | A             | AB        |   expr -> B
-#	expr        | A             | AB        |   Shift
-#	expr A      | A             | B         |   expr -> expr A
-#	expr        | A             | B         |   Shift
-#	expr A      | B             | ...       |   expr -> expr A
-#	expr        | B             | ...       |   Shift
-#	expr B      | ...           | ...       |   expr -> B
-#	expr expr   | ...           | ...       |   start -> expr
-#	expr start  | ...           | ...       |   start -> expr start
-#	start       | ...           | ...       |   Accept
-
-# Example of Top-Down ∞ token lookahead Left to right leftmost-derivative parsing
-#		Stack                           Action
-#	start                       |   start -> expr start
-#	expr start                  |   expr -> expr A
-#	expr A start                |   expr -> expr A
-#	expr A A start              |   expr -> B
-#	B A A start                 |   Pop
-#	A A start                   |   Pop
-#	A start                     |   Pop
-#	start                       |   start -> expr
-#	expr                        |   expr -> B
-#	B                           |   Pop
-#	...                         |   Accept
-#	Note that since this grammar contains Left-recursive rules, LL parsers will
-#	pee their pants. That's why the LL parser is said to have infinity tokens
-#	of lookahead, that is ofc, impossible.
+// Example of Top-Down ∞ token lookahead Left to right leftmost-derivative parsing
+//		Stack                           Action
+//	start                       |   start: expr start
+//	expr start                  |   expr: expr A
+//	expr A start                |   expr: expr A
+//	expr A A start              |   expr: B
+//	B A A start                 |   Pop
+//	A A start                   |   Pop
+//	A start                     |   Pop
+//	start                       |   start: expr
+//	expr                        |   expr: B
+//	B                           |   Pop
+//	...                         |   Accept
+//	Note that since this grammar contains Left-recursive rules, LL parsers will
+//	pee their pants. That's why the LL parser is said to have infinity tokens
+//	of lookahead, that is ofc, impossible.

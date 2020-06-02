@@ -168,8 +168,8 @@ namespace Alton
 			table [0] [Symbol::keyword_int].override (ParseOperationType::shift, 6);
 			table [0] [Symbol::keyword_nat].override (ParseOperationType::shift, 7);
 			table [0] [Symbol::keyword_graphic].override (ParseOperationType::shift, 8);
+			table [0] [Symbol::nterm_start].override (ParseOperationType::shift, 9);
 			table [0] [Symbol::nterm_module_space].override (ParseOperationType::go_to, 10);
-			table [0] [Symbol::nterm_start].override (ParseOperationType::go_to, 9);
 			table [0] [Symbol::nterm_module_item].override (ParseOperationType::go_to, 11);
 			table [0] [Symbol::nterm_module].override (ParseOperationType::go_to, 12);
 			table [0] [Symbol::nterm_function].override (ParseOperationType::go_to, 13);
@@ -474,8 +474,8 @@ namespace Alton
 			table [45] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [45] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [45] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [45] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [45] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [45] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [45] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [45] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [45] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -610,8 +610,8 @@ namespace Alton
 			table [58] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [58] [Symbol::nterm_union].override (ParseOperationType::go_to, 144);
 			table [58] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [58] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [58] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [58] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [58] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [58] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [58] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -847,8 +847,8 @@ namespace Alton
 			table [68] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [68] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [68] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [68] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [68] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [68] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [68] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [68] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [68] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -1506,8 +1506,8 @@ namespace Alton
 			table [99] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [99] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [99] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [99] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [99] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [99] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [99] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [99] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [99] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -1676,8 +1676,8 @@ namespace Alton
 			table [118] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [118] [Symbol::nterm_union].override (ParseOperationType::go_to, 220);
 			table [118] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [118] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [118] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [118] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [118] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [118] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [118] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -1722,8 +1722,8 @@ namespace Alton
 			table [120] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [120] [Symbol::nterm_union].override (ParseOperationType::go_to, 223);
 			table [120] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [120] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [120] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [120] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [120] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [120] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [120] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -2436,8 +2436,8 @@ namespace Alton
 			table [147] [Symbol::oper_greater_than_equal].override (ParseOperationType::shift, 117);
 			table [147] [Symbol::nterm_item].override (ParseOperationType::go_to, 274);
 			table [147] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [147] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [147] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [147] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [147] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [147] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [147] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -2490,8 +2490,8 @@ namespace Alton
 			table [150] [Symbol::oper_greater_than_equal].override (ParseOperationType::shift, 117);
 			table [150] [Symbol::nterm_item].override (ParseOperationType::go_to, 290);
 			table [150] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [150] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [150] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [150] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [150] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [150] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [150] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -2537,8 +2537,8 @@ namespace Alton
 			table [151] [Symbol::nterm_item].override (ParseOperationType::go_to, 302);
 			table [151] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [151] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [151] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [151] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [151] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [151] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [151] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [151] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -2632,8 +2632,8 @@ namespace Alton
 			table [156] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [156] [Symbol::nterm_union].override (ParseOperationType::go_to, 304);
 			table [156] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [156] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [156] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [156] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [156] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [156] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [156] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -2660,8 +2660,8 @@ namespace Alton
 			table [157] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [157] [Symbol::nterm_item].override (ParseOperationType::go_to, 318);
 			table [157] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [157] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [157] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [157] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [157] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [157] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [157] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -2775,8 +2775,8 @@ namespace Alton
 			table [163] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [163] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [163] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [163] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [163] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [163] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [163] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [163] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [163] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2800,8 +2800,8 @@ namespace Alton
 			table [164] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [164] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [164] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [164] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [164] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [164] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [164] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [164] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [164] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2825,8 +2825,8 @@ namespace Alton
 			table [165] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [165] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [165] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [165] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [165] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [165] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [165] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [165] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [165] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2850,8 +2850,8 @@ namespace Alton
 			table [166] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [166] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [166] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [166] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [166] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [166] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [166] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [166] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [166] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2875,8 +2875,8 @@ namespace Alton
 			table [167] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [167] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [167] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [167] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [167] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [167] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [167] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [167] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [167] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2900,8 +2900,8 @@ namespace Alton
 			table [168] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [168] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [168] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [168] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [168] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [168] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [168] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [168] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [168] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2925,8 +2925,8 @@ namespace Alton
 			table [169] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [169] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [169] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [169] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [169] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [169] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [169] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [169] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [169] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2950,8 +2950,8 @@ namespace Alton
 			table [170] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [170] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [170] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [170] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [170] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [170] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [170] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [170] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [170] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -2975,8 +2975,8 @@ namespace Alton
 			table [171] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [171] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [171] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [171] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [171] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [171] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [171] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [171] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [171] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3000,8 +3000,8 @@ namespace Alton
 			table [172] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [172] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [172] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [172] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [172] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [172] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [172] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [172] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [172] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3025,8 +3025,8 @@ namespace Alton
 			table [173] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [173] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [173] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [173] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [173] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [173] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [173] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [173] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [173] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3049,8 +3049,8 @@ namespace Alton
 			table [174] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [174] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [174] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [174] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [174] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [174] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [174] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [174] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [174] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3073,8 +3073,8 @@ namespace Alton
 			table [175] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [175] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [175] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [175] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [175] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [175] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [175] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [175] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [175] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3096,8 +3096,8 @@ namespace Alton
 			table [176] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [176] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [176] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [176] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [176] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [176] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [176] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [176] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [176] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3119,8 +3119,8 @@ namespace Alton
 			table [177] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [177] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [177] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [177] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [177] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [177] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [177] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [177] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [177] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3141,8 +3141,8 @@ namespace Alton
 			table [178] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [178] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [178] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [178] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [178] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [178] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [178] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [178] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [178] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3163,8 +3163,8 @@ namespace Alton
 			table [179] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [179] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [179] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [179] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [179] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [179] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [179] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [179] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [179] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3185,8 +3185,8 @@ namespace Alton
 			table [180] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [180] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [180] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [180] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [180] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [180] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [180] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [180] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [180] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3207,8 +3207,8 @@ namespace Alton
 			table [181] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [181] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [181] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [181] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [181] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [181] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [181] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [181] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [181] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3228,8 +3228,8 @@ namespace Alton
 			table [182] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [182] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [182] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [182] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [182] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [182] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [182] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [182] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [182] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3249,8 +3249,8 @@ namespace Alton
 			table [183] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [183] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [183] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [183] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [183] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [183] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [183] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [183] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [183] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3269,8 +3269,8 @@ namespace Alton
 			table [184] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [184] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [184] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [184] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [184] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [184] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [184] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [184] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [184] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3289,8 +3289,8 @@ namespace Alton
 			table [185] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [185] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [185] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [185] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [185] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [185] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [185] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [185] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [185] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3309,8 +3309,8 @@ namespace Alton
 			table [186] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [186] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [186] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [186] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [186] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [186] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [186] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [186] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [186] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3328,8 +3328,8 @@ namespace Alton
 			table [187] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [187] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [187] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [187] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [187] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [187] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [187] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [187] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [187] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3347,8 +3347,8 @@ namespace Alton
 			table [188] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [188] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [188] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [188] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [188] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [188] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [188] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [188] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [188] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3365,8 +3365,8 @@ namespace Alton
 			table [189] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [189] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [189] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [189] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [189] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [189] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [189] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [189] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [189] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3382,8 +3382,8 @@ namespace Alton
 			table [190] [Symbol::constant_text].override (ParseOperationType::shift, 62);
 			table [190] [Symbol::identifier].override (ParseOperationType::shift, 333);
 			table [190] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [190] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [190] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [190] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [190] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [190] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [190] [Symbol::nterm_location].override (ParseOperationType::go_to, 335);
@@ -3450,8 +3450,8 @@ namespace Alton
 			table [196] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [196] [Symbol::nterm_union].override (ParseOperationType::go_to, 365);
 			table [196] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [196] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [196] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [196] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [196] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [196] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [196] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4146,8 +4146,8 @@ namespace Alton
 			table [222] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [222] [Symbol::nterm_union].override (ParseOperationType::go_to, 401);
 			table [222] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [222] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [222] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [222] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [222] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [222] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [222] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -4196,8 +4196,8 @@ namespace Alton
 			table [225] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [225] [Symbol::nterm_union].override (ParseOperationType::go_to, 405);
 			table [225] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [225] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [225] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [225] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [225] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [225] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [225] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -4224,8 +4224,8 @@ namespace Alton
 			table [226] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [226] [Symbol::nterm_item].override (ParseOperationType::go_to, 406);
 			table [226] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [226] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [226] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [226] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [226] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [226] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [226] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -4318,8 +4318,8 @@ namespace Alton
 			table [229] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [229] [Symbol::nterm_union].override (ParseOperationType::go_to, 407);
 			table [229] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [229] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [229] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [229] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [229] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [229] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [229] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4344,8 +4344,8 @@ namespace Alton
 			table [230] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [230] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [230] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [230] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [230] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [230] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [230] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [230] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [230] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4369,8 +4369,8 @@ namespace Alton
 			table [231] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [231] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [231] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [231] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [231] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [231] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [231] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [231] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [231] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4394,8 +4394,8 @@ namespace Alton
 			table [232] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [232] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [232] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [232] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [232] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [232] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [232] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [232] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [232] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4419,8 +4419,8 @@ namespace Alton
 			table [233] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [233] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [233] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [233] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [233] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [233] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [233] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [233] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [233] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4444,8 +4444,8 @@ namespace Alton
 			table [234] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [234] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [234] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [234] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [234] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [234] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [234] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [234] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [234] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4469,8 +4469,8 @@ namespace Alton
 			table [235] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [235] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [235] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [235] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [235] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [235] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [235] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [235] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [235] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4494,8 +4494,8 @@ namespace Alton
 			table [236] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [236] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [236] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [236] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [236] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [236] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [236] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [236] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [236] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4519,8 +4519,8 @@ namespace Alton
 			table [237] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [237] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [237] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [237] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [237] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [237] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [237] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [237] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [237] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4544,8 +4544,8 @@ namespace Alton
 			table [238] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [238] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [238] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [238] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [238] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [238] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [238] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [238] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [238] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4569,8 +4569,8 @@ namespace Alton
 			table [239] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [239] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [239] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [239] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [239] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [239] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [239] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [239] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [239] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4594,8 +4594,8 @@ namespace Alton
 			table [240] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [240] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [240] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [240] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [240] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [240] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [240] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [240] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [240] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4618,8 +4618,8 @@ namespace Alton
 			table [241] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [241] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [241] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [241] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [241] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [241] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [241] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [241] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [241] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4642,8 +4642,8 @@ namespace Alton
 			table [242] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [242] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [242] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [242] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [242] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [242] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [242] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [242] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [242] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4665,8 +4665,8 @@ namespace Alton
 			table [243] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [243] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [243] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [243] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [243] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [243] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [243] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [243] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [243] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4688,8 +4688,8 @@ namespace Alton
 			table [244] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [244] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [244] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [244] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [244] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [244] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [244] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [244] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [244] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4710,8 +4710,8 @@ namespace Alton
 			table [245] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [245] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [245] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [245] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [245] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [245] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [245] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [245] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [245] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4732,8 +4732,8 @@ namespace Alton
 			table [246] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [246] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [246] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [246] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [246] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [246] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [246] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [246] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [246] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4754,8 +4754,8 @@ namespace Alton
 			table [247] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [247] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [247] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [247] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [247] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [247] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [247] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [247] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [247] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4776,8 +4776,8 @@ namespace Alton
 			table [248] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [248] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [248] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [248] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [248] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [248] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [248] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [248] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [248] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4797,8 +4797,8 @@ namespace Alton
 			table [249] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [249] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [249] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [249] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [249] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [249] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [249] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [249] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [249] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4818,8 +4818,8 @@ namespace Alton
 			table [250] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [250] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [250] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [250] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [250] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [250] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [250] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [250] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [250] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4838,8 +4838,8 @@ namespace Alton
 			table [251] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [251] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [251] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [251] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [251] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [251] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [251] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [251] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [251] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4858,8 +4858,8 @@ namespace Alton
 			table [252] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [252] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [252] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [252] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [252] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [252] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [252] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [252] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [252] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4878,8 +4878,8 @@ namespace Alton
 			table [253] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [253] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [253] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [253] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [253] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [253] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [253] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [253] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [253] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4897,8 +4897,8 @@ namespace Alton
 			table [254] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [254] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [254] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [254] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [254] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [254] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [254] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [254] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [254] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4916,8 +4916,8 @@ namespace Alton
 			table [255] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [255] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [255] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [255] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [255] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [255] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [255] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [255] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [255] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4934,8 +4934,8 @@ namespace Alton
 			table [256] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [256] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [256] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [256] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [256] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [256] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [256] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [256] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [256] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -4951,8 +4951,8 @@ namespace Alton
 			table [257] [Symbol::constant_text].override (ParseOperationType::shift, 124);
 			table [257] [Symbol::identifier].override (ParseOperationType::shift, 125);
 			table [257] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [257] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [257] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [257] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [257] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [257] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [257] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -5052,8 +5052,8 @@ namespace Alton
 			table [261] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [261] [Symbol::nterm_union].override (ParseOperationType::go_to, 437);
 			table [261] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [261] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [261] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [261] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [261] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [261] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [261] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -5435,8 +5435,8 @@ namespace Alton
 			table [273] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [273] [Symbol::nterm_union].override (ParseOperationType::go_to, 443);
 			table [273] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [273] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [273] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [273] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [273] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [273] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [273] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -5786,8 +5786,8 @@ namespace Alton
 			table [289] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [289] [Symbol::nterm_union].override (ParseOperationType::go_to, 473);
 			table [289] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [289] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [289] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [289] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [289] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [289] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [289] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -5835,8 +5835,8 @@ namespace Alton
 			table [291] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [291] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [291] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [291] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [291] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [291] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [291] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [291] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [291] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -6027,8 +6027,8 @@ namespace Alton
 			table [306] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [306] [Symbol::nterm_union].override (ParseOperationType::go_to, 485);
 			table [306] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [306] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [306] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [306] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [306] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [306] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [306] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -6700,8 +6700,8 @@ namespace Alton
 			table [332] [Symbol::nterm_item].override (ParseOperationType::go_to, 534);
 			table [332] [Symbol::nterm_union].override (ParseOperationType::go_to, 546);
 			table [332] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [332] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [332] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [332] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [332] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [332] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [332] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -7379,8 +7379,8 @@ namespace Alton
 			table [364] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [364] [Symbol::nterm_union].override (ParseOperationType::go_to, 549);
 			table [364] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [364] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [364] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [364] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [364] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [364] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [364] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7429,8 +7429,8 @@ namespace Alton
 			table [367] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [367] [Symbol::nterm_union].override (ParseOperationType::go_to, 553);
 			table [367] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [367] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [367] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [367] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [367] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [367] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [367] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7457,8 +7457,8 @@ namespace Alton
 			table [368] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [368] [Symbol::nterm_item].override (ParseOperationType::go_to, 554);
 			table [368] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [368] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [368] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [368] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [368] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [368] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [368] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -7551,8 +7551,8 @@ namespace Alton
 			table [371] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [371] [Symbol::nterm_union].override (ParseOperationType::go_to, 555);
 			table [371] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [371] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [371] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [371] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [371] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [371] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [371] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7577,8 +7577,8 @@ namespace Alton
 			table [372] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [372] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [372] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [372] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [372] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [372] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [372] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [372] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [372] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7602,8 +7602,8 @@ namespace Alton
 			table [373] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [373] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [373] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [373] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [373] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [373] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [373] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [373] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [373] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7627,8 +7627,8 @@ namespace Alton
 			table [374] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [374] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [374] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [374] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [374] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [374] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [374] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [374] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [374] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7652,8 +7652,8 @@ namespace Alton
 			table [375] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [375] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [375] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [375] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [375] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [375] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [375] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [375] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [375] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7677,8 +7677,8 @@ namespace Alton
 			table [376] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [376] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [376] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [376] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [376] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [376] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [376] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [376] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [376] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7702,8 +7702,8 @@ namespace Alton
 			table [377] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [377] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [377] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [377] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [377] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [377] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [377] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [377] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [377] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7727,8 +7727,8 @@ namespace Alton
 			table [378] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [378] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [378] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [378] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [378] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [378] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [378] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [378] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [378] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7752,8 +7752,8 @@ namespace Alton
 			table [379] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [379] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [379] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [379] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [379] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [379] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [379] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [379] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [379] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7777,8 +7777,8 @@ namespace Alton
 			table [380] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [380] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [380] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [380] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [380] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [380] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [380] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [380] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [380] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7802,8 +7802,8 @@ namespace Alton
 			table [381] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [381] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [381] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [381] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [381] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [381] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [381] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [381] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [381] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7827,8 +7827,8 @@ namespace Alton
 			table [382] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [382] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [382] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [382] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [382] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [382] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [382] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [382] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [382] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7851,8 +7851,8 @@ namespace Alton
 			table [383] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [383] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [383] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [383] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [383] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [383] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [383] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [383] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [383] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7875,8 +7875,8 @@ namespace Alton
 			table [384] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [384] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [384] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [384] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [384] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [384] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [384] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [384] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [384] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7898,8 +7898,8 @@ namespace Alton
 			table [385] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [385] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [385] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [385] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [385] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [385] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [385] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [385] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [385] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7921,8 +7921,8 @@ namespace Alton
 			table [386] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [386] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [386] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [386] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [386] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [386] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [386] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [386] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [386] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7943,8 +7943,8 @@ namespace Alton
 			table [387] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [387] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [387] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [387] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [387] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [387] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [387] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [387] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [387] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7965,8 +7965,8 @@ namespace Alton
 			table [388] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [388] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [388] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [388] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [388] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [388] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [388] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [388] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [388] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -7987,8 +7987,8 @@ namespace Alton
 			table [389] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [389] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [389] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [389] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [389] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [389] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [389] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [389] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [389] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8009,8 +8009,8 @@ namespace Alton
 			table [390] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [390] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [390] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [390] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [390] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [390] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [390] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [390] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [390] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8030,8 +8030,8 @@ namespace Alton
 			table [391] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [391] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [391] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [391] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [391] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [391] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [391] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [391] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [391] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8051,8 +8051,8 @@ namespace Alton
 			table [392] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [392] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [392] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [392] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [392] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [392] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [392] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [392] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [392] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8071,8 +8071,8 @@ namespace Alton
 			table [393] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [393] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [393] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [393] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [393] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [393] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [393] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [393] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [393] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8091,8 +8091,8 @@ namespace Alton
 			table [394] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [394] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [394] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [394] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [394] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [394] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [394] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [394] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [394] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8111,8 +8111,8 @@ namespace Alton
 			table [395] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [395] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [395] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [395] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [395] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [395] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [395] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [395] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [395] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8130,8 +8130,8 @@ namespace Alton
 			table [396] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [396] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [396] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [396] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [396] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [396] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [396] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [396] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [396] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8149,8 +8149,8 @@ namespace Alton
 			table [397] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [397] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [397] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [397] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [397] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [397] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [397] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [397] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [397] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8167,8 +8167,8 @@ namespace Alton
 			table [398] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [398] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [398] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [398] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [398] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [398] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [398] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [398] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [398] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8184,8 +8184,8 @@ namespace Alton
 			table [399] [Symbol::constant_text].override (ParseOperationType::shift, 200);
 			table [399] [Symbol::identifier].override (ParseOperationType::shift, 201);
 			table [399] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [399] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [399] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [399] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [399] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [399] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [399] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8945,8 +8945,8 @@ namespace Alton
 			table [436] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [436] [Symbol::nterm_union].override (ParseOperationType::go_to, 587);
 			table [436] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [436] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [436] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [436] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [436] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [436] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [436] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -8995,8 +8995,8 @@ namespace Alton
 			table [439] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [439] [Symbol::nterm_union].override (ParseOperationType::go_to, 591);
 			table [439] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [439] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [439] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [439] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [439] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [439] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [439] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -9023,8 +9023,8 @@ namespace Alton
 			table [440] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [440] [Symbol::nterm_item].override (ParseOperationType::go_to, 592);
 			table [440] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [440] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [440] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [440] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [440] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [440] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [440] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -9118,8 +9118,8 @@ namespace Alton
 			table [445] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [445] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [445] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [445] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [445] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [445] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [445] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [445] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [445] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9143,8 +9143,8 @@ namespace Alton
 			table [446] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [446] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [446] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [446] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [446] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [446] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [446] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [446] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [446] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9168,8 +9168,8 @@ namespace Alton
 			table [447] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [447] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [447] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [447] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [447] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [447] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [447] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [447] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [447] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9193,8 +9193,8 @@ namespace Alton
 			table [448] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [448] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [448] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [448] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [448] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [448] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [448] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [448] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [448] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9218,8 +9218,8 @@ namespace Alton
 			table [449] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [449] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [449] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [449] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [449] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [449] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [449] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [449] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [449] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9243,8 +9243,8 @@ namespace Alton
 			table [450] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [450] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [450] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [450] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [450] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [450] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [450] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [450] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [450] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9268,8 +9268,8 @@ namespace Alton
 			table [451] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [451] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [451] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [451] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [451] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [451] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [451] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [451] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [451] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9293,8 +9293,8 @@ namespace Alton
 			table [452] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [452] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [452] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [452] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [452] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [452] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [452] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [452] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [452] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9318,8 +9318,8 @@ namespace Alton
 			table [453] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [453] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [453] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [453] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [453] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [453] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [453] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [453] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [453] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9343,8 +9343,8 @@ namespace Alton
 			table [454] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [454] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [454] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [454] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [454] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [454] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [454] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [454] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [454] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9368,8 +9368,8 @@ namespace Alton
 			table [455] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [455] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [455] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [455] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [455] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [455] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [455] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [455] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [455] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9392,8 +9392,8 @@ namespace Alton
 			table [456] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [456] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [456] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [456] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [456] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [456] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [456] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [456] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [456] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9416,8 +9416,8 @@ namespace Alton
 			table [457] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [457] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [457] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [457] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [457] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [457] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [457] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [457] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [457] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9439,8 +9439,8 @@ namespace Alton
 			table [458] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [458] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [458] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [458] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [458] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [458] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [458] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [458] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [458] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9462,8 +9462,8 @@ namespace Alton
 			table [459] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [459] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [459] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [459] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [459] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [459] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [459] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [459] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [459] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9484,8 +9484,8 @@ namespace Alton
 			table [460] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [460] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [460] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [460] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [460] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [460] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [460] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [460] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [460] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9506,8 +9506,8 @@ namespace Alton
 			table [461] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [461] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [461] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [461] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [461] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [461] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [461] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [461] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [461] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9528,8 +9528,8 @@ namespace Alton
 			table [462] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [462] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [462] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [462] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [462] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [462] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [462] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [462] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [462] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9550,8 +9550,8 @@ namespace Alton
 			table [463] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [463] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [463] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [463] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [463] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [463] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [463] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [463] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [463] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9571,8 +9571,8 @@ namespace Alton
 			table [464] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [464] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [464] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [464] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [464] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [464] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [464] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [464] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [464] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9592,8 +9592,8 @@ namespace Alton
 			table [465] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [465] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [465] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [465] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [465] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [465] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [465] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [465] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [465] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9612,8 +9612,8 @@ namespace Alton
 			table [466] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [466] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [466] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [466] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [466] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [466] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [466] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [466] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [466] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9632,8 +9632,8 @@ namespace Alton
 			table [467] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [467] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [467] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [467] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [467] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [467] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [467] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [467] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [467] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9652,8 +9652,8 @@ namespace Alton
 			table [468] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [468] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [468] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [468] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [468] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [468] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [468] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [468] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [468] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9671,8 +9671,8 @@ namespace Alton
 			table [469] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [469] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [469] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [469] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [469] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [469] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [469] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [469] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [469] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9690,8 +9690,8 @@ namespace Alton
 			table [470] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [470] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [470] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [470] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [470] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [470] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [470] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [470] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [470] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9708,8 +9708,8 @@ namespace Alton
 			table [471] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [471] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [471] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [471] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [471] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [471] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [471] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [471] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [471] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9725,8 +9725,8 @@ namespace Alton
 			table [472] [Symbol::constant_text].override (ParseOperationType::shift, 265);
 			table [472] [Symbol::identifier].override (ParseOperationType::shift, 266);
 			table [472] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 271);
-			table [472] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [472] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 267);
+			table [472] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 268);
 			table [472] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 269);
 			table [472] [Symbol::nterm_array].override (ParseOperationType::go_to, 270);
 			table [472] [Symbol::nterm_location].override (ParseOperationType::go_to, 286);
@@ -9809,8 +9809,8 @@ namespace Alton
 			table [478] [Symbol::nterm_item].override (ParseOperationType::go_to, 302);
 			table [478] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [478] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [478] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [478] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [478] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [478] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [478] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [478] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -9857,8 +9857,8 @@ namespace Alton
 			table [479] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [479] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [479] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [479] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [479] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [479] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [479] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [479] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [479] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -9905,8 +9905,8 @@ namespace Alton
 			table [480] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [480] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [480] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [480] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [480] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [480] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [480] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [480] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [480] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -10005,8 +10005,8 @@ namespace Alton
 			table [484] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [484] [Symbol::nterm_union].override (ParseOperationType::go_to, 636);
 			table [484] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [484] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [484] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [484] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [484] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [484] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [484] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -10055,8 +10055,8 @@ namespace Alton
 			table [487] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [487] [Symbol::nterm_union].override (ParseOperationType::go_to, 640);
 			table [487] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [487] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [487] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [487] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [487] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [487] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [487] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -10083,8 +10083,8 @@ namespace Alton
 			table [488] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [488] [Symbol::nterm_item].override (ParseOperationType::go_to, 641);
 			table [488] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [488] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [488] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [488] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [488] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [488] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [488] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10205,8 +10205,8 @@ namespace Alton
 			table [492] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [492] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [492] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [492] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [492] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [492] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [492] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [492] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [492] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10230,8 +10230,8 @@ namespace Alton
 			table [493] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [493] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [493] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [493] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [493] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [493] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [493] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [493] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [493] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10255,8 +10255,8 @@ namespace Alton
 			table [494] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [494] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [494] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [494] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [494] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [494] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [494] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [494] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [494] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10280,8 +10280,8 @@ namespace Alton
 			table [495] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [495] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [495] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [495] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [495] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [495] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [495] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [495] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [495] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10305,8 +10305,8 @@ namespace Alton
 			table [496] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [496] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [496] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [496] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [496] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [496] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [496] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [496] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [496] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10330,8 +10330,8 @@ namespace Alton
 			table [497] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [497] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [497] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [497] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [497] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [497] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [497] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [497] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [497] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10355,8 +10355,8 @@ namespace Alton
 			table [498] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [498] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [498] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [498] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [498] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [498] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [498] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [498] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [498] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10380,8 +10380,8 @@ namespace Alton
 			table [499] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [499] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [499] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [499] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [499] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [499] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [499] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [499] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [499] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10405,8 +10405,8 @@ namespace Alton
 			table [500] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [500] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [500] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [500] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [500] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [500] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [500] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [500] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [500] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10430,8 +10430,8 @@ namespace Alton
 			table [501] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [501] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [501] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [501] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [501] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [501] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [501] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [501] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [501] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10455,8 +10455,8 @@ namespace Alton
 			table [502] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [502] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [502] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [502] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [502] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [502] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [502] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [502] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [502] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10479,8 +10479,8 @@ namespace Alton
 			table [503] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [503] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [503] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [503] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [503] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [503] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [503] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [503] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [503] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10503,8 +10503,8 @@ namespace Alton
 			table [504] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [504] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [504] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [504] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [504] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [504] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [504] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [504] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [504] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10526,8 +10526,8 @@ namespace Alton
 			table [505] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [505] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [505] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [505] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [505] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [505] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [505] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [505] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [505] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10549,8 +10549,8 @@ namespace Alton
 			table [506] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [506] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [506] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [506] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [506] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [506] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [506] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [506] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [506] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10571,8 +10571,8 @@ namespace Alton
 			table [507] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [507] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [507] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [507] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [507] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [507] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [507] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [507] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [507] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10593,8 +10593,8 @@ namespace Alton
 			table [508] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [508] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [508] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [508] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [508] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [508] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [508] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [508] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [508] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10615,8 +10615,8 @@ namespace Alton
 			table [509] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [509] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [509] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [509] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [509] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [509] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [509] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [509] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [509] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10637,8 +10637,8 @@ namespace Alton
 			table [510] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [510] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [510] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [510] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [510] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [510] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [510] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [510] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [510] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10658,8 +10658,8 @@ namespace Alton
 			table [511] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [511] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [511] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [511] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [511] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [511] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [511] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [511] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [511] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10679,8 +10679,8 @@ namespace Alton
 			table [512] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [512] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [512] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [512] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [512] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [512] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [512] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [512] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [512] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10699,8 +10699,8 @@ namespace Alton
 			table [513] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [513] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [513] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [513] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [513] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [513] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [513] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [513] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [513] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10719,8 +10719,8 @@ namespace Alton
 			table [514] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [514] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [514] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [514] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [514] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [514] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [514] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [514] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [514] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10739,8 +10739,8 @@ namespace Alton
 			table [515] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [515] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [515] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [515] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [515] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [515] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [515] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [515] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [515] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10758,8 +10758,8 @@ namespace Alton
 			table [516] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [516] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [516] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [516] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [516] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [516] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [516] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [516] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [516] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10777,8 +10777,8 @@ namespace Alton
 			table [517] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [517] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [517] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [517] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [517] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [517] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [517] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [517] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [517] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10795,8 +10795,8 @@ namespace Alton
 			table [518] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [518] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [518] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [518] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [518] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [518] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [518] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [518] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [518] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10812,8 +10812,8 @@ namespace Alton
 			table [519] [Symbol::constant_text].override (ParseOperationType::shift, 310);
 			table [519] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [519] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [519] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [519] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [519] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [519] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [519] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [519] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -10851,8 +10851,8 @@ namespace Alton
 			table [522] [Symbol::nterm_item].override (ParseOperationType::go_to, 132);
 			table [522] [Symbol::nterm_union].override (ParseOperationType::go_to, 671);
 			table [522] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 130);
-			table [522] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [522] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 126);
+			table [522] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 127);
 			table [522] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 128);
 			table [522] [Symbol::nterm_array].override (ParseOperationType::go_to, 129);
 			table [522] [Symbol::nterm_location].override (ParseOperationType::go_to, 145);
@@ -13120,8 +13120,8 @@ namespace Alton
 			table [627] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [627] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [627] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [627] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [627] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [627] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [627] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [627] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [627] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -13972,8 +13972,8 @@ namespace Alton
 			table [670] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [670] [Symbol::nterm_union].override (ParseOperationType::go_to, 720);
 			table [670] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [670] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [670] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [670] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [670] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [670] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [670] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -14022,8 +14022,8 @@ namespace Alton
 			table [673] [Symbol::nterm_item].override (ParseOperationType::go_to, 208);
 			table [673] [Symbol::nterm_union].override (ParseOperationType::go_to, 724);
 			table [673] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 206);
-			table [673] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [673] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 202);
+			table [673] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 203);
 			table [673] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 204);
 			table [673] [Symbol::nterm_array].override (ParseOperationType::go_to, 205);
 			table [673] [Symbol::nterm_location].override (ParseOperationType::go_to, 221);
@@ -14050,8 +14050,8 @@ namespace Alton
 			table [674] [Symbol::identifier].override (ParseOperationType::shift, 311);
 			table [674] [Symbol::nterm_item].override (ParseOperationType::go_to, 725);
 			table [674] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 316);
-			table [674] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [674] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 312);
+			table [674] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 313);
 			table [674] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 314);
 			table [674] [Symbol::nterm_array].override (ParseOperationType::go_to, 315);
 			table [674] [Symbol::nterm_location].override (ParseOperationType::go_to, 330);
@@ -14144,8 +14144,8 @@ namespace Alton
 			table [677] [Symbol::nterm_item].override (ParseOperationType::go_to, 534);
 			table [677] [Symbol::nterm_union].override (ParseOperationType::go_to, 726);
 			table [677] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [677] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [677] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [677] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [677] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [677] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [677] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14170,8 +14170,8 @@ namespace Alton
 			table [678] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [678] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [678] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [678] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [678] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [678] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [678] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [678] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [678] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14195,8 +14195,8 @@ namespace Alton
 			table [679] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [679] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [679] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [679] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [679] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [679] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [679] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [679] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [679] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14220,8 +14220,8 @@ namespace Alton
 			table [680] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [680] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [680] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [680] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [680] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [680] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [680] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [680] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [680] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14245,8 +14245,8 @@ namespace Alton
 			table [681] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [681] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [681] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [681] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [681] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [681] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [681] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [681] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [681] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14270,8 +14270,8 @@ namespace Alton
 			table [682] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [682] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [682] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [682] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [682] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [682] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [682] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [682] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [682] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14295,8 +14295,8 @@ namespace Alton
 			table [683] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [683] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [683] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [683] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [683] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [683] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [683] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [683] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [683] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14320,8 +14320,8 @@ namespace Alton
 			table [684] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [684] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [684] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [684] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [684] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [684] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [684] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [684] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [684] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14345,8 +14345,8 @@ namespace Alton
 			table [685] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [685] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [685] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [685] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [685] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [685] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [685] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [685] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [685] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14370,8 +14370,8 @@ namespace Alton
 			table [686] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [686] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [686] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [686] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [686] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [686] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [686] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [686] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [686] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14395,8 +14395,8 @@ namespace Alton
 			table [687] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [687] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [687] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [687] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [687] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [687] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [687] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [687] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [687] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14420,8 +14420,8 @@ namespace Alton
 			table [688] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [688] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [688] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [688] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [688] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [688] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [688] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [688] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [688] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14444,8 +14444,8 @@ namespace Alton
 			table [689] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [689] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [689] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [689] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [689] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [689] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [689] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [689] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [689] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14468,8 +14468,8 @@ namespace Alton
 			table [690] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [690] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [690] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [690] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [690] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [690] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [690] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [690] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [690] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14491,8 +14491,8 @@ namespace Alton
 			table [691] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [691] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [691] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [691] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [691] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [691] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [691] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [691] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [691] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14514,8 +14514,8 @@ namespace Alton
 			table [692] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [692] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [692] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [692] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [692] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [692] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [692] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [692] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [692] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14536,8 +14536,8 @@ namespace Alton
 			table [693] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [693] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [693] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [693] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [693] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [693] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [693] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [693] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [693] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14558,8 +14558,8 @@ namespace Alton
 			table [694] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [694] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [694] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [694] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [694] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [694] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [694] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [694] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [694] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14580,8 +14580,8 @@ namespace Alton
 			table [695] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [695] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [695] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [695] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [695] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [695] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [695] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [695] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [695] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14602,8 +14602,8 @@ namespace Alton
 			table [696] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [696] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [696] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [696] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [696] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [696] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [696] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [696] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [696] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14623,8 +14623,8 @@ namespace Alton
 			table [697] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [697] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [697] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [697] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [697] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [697] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [697] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [697] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [697] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14644,8 +14644,8 @@ namespace Alton
 			table [698] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [698] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [698] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [698] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [698] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [698] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [698] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [698] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [698] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14664,8 +14664,8 @@ namespace Alton
 			table [699] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [699] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [699] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [699] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [699] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [699] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [699] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [699] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [699] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14684,8 +14684,8 @@ namespace Alton
 			table [700] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [700] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [700] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [700] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [700] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [700] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [700] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [700] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [700] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14704,8 +14704,8 @@ namespace Alton
 			table [701] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [701] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [701] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [701] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [701] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [701] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [701] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [701] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [701] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14723,8 +14723,8 @@ namespace Alton
 			table [702] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [702] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [702] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [702] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [702] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [702] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [702] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [702] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [702] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14742,8 +14742,8 @@ namespace Alton
 			table [703] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [703] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [703] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [703] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [703] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [703] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [703] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [703] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [703] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14760,8 +14760,8 @@ namespace Alton
 			table [704] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [704] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [704] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [704] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [704] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [704] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [704] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [704] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [704] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -14777,8 +14777,8 @@ namespace Alton
 			table [705] [Symbol::constant_text].override (ParseOperationType::shift, 526);
 			table [705] [Symbol::identifier].override (ParseOperationType::shift, 527);
 			table [705] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 532);
-			table [705] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [705] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 528);
+			table [705] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 529);
 			table [705] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 530);
 			table [705] [Symbol::nterm_array].override (ParseOperationType::go_to, 531);
 			table [705] [Symbol::nterm_location].override (ParseOperationType::go_to, 547);
@@ -15040,8 +15040,8 @@ namespace Alton
 			table [713] [Symbol::nterm_item].override (ParseOperationType::go_to, 762);
 			table [713] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [713] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [713] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [713] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [713] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [713] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [713] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [713] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -15088,8 +15088,8 @@ namespace Alton
 			table [714] [Symbol::nterm_item].override (ParseOperationType::go_to, 762);
 			table [714] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [714] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [714] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [714] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [714] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [714] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [714] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [714] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);
@@ -15964,8 +15964,8 @@ namespace Alton
 			table [755] [Symbol::nterm_item].override (ParseOperationType::go_to, 83);
 			table [755] [Symbol::nterm_type].override (ParseOperationType::go_to, 82);
 			table [755] [Symbol::nterm_paren_oper].override (ParseOperationType::go_to, 80);
-			table [755] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [755] [Symbol::nterm_lvalue].override (ParseOperationType::go_to, 76);
+			table [755] [Symbol::nterm_call_item].override (ParseOperationType::go_to, 77);
 			table [755] [Symbol::nterm_array_access].override (ParseOperationType::go_to, 78);
 			table [755] [Symbol::nterm_array].override (ParseOperationType::go_to, 79);
 			table [755] [Symbol::nterm_location].override (ParseOperationType::go_to, 95);

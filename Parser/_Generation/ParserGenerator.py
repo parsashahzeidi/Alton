@@ -10,6 +10,7 @@ from Parser._Generation.Configuration import Configuration
 from Parser._Generation.ParseOperation import ParseOperation
 from Parser._Generation.ParseState import ParseState, state_0
 from Parser._Generation.ParseTransition import ParseTransition
+from Parser._Generation.GrammarParser import GrammarParser
 from Tools.PythonGeneralTools.remove_repetitions import remove_repetitions
 from Tools.PythonGeneralTools.multiply_without_referencing import make_multiplication
 from Tools.PythonGeneralTools.list_equality import list_equality
@@ -19,51 +20,25 @@ from copy import copy
 class ParserGenerator:
 	def __init__(self):
 		self.symbols = get_lexing_symbols()
-		self.grammar = self.read_grammar()
+		self.grammar = []
 		self.first_memory = {}
 		self.follow_memory = {}
-		self.state_list = [self.state_0 ()]
+		self.state_list = []
 		self.parse_table = []
 
-	def read_grammar(self):
-		"""
-		Reads the grammar from /Path/To/Alton/Parser/_Generation/GrammarList.txt
-		:return: A list of grammars
-		"""
+		self.parse_grammar()
+		self.state_list.append (self.state_0 ())
+
+	def parse_grammar (self):
 		# --- Head
-		file = open("./Parser/_Generation/GrammarList.txt", 'r')
-		lines = file.readlines(); file.close()
-		grammar = []
-		non_terminals = []
-		previous_symbols = []
-		name = ""
-		symbol = None
+		file = open ("./Parser/_Generation/GrammarList.txt", 'r')
+		text = file.read (); file.close ()
+
+		parser = GrammarParser ()
 
 		# --- Body
-		# -- Parsing
-		for i in lines:
-			# Detecting an empty line
-			if len(i) <= 1:
-				continue
+		parser.parse_grammar (text, self)
 
-			# Detecting a comment
-			if i[0] == "#":
-				continue
-
-			# Successfully passed thru limiters
-			grammar.append(Grammar(i))
-
-			name = grammar[-1].name
-			symbol = Symbol(name, 0)
-
-			# Need to add the symbol too.
-			if name not in previous_symbols:
-				non_terminals.append(symbol)
-				previous_symbols.append(name)
-
-		self.symbols += non_terminals
-
-		return grammar
 
 	def _calculate_first(self, symbol: Symbol, stack: list = []):
 		# --- Head
@@ -132,32 +107,6 @@ class ParserGenerator:
 
 		return _set
 
-	def find_state_index(self, state):
-		for i in range (self.count_of_states ()):
-			if self.state_list[i] == state:
-				return i
-
-		return None
-
-	def add_state (self, state):
-		# --- Kill condition
-		if state.is_empty ():
-			return True, None
-
-		# --- Head
-		index = self.find_state_index (state)
-
-		# --- Body
-		# -- Checking if the state exists
-		if index is None:
-			index = self.count_of_states ()
-			self.state_list.append (state)
-
-			return False, index
-
-		else:
-			return True, index
-
 	# TODO: Make a memorizing function and add it to the "PythonGeneralTools"
 	#	Then replace first and follow.
 	def first(self, symbol: Symbol, stack: list = []):
@@ -203,6 +152,32 @@ class ParserGenerator:
 				)
 
 		return mem.get(name)
+
+	def find_state_index(self, state):
+		for i in range (self.count_of_states ()):
+			if self.state_list[i] == state:
+				return i
+
+		return None
+
+	def add_state (self, state):
+		# --- Kill condition
+		if state.is_empty ():
+			return True, None
+
+		# --- Head
+		index = self.find_state_index (state)
+
+		# --- Body
+		# -- Checking if the state exists
+		if index is None:
+			index = self.count_of_states ()
+			self.state_list.append (state)
+
+			return False, index
+
+		else:
+			return True, index
 
 	def get_symbol_from_index (self, index: int):
 		# --- Head
@@ -451,7 +426,7 @@ class ParserGenerator:
 		output.write ("# Table\n\n| index | 0 |")
 		splitting_line += "| :--- | :---: |"
 
-		# The body
+		# The Body
 		for i in self.symbols:
 			output.write (" " + i.symbol + " |")
 			splitting_line += " :---: |"
