@@ -13,7 +13,6 @@ gmon.out
 .gdbinit
 CMakeLists.txt.user
 
-BuildLogs/*
 TouchFiles/*
 
 # Directories
