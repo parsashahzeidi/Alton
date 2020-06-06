@@ -28,6 +28,7 @@ namespace Alton
 			statement_end,
 			oper_union,
 			oper_dot,
+			oper_colon,
 			oper_assign,
 			oper_plus_assign,
 			oper_minus_assign,
@@ -65,10 +66,15 @@ namespace Alton
 			keyword_void,
 			keyword_int,
 			keyword_nat,
+			keyword_var,
+			keyword_goto,
+			keyword_seg,
 			keyword_graphic,
+			keyword_interface,
 			keyword_while,
 			keyword_if,
 			keyword_else,
+			keyword_underscore,
 
 			// Not a Token
 			count

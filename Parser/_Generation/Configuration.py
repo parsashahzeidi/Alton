@@ -69,15 +69,26 @@ class Configuration():
 		return output
 
 	def __eq__(self, item):
+		return self.strict_eq (item)
+
+	def lalr_eq (self, item):
 		if\
 				   self._product	!= item._product	\
 				or self.name		!= item.name		\
-				or self.lookahead	!= item.lookahead	\
 				or self.position	!= item.position:
 			return False
 
-		else:
-			return True
+		else: return True
+
+	def strict_eq (self, item):
+		if\
+				   self._product	!= item._product	\
+				or self.name		!= item.name		\
+				or self.position	!= item.position	\
+				or self.lookahead	!= item.lookahead:
+			return False
+
+		else: return True
 
 	def __ne__(self, item):
 		return basic_ne(self, item)

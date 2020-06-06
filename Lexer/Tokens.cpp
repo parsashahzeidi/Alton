@@ -50,6 +50,7 @@ namespace Alton
 			if (in == U";") return Token::statement_end; else
 			if (in == U",") return Token::oper_union; else
 			if (in == U".") return Token::oper_dot; else
+			if (in == U":") return Token::oper_colon; else
 			if (in == U"=") return Token::oper_assign; else
 			if (in == U"+") return Token::oper_plus; else
 			if (in == U"-") return Token::oper_minus; else
@@ -79,10 +80,15 @@ namespace Alton
 			if (in == U"Void") return Token::keyword_void; else
 			if (in == U"Int") return Token::keyword_int; else
 			if (in == U"Nat") return Token::keyword_nat; else
+			if (in == U"var") return Token::keyword_var; else
+			if (in == U"goto") return Token::keyword_goto; else
+			if (in == U"seg") return Token::keyword_seg; else
 			if (in == U"Graphic") return Token::keyword_graphic; else
+			if (in == U"Interface") return Token::keyword_interface; else
 			if (in == U"while") return Token::keyword_while; else
 			if (in == U"if") return Token::keyword_if; else
 			if (in == U"else") return Token::keyword_else; else
+			if (in == U"_") return Token::keyword_underscore; else
 			return Token::null_token;
 		}
 
@@ -105,6 +111,7 @@ namespace Alton
 			case Token::statement_end: return U"statement_end";
 			case Token::oper_union: return U"oper_union";
 			case Token::oper_dot: return U"oper_dot";
+			case Token::oper_colon: return U"oper_colon";
 			case Token::oper_assign: return U"oper_assign";
 			case Token::oper_plus_assign: return U"oper_plus_assign";
 			case Token::oper_minus_assign: return U"oper_minus_assign";
@@ -142,10 +149,15 @@ namespace Alton
 			case Token::keyword_void: return U"keyword_void";
 			case Token::keyword_int: return U"keyword_int";
 			case Token::keyword_nat: return U"keyword_nat";
+			case Token::keyword_var: return U"keyword_var";
+			case Token::keyword_goto: return U"keyword_goto";
+			case Token::keyword_seg: return U"keyword_seg";
 			case Token::keyword_graphic: return U"keyword_graphic";
+			case Token::keyword_interface: return U"keyword_interface";
 			case Token::keyword_while: return U"keyword_while";
 			case Token::keyword_if: return U"keyword_if";
 			case Token::keyword_else: return U"keyword_else";
+			case Token::keyword_underscore: return U"keyword_underscore";
 
 			default:
 				return U"??";

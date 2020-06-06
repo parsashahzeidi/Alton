@@ -1,6 +1,8 @@
 union ,
 dot .
 
+colon :
+
 assign =
 
 plus_assign +=
@@ -28,6 +30,7 @@ percent %
 
 left_left <<
 right_right >>
+
 accent ^
 stand |
 ampersand &

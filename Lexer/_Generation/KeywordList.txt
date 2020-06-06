@@ -4,9 +4,16 @@ bool Bool
 void Void
 int Int
 nat Nat
+var var
+
+goto goto
+seg seg
 
 graphic Graphic
+interface Interface
 
 while while
 if if
 else else
+
+underscore _

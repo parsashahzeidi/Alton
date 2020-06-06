@@ -1,36 +1,172 @@
-start
-	:	module_space
-	;
+%%
+start:
+		module_space;
 
-module_space
-	:	module_item module_space
-	|	module_item
-	;
+module_space:
+		module_item module_space
+	|	module_item;
 
-module_item
-	:	interface
+module_item:
+		interface
 	|	shader
-	|	module
-	;
+	|	module;
 
-interface
-	:	declare lparen defargs rparen code
-	|	keyword_graphic declare lparen defargs rparen code
-	;
+interface:
+		declare defargs code;
 
-declare
-	:	type identifier
+declare:
+		type identifier
+	|	type keyword_underscore
 	|	keyword_var identifier
-	;
+	|	keyword_var keyword_underscore;
 
-type
-	: i_am_invalid_and_i_mess_up_ur_code // TODO: FINISH ME!
-	;
+type:
+		keyword_shader
+	|	keyword_interface
+	|	keyword_bool
+	|	keyword_int
+	|	keyword_nat
+	|	keyword_float
+	|	keyword_void
+	|	keyword_goto
+	|	location;
 
-module
-	:	identifier lbrack module_space rbrack
-	|	identifier lbrack rbrack
-	;
+defargs:
+		lparen defunion rparen
+	|	lparen rparen;
+
+defunion:
+		declare oper_union defunion
+	|	declare
+	|	defassignunion;
+
+defassignunion:
+		declare oper_assign item oper_union defassignunion
+	|	declare oper_assign item;
+
+item:
+	// RValues
+		lparen paren_oper rparen
+	|	constant_number
+	|	literalized_number
+	|	constant_float
+	|	constant_text
+
+	// Possible LValues
+	|	call_item
+	|	array_access
+	|	array
+	|	location;
+
+paren_oper:
+		any_oper union;
+
+any_oper:
+		oper_plus
+	|	oper_minus
+	|	oper_star
+	|	oper_slash
+	|	oper_percent
+	|	oper_left_left
+	|	oper_right_right
+	|	oper_accent
+	|	oper_stand
+	|	oper_ampersand
+	|	oper_equal
+	|	oper_not_equal
+	|	oper_less_than
+	|	oper_less_than_equal
+	|	oper_greater_than
+	|	oper_greater_than_equal;
+
+union:
+		item oper_union union
+	|	item;
+
+call_item:
+		item lparen union rparen
+	|	item lparen paren_oper rparen
+	|	item lparen rparen;
+
+array_access:
+		item lbrack item rbrack;
+
+array:
+		lbrack union rbrack
+	|	lbrack rbrack;
+
+location:
+		identifier oper_dot location
+	|	identifier;
+
+code:
+		lscope stmtunion rscope
+	|	lscope rscope;
+
+stmtunion:
+		stmt statement_end stmtunion
+	|	stmt;
+
+stmt:
+		if
+	|	if_else
+	|	simple_stmt
+	|	statement_end;
+
+simple_stmt:
+		goto_stmt
+	|	seg_stmt
+	|	vardef
+	|	item;
+
+goto_stmt:
+		keyword_goto oper_colon identifier;
+
+seg_stmt:
+		keyword_seg oper_colon identifier;
+
+vardef:
+		declare
+	|	declare oper_assign item;
+
+if:
+		keyword_if		single_arg if
+	|	keyword_if		single_arg simple_stmt
+	|	keyword_if		single_arg code
+
+	|	keyword_if		single_arg if_else		keyword_else if
+	|	keyword_if		single_arg simple_stmt	keyword_else if
+	|	keyword_if		single_arg code			keyword_else if
+
+	|	keyword_if		single_arg if_else		keyword_else simple_stmt
+	|	keyword_if		single_arg simple_stmt	keyword_else simple_stmt
+	|	keyword_if		single_arg code			keyword_else simple_stmt
+
+	|	keyword_if		single_arg if_else		keyword_else code
+	|	keyword_if		single_arg simple_stmt	keyword_else code
+	|	keyword_if		single_arg code			keyword_else code
+
+	|	keyword_while	single_arg if
+	|	keyword_while	single_arg simple_stmt
+	|	keyword_while	single_arg code;
+
+single_arg:
+		lparen item rparen
+	|	lparen paren_oper rparen;
+
+if_else:
+		keyword_if		single_arg if_else		keyword_else if_else
+	|	keyword_if		single_arg simple_stmt	keyword_else if_else
+	|	keyword_if		single_arg code			keyword_else if_else
+
+	|	keyword_while	single_arg if_else;
+
+shader:
+		keyword_graphic declare defargs code;
+
+module:
+		identifier lbrack module_space rbrack
+	|	identifier lbrack rbrack;
 
 
 
@@ -57,17 +193,17 @@ module
 
 // Example of Top-Down ∞ token lookahead Left to right leftmost-derivative parsing
 //		Stack                           Action
-//	start                       |   start: expr start
-//	expr start                  |   expr: expr A
-//	expr A start                |   expr: expr A
-//	expr A A start              |   expr: B
-//	B A A start                 |   Pop
-//	A A start                   |   Pop
-//	A start                     |   Pop
-//	start                       |   start: expr
-//	expr                        |   expr: B
-//	B                           |   Pop
-//	...                         |   Accept
+//	start                       (   start: expr start
+//	expr start                  )   expr: expr A
+//	expr A start                (   expr: expr A
+//	expr A A start              )   expr: B
+//	B A A start                 (   Pop
+//	A A start                   )   Pop
+//	A start                     (   Pop
+//	start                       )   start: expr
+//	expr                        (   expr: B
+//	B                           )   Pop
+//	...                         (   Accept
 //	Note that since this grammar contains Left-recursive rules, LL parsers will
 //	pee their pants. That's why the LL parser is said to have infinity tokens
 //	of lookahead, that is ofc, impossible.

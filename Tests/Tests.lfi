@@ -19,26 +19,26 @@
 Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
 {
 	# --- Head ---
-	Float x1 = 0.0;#, y1, x2, y2, temp = 0.0;
+	var x1, y1, x2, y2, temp = 0.0;
 
-	Nat iterator = 0n;
+	var iterator = 0n;
 
 	# --- Body ---
-	while (x2 + y2 < 4)
+	while (< (+ x2, y2), 4)
 	{
-		if (iterator >= 100)
+		if (>= iterator, 100)
 		{
-			iterator = 0
+			iterator = 0;
 			break
 		}
 		else iterator++;
 
-		temp = x2 - y2;
-		y1 = 2 * x1 * y1 + y;
-		x1 = temp + x0;
+		temp = (- x2 y2);
+		y1 = (+ (* 2, x1, y1), y);
+		x1 = (+ temp, x0);
 
-		x2 = x1 ** 2;
-		y2 = y1 ** 2;
+		x2 = (* x1, x1);
+		y2 = (* y1, y1);
 	}
 
 	return placeholder_palette (iterator);
@@ -48,7 +48,7 @@ Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
 #	the bias parameter defines this behaviour's strength.
 Graphic noise (Float bias, Float _, Float _)
 {
-	colour = RGB
+	var colour = RGB
 	(
 		random_float (0, 1),
 		random_float (0, 1),

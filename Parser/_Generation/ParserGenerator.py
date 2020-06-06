@@ -154,8 +154,16 @@ class ParserGenerator:
 		return mem.get(name)
 
 	def find_state_index(self, state):
+		# LR:
+		#	for i in range (self.count_of_states ()):
+		#		if self.state_list[i].strict_eq (state):
+		#			return i
+		#
+		#	return None
+
+		# LALR:
 		for i in range (self.count_of_states ()):
-			if self.state_list[i] == state:
+			if self.state_list[i].lalr_eq (state):
 				return i
 
 		return None
@@ -166,7 +174,13 @@ class ParserGenerator:
 			return True, None
 
 		# --- Head
+		# NOTE: LR differs from LALR in this part:
+		#	LR would merge the states only if they were exactly identical.
+		#	But LALR would merge the states even if they were differing in
+		#		their lookaheads, thus compressing the state list.
 		index = self.find_state_index (state)
+
+		merge_result = None
 
 		# --- Body
 		# -- Checking if the state exists
@@ -177,7 +191,9 @@ class ParserGenerator:
 			return False, index
 
 		else:
-			return True, index
+			merge_result = self.state_list [index].merge (state)
+
+			return merge_result, index
 
 	def get_symbol_from_index (self, index: int):
 		# --- Head
@@ -444,18 +460,16 @@ class ParserGenerator:
 
 		# -- Second format
 		# - Head
-		output.write ("# States\n\n")
+		output.write ("\n# States\n")
 
 		# - Body
 		for i in range (len (self.state_list)):
-			state_text = "## State " + str (i) + "\n\n"
+			state_text = "\n## State " + str (i) + "\n\n"
 
 			output.write (state_text)
 
 			for j in self.state_list [i].items:
 				output.write ("* __" + str (j) + "__\n")
-
-			output.write ("\n")
 
 		output.close ()
 

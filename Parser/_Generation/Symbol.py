@@ -10,6 +10,7 @@ from Tools.PythonGeneralTools.basic_ne import basic_ne
 _symbol_list = {}
 _index_list = {}
 
+terminals = set ([i.token for i in get_lexing_tokens()])
 
 def add_symbol (text: str):
 	next_index = len (_symbol_list)
@@ -40,9 +41,6 @@ def get_symbol_text_from_index (index: int):
 
 
 def determine_term(text: str):
-	# --- Head
-	terminals = [i.token for i in get_lexing_tokens()]
-
 	# --- Body
 	if text in terminals:
 		return 1

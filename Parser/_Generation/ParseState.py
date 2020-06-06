@@ -37,6 +37,9 @@ class ParseState:
 		self.transition = []
 
 	def __eq__ (self, item):
+		return self.strict_eq (item)
+
+	def strict_eq (self, item):
 		for i in self.items:
 			if i not in item.items:
 				return False
@@ -47,19 +50,38 @@ class ParseState:
 
 		return True
 
+	def lalr_eq (self, item):
+		for i in self.items:
+			if not item.has_conf (i):
+				return False
+
+		for i in item.items:
+			if not self.has_conf (i):
+				return False
+
+		return True
+
 	def __ne__ (self, item):
 		return basic_ne (self, item)
 
 	def find_item (self, conf):
 		for i in range (self.size ()):
-			if self.items[i] == conf:
+			if self.items[i].strict_eq(conf):
 				return i
 
 		return None
 
+	def has_conf (self, item):
+		for i in range (self.size ()):
+			if self.items[i].lalr_eq (item):
+				return True
+
+		else: return False
+
 	def is_empty (self):
 		if self.size () != 0:
 			return False
+
 		else: return True
 
 	def append (self, item: Configuration):
@@ -74,7 +96,7 @@ class ParseState:
 			return True, index
 
 
-	def closure (self, rules: list, first, kernel: list = []]):
+	def closure (self, rules: list, first, kernel: list = []):
 		# --- Head
 		result = None
 		last_size = 0
@@ -160,3 +182,22 @@ class ParseState:
 
 	def size (self):
 		return len (self.items)
+
+	def merge (self, state):
+		# --- Head
+		changed = True
+
+		# --- Body
+		# -- Managing the configurations
+		for i in state.items:
+			if not self.has_conf (i):
+				changed = False
+				self.items.append (i)
+
+		# -- Managing each transition
+		for i in state.transition:
+			if i not in self.transition:
+				changed = False
+				self.transition.append (i)
+
+		return changed
