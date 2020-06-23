@@ -10,7 +10,7 @@ namespace Alton
 	namespace Clinic
 	{
 		Text *code = nullptr;
-		Natural scope_count = 0;
+		Natural scope_count = 1;
 
 		void _delete_setup()
 		{
@@ -62,7 +62,10 @@ namespace Alton
 				}
 				else if (code->at(i) == U'\t')
 				{
-					ansi_term_colour(ANSIColourStrength::high_ansi_colour_strength);
+					ansi_term_colour
+					(
+						ANSIColourStrength::high_ansi_colour_strength
+					);
 					index.curr_line += U"|   ";
 					ansi_term_colour();
 					index.chtr += 4;
@@ -99,7 +102,17 @@ namespace Alton
 		void terminate(Number code)
 		{
 			ansi_term_colour(ANSIColourStrength::high_ansi_colour_strength);
-			_log(U"\tTerminating...\n", stdout);
+
+			add_scope ();
+			say
+			(
+				Component::clinic_lib,
+				text_init
+					U"Terminating..." + nl_txt,
+				ANSIColourStrength::high_ansi_colour_strength
+			);
+			exit_scope ();
+
 			ansi_term_colour();
 			exit(code);
 		}
@@ -131,21 +144,24 @@ namespace Alton
 			// -- Error: Hello at 8:4. --
 			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U":";
-			message += Conversions::str_to_text(std::to_string(index.real_chtr));
-			message += U".\n";
+			message += Conversions::str_to_text
+			(
+				std::to_string(index.real_chtr)
+			);
+			message += text_init U'.' + nl_txt;
 
 			// -- 8		|			Hello! --
 			message += Conversions::str_to_text(std::to_string(index.line));
 			message += U" |\t";
 			message += index.curr_line;
-			message += U"\n\t";
+			message += text_init nl_txt + U'\t';
 
 			// --		------------ --
 			for (Natural i = 0; i < index.chtr; i++)
 				message += U'-';
 
 			// --		------------^ --
-			message += U"^\n";
+			message += text_init U'^' + nl_txt;
 
 			return message;
 		}
@@ -172,7 +188,8 @@ namespace Alton
 				err._message
 				+ U" ( \'"
 				+ arg
-				+ U"\' ).\n",
+				+ U"\' )."
+				+ nl_txt,
 				0xBeef
 			);
 		}
@@ -191,7 +208,7 @@ namespace Alton
 				+ __func
 				+ U"\" at line "
 				+ Conversions::str_to_text(std::to_string(__line))
-				+ U".\n",
+				+ U'.' + nl_txt,
 				0xDead
 			);
 		}
@@ -222,7 +239,7 @@ namespace Alton
 
 			// --- Body ---
 			for (Natural _ = 0; _ < scope_count; _++)
-				output += U" |  ";
+				output += U"  ";
 
 			return output;
 		}
@@ -256,15 +273,18 @@ namespace Alton
 
 			ansi_term_colour(strength, colour, stream);
 			_log(
-				text + U"\n"
-				, stream
+				text + nl_txt,
+				stream
 			);
 		}
 
 		void print_header()
 		{
 			// --- The Version data ---
-			ansi_term_colour(ANSIColourStrength::high_ansi_colour_strength);
+			ansi_term_colour
+			(
+				ANSIColourStrength::high_ansi_colour_strength
+			);
 			_log
 			(
 				text_init
@@ -278,37 +298,68 @@ namespace Alton
 			);
 
 			// --- The build time data ---
-			ansi_term_colour(ANSIColourStrength::low_ansi_colour_strength, ANSIColourCode::ansi_colour_white);
+			ansi_term_colour
+			(
+				ANSIColourStrength::low_ansi_colour_strength,
+				ANSIColourCode::ansi_colour_white
+			);
 			_log
 			(
 				text_init
-				U". [ "
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_YEAR,  10) + U"/"									// This Year
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_MONTH, 10) + U"/"									// This Month
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_DAY,	  10) + U" "									// Today
+					// This Year
+					U". [ "
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_YEAR, 10
+					) + U"/"
+					// This Month
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_MONTH, 10
+					) + U"/"
+					// Today
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_DAY, 10
+					) + U" "
 
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_HOUR,   10) + U":"									// This Hour
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_MINUTE, 10) + U":"									// This Minute
-				+ Conversions::base2_to_basen(ALTON_BUILD_TIME_SECOND, 10) + U" "									// This Second
-
-				, stdout
+					// This Hour
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_HOUR, 10
+					) + U":"
+					// This Minute
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_MINUTE, 10
+					) + U":"
+					// This Second
+					+ Conversions::base2_to_basen
+					(
+						ALTON_BUILD_TIME_SECOND, 10
+					) + U" ",
+				stdout
 			);
 
 			// --- The platform data ---
 			_log
 			(
 				text_init
-				ALTON_OS_TEXT + U" " + ALTON_ARCH_TEXT + U" " + ALTON_COMPILER_TEXT														// This Compiling Platform
+				// This Compiling Platform
+				ALTON_OS_TEXT + U" " + ALTON_ARCH_TEXT + U" " +
+				ALTON_COMPILER_TEXT + U" ]" + nl_txt +
 
-				+ U" ]\nMade with Python "
-				+ ALTON_PYTHON_VERSION_INFO + U"\n"																	// The version of Python used
-
-				, stdout
+				// The version of Python used
+				U"Made with Python " + ALTON_PYTHON_VERSION_INFO +  nl_txt,
+				stdout
 			);
 			ansi_term_colour();
 		}
 
-		void ansi_term_colour(ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream)
+		void ansi_term_colour
+		(
+			ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream
+		)
 		{
 			// --- Body ---
 			// -- Printing the ANSI escape code initial --

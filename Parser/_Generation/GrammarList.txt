@@ -1,3 +1,5 @@
+%token identifier keyword_underscore keyword_var keyword_shader keyword_interface keyword_bool keyword_int keyword_nat keyword_float keyword_void keyword_goto lparen rparen oper_union oper_assign constant_number literalized_number constant_float constant_text oper_plus oper_minus oper_star oper_slash oper_percent oper_left_left oper_right_right oper_accent oper_stand oper_ampersand oper_equal oper_not_equal oper_less_than oper_less_than_equal oper_greater_than oper_greater_than_equal fakelparen lbrack rbrack oper_dot lscope rscope statement_end oper_colon keyword_seg oper_plus_assign oper_minus_assign oper_star_assign oper_slash_assign oper_percent_assign oper_left_left_assign oper_right_right_assign oper_accent_assign oper_stand_assign oper_ampersand_assign keyword_if keyword_else keyword_while keyword_graphic
+%start start
 %%
 start:
 		module_space;
@@ -44,19 +46,35 @@ defassignunion:
 		declare oper_assign item oper_union defassignunion
 	|	declare oper_assign item;
 
+lval:
+		call_item
+	|	array_access
+	|	array
+	|	location;
+
+// NOTE: Item is special, in the sence that an Operator Precedence Parser will
+//	be used to apply expressions using the "nterm_expression" nonterminal, in
+//	C++ itself. This is applied automatically, and therfore, do NOT change
+//	another rule's name to item.
 item:
-	// RValues
-		lparen paren_oper rparen
+		expression;
+
+rval:
+		single_arg
+	|	fakecall
 	|	constant_number
 	|	literalized_number
 	|	constant_float
 	|	constant_text
+	|	oper_minus item
+	|	oper_plus item
+	|	item oper_plus_plus
+	|	item oper_minus_minus;
 
-	// Possible LValues
-	|	call_item
-	|	array_access
-	|	array
-	|	location;
+
+single_arg:
+		lparen paren_oper rparen
+		lparen item rparen;
 
 paren_oper:
 		any_oper union;
@@ -79,14 +97,31 @@ any_oper:
 	|	oper_greater_than
 	|	oper_greater_than_equal;
 
-union:
-		item oper_union union
-	|	item;
+fakecall:
+	// NOTE: fakelparen is a workaround for the following conflict.
+	//	location "%" "(" item ")" for modulating location against item
+	//	location "%" "(" item ")" for fake calling location
+	// The workaround consists of merging "%" and "(" into one single token,
+	//	so we would have the two following non-conflicting statements.
+	//	location "%" "(" item ")" for modulating location against item
+	//	location "%(" item ")" for fake calling location
+		item fakelparen fakecall_union rparen
+	|	item fakelparen rparen;
+
+fakecall_union:
+		item oper_union fakecall_union
+	|	item
+	|	keyword_underscore oper_union fakecall_union
+	|	keyword_underscore;
 
 call_item:
 		item lparen union rparen
 	|	item lparen paren_oper rparen
 	|	item lparen rparen;
+
+union:
+		item oper_union union
+	|	item;
 
 array_access:
 		item lbrack item rbrack;
@@ -117,6 +152,7 @@ simple_stmt:
 		goto_stmt
 	|	seg_stmt
 	|	vardef
+	|	assign
 	|	item;
 
 goto_stmt:
@@ -126,38 +162,60 @@ seg_stmt:
 		keyword_seg oper_colon identifier;
 
 vardef:
-		declare
-	|	declare oper_assign item;
+		declare_union
+	|	declare_union oper_assign item;
+
+declare_union:
+		type sid_union
+	|	keyword_var sid_union;
+
+sid_union:
+		identifier sid_union
+	|	identifier
+	|	keyword_underscore sid_union
+	|	keyword_underscore;
+
+assign:
+		item assign_oper item;
+
+assign_oper:
+		oper_assign
+	|	oper_plus_assign
+	|	oper_minus_assign
+	|	oper_star_assign
+	|	oper_slash_assign
+	|	oper_percent_assign
+	|	oper_left_left_assign
+	|	oper_right_right_assign
+	|	oper_accent_assign
+	|	oper_stand_assign
+	|	oper_ampersand_assign;
 
 if:
 		keyword_if		single_arg if
-	|	keyword_if		single_arg simple_stmt
+	|	keyword_if		single_arg simple_stmt statement_end
 	|	keyword_if		single_arg code
 
-	|	keyword_if		single_arg if_else		keyword_else if
-	|	keyword_if		single_arg simple_stmt	keyword_else if
-	|	keyword_if		single_arg code			keyword_else if
+	|	keyword_if		single_arg if_else						keyword_else if
+	|	keyword_if		single_arg simple_stmt statement_end	keyword_else if
+	|	keyword_if		single_arg code							keyword_else if
 
-	|	keyword_if		single_arg if_else		keyword_else simple_stmt
-	|	keyword_if		single_arg simple_stmt	keyword_else simple_stmt
-	|	keyword_if		single_arg code			keyword_else simple_stmt
+	|	keyword_if		single_arg if_else						keyword_else simple_stmt statement_end
+	|	keyword_if		single_arg simple_stmt statement_end	keyword_else simple_stmt statement_end
+	|	keyword_if		single_arg code							keyword_else simple_stmt statement_end
 
-	|	keyword_if		single_arg if_else		keyword_else code
-	|	keyword_if		single_arg simple_stmt	keyword_else code
-	|	keyword_if		single_arg code			keyword_else code
+	|	keyword_if		single_arg if_else						keyword_else code
+	|	keyword_if		single_arg simple_stmt statement_end	keyword_else code
+	|	keyword_if		single_arg code							keyword_else code
 
 	|	keyword_while	single_arg if
 	|	keyword_while	single_arg simple_stmt
 	|	keyword_while	single_arg code;
 
-single_arg:
-		lparen item rparen
-	|	lparen paren_oper rparen;
-
 if_else:
-		keyword_if		single_arg if_else		keyword_else if_else
-	|	keyword_if		single_arg simple_stmt	keyword_else if_else
-	|	keyword_if		single_arg code			keyword_else if_else
+		keyword_if		single_arg if_else						keyword_else if_else
+	|	keyword_if		single_arg simple_stmt					keyword_else if_else
+	|	keyword_if		single_arg code							keyword_else if_else
 
 	|	keyword_while	single_arg if_else;
 
@@ -178,7 +236,7 @@ module:
 // Example lex
 //	B A A B
 
-// Example of Bottom-Up Shift-reduce Left to right rightmost-deriative parsing
+// Example of Bottom-Up Shift-reduce parsing
 //		Stack       Lookahead       Future          Action
 //	B           | A             | AB        |   expr: B
 //	expr        | A             | AB        |   Shift
@@ -191,7 +249,7 @@ module:
 //	expr start  | ...           | ...       |   start: expr start
 //	start       | ...           | ...       |   Accept
 
-// Example of Top-Down ∞ token lookahead Left to right leftmost-derivative parsing
+// Example of Top-Down infinity lookahead parsing
 //		Stack                           Action
 //	start                       (   start: expr start
 //	expr start                  )   expr: expr A
@@ -204,6 +262,6 @@ module:
 //	expr                        (   expr: B
 //	B                           )   Pop
 //	...                         (   Accept
-//	Note that since this grammar contains Left-recursive rules, LL parsers will
-//	pee their pants. That's why the LL parser is said to have infinity tokens
-//	of lookahead, that is ofc, impossible.
+//	Note that since this grammar contains Left-recursive rules, LL parsers can
+//	piss their pants. That's why the LL parser is said to have infinity tokens
+//	of lookahead, which is ofc, impossible.

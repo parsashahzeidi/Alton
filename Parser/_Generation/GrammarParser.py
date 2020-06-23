@@ -6,6 +6,7 @@ path.append(getcwd())
 
 from Parser._Generation.Grammar import Grammar
 from Parser._Generation.Symbol import Symbol
+from Parser._Generation.Configuration import get_product_index
 from copy import copy
 
 
@@ -209,14 +210,16 @@ class GrammarParser:
 				raise SyntaxError\
 						("A product is missing from rule `" + error_text + "`.")
 
-			# -- Appending the rule
-			pgen.grammar.append (copy (grammar))
+			# -- Appending the rule, via the get_product_index function. Despite
+			#	the name, this function adds a product, if it's not already
+			#	existing, then returns the index The copying is required.
+			get_product_index (copy (grammar))
 
 			# -- Resetting the product
 			grammar.product = []
 
 			# -- Advancing the ; or the |
-			# - Advancing the or
+			# - Advancing the or first, since it's more common.
 			cache, text = self._advance_or (text)
 			text = self._advance_waste (text)
 
@@ -250,7 +253,7 @@ class GrammarParser:
 		else:
 			return split [1]
 
-	def parse_grammar(self, _text, pgen):
+	def parse_grammar (self, _text, pgen):
 		# --- Head
 		text = self.trim_percent (_text)
 

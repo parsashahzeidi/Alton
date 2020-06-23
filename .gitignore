@@ -12,12 +12,19 @@ temp.tmp
 gmon.out
 .gdbinit
 CMakeLists.txt.user
+Alton.kdev4
 
 TouchFiles/*
 
 # Directories
 .vscode/
 .idea/
+.kdev4/
 Build/*/
 tmpbld/
-__pycache__/
+# Ignoring __pycache__s in 5 levels of recursion
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*/*/*/*/__pycache__/
+*/*/*/*/*/__pycache__/

@@ -11,6 +11,7 @@ namespace Alton
 			accept,
 			shift,
 			go_to,
+			parse_expression
 		};
 	} // namespace Parser
 } // namespace Alton

@@ -15,19 +15,23 @@
 		/Path/To/Alton/LICENSE
 */
 
-# include <thread>
+// --- External Libraries ---
 /**
  * TODO:
 	Make a wrapper class similliar to std::thread but with Posix Thread calls.
  */
+# include <thread>
 # include <filesystem>
 # include <stdint.h>
 # include <iostream>
 # include <string>
 # include <fstream>
 
-// Newline Character
-# if defined(__WIN__)
+// --- Internal Libraries ---
+# include <ETC/VersionData.hpp>
+
+// --- Newline Characters ---
+# if ALTON_OS == OS_WINDOWS
 	# define nl_str "\r\n"
 	# define nl_txt U"\r\n"
 # else
@@ -35,20 +39,20 @@
 	# define nl_txt U"\n"
 # endif
 
-// String initialization
+// --- String / Text Initialization ---
 # define text_init Alton::Types::Text() +
 # define str_init std::string() +
 
-// Some typedefs
+// --- Typedefs / Usings ---
 namespace Alton
 {
 	inline namespace Types
 	{
-		// String
+		// -- String / Text --
 		using Character = char32_t;
 		using Text = std::u32string;
 
-		// Numeric
+		// -- Numeric --
 		using Number = long long int;
 		using Natural = unsigned long long int;
 		using Float = long double;

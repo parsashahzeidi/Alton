@@ -41,8 +41,8 @@ namespace Alton
 				// Example: -i=./in.lfi
 				//	== ./in.lfi
 				cache.value = cache.value.substr
-				(
-					h.arg_group[cache.arg].size() + 1  // The size of the current argument
+				(  // The size of the current argument
+					h.arg_group[cache.arg].size() + 1
 				);
 				out.push_back(cache);
 
@@ -62,13 +62,13 @@ namespace Alton
 			// Allocating ArgumentID::count items at formatted
 			formatted.resize(ArgumentID::count);
 
-			// Reformatting the chart 
+			// Reformatting the chart
 			for (Natural i = 0; i < in.size(); i++)
 			{
 				cache = in[i];
 				formatted[cache.arg] = cache.value;
 			}
-			
+
 			return formatted;
 
 		}
@@ -77,7 +77,7 @@ namespace Alton
 		{
 			ArgumentList arg_list = _get_args();
 			ArgumentState formatted = _reformat(arg_list);
-			
+
 			return formatted;
 		}
 

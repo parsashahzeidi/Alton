@@ -48,6 +48,9 @@ def determine_term(text: str):
 	elif text == "ending":
 		return 1
 
+	elif text == "expression":
+		return 1
+
 	else: return 0
 
 
@@ -85,7 +88,7 @@ class Symbol:
 		return self.index == item.index
 
 	def __ne__(self, item):
-		return basic_ne(self, item)
+		return self.index != item.index
 
 	def get_index (self):
 		# --- Head

@@ -50,13 +50,13 @@
 # ifdef ALTON_BUILD_TIME_MONTH
 	# undef ALTON_BUILD_TIME_MONTH
 # endif /*ALTON_BUILD_TIME_MONTH*/
-# define ALTON_BUILD_TIME_MONTH 5  // Seventh
+# define ALTON_BUILD_TIME_MONTH 6  // Seventh
 
 // - Day -
 # ifdef ALTON_BUILD_TIME_DAY
 	# undef ALTON_BUILD_TIME_DAY
 # endif /*ALTON_BUILD_TIME_DAY*/
-# define ALTON_BUILD_TIME_DAY 11  // Eigth
+# define ALTON_BUILD_TIME_DAY 15  // Eigth
 
 
 // -- Minor timings --
@@ -64,19 +64,19 @@
 # ifdef ALTON_BUILD_TIME_HOUR
 	# undef ALTON_BUILD_TIME_HOUR
 # endif /*ALTON_BUILD_TIME_HOUR*/
-# define ALTON_BUILD_TIME_HOUR 22  // Ninth
+# define ALTON_BUILD_TIME_HOUR 10  // Ninth
 
 // - Minute -
 # ifdef ALTON_BUILD_TIME_MINUTE
 	# undef ALTON_BUILD_TIME_MINUTE
 # endif /*ALTON_BUILD_TIME_MINUTE*/
-# define ALTON_BUILD_TIME_MINUTE 31  // Tenth
+# define ALTON_BUILD_TIME_MINUTE 4  // Tenth
 
 // - Second -
 # ifdef ALTON_BUILD_TIME_SECOND
 	# undef ALTON_BUILD_TIME_SECOND
 # endif /*ALTON_BUILD_TIME_SECOND*/
-# define ALTON_BUILD_TIME_SECOND 55  // Eleventh!
+# define ALTON_BUILD_TIME_SECOND 33  // Eleventh!
 
 
 
@@ -803,4 +803,4 @@
 # ifdef ALTON_PYTHON_VERSION_INFO
 	# undef ALTON_PYTHON_VERSION_INFO
 # endif /*ALTON_PYTHON_VERSION_INFO*/
-# define ALTON_PYTHON_VERSION_INFO U"3.7.5 (default, Apr 19 2020, 20:18:17) [GCC 9.2.1 20191008]"  // Eighteenth
+# define ALTON_PYTHON_VERSION_INFO U"3.8.2 (default, Apr 27 2020, 15:53:34) [GCC 9.3.0]"  // Eighteenth

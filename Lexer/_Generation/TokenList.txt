@@ -1,7 +1,10 @@
+fakelparen %(
 lparen (
 rparen )
+
 lscope {
 rscope }
+
 lbrack [
 rbrack ]
 

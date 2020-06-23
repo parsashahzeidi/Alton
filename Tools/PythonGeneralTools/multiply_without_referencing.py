@@ -3,14 +3,13 @@ from copy import deepcopy
 
 
 def make_multiplication (item, axis: list):
-	array = item
-	new_array = []
+	array = []
 
-	for i in axis:
-		for _ in range (i):
-			new_array.append (deepcopy (array))
+	if axis != []:
+		for i in range (axis [0]):
+			array.append (make_multiplication (item, axis [1:]))
 
-		array = new_array
-		new_array = []
+		return array
 
-	return array
+	else:
+		return deepcopy (item)

@@ -19,14 +19,14 @@
 Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
 {
 	# --- Head ---
-	var x1, y1, x2, y2, temp = 0.0;
+	var x1 y1 x2 y2 temp = 0.0;
 
 	var iterator = 0n;
 
 	# --- Body ---
 	while (< (+ x2, y2), 4)
 	{
-		if (>= iterator, 100)
+		if iterator >= 100
 		{
 			iterator = 0;
 			break

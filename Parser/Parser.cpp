@@ -143,6 +143,15 @@ namespace Alton
 				___shift(oper.result);
 				break;
 
+			case ParseOperationType::parse_expression:
+				say
+				(
+					Clinic::Component::parser_lib,
+					text_init
+						U"BICH Y U DO DIS"
+				);
+				Clinic::terminate (0x420);
+
 			case ParseOperationType::accept:
 				break;
 

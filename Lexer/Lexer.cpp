@@ -75,9 +75,9 @@ namespace Alton
 				if
 				(
 					// The expected scope closing from the scope opening
-					h._find_potential_scope_closing(h.open_miniscopes.back()) ==
+					h._find_potential_scope_closing(h.open_miniscopes.back())
 					// The scope closing
-					cache.enumeration[0]
+					== cache.enumeration[0]
 				)
 				{
 					h.open_miniscopes.pop_back();

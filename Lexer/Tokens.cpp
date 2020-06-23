@@ -16,6 +16,7 @@ namespace Alton
 		Token ____get_const_token_2_chars(Text in)
 		{
 			// Third 
+			if (in == U"%(") return Token::fakelparen; else
 			if (in == U"+=") return Token::oper_plus_assign; else
 			if (in == U"-=") return Token::oper_minus_assign; else
 			if (in == U"*=") return Token::oper_star_assign; else
@@ -96,6 +97,7 @@ namespace Alton
 		{
 			switch(in)
 			{  // Seventh 
+			case Token::fakelparen: return U"fakelparen";
 			case Token::lparen: return U"lparen";
 			case Token::rparen: return U"rparen";
 			case Token::lscope: return U"lscope";

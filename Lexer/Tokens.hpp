@@ -13,6 +13,7 @@ namespace Alton
 		{
 			null_token,
 			// First 
+			fakelparen,
 			lparen,
 			rparen,
 			lscope,

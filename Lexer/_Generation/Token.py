@@ -2,10 +2,6 @@
 
 
 def get_tokens(filepath: str, prependix: str):
-	"""
-	Grabs the tokens at /Path/To/Alton/Tools/Instructions/LexedTree/TokenLists.txt
-	:return: a list of strings and a list of strings
-	"""
 	file = open(filepath)
 	text = file.read(); file.close()
 
