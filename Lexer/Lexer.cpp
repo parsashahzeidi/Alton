@@ -11,13 +11,15 @@ namespace Alton
 			// --- Head ---
 			// -- Remaining characters to the end --
 			Natural remaining_chars = h.out.size() - h.it;
+			
 			// -- A cache value --
 			Lexeme cache;
+			
 			// -- The parameters --
 			cache.token_type = Token::null_token;
 			cache.position_in_code = h.it;
 			cache.enumeration = h.out.substr(h.it);
-
+			
 			// --- Body ---
 			// -- 3 character long tokens --
 			if (cache.token_type == Token::null_token && remaining_chars >= 3)
@@ -60,11 +62,20 @@ namespace Alton
 			switch (cache.token_type)
 			{
 				// Exception for miniscope openings
-			case Token::lparen:
 			case Token::lscope:
-			case Token::lbrack:
-				h.open_miniscopes.push_back(cache.enumeration[0]);
+				h.open_miniscopes.push_back(U'}');
 				h.__append(cache);
+				break;
+
+			case Token::lbrack:
+				h.open_miniscopes.push_back(U']');
+				h.__append(cache);
+				break;
+				
+			case Token::fakelparen:
+			case Token::lparen:
+				h.open_miniscopes.push_back (U')');
+				h.__append (cache);
 				break;
 
 				// Exception for miniscope closings
@@ -72,55 +83,63 @@ namespace Alton
 			case Token::rscope:
 			case Token::rbrack:
 				// Scope closing is legal.
-				if
-				(
-					// The expected scope closing from the scope opening
-					h._find_potential_scope_closing(h.open_miniscopes.back())
-					// The scope closing
-					== cache.enumeration[0]
-				)
-				{
-					h.open_miniscopes.pop_back();
-					h.__append(cache);
-				}
-				// Scope closing is illegal.
-				else
-					switch (h.open_miniscopes.back())
+				if (!h.open_miniscopes.empty ())
+					if (text_init h.open_miniscopes.back() == cache.enumeration)
 					{
-					case U'{':
-						Clinic::raise_pos
-						(
-							Clinic::Exceptions::
-									RoundBracketMiniScopeLeftOpenException(),
-							h.it
-						);
+						
+						h.open_miniscopes.pop_back();
+						h.__append(cache);
 						break;
-
-					case U'[':
-						Clinic::raise_pos
-						(
-							Clinic::Exceptions::
-									SquareBracketMiniScopeLeftOpenException(),
-							h.it
-						);
-						break;
-
-					case U'(':
-						Clinic::raise_pos
-						(
-							Clinic::Exceptions::
-									ParanthesisMiniScopeLeftOpenException(),
-							h.it
-						);
-						break;
-
-					default:
-						Clinic::raise_pos
-						(
-							Clinic::Exceptions::MiniScopeLeftOpenException(),
-							h.it
-						);
 					}
+					
+					else
+						// No; Scope closing is ILLEGAL
+						switch (h.open_miniscopes.back())
+						{
+						case U'}':
+							Clinic::raise_pos
+							(
+								Clinic::Exceptions::
+										RoundBracketMiniScopeLeftOpenException
+												(),
+								h.it-1
+							);
+							break;
+		
+						case U']':
+							Clinic::raise_pos
+							(
+								Clinic::Exceptions::
+										SquareBracketMiniScopeLeftOpenException
+												(),
+								h.it-1
+							);
+							break;
+		
+						case U')':
+							Clinic::raise_pos
+							(
+								Clinic::Exceptions::
+										ParanthesisMiniScopeLeftOpenException(),
+								h.it-1
+							);
+							break;
+		
+						default:
+							Clinic::raise_pos
+							(
+								Clinic::Exceptions::
+										MiniScopeLeftOpenException(),
+								h.it-1
+							);
+						}
+				else
+					Clinic::raise_pos
+					(
+						Clinic::Exceptions::ExcessMiniScopeClosingException(),
+						h.it-1
+					);
+
 				break;
 
 				// - Token is under no exceptions -
@@ -410,7 +429,7 @@ namespace Alton
 			if (!h.open_miniscopes.empty())
 				switch (h.open_miniscopes.front())
 				{
-				case U'{':
+				case U'}':
 					Clinic::raise_pos
 					(
 						Clinic::Exceptions::RoundBracketMiniScopeLeftOpenException(),
@@ -418,7 +437,7 @@ namespace Alton
 					);
 					break;
 
-				case U'[':
+				case U']':
 					Clinic::raise_pos
 					(
 						Clinic::Exceptions::SquareBracketMiniScopeLeftOpenException(),
@@ -426,7 +445,7 @@ namespace Alton
 					);
 					break;
 
-				case U'(':
+				case U')':
 					Clinic::raise_pos
 					(
 						Clinic::Exceptions::ParanthesisMiniScopeLeftOpenException(),

@@ -9,7 +9,6 @@ set									(LEXER_LIB_SOURCES
 # -- Dependencies --
 add_subdirectory					(${dir}/Lexer/_Generation/)
 
-
 # --- Body ---
 # -- Library targets --
 add_library							(lexer_lib

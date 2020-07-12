@@ -28,16 +28,30 @@ namespace Alton
 
 			// -- Thread related stuff
 			Natural lock_count = 0;
-			std::thread::id lock_owner = std::this_thread::get_id();
+			pthread_t lock_owner;
 
 			// --- Body
 		private:
+			/*
+			 * BRIEF: Gets the current thread's id, named after PThread's
+				pthread_self call.
+			 * RETURN: an Unsigned Long integer on most platforms,
+				AKA pthread_t.
+			 * NOTE:
+				This function may vary on certain OSs / architectures,
+				therefore it's suggested to call the self function indirectly.
+			 */
+			const pthread_t ___get_self_id () const
+			{
+				return pthread_self ();
+			}
+			
 			/**
 			 * BRIEF: Returns a value to indicate a lock
 			*/
 			bool __is_locked() const
 			{
-				return lock_count;
+				return lock_count != 0;
 			}
 
 			/**
@@ -49,7 +63,7 @@ namespace Alton
 					// Condition for checking if a lock is present
 					__is_locked() &&
 					// Condition for checking if we own the lock
-					(lock_owner != std::this_thread::get_id());
+					(lock_owner != ___get_self_id ());
 			}
 
 			/**
@@ -59,11 +73,7 @@ namespace Alton
 			{
 				// Checking if a lock that we don't own is present.
 				while (__is_locked_for_this_thread())
-					// Wait a 100 ms and recheck the lock
-					std::this_thread::sleep_for
-					(
-						std::chrono::milliseconds(100)
-					);
+					/* Recheck the lock Immediately */;
 			}
 
 			/**
@@ -71,12 +81,9 @@ namespace Alton
 			*/
 			void _wait_until_full_unlock() const
 			{
+				// Checking if a lock that we may or may not own is present.
 				while (__is_locked())
-					// Wait a 100 ms and recheck the lock
-					std::this_thread::sleep_for
-					(
-						std::chrono::milliseconds(100)
-					);
+					/* Recheck the lock Immediately */;
 			}
 
 			/**
@@ -86,7 +93,7 @@ namespace Alton
 			{
 				_wait_until_unlock();
 
-				lock_owner = std::this_thread::get_id();
+				lock_owner = ___get_self_id ();
 				lock_count++;
 			}
 

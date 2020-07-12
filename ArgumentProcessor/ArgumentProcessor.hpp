@@ -25,13 +25,11 @@ namespace Alton
 			ArgumentList _get_args();
 
 			/**
-			 * BRIEF: Reformats a ArgumentList into a ArgumentState
+			 * BRIEF: Reformats an ArgumentList into an ArgumentState
 			 * 
 			 * The reason for not making ArgumentState-s in the first
 			 *  place is that if some arguments have order-specialities,
 			 *  we can easily find them by using _get_args.
-			 * 
-			 * ArgumentStates are easier / faster to access too, so there's that.
 			*/
 			ArgumentState _reformat(ArgumentList in);
 

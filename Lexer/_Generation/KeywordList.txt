@@ -1,16 +1,18 @@
-shader Shader
-float Float
-bool Bool
-void Void
-int Int
-nat Nat
+fn fn
+ns ns
+fast fast
 var var
+float float
+bool bool
+void void
+int int
+nat nat
+
+cst cst
+ref ref
 
 goto goto
 seg seg
-
-graphic Graphic
-interface Interface
 
 while while
 if if

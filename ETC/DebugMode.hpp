@@ -1,13 +1,13 @@
 # pragma once
 
-# ifdef DEBUG_MODE
-	# undef DEBUG_MODE
-# endif  /* defined (DEBUG_MODE) */
+# ifdef ALTON_DEBUG_MODE
+	# undef ALTON_DEBUG_MODE
+# endif  /* defined (ALTON_DEBUG_MODE) */
 
 # if defined (NDEBUG) && NDEBUG == 1
-	# define DEBUG_MODE false
+	# define ALTON_DEBUG_MODE false
 
 # else
-	# define DEBUG_MODE true
+	# define ALTON_DEBUG_MODE true
 
 # endif

@@ -75,17 +75,19 @@ namespace Alton
 		Token ____get_keyword_token(Text in)
 		{
 			// Sixth 
-			if (in == U"Shader") return Token::keyword_shader; else
-			if (in == U"Float") return Token::keyword_float; else
-			if (in == U"Bool") return Token::keyword_bool; else
-			if (in == U"Void") return Token::keyword_void; else
-			if (in == U"Int") return Token::keyword_int; else
-			if (in == U"Nat") return Token::keyword_nat; else
+			if (in == U"fn") return Token::keyword_fn; else
+			if (in == U"ns") return Token::keyword_ns; else
+			if (in == U"fast") return Token::keyword_fast; else
 			if (in == U"var") return Token::keyword_var; else
+			if (in == U"float") return Token::keyword_float; else
+			if (in == U"bool") return Token::keyword_bool; else
+			if (in == U"void") return Token::keyword_void; else
+			if (in == U"int") return Token::keyword_int; else
+			if (in == U"nat") return Token::keyword_nat; else
+			if (in == U"cst") return Token::keyword_cst; else
+			if (in == U"ref") return Token::keyword_ref; else
 			if (in == U"goto") return Token::keyword_goto; else
 			if (in == U"seg") return Token::keyword_seg; else
-			if (in == U"Graphic") return Token::keyword_graphic; else
-			if (in == U"Interface") return Token::keyword_interface; else
 			if (in == U"while") return Token::keyword_while; else
 			if (in == U"if") return Token::keyword_if; else
 			if (in == U"else") return Token::keyword_else; else
@@ -145,17 +147,19 @@ namespace Alton
 			case Token::oper_less_than_equal: return U"oper_less_than_equal";
 			case Token::oper_greater_than: return U"oper_greater_than";
 			case Token::oper_greater_than_equal: return U"oper_greater_than_equal";
-			case Token::keyword_shader: return U"keyword_shader";
+			case Token::keyword_fn: return U"keyword_fn";
+			case Token::keyword_ns: return U"keyword_ns";
+			case Token::keyword_fast: return U"keyword_fast";
+			case Token::keyword_var: return U"keyword_var";
 			case Token::keyword_float: return U"keyword_float";
 			case Token::keyword_bool: return U"keyword_bool";
 			case Token::keyword_void: return U"keyword_void";
 			case Token::keyword_int: return U"keyword_int";
 			case Token::keyword_nat: return U"keyword_nat";
-			case Token::keyword_var: return U"keyword_var";
+			case Token::keyword_cst: return U"keyword_cst";
+			case Token::keyword_ref: return U"keyword_ref";
 			case Token::keyword_goto: return U"keyword_goto";
 			case Token::keyword_seg: return U"keyword_seg";
-			case Token::keyword_graphic: return U"keyword_graphic";
-			case Token::keyword_interface: return U"keyword_interface";
 			case Token::keyword_while: return U"keyword_while";
 			case Token::keyword_if: return U"keyword_if";
 			case Token::keyword_else: return U"keyword_else";

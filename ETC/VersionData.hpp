@@ -50,13 +50,13 @@
 # ifdef ALTON_BUILD_TIME_MONTH
 	# undef ALTON_BUILD_TIME_MONTH
 # endif /*ALTON_BUILD_TIME_MONTH*/
-# define ALTON_BUILD_TIME_MONTH 6  // Seventh
+# define ALTON_BUILD_TIME_MONTH 7  // Seventh
 
 // - Day -
 # ifdef ALTON_BUILD_TIME_DAY
 	# undef ALTON_BUILD_TIME_DAY
 # endif /*ALTON_BUILD_TIME_DAY*/
-# define ALTON_BUILD_TIME_DAY 15  // Eigth
+# define ALTON_BUILD_TIME_DAY 1  // Eigth
 
 
 // -- Minor timings --
@@ -64,19 +64,19 @@
 # ifdef ALTON_BUILD_TIME_HOUR
 	# undef ALTON_BUILD_TIME_HOUR
 # endif /*ALTON_BUILD_TIME_HOUR*/
-# define ALTON_BUILD_TIME_HOUR 10  // Ninth
+# define ALTON_BUILD_TIME_HOUR 13  // Ninth
 
 // - Minute -
 # ifdef ALTON_BUILD_TIME_MINUTE
 	# undef ALTON_BUILD_TIME_MINUTE
 # endif /*ALTON_BUILD_TIME_MINUTE*/
-# define ALTON_BUILD_TIME_MINUTE 4  // Tenth
+# define ALTON_BUILD_TIME_MINUTE 58  // Tenth
 
 // - Second -
 # ifdef ALTON_BUILD_TIME_SECOND
 	# undef ALTON_BUILD_TIME_SECOND
 # endif /*ALTON_BUILD_TIME_SECOND*/
-# define ALTON_BUILD_TIME_SECOND 33  // Eleventh!
+# define ALTON_BUILD_TIME_SECOND 15  // Eleventh!
 
 
 

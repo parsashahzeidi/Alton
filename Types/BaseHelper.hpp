@@ -5,10 +5,10 @@
 # include <ETC/BareboneMacros.hpp>
 
 
-namespace Alton{
+namespace Alton
+{
 	inline namespace Types
 	{
-
 		template<typename item, typename list, bool refining>
 		class BaseHelper
 		{

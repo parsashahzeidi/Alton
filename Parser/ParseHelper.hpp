@@ -6,53 +6,61 @@
 # include <Lexer/Lexeme.hpp>
 # include <Lexer/Tokens.hpp>
 
-# include <Parser/AlfieRunData.hpp>
-# include <Parser/Symbol.hpp>
-# include <Parser/ParsingNode.hpp>
-# include <Parser/ParseOperation.hpp>
-# include <Parser/ParseTable.hpp>
-# include <Parser/ParseState.hpp>
-# include <Parser/ParseRule.hpp>
+# include <Lexer/Tokens.hpp>
 
+// TODO: # include <Parser/AST/Function.hpp>
+// TODO: # include <Parser/AST/Configuration.hpp>
 
 namespace Alton
 {
 	namespace Parser
 	{
-		class ParseHelper: public BaseHelper<ParsingNode, LinearParse, false>
+		class ParseHelper: public BaseHelper<Lexer::Lexeme, Lexer::LexemeList, false>
 		{
 			// --- Head
-		public:
-			AlfieRunData data;
-			Container<ParseState> stack;
-			ParseTree result;
+		private:
 
-			ParseTable table;
-			Container <ParseRule> rules;
+		public:
+			// -- The functions that are finally parsed.
+			// TODO: Container <Function *> functions;
+			// TODO: Container <Configuration> configurations;
 
 			// --- Body
 		public:
 			/**
-			 * BRIEF: Initializes a constant parse table
+			 * BRIEF: Advances a symbol thru the code if it is the expected
+				symbol, errors otherwise
+			 * PARAM: in The expected symbol
+			 * TODO: add PARAM: error The error to raise if the symbol
+				wasn't expected
 			 */
-			void initialize_parse_table ();
+			Text advance (const Lexer::Token &in);
 
 			/**
-			 * BRIEF: Initializes a list containing rule lists
+			 * BRIEF: Checks the equality of curr (0) and the input symbol
+			 * PARAM: in The symbol to check
+
+			 * RETURN: A Boolean
 			 */
-			void initialize_rules ();
+			bool can_expect (const Lexer::Token &in);
 
 			/**
-			 * BRIEF: Checks if a Symbol is a terminal
-			*/
-			bool _symbol_is_term (const Symbol &in);
+			 * BRIEF: Checks if atleast one of the symbols inputted is equal to
+				curr (0)
+			 * PARAM: count The count of the arguments passed
+			 * PARAM: ... an expandable variable pack of type int and of size
+				count
+
+			 * RETURN: A boolean
+			 */
+			bool can_expect (Natural count, ...);
 
 			// --- CTOR ~ DTOR
 		public:
 			ParseHelper () = delete;
 
 			// CTORs
-			ParseHelper (const LinearParse &in);
+			ParseHelper (const Lexer::LexemeList &in);
 
 			// DTOR
 			~ParseHelper ();

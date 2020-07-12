@@ -1,9 +1,9 @@
-##~ import Daemon
-~ import Image
-~ import RGBTools
-~ import Placeholders
-~ import Colours
-~ import Random#
+#~ import Daemon #
+#~ import Image #
+#~ import RGBTools #
+#~ import Placeholders #
+#~ import Colours #
+#~ import Random #
 
 # This is a basic mandelbrot implementation whom purpose is
 #	to provide testing for Alfie's stock launcher, Alton.
@@ -13,68 +13,68 @@
 
 # Enjoy the results!
 
-##
-	The Mandelbrot Algorithm
+gnyFolder make_folder (Text loc mode; ref var output);
+# The Mandelbrot Algorithm
+var mandelbrot_pixel (nat x y);
 #
-Graphic Pixel mandelbrot_pixel (Nat x, Nat y)
-{
+#{
 	# --- Head ---
-	var x1 y1 x2 y2 temp = 0.0;
+#	var x1 y1 x2 y2 temp = 0.0;
 
-	var iterator = 0n;
+#	var iterator = 0n;
 
 	# --- Body ---
-	while (< (+ x2, y2), 4)
-	{
-		if iterator >= 100
-		{
-			iterator = 0;
-			break
-		}
-		else iterator++;
+#	while (< (+ x2, y2), 4)
+	#{
+	#	if iterator >= 100
+#		{
+#			iterator = 0;
+	#		break
+	#	}
+	#	else iterator++;
 
-		temp = (- x2 y2);
-		y1 = (+ (* 2, x1, y1), y);
-		x1 = (+ temp, x0);
+	#	temp = (- x2 y2);
+	#	y1 = (+ (* 2, x1, y1), y);
+	#	x1 = (+ temp, x0);
 
-		x2 = (* x1, x1);
-		y2 = (* y1, y1);
-	}
+	#	x2 = (* x1, x1);
+	#	y2 = (* y1, y1);
+	#}
 
-	return placeholder_palette (iterator);
-}
+	#return placeholder_palette (iterator);
+#}
 
 # NOTE: I want the noise to be biased towards 0,
 #	the bias parameter defines this behaviour's strength.
-Graphic noise (Float bias, Float _, Float _)
-{
-	var colour = RGB
-	(
-		random_float (0, 1),
-		random_float (0, 1),
-		random_float (0, 1)
-	);
-	colour = pow (bias, colour);
-	return colour;
-}
+fast var noise (Float bias _ _);
+#{
+	#var colour = RGB
+#	(
+	#	random_float (0, 1),
+	#	random_float (0, 1),
+	#	random_float (0, 1)
+	#);
+	#colour = pow (bias, colour);
+	#return colour;
+#}
 
-Image mandelbrot ()
-{
-	# --- Head ---
-	var output = Image (1920, 1080, Colours.black);
-	var calculator = output.calculator;
+var mandelbrot;
+#{
+#	# --- Head ---
+#	var output = Image (scale (1920, 1080), Colours.black);
+#	var calculator = output.calculator;
 
-	# --- Body ---
-	calculator.assign_embarrassingly_parallel (mandelbrot_pixel);
-	calculator.add_embarrassingly_parallel (noise, 4);
-	output.normalize_min_max ();
-	return output;
-}
+#	# --- Body ---
+#	calculator.assign (paralell=embarrasing, noise%(mandelbrot_pixel));
+#	calculator.add_embarrassingly_parallel (noise, 4);
+#	output.normalize_min_max ();
+#	return output;
+#}
 
 
-Void main ()
-{
-	Daemon.initialize_input ();
-	Daemon.add_image (mandelbrot ());
-	Daemon.exit ();
-}
+nat main;
+#{
+	#Daemon.initialize_input ();
+#	Daemon.add_image (mandelbrot ());
+#	Daemon.exit ();
+#}

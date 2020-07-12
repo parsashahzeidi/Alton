@@ -52,8 +52,8 @@ namespace Alton
 					DEF_ERROR_TEMPLATE(InvalidArgumentException,							BaseArgumentException,									"Unrecognised argument");
 					DEF_ERROR_TEMPLATE(InvalidArgumentValueException,						BaseArgumentException,									"Can't evaluate argument");
 
-				DEF_ERROR_TEMPLATE(BaseUnhandeledException, 							BaseExternalException, 										"Severe external unhandeled exception");  // Not a base exception.
-					DEF_ERROR_TEMPLATE(IntegerSyntaxUnhandeledException,					BaseUnhandeledException, 							"Integer processor raised an unhandeled exception");
+				DEF_ERROR_TEMPLATE(BaseUnhandeledException, 							BaseExternalException, 									"Severe external unhandeled exception");  // Not a base exception.
+					DEF_ERROR_TEMPLATE(IntegerSyntaxUnhandeledException,					BaseUnhandeledException, 								"Integer processor raised an unhandeled exception");
 
 				DEF_ERROR_TEMPLATE(BaseCodeException,									BaseExternalException,									"[Internal] Base exception raised");
 					DEF_ERROR_TEMPLATE(BaseSyntaxException,									BaseCodeException,										"[Internal] Base exception raised");
@@ -71,6 +71,7 @@ namespace Alton
 							DEF_ERROR_TEMPLATE(RoundBracketMiniScopeLeftOpenException,				MiniScopeLeftOpenException,								"Expected '}'");
 							DEF_ERROR_TEMPLATE(SquareBracketMiniScopeLeftOpenException,				MiniScopeLeftOpenException,								"Expected ']'");
 							DEF_ERROR_TEMPLATE(ParanthesisMiniScopeLeftOpenException,				MiniScopeLeftOpenException,								"Expected ')'");
+							DEF_ERROR_TEMPLATE(ExcessMiniScopeClosingException,						MiniScopeLeftOpenException,								"Unmatched miniscope closing");
 						
 					DEF_ERROR_TEMPLATE(InvalidHeaderException,								BaseCodeException,										"Can't evaluate the header");
 						DEF_ERROR_TEMPLATE(InvalidHeaderIdentifierException,					InvalidHeaderException,									"Unrecognised header identifier");

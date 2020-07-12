@@ -35,10 +35,8 @@ int main(int argc, char *argv[])
 
 	// -- Parsing Test --
 	using Alton::Parser::Parser;
-	using Alton::Parser::ParseTree;
-
+	
 	Parser parser;
-	ParseTree parse_tree;
 
 	// -- Adittional usings --
 	using Alton::Tools::left_fill;
@@ -123,7 +121,10 @@ int main(int argc, char *argv[])
 	); add_scope ();
 
 	parser = Parser(lex);
-	parse_tree = parser.parse();
+	// NOTE: This is deleted because the parser returns an
+	//	Alton::Parser::AST::NamespaceInternals now instead.
+	// TODO: Get the AST or the bytecode.
+	/* parse_tree =*/ parser.parse();
 
 	say
 	(
@@ -133,11 +134,8 @@ int main(int argc, char *argv[])
 		ANSIColourCode::ansi_colour_green
 	); exit_scope ();
 
-	/**
-	 * NOTE:
-		Using terminate instead of return helps keep track of
-		memory errors.
-	*/
+	// NOTE:Using terminate instead of return helps keep track of memory
+	//	errors.
 	Alton::Clinic::terminate(0);
 
 	// If the termination fails.

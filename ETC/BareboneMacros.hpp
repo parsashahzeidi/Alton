@@ -16,22 +16,20 @@
 */
 
 // --- External Libraries ---
-/**
- * TODO:
-	Make a wrapper class similliar to std::thread but with Posix Thread calls.
- */
-# include <thread>
+# include <pthread.h>
 # include <filesystem>
-# include <stdint.h>
+# include <cstdint>
 # include <iostream>
 # include <string>
 # include <fstream>
+# include <cstdarg>
+
 
 // --- Internal Libraries ---
 # include <ETC/VersionData.hpp>
 
 // --- Newline Characters ---
-# if ALTON_OS == OS_WINDOWS
+# if ALTON_OS == OS_WINDOWS || ALTON_OS == OS_OS2
 	# define nl_str "\r\n"
 	# define nl_txt U"\r\n"
 # else

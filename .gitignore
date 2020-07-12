@@ -1,28 +1,39 @@
-# Extensions
+# --- Extensions ---
+# -- Executables --
 *.out
 *.exe
 *.asm
 *.o
+
+# -- Others, containing backup files --
 *.tmp
 *~
 *.pyc
 
-# Files
-temp.tmp
+# --- Specific files ---
+# -- Benchmarking / Debugging files --
 gmon.out
 .gdbinit
+
+# -- Common Project manager noise --
 CMakeLists.txt.user
 Alton.kdev4
+.geanyprj
 
+# -- Touching files --
 TouchFiles/*
 
-# Directories
+# --- Directories ---
+# -- Common Project manager noise --
 .vscode/
 .idea/
 .kdev4/
+
+# -- Directories containing build files --
 Build/*/
 tmpbld/
-# Ignoring __pycache__s in 5 levels of recursion
+# - Ignoring __pycache__s in 5 levels of recursion, cuz they're
+#	everywhere -
 */__pycache__/
 */*/__pycache__/
 */*/*/__pycache__/

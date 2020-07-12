@@ -1,27 +1,18 @@
 # --- Head ---
 # -- Sources --
-set							(PARSER_LIB_SOURCES
+set (PARSER_LIB_SOURCES
 	${dir}/Parser/Parser.cpp
 	${dir}/Parser/ParseHelper.cpp
-	${dir}/Parser/Symbol.cpp
-	${dir}/Parser/ParseState.cpp
-	${dir}/Parser/ParseTable.cpp
-	${dir}/Parser/ParseOperation.cpp
 )
 
 # -- Dependencies --
-add_subdirectory			(${dir}/Parser/_Generation/)
-
+add_subdirectory					(${dir}/Parser/AST/ BINARY_DIR)
 
 # --- Body ---
 # -- Library targets --
-add_library							(parser_lib
-	STATIC EXCLUDE_FROM_ALL
-	${PARSER_LIB_SOURCES}
+add_library (parser_lib STATIC EXCLUDE_FROM_ALL
+		   ${PARSER_LIB_SOURCES} $<TARGET_OBJECTS:ast_lib>
 )
 
-# -- Dependencies --
-add_dependencies					(parser_lib parser_headers)
-
 # -- CXX includes --
-target_include_directories			(parser_lib PUBLIC ${dir})
+target_include_directories (parser_lib PUBLIC ${dir})

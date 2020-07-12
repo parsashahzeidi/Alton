@@ -31,19 +31,7 @@ A bunch of cool and *free* software on the internet! - See the [CREDIT.md](CREDI
 
 ## Badges
 
-![Latest Version](https://img.shields.io/endpoint?style=for-the-badge&url=https://raw.githubusercontent.com/parsashahzeidi/BadgeData/master/LatestVersion.json)
+![Latest Version](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FLatestVersion.json)
 ![Build Status](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FBuildStatus.json)
 ![Test Status](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FTestStatus.json)
 ![Hash](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fparsashahzeidi%2FBadgeData%2Fmaster%2FCommitHash.json)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/parsashahzeidi/Alton/total?color=67add8&style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub license](https://img.shields.io/github/license/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/parsashahzeidi/Alton?color=67add8&style=for-the-badge)
-![GitHub followers](https://img.shields.io/github/followers/parsashahzeidi?color=67add8&label=&logo=github&logoColor=f2f1f0&style=for-the-badge)
-![Discord](https://img.shields.io/discord/695965733238079519?color=67add8&label=%20&logo=discord&logoColor=f2f1f0&style=for-the-badge)
