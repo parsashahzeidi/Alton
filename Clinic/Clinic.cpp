@@ -26,7 +26,7 @@ namespace Alton
 			if (code == nullptr)
 			{
 				code = new Text(_code);
-				atexit(_delete_setup);
+				atexit (_delete_setup);
 			}
 			else
 				*code = (_code);
@@ -46,41 +46,39 @@ namespace Alton
 			// --- Head ---
 			FileIndexData index;
 			Natural i = 0;
+			Character current;
 
 			// --- Body ---
-			for (; i < ptr; i++)
+			for (; i < ptr; i++, index.chtr++)
 			{
-				index.real_chtr++;
+				current = code->at (i);
 
-				if (code->at(i) == U'\n')
+				switch (current)
 				{
-					index.curr_line = U"";
+					// -- Noticed a newline --
+				case U'\n':
+					// - Clearing the current line -
+					index.curr_line.clear ();
+					index.chtr = 0;
 
 					index.line++;
-					index.chtr = 0;
-					index.real_chtr = 0;
-				}
-				else if (code->at(i) == U'\t')
-				{
-					ansi_term_colour
-					(
-						ANSIColourStrength::high_ansi_colour_strength
-					);
-					index.curr_line += U"|   ";
-					ansi_term_colour();
-					index.chtr += 4;
-				}
-				else
-				{
-					index.curr_line += code->at(i);
-					index.chtr++;
+					break;
+
+					// -- Noticed a Tab character --
+				case U'\t':
+					index.curr_line.push_back (U' ');
+					break;
+
+					// -- Noticed any other character --
+				default:
+					index.curr_line += current;
 				}
 			}
 
 			// Filling ze current line
 			while ((i < code->size()) && (code->at(i) != U'\n'))
 			{
-				index.curr_line += code->at(i);
+				index.curr_line += code->at (i);
 				i++;
 			}
 
@@ -146,7 +144,7 @@ namespace Alton
 			message += U":";
 			message += Conversions::str_to_text
 			(
-				std::to_string(index.real_chtr)
+				std::to_string(index.chtr)
 			);
 			message += text_init U'.' + nl_txt;
 
@@ -174,8 +172,9 @@ namespace Alton
 			// --- Body ---
 			message += beautify_index(__index);
 
-			// Actually raising the shit
-			_raise_error(
+			// Actually raising the damn thing
+			_raise_error
+			(
 				message,
 				0xDeadBeef
 			);
@@ -200,7 +199,8 @@ namespace Alton
 			std::string __file, Text __func, Natural __line
 		)
 		{
-			_raise_error(
+			_raise_error
+			(
 				err._message
 				+ U" at \""
 				+ Conversions::str_to_text(__file)
@@ -238,38 +238,49 @@ namespace Alton
 			Text output;
 
 			// --- Body ---
-			for (Natural _ = 0; _ < scope_count; _++)
-				output += U"  ";
+			for (Natural _ = 1; _ < scope_count; _++)
+				output += U"- ";
 
 			return output;
 		}
 
-		void say(Component component, const Text &text, ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream)
+		Text get_initializer (Component component)
+		{
+			// --- Head ---
+			Text output;
+
+			// --- Body ---
+			output += text_init
+					U' ' +
+					get_scope () +
+					get_component_char(component) +
+					U' ' ;
+
+			// --- Footer ---
+			return output;
+		}
+
+		void log_initializer (Component component, FILE *&stream)
 		{
 			ansi_term_colour
 			(
-				ANSIColourStrength::high_ansi_colour_strength,
-				ANSIColourCode::ansi_colour_magenta,
-				stream
-			);
-
-			_log
-			(
-				text_init U" " + get_component_char(component) + U" ",
-				stream
-			);
-
-			ansi_term_colour
-			(
 				ANSIColourStrength::low_ansi_colour_strength,
-				ANSIColourCode::ansi_colour_blue
+				ANSIColourCode::ansi_colour_blue,
+				stream
 			);
 
 			_log
 			(
-				get_scope (),
+				get_initializer (component),
 				stream
 			);
+
+			ansi_term_colour ();
+		}
+
+		void say(Component component, const Text &text, ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream)
+		{
+			log_initializer (component, stream);
 
 			ansi_term_colour(strength, colour, stream);
 			_log(
@@ -280,6 +291,9 @@ namespace Alton
 
 		void print_header()
 		{
+			// --- Line initializer ---
+			log_initializer (Component::clinic_lib, stdout);
+
 			// --- The Version data ---
 			ansi_term_colour
 			(
@@ -347,8 +361,22 @@ namespace Alton
 				text_init
 				// This Compiling Platform
 				ALTON_OS_TEXT + U" " + ALTON_ARCH_TEXT + U" " +
-				ALTON_COMPILER_TEXT + U" ]" + nl_txt +
+				ALTON_COMPILER_TEXT + U" ]" + nl_txt
+				
+				, stdout
+			);
 
+			// -- Line initializer --
+			log_initializer (Component::clinic_lib, stdout);
+
+			ansi_term_colour
+			(
+				ANSIColourStrength::low_ansi_colour_strength,
+				ANSIColourCode::ansi_colour_white
+			);
+			
+			_log
+			(text_init
 				// The version of Python used
 				U"Made with Python " + ALTON_PYTHON_VERSION_INFO +  nl_txt,
 				stdout
@@ -358,7 +386,9 @@ namespace Alton
 
 		void ansi_term_colour
 		(
-			ANSIColourStrength strength, ANSIColourCode colour, FILE *&stream
+				ANSIColourStrength strength,
+				ANSIColourCode colour,
+				FILE *&stream
 		)
 		{
 			// --- Body ---

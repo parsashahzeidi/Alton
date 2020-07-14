@@ -96,9 +96,22 @@ namespace Alton
 
 		/**
 		 * BRIEF: Returns the dent count depending on the scope count
-		 * RETURN: " " * 4 * scope_count
+		 * RETURN: "- " * scope_count
 		*/
 		Text get_scope();
+
+		/**
+		 * BRIEF: Returns the dent count concat-ed with the component character
+		 * PARAM: component The component to get the initializer of
+		 */
+		Text get_initializer (Component component);
+
+		/**
+		 * BRIEF: Prints the result of get_initializer () with added colour
+		 * PARAM: component The argument to redirect
+		 * PARAM: stream The text stream to print to
+		 */
+		void log_initializer (Component component, FILE *&stream)
 
 		/**
 		 * BRIEF: Log a string as a component from alfie

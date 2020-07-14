@@ -17,7 +17,6 @@ namespace Alton
 		struct FileIndexData
 		{
 			Natural line = 1;
-			Natural real_chtr = 0;
 			Natural chtr = 0;
 
 			Text curr_line = U"";
